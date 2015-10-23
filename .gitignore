@@ -1,4 +1,5 @@
 # LaTeX
+*.synctex.*
 *.aux
 *.log
 *.out
