@@ -1,47 +1,122 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 % Packages
 \usepackage{enumerate}
+\usepackage{mathptmx}
+\usepackage{helvet}
 \usepackage{listings}
+\usepackage[margin=1in]{geometry}
 \usepackage{titling}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[explicit]{titlesec}
+\usepackage{graphicx}
+\usepackage{xcolor}
 
-% Title Page -----------------------------------------------------------------
-\title{
-\LARGE Mosaic Redesign: Project Proposal
-\\\vspace{10mm}
-\large CS 4HC3\\
-McMaster University
-\vspace{40mm}
-}
-\author{
-Stuart Douglas -- 1214422
-\\Matthew Pagnan -- 1208693
-\vspace{10mm}
-}
-\date{\vfill \today}
-% End Title Page -------------------------------------------------------------
+% Single column figure
+\newenvironment{InlineColumnFigure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+% ACM CHI Format
+\setlength{\columnsep}{1cm}
 \setlength{\parindent}{0pt}
+
+\titlespacing{\section}{0pt}{10pt}{-\parskip}
+\titlespacing{\subsection}{0pt}{10pt}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{10pt}{-\parskip}
+
+\titleformat{\section}{\normalfont\fontsize{9}{9}\sffamily\bfseries}{\thesection}{1em}{\MakeUppercase{#1}}
+\titleformat{\subsection}{\normalfont\fontsize{9}{9}\sffamily\bfseries}{\thesubsection}{1em}{#1}
+\titleformat{\subsubsection}{\normalfont\fontsize{9}{9}\sffamily\itshape}{\thesubsubsection}{1em}{#1}
+\pagenumbering{gobble}
+
+% Begin DOCUMENT
 \begin{document}
 
-\pagenumbering{gobble}
-\maketitle
-\newpage
-\pagenumbering{arabic}
+% Title
+\begin{center}
+{\LARGE \sffamily \textbf{Mosaic Redesign: Project Proposal} \vspace{2mm}}\\
+\begin{tabular}{cccc}
+\textbf{Stuart Douglas} & \textbf{Matthew Pagnan} & \textbf{Rob Gorrie} & \textbf{Derek Dagworthy}\\
+1214422 & 1208693 & ?? & ??\\
+McMaster University & McMaster University & McMaster University & McMaster University\\
+dougls2@mcmaster.ca & ?? & ?? & ??\\
+\end{tabular}
+\end{center}
+\vspace{2mm}
+
+\begin{multicols}{2}
+
+% =================== Section =================== 
+\section*{Abstract}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. 
+
+Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
 
 % =================== Section =================== %
 \section*{Project Proposal}
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.\\
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.
 
+% =================== SubSection =================== %
+\subsection*{Overview}
 Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros. 
+
+% =================== SubSection =================== %
+\subsection*{Suggested Improvements}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien.
 
 % =================== Section =================== %
 \section*{Software Survey}
-Five student management systems from Canadian universities have been selected for review (including Mosaic). For each system, a brief description will 
+Five student management systems from Canadian universities have been selected for review (including Mosaic). For each system, a brief description will be followed by a critique of the major usability flaws and strengths. From this, the main goals and tasks of users using the systems will be extracted. Finally, the two most important of those features will be further analyzed via hierarchical task analyses. Screenshots will be presented throughout each software review.
 
-\subsection*{McMaster University (2014) -- Mugsi}
+% =================== SubSection =================== %
+\subsection*{McMaster University (current) -- Mosaic}
+\subsubsection*{Description}
+In 2015, after several years of development, McMaster University switched to a new system for student self-administration. The purpose of the software is to allow students to manage their courses (enrolling, dropping etc.), and view information about their current status (current timetable, enrollment status, financial balance etc.). The interface for the software consists of several distinct modules encapsulating different aspects of the software. These include Academics, Finances, Personal Information, and Admissions.
 
+\subsubsection*{Critique}
+The problems
+
+% =================== SubSection =================== %
+\subsection*{McMaster University (pre 2015) -- Solar}
+\subsubsection*{Description}
+Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. 
+
+\subsubsection*{Critique}
+Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
+
+% =================== SubSection =================== %
 \subsection*{Guelph University -- WebAdvisor}
+\subsubsection*{Description}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. 
 
-\subsection*{Carleton University -- }
+\subsubsection*{Critique}
+Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. 
 
+% =================== SubSection =================== %
+\subsection*{Carleton University -- ??}
+\subsubsection*{Description}
+Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. 
+
+\subsubsection*{Critique}
+Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
+
+% =================== SubSection =================== %
+\subsection*{Waterloo University -- ??}
+\subsubsection*{Description}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar odio lorem non turpis. 
+
+\subsubsection*{Critique}
+Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Aliquam erat volutpat. Sed quis velit. Nulla facilisi. Nulla libero. Vivamus pharetra posuere sapien. 
+
+% =================== Section =================== 
+\section*{Conclusion}
+\subsubsection*{Description}
+Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. 
+
+\subsubsection*{Critique}
+Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
+
+\end{multicols}
 \end{document}
