@@ -78,15 +78,17 @@ Five student management systems from Canadian universities have been selected fo
 % =================== SubSection =================== %
 \subsection*{McMaster University (current) -- Mosaic}
 \subsubsection*{Description}
-In 2015, after several years of development, McMaster University switched to a new system for student self-administration. The purpose of the software is to allow students to manage their courses (enrolling, dropping etc.), and view information about their current status (current timetable, enrollment status, financial balance etc.). The interface for the software consists of several distinct modules encapsulating different aspects of the software. These include Academics, Finances, Personal Information, and Admissions.
+The purpose of the software is to allow students to manage their courses (enrolling, dropping etc.), and view information about their current status (current timetable, enrollment status, financial balance etc.). The interface for the software consists of several distinct modules encapsulating different aspects of the software. These include Academics, Finances, Personal Information, and Admissions. The focus of this analysis is on two common tasks -- enrolling in courses and viewing one's course schedule.
 
 \subsubsection*{Critique}
-The problems
+The largest usability flaws in Mosaic center around difficulty to access required information. Combined with an unintuitive and inconsistent navigation interface, the software is not very usable. The HTA for enrolling in a course demonstrates this through the large number of steps required to perform a routine and common task. Other functions are hidden behind dropdown menus, and are difficult to discover.\\
+
+The navigation is separated into a top navigation bar separated by user-type (e.g. Students and Employees). Within the student center page, functions are separated into modules, an effective strategy to group related functions. Navigating to one of the sub-functions (such as enrolling in a course) presents secondary and tertiary menus below the main one. Navigation within one of these is handled by blue text hyperlinks back to previous pages. Native back and forward browser functionality does not work. There is little visual indication of where the user is beyond the navigation bars at the top, which do not go to a depth sufficient to cover all pages used when performing common actions, such as enrolling in a course.
 
 % =================== SubSection =================== %
 \subsection*{McMaster University (pre 2015) -- Solar}
 \subsubsection*{Description}
-Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. 
+Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum.
 
 \subsubsection*{Critique}
 Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
@@ -124,4 +126,19 @@ Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamc
 Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
 
 \end{multicols}
+
+\newpage
+\section*{HTA - Mosaic, Enrolling in a Course}
+\vspace{2mm}
+\begin{center}
+\includegraphics[width=3in]{MosaicEnroll.png}
+\end{center}
+
+\newpage
+\section*{HTA - Mosaic, Viewing Weekly Schedule}
+\vspace{2mm}
+\begin{center}
+\includegraphics[width=\textwidth]{MosaicViewSchedule.png}
+\end{center}
+
 \end{document}
