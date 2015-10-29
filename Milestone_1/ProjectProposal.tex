@@ -18,6 +18,12 @@
 {\par\medskip\noindent\minipage{\linewidth}}
 {\endminipage\par\medskip}
 
+\newcommand{\Caption}[1]
+{\vspace{-4mm}\fontsize{9}{9}\textbf{Figure \refstepcounter{figCounter} \arabic{figCounter}: #1}}
+
+\newcounter{figCounter}
+\setcounter{figCounter}{0}
+
 % ACM CHI Format
 \setlength{\columnsep}{1cm}
 \setlength{\parindent}{0pt}
@@ -65,9 +71,12 @@ Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamc
 % =================== SubSection =================== %
 \subsection*{Suggested Improvements}
 Our suggested improvement is to have a dynamic element near the top of the home page which will provide useful information and links to pages of importance relative to the date.\\
+
 For example, when close to exam season the element will display the students exam time table. During the course registration time frame the element will display information about course registration.\\
+
 The items that are displayed on the dynamic element will also have permanent links on the page for users who wish to access those pages when they are not on display. \\
-This dynamic element will help users find the information they are most likely looking for by making information more visible and easier to access. \\ \\
+
+This dynamic element will help users find the information they are most likely looking for by making information more visible and easier to access. \\
 
 We are also proposing to have a better, more logical layout for the system. Currently the pages with information on courses have a section for personal information. This section should instead be moved to the "My Profile" section as it would make more sense to be located there. By moving sections that do not make logical sense to sections where they do make sense we will have cleared page space thus allowing us to increase the size of what is left on the page so it is easier for the user to find what they are looking for as well as giving us a spot to implement our dynamic element. 
 
@@ -77,6 +86,14 @@ Five student management systems from Canadian universities have been selected fo
 
 % =================== SubSection =================== %
 \subsection*{McMaster University (current) -- Mosaic}
+\vspace{-1mm}
+\begin{InlineColumnFigure}
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{MosaicScreen.png}
+\end{center}
+\Caption{Selecting courses to enroll in -- Mosaic}
+\end{InlineColumnFigure}
+
 \subsubsection*{Description}
 The purpose of the software is to allow students to manage their courses (enrolling, dropping etc.), and view information about their current status (current timetable, enrollment status, financial balance etc.). The interface for the software consists of several distinct modules encapsulating different aspects of the software. These include Academics, Finances, Personal Information, and Admissions. The focus of this analysis is on two common tasks -- enrolling in courses and viewing one's course schedule.
 
@@ -95,6 +112,13 @@ Donec porttitor ligula eu dolor. Maecenas vitae nulla consequat libero cursus ve
 
 % =================== SubSection =================== %
 \subsection*{Guelph University -- WebAdvisor}
+\begin{InlineColumnFigure}
+\begin{center}
+	\includegraphics[width=0.9\textwidth]{GuelphScreen.png}
+\end{center}
+\Caption{Registering for preferred courses -- WebAdvisor}
+\end{InlineColumnFigure}
+
 \subsubsection*{Description}
 Guelph's
 
@@ -119,10 +143,8 @@ Nullam sit amet enim. Suspendisse id velit vitae ligula volutpat condimentum. Al
 
 % =================== Section =================== 
 \section*{Conclusion}
-\subsubsection*{Description}
 Nam consectetuer. Sed aliquam, nunc eget euismod ullamcorper, lectus nunc ullamcorper orci, fermentum bibendum enim nibh eget ipsum. Donec porttitor ligula eu dolor. 
 
-\subsubsection*{Critique}
 Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan eu, blandit sed, blandit a, eros.
 
 \end{multicols}
@@ -142,7 +164,7 @@ Maecenas vitae nulla consequat libero cursus venenatis. Nam magna enim, accumsan
 \vspace{3mm}
 \section*{HTA - WebAdvisor, Enrolling in a Course}
 \begin{center}
-\fbox{\includegraphics[width=\textwidth]{WebAdvisorViewSchedule.png}}
+\fbox{\includegraphics[width=\textwidth]{WebAdvisorEnroll.png}}
 \end{center}
 
 \vspace{3mm}
