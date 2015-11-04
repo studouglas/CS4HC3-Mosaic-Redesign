@@ -1,0 +1,24 @@
+Breakdown - CS 4HC3 Assignment 2
+
+Choice
+-Bank Machine
+
+Tech 
+-HTML, CSS, Javascript
+-probably use a CSS pre-processor, LESS is pretty good, so is SASS (never used it though)
+-brackets is a good free editor btw
+
+Stuart
+-create some empty files soon so we’re ready to go when we meet up
+
+Required Functionality
+-withdraw money (and update balance accordingly)
+-deposit money  (and update balance accordingly)
+-log in by entering account num
+-log out 
+-view balance of all accounts
+-transfer money between accounts
+
+Additional Functionality (if we want)
+-view transaction history
+-create new account
