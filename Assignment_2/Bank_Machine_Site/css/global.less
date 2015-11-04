@@ -1,0 +1,118 @@
+/***************************************
+STANDARDIZE http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+***************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*=============== End Standardize ==================*/
+
+
+/*=========== LESS Variables / Functions ===========*/
+.default-font {
+    font-family: "San Francisco Display";
+    font-weight: 200;
+    line-height: 1.7em;
+    color: @dark-text;
+}
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.vendor(@property, @value) {
+    -webkit-@{property}: @value;
+       -moz-@{property}: @value;
+        -ms-@{property}: @value;
+         -o-@{property}: @value;
+            @{property}: @value;
+}
+
+@link-dark: #4f59d6;
+@link-dark-hover: #313990;
+
+@dark-text: #2E2E2E;
+@medium-text: #848484;
+@light-text: #eeeeee;
+
+/***********************************************
+    Text
+***********************************************/
+p, a, h1, h2, h3, h4, h5, h6, ul, .button {
+    .default-font;
+}
+h1 {
+    font-size: 2em;
+}
+a {
+    text-decoration: none;
+    color: @link-dark;
+    .vendor(transition, color 0.3s ease-out);
+}
+a:hover, a:focus {
+    color: @link-dark-hover;
+}
+
+/***********************************************
+    Layout
+***********************************************/
+body {
+    background-color: #f4f4f4;
+}
+.content {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0px 10% 0px 10%;
+}
+.blue-background-test {
+    background-color: #699df0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
