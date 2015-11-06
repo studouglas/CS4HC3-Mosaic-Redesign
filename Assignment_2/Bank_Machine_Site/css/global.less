@@ -56,7 +56,7 @@ table {
 
 /*=========== LESS Variables / Functions ===========*/
 .default-font {
-    font-family: "San Francisco Display";
+    font-family: "Open Sans", sans-serif;
     font-weight: 200;
     line-height: 1.7em;
     color: @dark-text;
@@ -106,13 +106,69 @@ body {
     background-color: #f4f4f4;
 }
 .content {
+    position: relative;
     margin: 0 auto;
-    max-width: 1000px;
-    padding: 0px 10% 0px 10%;
+    max-width: 1060px;
+    min-width: 1060px;
+    padding: 30px;
+    background: #ccc;
 }
 .blue-background-test {
     background-color: #699df0;
     border-radius: 5px;
     padding: 10px;
     margin-top: 20px;
+}
+
+/***********************************************
+    Button (ghost)
+***********************************************/
+.ghost_button {
+    padding: 4px 16px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: @medium-text;
+    background: none;
+    border-radius: 3px;
+    border: 2px solid @medium-text;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.ghost_button:hover {
+    background-color: #e3e3e3;
+    color: #555555;
+    border-color: #555555;
+}
+
+.button_container_center {
+    text-align: center;
+}
+
+.page-title {
+    text-align: center;
+}
+.enter-account-label {
+    display: inline-block;
+}
+.enter-account-wrapper {
+    position:inherit;
+    left: 50%;
+    margin: 40px -500px 20px 0;
+}
+.enter-account-input {
+    height: 37px;
+    border-radius: 6px;
+    border: none;
+}
+
+.language-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
