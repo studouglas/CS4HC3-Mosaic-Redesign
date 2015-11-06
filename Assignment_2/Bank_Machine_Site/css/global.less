@@ -54,17 +54,14 @@ table {
 /*=============== End Standardize ==================*/
 
 
-/*=========== LESS Variables / Functions ===========*/
+/***********************************************
+    LESS Variables / Functions
+***********************************************/
 .default-font {
     font-family: "Open Sans", sans-serif;
     font-weight: 200;
     line-height: 1.7em;
     color: @dark-text;
-}
-.vertical-center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 .vendor(@property, @value) {
     -webkit-@{property}: @value;
@@ -90,6 +87,10 @@ p, a, h1, h2, h3, h4, h5, h6, ul, .button {
 h1 {
     font-size: 2em;
 }
+
+/***********************************************
+    Links
+***********************************************/
 a {
     text-decoration: none;
     color: @link-dark;
@@ -103,27 +104,26 @@ a:hover, a:focus {
     Layout
 ***********************************************/
 body {
-    background-color: #f4f4f4;
+    background-color: #fcfcfc;
 }
 .content {
     position: relative;
     margin: 0 auto;
     max-width: 1060px;
     min-width: 1060px;
-    padding: 30px;
-    background: #ccc;
+    height: 600px;
+    background: #e8e8e8;
 }
-.blue-background-test {
-    background-color: #699df0;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 20px;
+.vertical-center {
+    position: relative;
+    top: 25%;
+    transform: translateY(-50%);
 }
 
 /***********************************************
     Button (ghost)
 ***********************************************/
-.ghost_button {
+.ghost-button {
     padding: 4px 16px;
     width: auto;
     display: inline-block;
@@ -139,43 +139,71 @@ body {
     -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
     -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-
-.ghost_button:hover {
+.ghost-button:hover {
     background-color: #e3e3e3;
     color: #555555;
     border-color: #555555;
 }
-
-.button_container_center {
+.button-container-center {
     text-align: center;
 }
 
+/***********************************************
+    Page Title
+***********************************************/
 .page-title {
     text-align: center;
+    width: 100%;
+    background-color: #5790eb;
+    margin-bottom: 30px;
+    padding: 20px;
+    font-weight: 600;
 }
 
-.enter-account-label {
-    display: inline-block;
-}
-
-.enter-account-wrapper {
-    display:table;
-   width:auto;
+/***********************************************
+    Enter Number
+***********************************************/
+.enter-number-wrapper {
+    display: table;
+    width: auto;
     margin: 0 auto;
 }
-
-.enter-account-input {
+.enter-number-label {
+    display: inline-block;
+}
+.enter-number-input {
     height: 37px;
+    width: 180px;
     border-radius: 6px;
     border: none;
 }
-
-#error-box {
-    background-color: #ff7b7b;
-    border-radius: 3px;
+.enter-number-button {
+    padding-top: 2px;
+    padding-bottom: 4px;
 }
 
-.language-button {
+/***********************************************
+    Error box
+***********************************************/
+.error-box {
+    display: table;
+    visibility: hidden;
+    background-color: #ff7b7b;
+    border-radius: 3px;
+    max-width: 400px;
+    padding: 3px 10px;
+    margin: 30px auto;
+}
+
+/***********************************************
+    Bottom buttons
+***********************************************/
+.bottom-left-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.bottom-right-button {
     position: absolute;
     bottom: 10px;
     right: 10px;
