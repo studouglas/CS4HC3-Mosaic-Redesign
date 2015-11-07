@@ -71,7 +71,10 @@ table {
             @{property}: @value;
 }
 
-@link-dark: #4f59d6;
+@default-margin: 15px;
+
+@main-colour: #729fea;
+@link-dark: #4885e8;
 @link-dark-hover: #313990;
 
 @dark-text: #2E2E2E;
@@ -104,24 +107,27 @@ a:hover, a:focus {
     Layout
 ***********************************************/
 body {
-    background-color: #fcfcfc;
+    background-color: #ffffff;
 }
 .content {
     position: relative;
     margin: 0 auto;
-    max-width: 1060px;
-    min-width: 1060px;
+    max-width: 1000px;
+    min-width: 1000px;
     height: 600px;
-    background: #e8e8e8;
+    background: #f0f0f0;
 }
-.vertical-center {
-    position: relative;
-    top: 25%;
-    transform: translateY(-50%);
+.left-column {
+    float: left;
+    margin-left: @default-margin;
+}
+.right-column {
+    float: right;
+    margin-right: @default-margin;
 }
 
 /***********************************************
-    Button (ghost)
+     Button (ghost)
 ***********************************************/
 .ghost-button {
     padding: 4px 16px;
@@ -144,9 +150,6 @@ body {
     color: #555555;
     border-color: #555555;
 }
-.button-container-center {
-    text-align: center;
-}
 
 /***********************************************
     Page Title
@@ -154,10 +157,11 @@ body {
 .page-title {
     text-align: center;
     width: 100%;
-    background-color: #5790eb;
+    background-color: @main-colour;
     margin-bottom: 30px;
-    padding: 20px;
+    padding: 23px;
     font-weight: 600;
+    height: 100px;
 }
 
 /***********************************************
@@ -167,32 +171,42 @@ body {
     display: table;
     width: auto;
     margin: 0 auto;
+    position: relative;
+    top: 130px;
 }
 .enter-number-label {
     display: inline-block;
 }
 .enter-number-input {
-    height: 37px;
-    width: 180px;
-    border-radius: 6px;
+    height: 50px;
+    width: 400px;
+    border-radius: 3px;
     border: none;
+    padding: 0 15px;
+    font-size: 16px;
 }
 .enter-number-button {
-    padding-top: 2px;
-    padding-bottom: 4px;
+    padding-top: 9px;
+    width: 400px;
+    height: 50px;
+    margin-top: 15px;
+    font-size: 18px;
 }
 
 /***********************************************
     Error box
 ***********************************************/
-.error-box {
-    display: table;
-    visibility: hidden;
-    background-color: #ff7b7b;
+.message-box {
+    opacity: 0;
+    background-color: #fff;
     border-radius: 3px;
     max-width: 400px;
     padding: 3px 10px;
-    margin: 30px auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /***********************************************
@@ -200,11 +214,71 @@ body {
 ***********************************************/
 .bottom-left-button {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: @default-margin;
+    left: @default-margin;
 }
 .bottom-right-button {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: @default-margin;
+    right: @default-margin;
+}
+
+/***********************************************
+    Main Menu buttons
+**********************************************/
+.go-function-button {
+    width: 300px;
+    height: 160px;
+    text-align: center;
+    padding-top: 15px;
+}
+.go-view-accounts-button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 120px;
+}
+.go-transfer-money-button {
+    margin-left: 120px;
+}
+.go-withdraw-button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-right: 120px;
+}
+.go-deposit-button {
+    margin-right: 120px;
+}
+
+/***********************************************
+    View Accounts
+ **********************************************/
+.view-accounts-container {
+    width: 800px;
+    margin: 0 100px;
+    max-height: 355px;
+    overflow: scroll;
+    background-color: #e6e6e6;
+    border-radius: 3px;
+    padding: 15px 15px 8px 15px;
+}
+.account-name {
+    font-size: 22px;
+}
+.account-balance {
+    font-size: 22px;
+    font-weight: 800;
+}
+.account-separator {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.bank-accounts-label {
+    margin-left: 100px;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.account-number-label {
+    font-weight: 700;
 }

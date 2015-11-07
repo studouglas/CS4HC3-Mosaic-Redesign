@@ -1,3 +1,22 @@
 {"accounts":[
-    {"accountNumber":"12345", "accountPin":"12345", "chequingBalance":"500.00", "savingsBalance":"1000.00"}
+    {"accountNumber":"12345", "accountPin":"55555", "bankAccounts":
+        [{"name":"chequing","balance":"518.00"},
+         {"name":"savings", "balance":"3568.00"}]},
+    {"accountNumber":"11111", "accountPin":"12345",  "bankAccounts":
+        [{"name":"chequing","balance":"1056.00"},
+         {"name":"savings", "balance":"1150.00"},
+         {"name":"travel",  "balance":"350.00"}]},
+    {"accountNumber":"98765", "accountPin":"10202",  "bankAccounts":
+        [{"name":"chequing", "balance":"56052.00"},
+         {"name":"savings",  "balance":"285.00"},
+         {"name":"emergency","balance":"500.00"}]},
+    {"accountNumber":"55555", "accountPin":"11223",  "bankAccounts":
+        [{"name":"chequing","balance":"2322.00"},
+         {"name":"savings", "balance":"6768.00"},
+         {"name":"travel","balance":"1800.00"},
+         {"name":"emergency", "balance":"200.00"}]},
+    {"accountNumber":"10101", "accountPin":"00000",  "bankAccounts":
+        [{"name":"chequing","balance":"4330.00"},
+         {"name":"savings", "balance":"89570.00"},
+         {"name":"tuition", "balance":"3000.00"}]}
 ]}
