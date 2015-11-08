@@ -73,9 +73,11 @@ table {
 
 @default-margin: 15px;
 
-@main-colour: #729fea;
-@link-dark: #4885e8;
-@link-dark-hover: #313990;
+@main-colour: #58dea6;
+@button-colour: #619a91;
+
+@link-dark: #32d1b3;
+@link-dark-hover: #2a917a;
 
 @dark-text: #2E2E2E;
 @medium-text: #848484;
@@ -136,10 +138,10 @@ body {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-    color: @medium-text;
+    color: @button-colour;
     background: none;
     border-radius: 3px;
-    border: 2px solid @medium-text;
+    border: 2px solid @button-colour;
     transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
     -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
     -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -194,7 +196,7 @@ body {
 }
 
 /***********************************************
-    Error box
+    Message box
 ***********************************************/
 .message-box {
     opacity: 0;
@@ -231,6 +233,7 @@ body {
     height: 160px;
     text-align: center;
     padding-top: 15px;
+    font-size: 18px;
 }
 .go-view-accounts-button {
     margin-top: 20px;
@@ -247,6 +250,11 @@ body {
 }
 .go-deposit-button {
     margin-right: 120px;
+}
+.main-menu-icon {
+    height: 95px;
+    opacity: 0.6;
+    margin-top: 5px;
 }
 
 /***********************************************

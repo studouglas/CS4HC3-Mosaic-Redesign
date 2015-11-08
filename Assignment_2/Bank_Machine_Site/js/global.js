@@ -37,7 +37,7 @@ $(document).ready(function () {
             lineToAdd += "<p class=\"account-name\">";
             lineToAdd += currentAccount.bankAccounts[i].name;
             lineToAdd += "</p>\n<p class=\"account-balance\">$";
-            lineToAdd += currentAccount.bankAccounts[i].balance + "</p><br>";
+            lineToAdd += getBalance(currentAccount.bankAccounts[i].name) + "</p><br>";
             lineToAdd += (i == currentAccount.bankAccounts.length-1) ? "" : "<hr class=\"account-separator\"/>";
             $(".view-accounts-container")[0].innerHTML = lineToAdd;
         }
@@ -170,5 +170,50 @@ function switchLanguage() {
         switchButton.innerHTML = "Français";
     } else {
         switchButton.innerHTML = "English";
+    }
+}
+
+/***********************************************
+* returns the default value from JSON or modified
+* from localStorage
+***********************************************/
+function getBalance(accountName) {
+    var bankAccountKey = currentAccount.accountNumber + accountName;
+
+    if (localStorage.getItem(bankAccountKey) != null) {
+        return localStorage.getItem(bankAccountKey);
+    } else {
+        for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
+            if (currentAccount.bankAccounts[i].name == accountName) {
+                return currentAccount.bankAccounts[i].balance;
+            }
+        }
+        return "ERROR: Account" + accountName + " could not be found";
+    }
+}
+
+/***********************************************
+* delta is float, can be positive or negative 
+***********************************************/
+function updateBalance(delta) {
+    var accountName = "chequing";
+    if (getBalance(accountName) + delta < 0) {
+        displayMessage("You do not have enough money in your account to withdraw that amount.", true);
+    } else {
+        var accountKey = currentAccount.accountNumber + accountName;
+        var newBalance = parseFloat(getBalance(accountName)) + parseFloat(delta);
+        localStorage.setItem(accountKey, newBalance.toFixed(2));
+    }
+}
+
+/***********************************************
+* Removes all localStorage items (except acct #) 
+***********************************************/
+function resetBalanceUpdates() {
+    for (var i = 0; i < localStorage.length; i++) {
+        if (localStorage.key(i) != "accountNumber") {
+            console.log("Resetting balance for: " + localStorage.key(i));
+            localStorage.removeItem(localStorage.key(i));
+        }
     }
 }
