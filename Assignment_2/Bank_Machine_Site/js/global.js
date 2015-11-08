@@ -30,7 +30,7 @@ $(document).ready(function () {
     }
     
     // view accounts
-    else if (window.location.href.indexOf("viewaccounts.html") > -1) {
+    else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
         $(".account-number-label")[0].innerHTML = currentAccount.accountNumber;
         for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
             var lineToAdd = $(".view-accounts-container")[0].innerHTML;
