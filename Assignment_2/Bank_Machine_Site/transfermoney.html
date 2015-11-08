@@ -17,6 +17,35 @@
 	<div class="content">
         <h1 class="page-title">Transfer Between Accounts</h1>
         
+        <div class="message-box">
+            <p class="message-box-text">Error Text Here</p>
+        </div>
+        
+        <div>
+            <div class = "left-column">
+                <h2 class="bank-accounts-label">From</h2>
+                <div class="select-account-container">
+                    <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
+                    <table class="select-account-table">
+                    </table>
+                </div>
+            </div>
+        
+            <div class = "right-column">
+                <h2 class="bank-accounts-label">To</h2>
+                <div class="select-account-container">
+                    <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker('true')">Choose Account <span style="font-size: 12px;">▼</span></a>
+                    <table class="select-account-table">
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <span class = "enter-number-wrapper">
+            <input class = "enter-number-input" value = "" placeholder = "Amount" > <br>   
+            <a class = "ghost-button enter-number-button" onclick = "checkValidTransfer()">Confirm</a>
+        </span>
+                
         
         <a class="ghost-button bottom-left-button"  href="mainmenu.html">Back to Main Menu</a>
         <a class="ghost-button bottom-right-button switch-language-button" href="#" onclick="switchLanguage()">Français</a>
