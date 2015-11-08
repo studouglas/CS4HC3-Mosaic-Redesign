@@ -51,7 +51,7 @@ $(document).ready(function () {
     }
     
     // view accounts
-    else if (window.location.href.indexOf("viewaccounts.html") > -1) {
+    else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
         $(".account-number-label")[0].innerHTML = currentAccount.accountNumber;
         for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
             var lineToAdd = $(".view-accounts-container")[0].innerHTML;
@@ -242,3 +242,24 @@ function resetBalanceUpdates() {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+/***********************************************
+* Checks to ensure Transfer is valid 
+***********************************************/
+function checkValidTransfer()
+{
+    
+    var fromAccount = "";
+    var toAccount = "";
+    
+    if (fromAccount == toAccount)// Cannot transfer to same account
+    {
+        displayMessage("Cannot Transfer money to same account", true);  
+        return;
+    }
+    var amount = $(".enter-number-input")[0].value;
+    console.log("Amount entered: " + amount);
+}
+>>>>>>> 4a063ea6440b40ec76130143fee8fb50b428e695
