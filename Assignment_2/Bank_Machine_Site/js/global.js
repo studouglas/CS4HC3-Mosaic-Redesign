@@ -217,3 +217,21 @@ function resetBalanceUpdates() {
         }
     }
 }
+
+/***********************************************
+* Checks to ensure Transfer is valid 
+***********************************************/
+function checkValidTransfer()
+{
+    
+    var fromAccount = "";
+    var toAccount = "";
+    
+    if (fromAccount == toAccount)// Cannot transfer to same account
+    {
+        displayMessage("Cannot Transfer money to same account", true);  
+        return;
+    }
+    var amount = $(".enter-number-input")[0].value;
+    console.log("Amount entered: " + amount);
+}
