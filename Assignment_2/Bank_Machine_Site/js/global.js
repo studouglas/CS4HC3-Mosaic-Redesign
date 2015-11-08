@@ -2,6 +2,7 @@
 
 var accounts;
 var currentAccount;
+var selectedBankAccount;
 
 /***********************************************
 * Load data / show messages initially 
@@ -41,7 +42,31 @@ $(document).ready(function () {
             lineToAdd += (i == currentAccount.bankAccounts.length-1) ? "" : "<hr class=\"account-separator\"/>";
             $(".view-accounts-container")[0].innerHTML = lineToAdd;
         }
-    }    
+    }
+    
+    else if (window.location.href.indexOf("withdraw.html") > -1) {
+        for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
+            var lineToAdd = $(".select-account-table")[0].innerHTML;
+            lineToAdd += "<tr class=\"select-account-row\" onclick=\"selectAccount(\'";
+            lineToAdd += currentAccount.bankAccounts[i].name;
+            lineToAdd += "\')\">\n<td class=\"select-account-column-1\">";
+            lineToAdd += currentAccount.bankAccounts[i].name;
+            lineToAdd += "</td>\n<td class=\"select-account-column-2\">$";
+            lineToAdd += getBalance(currentAccount.bankAccounts[i].name) + "</td>\n</tr>";
+            $(".select-account-table")[0].innerHTML = lineToAdd;
+        }
+    }
+    
+    else if (window.location.href.indexOf("withdrawamount.html") > -1) {
+        selectedBankAccount = window.location.href.substring(window.location.href.indexOf("?") + 1);
+        $(".selected-account")[0].innerHTML = selectedBankAccount;
+        for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
+            if (currentAccount.bankAccounts[i].name == selectedBankAccount) {
+                $(".selected-account-balance")[0].innerHTML = currentAccount.bankAccounts[i].balance;
+                break;
+            }
+        }
+    }
 });
 
 /***********************************************
@@ -195,8 +220,7 @@ function getBalance(accountName) {
 /***********************************************
 * delta is float, can be positive or negative 
 ***********************************************/
-function updateBalance(delta) {
-    var accountName = "chequing";
+function updateBalance(accountName, delta) {
     if (getBalance(accountName) + delta < 0) {
         displayMessage("You do not have enough money in your account to withdraw that amount.", true);
     } else {
@@ -217,3 +241,48 @@ function resetBalanceUpdates() {
         }
     }
 }
+
+/***********************************************
+* Shows dropdown with accounts 
+***********************************************/
+function showAccountsPicker() {
+    $(".select-account-table")[0].style.visibility = "visible";
+}
+
+function selectAccount(accountName) {
+    selectedBankAccount = accountName;
+    var selectedBalance;
+    for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
+        if (currentAccount.bankAccounts[i].name == selectedBankAccount) {
+            selectedBalance = currentAccount.bankAccounts[i].balance;
+            break;
+        }
+    }
+    $(".select-account-table")[0].style.visibility = "hidden";
+    $("#continue-button").removeClass("disabled-button");
+    var lineToAdd = "<span class=\"left-column select-account-span\" onclick=\"showAccountsPicker()\">";
+    lineToAdd += accountName;
+    lineToAdd += "</span><span class=\"right-column select-account-span\"  onclick=\"showAccountsPicker()\" style=\"font-weight: 800;\">$";
+    lineToAdd += selectedBalance;
+    lineToAdd += "</span>"
+    $(".select-account-button")[0].innerHTML = lineToAdd;
+    $(".select-account-button")[0].textAlign = "center";
+
+}
+
+function continueToWithdraw() {
+    if ($("#continue-button").hasClass("disabled-button"))
+        return;
+    console.log("currentAcct: " + currentAccount);
+    window.location.href = "withdrawamount.html?" + selectedBankAccount;
+}
+
+$(document).click(function (e) {
+   if ($(".select-account-table")[0] != null
+     && e.target != $(".select-account-table")[0] 
+     && e.target != $(".select-account-button")[0]
+     && e.target != $(".select-account-span")[0]
+     && e.target != $(".select-account-span")[1]) {
+       $(".select-account-table")[0].style.visibility = "hidden";
+   }
+});
