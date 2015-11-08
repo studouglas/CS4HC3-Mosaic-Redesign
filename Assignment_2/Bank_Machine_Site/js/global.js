@@ -223,17 +223,12 @@ function resetBalanceUpdates() {
 ***********************************************/
 function checkValidTransfer()
 {
-    
     var fromAccount = "";
-    var toAccount = "";
-    
+    var toAccount = "";   
     var amount = $(".enter-number-input")[0].value;
     
     updateBalance(amount)
     updateBalance(-1*amount)
     
-    console.log("Amount entered: " + amount);
-    
     window.location.href = "confirm.html";
-    
 }
