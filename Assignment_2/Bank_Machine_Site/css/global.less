@@ -86,7 +86,7 @@ table {
 /***********************************************
     Text
 ***********************************************/
-p, a, h1, h2, h3, h4, h5, h6, ul, .button {
+p, a, h1, h2, h3, h4, h5, h6, ul, td, .button {
     .default-font;
 }
 h1 {
@@ -152,6 +152,20 @@ body {
     color: #555555;
     border-color: #555555;
 }
+.disabled-button {
+    border-color: #c6c6c6;
+    color: #c6c6c6;
+}
+.disabled-button:hover {
+    cursor: default;
+    background: none;
+    color: #c6c6c6;
+    border-color: #c6c6c6;
+}
+.disabled-button:visited {
+    color: #c6c6c6;
+    border-color: #c6c6c6;
+}
 
 /***********************************************
     Page Title
@@ -188,11 +202,10 @@ body {
     font-size: 16px;
 }
 .enter-number-button {
-    padding-top: 9px;
+    padding-top: 11px;
     width: 400px;
     height: 50px;
     margin-top: 15px;
-    font-size: 18px;
 }
 
 /***********************************************
@@ -289,4 +302,64 @@ body {
 }
 .account-number-label {
     font-weight: 700;
+}
+
+/***********************************************
+* Accounts picker 
+***********************************************/
+.select-account-container {
+    width: 400px;
+    margin: 0 auto;
+}
+.select-account-button {
+    width: 400px;
+    margin-bottom: 50px;
+    height: 50px;
+    line-height: 40px;
+    
+}
+.select-account-table {
+    max-height: 370px;
+    width: 400px;
+    position: absolute;
+    top: 157px;
+    background-color: white;
+    overflow: scroll;
+    border-radius: 3px;
+    visibility: hidden;
+}
+.select-account-row {
+    height: 60px;
+    line-height: 40px;
+    border: 2px solid @medium-text;
+    border-radius: 3px;
+}
+.select-account-row:hover {
+    background-color: #e0e0e0;
+}
+.select-account-column-1 {
+    text-align: left;
+    padding: 0 15px;
+    vertical-align: middle;
+}
+.select-account-column-2 {
+    text-align: right;
+    padding: 0 15px;
+    vertical-align: middle;
+}
+
+
+.selected-account {
+    font-weight: 800;
+}
+
+.selected-account-balance {
+    font-weight: 800;
+}
+
+.absolute-amount-transfer {
+    position: absolute;
+    display: block;
+    top: 250px;
+    left: auto;
 }

@@ -24,12 +24,20 @@
         <div>
             <div class = "left-column">
                 <h2 class="bank-accounts-label">From</h2>
-                <a class = "from-account-select"> </a>
+                <div class="select-account-container">
+                    <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
+                    <table class="select-account-table">
+                    </table>
+                </div>
             </div>
         
             <div class = "right-column">
                 <h2 class="bank-accounts-label">To</h2>
-                <a class = "to-account-select"></a>
+                <div class="select-account-container">
+                    <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker('true')">Choose Account <span style="font-size: 12px;">▼</span></a>
+                    <table class="select-account-table">
+                    </table>
+                </div>
             </div>
         </div>
         

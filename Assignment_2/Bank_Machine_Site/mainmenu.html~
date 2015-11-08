@@ -15,8 +15,8 @@
 
 <body>
 	<div class="content">
-        <h1 class="page-title english">Main Menu</h1>
-				<!--<h1 class="page-title french">Menu Central</h1>-->
+        <h1 class="page-title" id="english">Main Menu</h1>
+				<h1 class="page-title" id="french">Menu Central</h1>
         
         <div class="left-column vertical-center">
             <a class="ghost-button go-view-accounts-button go-function-button" href="viewaccounts.html">
