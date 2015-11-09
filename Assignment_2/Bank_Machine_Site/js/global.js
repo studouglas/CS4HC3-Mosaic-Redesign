@@ -9,7 +9,7 @@ var selectedBankAccount;
 ***********************************************/
 $(document).ready(function () {
     accounts = loadAccountsJson();
-    if (localStorage.getItem("accountNumber") != "") {
+    if (localStorage.getItem("accountNumber") !== "") {
         for (var i = 0; i < accounts.length; i++) {
             if (accounts[i].accountNumber == localStorage.getItem("accountNumber")) {
                 currentAccount = accounts[i];
@@ -251,11 +251,13 @@ function getBalance(accountName) {
 function updateBalance(accountName, delta) {
     if (getBalance(accountName) + delta < 0) {
         displayMessage("You do not have enough money in your account to withdraw that amount.", true);
+        return false;
     } else {
         var accountKey = currentAccount.accountNumber + accountName;
         var newBalance = parseFloat(getBalance(accountName)) + parseFloat(delta);
         localStorage.setItem(accountKey, newBalance.toFixed(2));
     }
+    return true;
 }
 
 /***********************************************
@@ -354,14 +356,13 @@ $(document).click(function (e) {
 * Checks to ensure Transfer is valid 
 ***********************************************/
 function checkValidTransfer() {
-    var fromAccount = "";
-    var toAccount = "";
+    var fromAccount = "chequing"
+    var toAccount = "savings"
     var amount = $(".enter-number-input")[0].value;
     
-    updateBalance(amount)
-    updateBalance(-1*amount)
-    
-    window.location.href = "confirm.html";
+    var transact = updateBalance(fromAccount,-1*amount);
+    if (transact == true){ updateBalance(toAccount,amount);
+    window.location.href = "confirm.html";}
 }
 
 /***********************************************
