@@ -360,6 +360,7 @@ function checkValidTransfer() {
     
     updateBalance(amount)
     updateBalance(-1*amount)
+    
     window.location.href = "confirm.html";
 }
 
