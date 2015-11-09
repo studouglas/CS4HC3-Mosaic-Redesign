@@ -91,10 +91,14 @@ $(document).ready(function () {
             var val = $(this).val();
             if (isNaN(val)) {
                 $(".enter-number-button").addClass("disabled-button")
-                $(".enter-number-input-error")[0].style.visibility = "visible";
+                if ($(".enter-number-input-error")[0] != null) {
+                    $(".enter-number-input-error")[0].style.visibility = "visible";
+                }
             } else {
                 $(".enter-number-button").removeClass("disabled-button")
-                $(".enter-number-input-error")[0].style.visibility = "hidden";
+                if ($(".enter-number-input-error")[0] != null) {
+                    $(".enter-number-input-error")[0].style.visibility = "hidden";
+                }
             }
             
             if (selectedFromAccountName == null && $(".from-not-selected-error")[0] != null) {
