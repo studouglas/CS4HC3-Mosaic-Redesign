@@ -18,26 +18,26 @@ $(document).ready(function () {
         }
     }
 
-		//read current language and display appropriate tags
-		if (localStorage.getItem("currentLang") == null) { //if current language has not yet been set in cache, set to english
-				localStorage.setItem("currentLang", "English");
-		}
-		var switchButton = $(".switch-language-button")[0];
-		//var engElems = document.getElementsByClass("english");
-		//var frnElems = document.getElementsbyClass("french");
-		if (localStorage.getItem("currentLang") == "English"){
-				switchButton.innerHTML = "English";
-				//for (var i = 0; i < frnElems.length; i++) {
-    			//frnElems[i].disabled = true;
-				//}
-				//document.getElementsbyId("english").disabled=false;
-		}else if (localStorage.getItem("currentLang") == "French"){
-				switchButton.innerHTML = "Français";
-				//for (var i = 0; i < engElems.length; i++) {
-    			//engElems[i].disabled = true;
-				//}			
-				//document.getElementsById("french").disabled=false;
-		}
+    //read current language and display appropriate tags
+    if (localStorage.getItem("currentLang") == null) { //if current language has not yet been set in cache, set to english
+            localStorage.setItem("currentLang", "English");
+    }
+    var switchButton = $(".switch-language-button")[0];
+    //var engElems = document.getElementsByClass("english");
+    //var frnElems = document.getElementsbyClass("french");
+    if (localStorage.getItem("currentLang") == "English"){
+            switchButton.innerHTML = "English";
+            //for (var i = 0; i < frnElems.length; i++) {
+            //frnElems[i].disabled = true;
+            //}
+            //document.getElementsbyId("english").disabled=false;
+    }else if (localStorage.getItem("currentLang") == "French"){
+            switchButton.innerHTML = "Français";
+            //for (var i = 0; i < engElems.length; i++) {
+            //engElems[i].disabled = true;
+            //}			
+            //document.getElementsById("french").disabled=false;
+    }
     
     // enter account number
     if (window.location.href.indexOf("index.html") > -1) {
@@ -274,27 +274,32 @@ function resetBalanceUpdates() {
 * Shows dropdown with accounts 
 ***********************************************/
 function showAccountsPicker(second) {
-    
     if (second) {
+        $(".select-account-table")[0].style.visibility = "hidden";    
         $(".select-account-table")[1].style.visibility = "visible";    
     } else {
         $(".select-account-table")[0].style.visibility = "visible";
-    }
-    
-}
-
-function selectAccount(accountName, second) {
-    var i = (second == true) ? 1 : 0;
-    selectedBankAccount = accountName;
-    var selectedBalance;
-    for (var j = 0; j < currentAccount.bankAccounts.length; j++) {
-        if (currentAccount.bankAccounts[j].name == selectedBankAccount) {
-            selectedBalance = currentAccount.bankAccounts[j].balance;
-            break;
+        if ($(".select-account-table")[1] != null) {
+            $(".select-account-table")[1].style.visibility = "hidden";    
         }
     }
+}
+
+/***********************************************
+* Choose account from dropdown 
+***********************************************/
+function selectAccount(accountName, second) {
+    // hide the dropdown
+    var i = (second == true) ? 1 : 0;
     $(".select-account-table")[i].style.visibility = "hidden";
-    $("#continue-button").removeClass("disabled-button");
+    
+    selectedBankAccount = accountName;
+    var selectedBalance = getBalance(accountName);
+    
+    // enable next section
+    $(".enter-number-input")[0].disabled = false;
+    
+    // add the name and balance as button text
     var lineToAdd = "<span class=\"left-column select-account-span\" onclick=\"showAccountsPicker(" + second + ")\">";
     lineToAdd += accountName;
     lineToAdd += "</span><span class=\"right-column select-account-span\" onclick=\"showAccountsPicker(" + second + ")\" style=\"font-weight: 800;\">$";
@@ -305,32 +310,44 @@ function selectAccount(accountName, second) {
 }
 
 /***********************************************
-* Sends the selected account in url to withdraw 
+* When input changes, enable withdraw/deposit
+* button 
 ***********************************************/
-function continueToWithdraw() {
-    if ($("#continue-button").hasClass("disabled-button"))
+if ($("#withdraw-button") != null) {
+    console.log("INPUT Exists");
+    $("#withdraw-button").bind('input', function () {
+        console.log("HERE");
+        var val = $(this).val();
+        if (val != "" && $(".enter-number-button")[0].hasClass("disabled-button")) {
+            $(".enter-number-button").removeClass("disabled-button")
+        } else if (val == "" && !($(".enter-number-button")[0].hasClass("disabled-button"))) {
+            $(".enter-number-button").addClass("disabled-button")
+        }
+    });
+}
+
+/***********************************************
+* Withdraw the money
+***********************************************/
+function withdraw() {
+    if ($("#withdraw-button").hasClass("disabled-button")) {
         return;
-    console.log("currentAcct: " + currentAccount);
-    window.location.href = "withdrawamount.html?" + selectedBankAccount;
+    }
+    console.log("WITHDRAW: currentAcct: " + currentAccount);
 }
 
 /***********************************************
 * Dismiss dropdown if click outside of it 
 ***********************************************/
 $(document).click(function (e) {
-   if ($(".select-account-table")[0] != null
-     && e.target != $(".select-account-table")[0] 
-     && e.target != $(".select-account-button")[0]
-     && e.target != $(".select-account-span")[0]
-     && e.target != $(".select-account-span")[1]
-     && e.target != $(".select-account-table")[1] 
-     && e.target != $(".select-account-button")[1]
-     && e.target != $(".select-account-span")[2]
-     && e.target != $(".select-account-span")[3]) {
+   if ($(".select-account-container")[0] != null 
+    && !isDescendant($(".select-account-container")[0], e.target)) {
        $(".select-account-table")[0].style.visibility = "hidden";
-       $(".select-account-table")[1].style.visibility = "hidden";
-   }
-   
+    }
+    if ($(".select-account-container")[1] != null
+     && !isDescendant($(".select-account-container")[1], e.target)) {
+        $(".select-account-table")[1].style.visibility = "hidden";
+    }
 });
 
 /**********************************************
@@ -344,4 +361,17 @@ function checkValidTransfer() {
     updateBalance(amount)
     updateBalance(-1*amount)
     window.location.href = "confirm.html";
+}
+
+/***********************************************
+*  true if 2nd arg contained in 1st 
+***********************************************/
+function isDescendant(parent, child) {
+    var node = child.parentNode;
+    while (node != null) {
+        if (node == parent) {
+            return true;
+        }
+        node = node.parentNode;
+    }
 }

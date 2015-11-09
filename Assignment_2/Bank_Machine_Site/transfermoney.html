@@ -20,28 +20,26 @@
         <div class="message-box">
             <p class="message-box-text">Error Text Here</p>
         </div>
-        
-        <div>
-            <div class = "left-column">
-                <h2 class="bank-accounts-label">From</h2>
-                <div class="select-account-container">
-                    <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
-                    <table class="select-account-table">
-                    </table>
-                </div>
-            </div>
-        
-            <div class = "right-column">
-                <h2 class="bank-accounts-label">To</h2>
-                <div class="select-account-container">
-                    <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker('true')">Choose Account <span style="font-size: 12px;">▼</span></a>
-                    <table class="select-account-table">
-                    </table>
-                </div>
+        <br><br><br><br>
+        <div class = "left-column">
+            <h2 class="transfer-from-label">From:</h2>
+            <div class="select-account-container select-account-transfer-page-left">
+                <a class="ghost-button select-account-button" style="width: 200px;" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
+                <table class="select-account-table select-account-table-transfer" style="width: 200px;">
+                </table>
             </div>
         </div>
-        
-        <span class = "enter-number-wrapper">
+
+        <div class = "right-column">
+            <h2 class="transfer-to-label">To:</h2>
+            <div class="select-account-container select-account-transfer-page-right">
+                <a class="ghost-button select-account-button" style="width: 200px;" href="#" onclick="showAccountsPicker('true')">Choose Account <span style="font-size: 12px;">▼</span></a>
+                <table class="select-account-table select-account-table-transfer" style="width: 200px;">
+                </table>
+            </div>
+        </div>
+
+        <span class = "enter-number-wrapper absolute-amount-transfer">
             <input class = "enter-number-input" value = "" placeholder = "Amount" > <br>   
             <a class = "ghost-button enter-number-button" onclick = "checkValidTransfer()">Confirm</a>
         </span>

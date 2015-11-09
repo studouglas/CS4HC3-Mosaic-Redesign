@@ -295,13 +295,13 @@ body {
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
-.bank-accounts-label {
-    margin-left: 100px;
-    font-size: 24px;
-    margin-bottom: 5px;
-}
 .account-number-label {
     font-weight: 700;
+}
+.bank-accounts-label {
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-left: 100px;
 }
 
 /***********************************************
@@ -316,17 +316,22 @@ body {
     margin-bottom: 50px;
     height: 50px;
     line-height: 40px;
+    padding: 3px 0 0 0;
     
 }
 .select-account-table {
     max-height: 370px;
     width: 400px;
+    z-index: 100;
     position: absolute;
     top: 157px;
     background-color: white;
     overflow: scroll;
     border-radius: 3px;
     visibility: hidden;
+    -webkit-box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.35);
+    -moz-box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.35);
+    box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.35);
 }
 .select-account-row {
     height: 60px;
@@ -339,27 +344,57 @@ body {
 }
 .select-account-column-1 {
     text-align: left;
-    padding: 0 15px;
+    padding: 0 5%;
     vertical-align: middle;
 }
 .select-account-column-2 {
     text-align: right;
-    padding: 0 15px;
+    padding: 0 5%;
     vertical-align: middle;
 }
-
-
-.selected-account {
-    font-weight: 800;
+.select-account-span {
+    margin: 0 5%;
+    padding: 0;
 }
 
-.selected-account-balance {
-    font-weight: 800;
-}
-
+/***********************************************
+* TransferMoney.html
+***********************************************/
 .absolute-amount-transfer {
     position: absolute;
     display: block;
-    top: 250px;
-    left: auto;
+    top: 340px;
+    left: 290px;
+}
+.select-account-transfer-page-left {
+    padding-left: 150px;
+}
+.select-account-table-transfer {
+    top: 239px;
+}
+.left-column .bank-accounts-label {
+    margin-left: 150px;
+}
+.transfer-from-label {
+    font-size: 24px;
+    margin-left: 150px;
+    margin-bottom: 5px;
+}
+.transfer-to-label {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+.select-amount-container {
+    width: 400px;
+    margin: 0 auto;
+}
+
+/***********************************************
+* Withdraw.html 
+***********************************************/
+#withdraw-button {
+    display: block;
+    margin: 15px auto;
 }
