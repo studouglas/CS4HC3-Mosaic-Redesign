@@ -207,6 +207,11 @@ body {
     height: 50px;
     margin-top: 15px;
 }
+.enter-number-input-error {
+    color: red;
+    font-size: 13px;
+    visibility: hidden;
+}
 
 /***********************************************
     Message box
@@ -309,7 +314,7 @@ body {
 ***********************************************/
 .select-account-container {
     width: 400px;
-    margin: 0 auto;
+    margin: 100px auto 0 auto;
 }
 .select-account-button {
     width: 400px;
@@ -324,7 +329,7 @@ body {
     width: 400px;
     z-index: 100;
     position: absolute;
-    top: 157px;
+    top: 227px;
     background-color: white;
     overflow: scroll;
     border-radius: 3px;
@@ -363,11 +368,15 @@ body {
 .absolute-amount-transfer {
     position: absolute;
     display: block;
-    top: 340px;
+    top: 360px;
     left: 290px;
 }
 .select-account-transfer-page-left {
     padding-left: 150px;
+    margin: 0 auto;
+}
+.select-account-transfer-page-right {
+    margin: 0 auto;
 }
 .select-account-table-transfer {
     top: 239px;
@@ -384,17 +393,54 @@ body {
     font-size: 24px;
     margin-bottom: 5px;
 }
-
-
 .select-amount-container {
     width: 400px;
     margin: 0 auto;
 }
+.from-not-selected-error {
+    color: red;
+    font-size: 13px;
+    margin-top: -50px;
+    visibility: hidden;
+}
+.to-not-selected-error {
+    color: red;
+    font-size: 13px;
+    margin-top: -50px;
+    visibility: hidden;
+}
+.right-arrow-image {
+    width: 100px;
+    opacity: 0.3;
+    position: absolute;
+    top: 235px;
+    left: 424px;    
+}
 
 /***********************************************
-* Withdraw.html 
+* centered big buttons
 ***********************************************/
-#withdraw-button {
+#withdraw-button,
+#deposit-button {
     display: block;
     margin: 15px auto;
+}
+
+.enter-amount-input {
+    width: 370px;
+    margin: 0;
+    height: 50px;
+    border-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.dollar-sign {
+    .default-font;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #d4d4d4;
+    font-size: 20px;
+    color: #797979;
+    padding: 10px 10px 13px 8px;
 }

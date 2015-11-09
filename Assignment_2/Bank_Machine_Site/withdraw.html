@@ -17,6 +17,10 @@
 	<div class="content">
         <h1 class="page-title">Withdraw: Select Account</h1>
         
+        <div class="message-box" style="margin-top: -20px;">
+            <p class="message-box-text"></p>
+        </div>
+        
         <div class="select-account-container">
             <p>Select Account:</p>
             <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
@@ -27,7 +31,9 @@
         
         <div class="select-amount-container">
             <p>Select Amount:</p>
-            <input class="enter-number-input" disabled="disabled" placeholder="Amount to Withdraw">
+            <span class="dollar-sign">$</span><!--
+            --><input class="enter-number-input enter-amount-input" disabled="disabled" placeholder="Amount to Withdraw">
+            <p class="enter-number-input-error">Invalid input</p>
         </div>
         
         <a href="#" class="ghost-button disabled-button enter-number-button" id="withdraw-button" onclick="withdraw()">Continue</a>

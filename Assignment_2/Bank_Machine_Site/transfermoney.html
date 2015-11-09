@@ -25,23 +25,29 @@
             <h2 class="transfer-from-label">From:</h2>
             <div class="select-account-container select-account-transfer-page-left">
                 <a class="ghost-button select-account-button" style="width: 200px;" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
+                <p class="from-not-selected-error">No account selected</p>
                 <table class="select-account-table select-account-table-transfer" style="width: 200px;">
                 </table>
             </div>
         </div>
 
+        <img class="right-arrow-image" src="images/rightarrow.png">
+        
         <div class = "right-column">
             <h2 class="transfer-to-label">To:</h2>
             <div class="select-account-container select-account-transfer-page-right">
                 <a class="ghost-button select-account-button" style="width: 200px;" href="#" onclick="showAccountsPicker('true')">Choose Account <span style="font-size: 12px;">▼</span></a>
+                <p class="to-not-selected-error">No account selected</p>
                 <table class="select-account-table select-account-table-transfer" style="width: 200px;">
                 </table>
             </div>
         </div>
 
-        <span class = "enter-number-wrapper absolute-amount-transfer">
-            <input class = "enter-number-input" value = "" placeholder = "Amount" > <br>   
-            <a class = "ghost-button enter-number-button" onclick = "checkValidTransfer()">Confirm</a>
+        <span class="enter-number-wrapper absolute-amount-transfer">
+            <span class="dollar-sign">$</span><!--
+            --><input class="enter-number-input enter-amount-input" value="" placeholder="Amount"><br>
+            <p class="enter-number-input-error">Invalid input</p>
+            <a class="ghost-button enter-number-button disabled-button" onclick="checkValidTransfer()">Confirm</a>
         </span>
                 
         
