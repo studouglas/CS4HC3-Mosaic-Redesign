@@ -22,7 +22,7 @@
         </div>
 
         <span class="enter-number-wrapper vertical-center">
-            <input type=password class="enter-number-input" value="" placeholder="Pin Number" onkeydown="if (event.keyCode == 13) document.getElementById('goPin').click()"/><br>
+            <input autofocus type=password class="enter-number-input" value="" placeholder="Pin Number" onkeydown="if (event.keyCode == 13) document.getElementById('goPin').click()"/><br>
             <a id='goPin' class="ghost-button enter-number-button" onclick="pinNumberEntered()" href="#">GO</a>
         </span>
         <a href="#" class="ghost-button bottom-left-button" onclick="logout(true)">Cancel</a>

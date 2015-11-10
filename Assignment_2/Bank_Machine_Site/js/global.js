@@ -43,6 +43,7 @@ $(document).ready(function () {
     
     // enter account number
     if (window.location.href.indexOf("index.html") > -1) {
+
         if (window.location.href.indexOf("logout") > -1) {
             displayMessage("You have been successfully logged out.", false);
         } else if (window.location.href.indexOf("cancelPin") > -1) {
@@ -51,6 +52,9 @@ $(document).ready(function () {
             return;
         }
         window.history.pushState('', document.title, window.location.href.substring(0, window.location.href.indexOf("?")));
+    }
+    
+    else if (window.location.href.indexOf("enterpin.html") > -1){
     }
     
     // view accounts
@@ -409,7 +413,7 @@ function checkValidTransfer() {
         updateBalance(selectedToAccountName, amount);
         window.location.href = "confirm.html";
     } else {
-        displayMessage("Not enough funds in '" + selectedFromAccountName + "' to perform transfer");
+        displayMessage("Not enough funds in '" + selectedFromAccountName + "' to perform transfer",true);
     }
 }
 

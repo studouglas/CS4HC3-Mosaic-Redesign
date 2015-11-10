@@ -23,7 +23,7 @@
         </div>
 
         <span class="enter-number-wrapper vertical-center">
-            <input class="enter-number-input" value="" placeholder="Account Number" onkeydown="if(event.keyCode == 13) $('#goLogin').click()"/><br>
+            <input class="enter-number-input" id="AccountNumber" autofocus value="" placeholder="Account Number" onkeydown="if(event.keyCode == 13) $('#goLogin').click()"/><br>
             <p class="enter-number-input-error">Invalid input</p>
             <a id='goLogin' class="ghost-button enter-number-button" onclick="accountNumberEntered()" href="#">GO</a>
         </span>
