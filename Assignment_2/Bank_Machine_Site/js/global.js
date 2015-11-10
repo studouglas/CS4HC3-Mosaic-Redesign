@@ -54,8 +54,6 @@ $(document).ready(function () {
         window.history.pushState('', document.title, window.location.href.substring(0, window.location.href.indexOf("?")));
     }
     
-    else if (window.location.href.indexOf("enterpin.html") > -1){
-    }
     
     // view accounts
     else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
