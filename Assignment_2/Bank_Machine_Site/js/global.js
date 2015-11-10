@@ -1,3 +1,4 @@
+/*jshint passfail: false */
 'use strict';
 
 var accounts;
@@ -7,12 +8,12 @@ var selectedFromAccountName;
 var selectedToAccountName;
 
 /***********************************************
-* Load data / show messages initially 
+* Load data / show messages initially
 ***********************************************/
 $(document).ready(function () {
     accounts = loadAccountsJson();
     if (localStorage.getItem("accountNumber") != "") {
-        for (var i = 0; i < accounts.length; i++) {
+        for (i = 0; i < accounts.length; i++) {
             if (accounts[i].accountNumber == localStorage.getItem("accountNumber")) {
                 currentAccount = accounts[i];
                 break;
@@ -22,23 +23,23 @@ $(document).ready(function () {
 
     //read current language and display appropriate tags
     if (localStorage.getItem("currentLang") == null) { //if current language has not yet been set in cache, set to english
-            localStorage.setItem("currentLang", "English");
+        localStorage.setItem("currentLang", "English");
     }
     var switchButton = $(".switch-language-button")[0];
     //var engElems = document.getElementsByClass("english");
     //var frnElems = document.getElementsbyClass("french");
-    if (localStorage.getItem("currentLang") == "English"){
-            switchButton.innerHTML = "English";
-            //for (var i = 0; i < frnElems.length; i++) {
-            //frnElems[i].disabled = true;
-            //}
-            //document.getElementsbyId("english").disabled=false;
-    }else if (localStorage.getItem("currentLang") == "French"){
-            switchButton.innerHTML = "Français";
-            //for (var i = 0; i < engElems.length; i++) {
-            //engElems[i].disabled = true;
-            //}			
-            //document.getElementsById("french").disabled=false;
+    if (localStorage.getItem("currentLang") == "English") {
+        switchButton.innerHTML = "English";
+        //for (var i = 0; i < frnElems.length; i++) {
+           //frnElems[i].disabled = true;
+        //}
+        //document.getElementsbyId("english").disabled=false;
+    } else if (localStorage.getItem("currentLang") == "French") {
+        switchButton.innerHTML = "Français";
+        //for (var i = 0; i < engElems.length; i++) {
+        //engElems[i].disabled = true;
+        //}			
+        //document.getElementsById("french").disabled=false;
     }
     
     // enter account number
@@ -56,21 +57,21 @@ $(document).ready(function () {
     // view accounts
     else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
         $(".account-number-label")[0].innerHTML = currentAccount.accountNumber;
-        for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
+        for (i = 0; i < currentAccount.bankAccounts.length; i++) {
             var lineToAdd = $(".view-accounts-container")[0].innerHTML;
             lineToAdd += "<p class=\"account-name\">";
             lineToAdd += currentAccount.bankAccounts[i].name;
             lineToAdd += "</p>\n<p class=\"account-balance\">$";
             lineToAdd += getBalance(currentAccount.bankAccounts[i].name) + "</p><br>";
-            lineToAdd += (i == currentAccount.bankAccounts.length-1) ? "" : "<hr class=\"account-separator\"/>";
+            lineToAdd += (i == currentAccount.bankAccounts.length - 1) ? "" : "<hr class=\"account-separator\"/>";
             $(".view-accounts-container")[0].innerHTML = lineToAdd;
         }
     }
     
     // populate select account dropdowns
     else if (window.location.href.indexOf("withdraw.html") > -1
-          || window.location.href.indexOf("transfermoney.html") > -1
-          || window.location.href.indexOf("deposit.html") > -1) {
+            || window.location.href.indexOf("transfermoney.html") > -1
+            || window.location.href.indexOf("deposit.html") > -1) {
         for (var j = 0; j < $(".select-account-table").length; j++) {
             for (var i = 0; i < currentAccount.bankAccounts.length; i++) {
                 var lineToAdd = $(".select-account-table")[j].innerHTML;
@@ -95,7 +96,8 @@ $(document).ready(function () {
                     $(".enter-number-input-error")[0].style.visibility = "visible";
                 }
             } else {
-                $(".enter-number-button").removeClass("disabled-button")
+                $(".enter-number-button").removeClass("disabled-button");
+                console.log("HERE");
                 if ($(".enter-number-input-error")[0] != null) {
                     $(".enter-number-input-error")[0].style.visibility = "hidden";
                 }
