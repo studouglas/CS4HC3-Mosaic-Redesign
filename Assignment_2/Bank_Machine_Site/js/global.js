@@ -400,11 +400,16 @@ function checkValidTransfer() {
         displayMessage("Cannot transfer to same account", true);
         return;
     }
-    if (isNaN(amount)) {
+    if (isNaN($(".enter-number-input")[0].value)) {
         displayMessage("Amount in unrecognized format", true);
         return;
     }
+    if ($("#transfer-button").hasClass("disabled-button")) {
+        console.log("button is disabled")
+        return;
+    }
     
+    // perform transfer
     if (updateBalance(selectedFromAccountName, -amount)) { 
         updateBalance(selectedToAccountName, amount);
         window.location.href = "confirm.html";
