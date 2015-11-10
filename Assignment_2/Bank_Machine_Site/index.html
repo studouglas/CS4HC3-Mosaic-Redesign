@@ -24,9 +24,9 @@
 
         <span class="enter-number-wrapper vertical-center">
             <input class="enter-number-input" id="AccountNumber" autofocus value="" placeholder="Account Number" onkeydown="if(event.keyCode == 13) $('#goLogin').click()"/><br>
-            <p class="enter-number-input-error">Invalid input</p>
+            <p class="enter-number-input-error">Account number can only contain numbers</p>
             <a id='goLogin' class="ghost-button enter-number-button disabled-button" onclick="accountNumberEntered()" href="#">Continue</a>
         </span>
-        <a href="#" class="ghost-button bottom-right-button switch-language-button" onclick="switchLanguage()">Français</a>
+        <a href="#" class="ghost-button bottom-right-button switch-language-button" onclick="switchLanguageClicked()">Changez à Français</a>
     </div>
 </body>

@@ -15,32 +15,37 @@
 
 <body>
 	<div class="content">
-        <h1 class="page-title english">Main Menu</h1>
-				<!--<h1 class="page-title french">Menu Central</h1>-->
+        <h1 class="page-title english">Main Menu</h1>		
+        <h1 class="page-title french">Menu central</h1>
         
         <div class="left-column vertical-center">
             <a class="ghost-button go-view-accounts-button go-function-button" href="viewaccounts.html">
-                <p>View Accounts</p>
+                <p class="english">View Accounts</p>
+                <p class="french">Voyez comptes</p>
                 <img class="main-menu-icon" src="images/viewaccounts.png">
             </a><br>
             <a class="ghost-button go-transfer-money-button go-function-button" href="transfermoney.html">
-                <p>Transfer between Accounts</p>
+                <p class="english">Transfer between Accounts</p>
+                <p class="french">Transférez entre comptes</p>
                 <img class="main-menu-icon" src="images/transfermoney.png">
             </a>
         </div>
         
         <div class="right-column vertical-center">
             <a class="ghost-button go-withdraw-button go-function-button" href="withdraw.html">
-                <p>Withdraw</p>
+                <p class="english">Withdraw</p>
+                <p class="french">Retirez</p>
                 <img class="main-menu-icon" src="images/withdraw.png">
             </a><br>
             <a class="ghost-button go-deposit-button go-function-button" href="deposit.html">
-                <p>Deposit</p>
+                <p class="english">Deposit</p>
+                <p class="french">Déposez</p>
                 <img class="main-menu-icon" src="images/deposit.png">
             </a>
         </div>
         
-        <a class="ghost-button bottom-left-button"  href="#" onclick="logout()">Logout</a>
-        <a class="ghost-button bottom-right-button switch-language-button" href="#" onclick="switchLanguage()">Français</a>
+        <a class="ghost-button bottom-left-button english" href="#" onclick="logout()">Logout</a>
+        <a class="ghost-button bottom-left-button french" href="#" onclick="logout()">Déconnectez</a>
+        <a class="ghost-button bottom-right-button switch-language-button" href="#" onclick="switchLanguageClicked()">Changez à Français</a>
     </div>
 </body>
