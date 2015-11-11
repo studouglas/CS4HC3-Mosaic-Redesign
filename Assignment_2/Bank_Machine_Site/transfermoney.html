@@ -15,17 +15,20 @@
 
 <body>
 	<div class="content">
-        <h1 class="page-title">Transfer Between Accounts</h1>
+        <h1 class="page-title english">Transfer Between Accounts</h1>
+        <h1 class="page-title french">Transferez entre comptes</h1>
         
         <div class="message-box">
             <p class="message-box-text">Error Text Here</p>
         </div>
         <br><br><br><br>
         <div class = "left-column">
-            <h2 class="transfer-from-label">From:</h2>
+            <h2 class="transfer-from-label english">From:</h2>
+            <h2 class="transfer-from-label french">De:</h2>
             <div class="select-account-container select-account-transfer-page-left">
                 <a class="ghost-button select-account-button" style="width: 200px;" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
-                <p class="from-not-selected-error">No account selected</p>
+                <p class="from-not-selected-error english">No account selected</p>
+                <p class="from-not-selected-error french">Pas de compte choisi</p>
                 <table class="select-account-table select-account-table-transfer" style="width: 200px;">
                 </table>
             </div>
@@ -34,10 +37,12 @@
         <img class="right-arrow-image" src="images/rightarrow.png">
         
         <div class = "right-column">
-            <h2 class="transfer-to-label">To:</h2>
+            <h2 class="transfer-to-label english">To:</h2>
+            <h2 class="transfer-to-label french">À:</h2>
             <div class="select-account-container select-account-transfer-page-right">
                 <a class="ghost-button select-account-button" style="width: 200px;" href="#" onclick="showAccountsPicker('true')">Choose Account <span style="font-size: 12px;">▼</span></a>
-                <p class="to-not-selected-error">No account selected</p>
+                <p class="to-not-selected-error english">No account selected</p>
+                <p class="to-not-selected-error french">Pas de compte choisi</p>
                 <table class="select-account-table select-account-table-transfer" style="width: 200px;">
                 </table>
             </div>
@@ -45,13 +50,16 @@
 
         <span class="enter-number-wrapper absolute-amount-transfer">
             <span class="dollar-sign">$</span><!--
-            --><input class="enter-number-input enter-amount-input" value="" placeholder="Amount"><br>
-            <p class="enter-number-input-error">Invalid input</p>
-            <a class="ghost-button enter-number-button disabled-button" id="transfer-button" onclick="checkValidTransfer()">Confirm Transfer</a>
+            --><input class="enter-number-input enter-amount-input" value="" placeholder="Amount">
+            <p class="enter-number-input-error english">Invalid input</p>
+            <p class="enter-number-input-error french">Donnée invalide</p>
+            <a class="ghost-button enter-number-button disabled-button english" id="transfer-button" onclick="checkValidTransfer()">Confirm Transfer</a>
+            <a class="ghost-button enter-number-button disabled-button french" id="transfer-button" onclick="checkValidTransfer()">Confirmez transfer</a>
         </span>
                 
         
-        <a class="ghost-button bottom-left-button"  href="mainmenu.html">Back to Main Menu</a>
-        <a class="ghost-button bottom-right-button switch-language-button" href="#" onclick="switchLanguage()">Français</a>
+        <a class="ghost-button bottom-left-button english"  href="mainmenu.html">Back to Main Menu</a>
+        <a class="ghost-button bottom-left-button french"  href="mainmenu.html">Retournez á menu principal</a>
+        <a class="ghost-button bottom-right-button switch-language-button" href="#" onclick="switchLanguageClicked()">Changez à Français</a>
     </div>
 </body>

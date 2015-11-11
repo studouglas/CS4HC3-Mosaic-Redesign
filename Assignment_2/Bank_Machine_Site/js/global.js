@@ -6,6 +6,7 @@ var currentAccount;
 var selectedBankAccountName;
 var selectedFromAccountName;
 var selectedToAccountName;
+var indexEnglishFrench;
 
 /***********************************************
 * Load data / show messages initially
@@ -21,42 +22,26 @@ $(document).ready(function () {
         }
     }
 
-    //read current language and display appropriate tags
-    if (localStorage.getItem("currentLang") == null) { //if current language has not yet been set in cache, set to english
-        localStorage.setItem("currentLang", "English");
-    }
-    var switchButton = $(".switch-language-button")[0];
-    //var engElems = document.getElementsByClass("english");
-    //var frnElems = document.getElementsbyClass("french");
-    if (localStorage.getItem("currentLang") == "English") {
-        switchButton.innerHTML = "English";
-        //for (var i = 0; i < frnElems.length; i++) {
-           //frnElems[i].disabled = true;
-        //}
-        //document.getElementsbyId("english").disabled=false;
-    } else if (localStorage.getItem("currentLang") == "French") {
-        switchButton.innerHTML = "Français";
-        //for (var i = 0; i < engElems.length; i++) {
-        //engElems[i].disabled = true;
-        //}			
-        //document.getElementsById("french").disabled=false;
-    }
+    setLanguageElements();
     
     // enter account number
     if (window.location.href.indexOf("index.html") > -1) {
         if (window.location.href.indexOf("logout") > -1) {
             displayMessage("You have been successfully logged out.", false);
+            window.history.pushState('', document.title, window.location.href.substring(0, window.location.href.indexOf("?")));
         } else if (window.location.href.indexOf("cancelPin") > -1) {
             displayMessage("Login successfully cancelled.", false);
-        } else {
-            return;
+            window.history.pushState('', document.title, window.location.href.substring(0, window.location.href.indexOf("?")));
         }
-        window.history.pushState('', document.title, window.location.href.substring(0, window.location.href.indexOf("?")));
     }
+    
     
     // view accounts
     else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
         $(".account-number-label")[0].innerHTML = currentAccount.accountNumber;
+        if ($(".account-number-label")[1] != null) {
+            $(".account-number-label")[1].innerHTML = currentAccount.accountNumber;
+        }
         for (i = 0; i < currentAccount.bankAccounts.length; i++) {
             var lineToAdd = $(".view-accounts-container")[0].innerHTML;
             lineToAdd += "<p class=\"account-name\">";
@@ -87,27 +72,35 @@ $(document).ready(function () {
     }
    
     // when input changes, enable withdraw/deposit button 
-    if (($(".enter-number-input")[0]) != null) {
+    if (($(".enter-number-input")[0]) != null && window.location.href.indexOf("enterpin.html") < 0) {
+        console.log("BINDING");
         $(".enter-number-input").bind('input', function () {
             var val = $(this).val();
-            if (isNaN(val)) {
+            if (isNaN(val) || val == "") {
                 $(".enter-number-button").addClass("disabled-button")
                 if ($(".enter-number-input-error")[0] != null) {
                     $(".enter-number-input-error")[0].style.visibility = "visible";
+                    if ($(".enter-number-input-error")[1] != null) {
+                        $(".enter-number-input-error")[1].style.visibility = "visible";
+                    }
                 }
             } else {
                 $(".enter-number-button").removeClass("disabled-button");
-                console.log("HERE");
                 if ($(".enter-number-input-error")[0] != null) {
                     $(".enter-number-input-error")[0].style.visibility = "hidden";
+                    if ($(".enter-number-input-error")[1] != null) {
+                        $(".enter-number-input-error")[1].style.visibility = "hidden";
+                    }
                 }
             }
             
             if (selectedFromAccountName == null && $(".from-not-selected-error")[0] != null) {
                 $(".from-not-selected-error")[0].style.visibility = "visible";
+                $(".from-not-selected-error")[1].style.visibility = "visible";
             }
             if (selectedToAccountName == null && $(".from-not-selected-error")[0] != null) {
                 $(".to-not-selected-error")[0] .style.visibility = "visible";
+                $(".to-not-selected-error")[1] .style.visibility = "visible";
             }
         });
     }
@@ -132,6 +125,7 @@ $(document).click(function (e) {
 ***********************************************/
 function accountNumberEntered() {
     var accountNumber = $(".enter-number-input")[0].value;
+    
     if (accountNumber == "") {
         return;
     }
@@ -149,7 +143,9 @@ function accountNumberEntered() {
         displayMessage("Account number could not be found. Please try entering it again.", true);
     } else {
         localStorage.setItem("accountNumber", accountNumber);
+        console.log("ACCT NUM: " + accountNumber);
         window.location.href = "enterpin.html";
+        console.log("ACCT NUM: " + accountNumber);
     }
 }
 
@@ -200,6 +196,8 @@ var fadingOut = false;
 var timer;
 function displayMessage(message, isError) {
     var messageBox = $(".message-box")[0];
+    var translatedMessage = translate(message);
+    console.log(translatedMessage);
     if (fadingOut) {
         clearInterval(timer);
     }
@@ -212,7 +210,7 @@ function displayMessage(message, isError) {
     }
     
     // set message text
-    $(".message-box-text")[0].innerHTML = message;
+    $(".message-box-text")[0].innerHTML = translatedMessage;
     
     // show it, then fade it out after a few seconds
     var opacity = 1;
@@ -231,12 +229,12 @@ function displayMessage(message, isError) {
     }, 4000);
 }
 
+
 /***********************************************
 * logout 
 ***********************************************/
 function logout(isCancellingPin) {
     localStorage.setItem("accountNumber", null);
-    localStorage.setItem("pinNumber", null);
     if (isCancellingPin) {
         window.location.href = "index.html?cancelPin";
     } else {
@@ -247,15 +245,55 @@ function logout(isCancellingPin) {
 /***********************************************
 * change languages 
 ***********************************************/
-function switchLanguage() {
+function switchLanguageClicked() {
     var switchButton = $(".switch-language-button")[0];
-    if (switchButton.innerHTML == "English") {
-        localStorage.setItem("currentLang", "French");
-        switchButton.innerHTML = "Français";
-    } else {
+    if (switchButton.innerHTML == "Switch to English") {
         localStorage.setItem("currentLang", "English");
-        switchButton.innerHTML = "English";
-    }		
+    } else {
+        localStorage.setItem("currentLang", "French");
+    }
+    setLanguageElements();
+}
+
+/***********************************************
+* hides/shows appropriate elements 
+***********************************************/
+function setLanguageElements() {
+    var isEnglish = (localStorage.getItem("currentLang") != "French");
+    indexEnglishFrench = isEnglish ? 0 : 1;
+    
+    var englishElements = $(".english");
+    var frenchElements = $(".french");
+    
+    $(".switch-language-button")[0].innerHTML = isEnglish ? "Changez à Français" : "Switch to English";
+    for (var i = 0; i < frenchElements.length; i++) {
+        frenchElements[i].style.display = isEnglish ? "none" : "";
+    }
+    for (var i = 0; i < englishElements.length; i++) {
+        englishElements[i].style.display = isEnglish ? "" : "none";
+    }
+    
+    var selectAccountButtons = $(".select-account-button");
+    for (var i = 0; i < selectAccountButtons.length; i++) {
+        if (isEnglish && selectAccountButtons[i].innerHTML.indexOf("▼") > -1) {
+            selectAccountButtons[i].innerHTML = "Choose Account <span style='font-size: 12px;'>▼</span>";   
+        } else if (!isEnglish && selectAccountButtons[i].innerHTML.indexOf("▼") > -1) {
+            console.log("CHANGING");
+            selectAccountButtons[i].innerHTML = "Choisissez compte <span style='font-size: 12px;'>▼</span>";   
+        }
+    }
+    if ($(".enter-amount-input")[0] != null) {
+        $(".enter-amount-input")[0].placeholder = isEnglish ? "Amount" : "Somme";
+    }
+    if ($("#AccountNumber")[0] != null) {
+        $("#AccountNumber")[0].placeholder = isEnglish ? "Account Number" : "Numéro de compte";
+    }
+    if ($("#PinNumber")[0] != null) {
+        $("#PinNumber")[0].placeholder = isEnglish ? "Pin Number" : "Numéro secret";
+    }
+    if ($(".message-box")[0] != null && $(".message-box")[0].style.opacity > 0) {
+        $(".message-box-text")[0].innerHTML = translate($(".message-box-text")[0].innerHTML);
+    } 
 }
 
 /***********************************************
@@ -329,9 +367,11 @@ function selectAccount(sender, accountName, second) {
         if (isDescendant($(".select-account-table")[0], sender)) {
             selectedFromAccountName = accountName;
             $(".from-not-selected-error")[0].style.visibility = "hidden";
+            $(".from-not-selected-error")[1].style.visibility = "hidden";
         } else if (isDescendant($(".select-account-table")[1], sender)) {
             selectedToAccountName = accountName;
             $(".to-not-selected-error")[0].style.visibility = "hidden";
+            $(".to-not-selected-error")[1].style.visibility = "hidden";
         }
     } else {
         selectedBankAccountName = accountName;
@@ -360,13 +400,13 @@ function withdraw() {
     }
     var amount = parseFloat($(".enter-number-input")[0].value);
     if (isNaN(amount)) {
-        displayMessage("Amount in unrecognized format", true);
+        displayMessage("Amount in unrecognized format.", true);
     }
     
     if (updateBalance(selectedBankAccountName, -amount)) {
         window.location.href = "confirm.html";
     } else {
-        displayMessage("Not enough funds in '" + selectedBankAccountName + "' to withdraw that amount", true);
+        displayMessage("Not enough funds in '" + selectedBankAccountName + "' to perform withdrwawal.", true);
     }
 }
 
@@ -379,7 +419,7 @@ function deposit() {
     }
     var amount = parseFloat($(".enter-number-input")[0].value);
     if (isNaN(amount)) {
-        displayMessage("Amount in unrecognized format", true);
+        displayMessage("Amount in unrecognized format.", true);
     }
     
     if (updateBalance(selectedBankAccountName, amount)) {
@@ -393,21 +433,22 @@ function deposit() {
 * Checks to ensure Transfer is valid 
 ***********************************************/
 function checkValidTransfer() {
+    if ($("#transfer-button").hasClass("disabled-button")) {
+        console.log("button is disabled")
+        return;
+    }
+    
     var amount = parseFloat($(".enter-number-input")[0].value);
     if (selectedFromAccountName == null || selectedToAccountName == null) {
-        displayMessage("Both accounts must be selected", true);
+        displayMessage("Two accounts must be selected to perform transfer.", true);
         return;
     }
     if (selectedFromAccountName == selectedToAccountName) {
-        displayMessage("Cannot transfer to same account", true);
+        displayMessage("Cannot perform transfer to same account.", true);
         return;
     }
     if (isNaN($(".enter-number-input")[0].value)) {
-        displayMessage("Amount in unrecognized format", true);
-        return;
-    }
-    if ($("#transfer-button").hasClass("disabled-button")) {
-        console.log("button is disabled")
+        displayMessage("Amount in unrecognized format.", true);
         return;
     }
     
@@ -416,7 +457,7 @@ function checkValidTransfer() {
         updateBalance(selectedToAccountName, amount);
         window.location.href = "confirm.html";
     } else {
-        displayMessage("Not enough funds in '" + selectedFromAccountName + "' to perform transfer");
+        displayMessage("Not enough funds in '" + selectedFromAccountName + "' to perform transfer.",true);
     }
 }
 
@@ -431,4 +472,48 @@ function isDescendant(parent, child) {
         }
         node = node.parentNode;
     }
+}
+
+/***********************************************
+* translation text
+***********************************************/
+function translate(message) {
+    if (localStorage.getItem("currentLang") != "French") {
+        return message;
+    }
+    
+    if (message.indexOf("Not enough funds in") > -1 && message.indexOf("to perform transfer.") > -1) {
+        var accountName = message.substring(20, message.indexOf("to perform transfer"));
+        return "Pas assez d'argent en " + accountName + " pour faire transfert.";
+    } else if (message.indexOf("Not enough funds in") > -1 && message.indexOf("to perform withdrawal") > -1) {
+        var accountName = message.substring(20, message.indexOf("to perform withdrawal."));
+        return "Pas assez d'argent en " + accountName + " pour faire retrait.";
+    }
+
+    switch (message) {
+        case "You have been successfully logged out.":
+            message = "Vous vous avez été déconnecté.";
+            break;
+        case "Login successfully cancelled.":
+            message = "Ouverture de session a été annulé.";
+            break;
+        case "Account number could not be found. Please try entering it again.":
+            message = "Numéro de compte n'était pas trouvé. Réessayez.";
+            break;
+        case "Pin number incorrect. Please try again.":
+            message = "Code confidential n'était pas correcte. Réessayez.";
+            break;
+        case "Amount in unrecognized format.":
+            message = "Format n'est pas correcte.";
+            break;
+        case "Two accounts must be selected to perform transfer.":
+            message = "Deux comptes doivent être choisi.";
+            break;
+        case "Cannot perform transfer to same account.":
+            message = "On ne peut pas transferer à la même compte.";
+            break; 
+        default: 
+            break;
+    }
+    return message;
 }
