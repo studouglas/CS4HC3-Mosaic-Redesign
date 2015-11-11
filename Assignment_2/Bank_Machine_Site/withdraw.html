@@ -26,7 +26,6 @@
             <p class="english">Select Account:</p>
             <p class="french">Choisissez compte:</p>
             <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
-            
             <table class="select-account-table">
             </table>
         </div>
@@ -38,6 +37,22 @@
             --><input class="enter-number-input enter-amount-input" disabled="disabled" placeholder="Amount to Withdraw">
             <p class="enter-number-input-error english">Invalid input</p>
             <p class="enter-number-input-error french">Donnée invalide</p>
+            <p class="enter-number-input-error-empty english">Amount field is required</p>
+            <p class="enter-number-input-error-empty french">La somme est requis</p>
+            <p class="enter-number-input-error-twenty english">Bank machine can only dispense $20 bills</p>
+            <p class="enter-number-input-error-twenty french">Ce machine a seulement des billets de $20</p>
+        </div>
+        
+        <div class="confirm-popup">
+            <p class="english">Are you sure you want to withdraw <strong>$<span class="popup-amount"></span></strong> from <span class="popup-bank-account"></span>?</p>
+            <p class="french">Vous voulez vous retirez <strong>$<span class="popup-amount"></span></strong> de <span class="popup-bank-account"></span>?</p>
+            <br><br>
+            <div class="popup-button-container">
+                <a class="ghost-button popup-cancel-button english" href="#" onclick="cancelPopupClicked()">Cancel</a>
+                <a class="ghost-button popup-cancel-button french" href="#" onclick="cancelPopupClicked()">Annulez</a>
+                <a class="ghost-button popup-confirm-button english" href="#" onclick="confirmPopupClicked()">Confirm Withdrawal</a>
+                <a class="ghost-button popup-confirm-button french" href="#" onclick="confirmPopupClicked()">Confirmez rétraction</a>
+            </div>
         </div>
         
         <a href="#" class="ghost-button disabled-button enter-number-button english" id="withdraw-button" onclick="withdraw()">Continue</a>

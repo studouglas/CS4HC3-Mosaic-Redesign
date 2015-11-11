@@ -37,10 +37,24 @@
             --><input class="enter-number-input enter-amount-input" disabled="disabled" placeholder="Amount to Deposit">
             <p class="enter-number-input-error english">Invalid input</p>
             <p class="enter-number-input-error french">Donnée invalide</p>
+            <p class="enter-number-input-error-empty english">Amount field is required</p>
+            <p class="enter-number-input-error-empty french">La somme est requis</p>
         </div>
         
         <a href="#" class="ghost-button disabled-button enter-number-button english" id="deposit-button" onclick="deposit()">Continue</a>
         <a href="#" class="ghost-button disabled-button enter-number-button french" id="deposit-button" onclick="deposit()">Continuez</a>
+        
+        <div class="confirm-popup">
+            <p class="english">Are you sure you want to deposit <strong>$<span class="popup-amount"></span></strong> to <span class="popup-bank-account"></span>?</p>
+            <p class="french">Vous voulez déposez <strong>$<span class="popup-amount"></span></strong> à <span class="popup-bank-account"></span>?</p>
+            <br><br>
+            <div class="popup-button-container">
+                <a class="ghost-button popup-cancel-button english" href="#" onclick="cancelPopupClicked()">Cancel</a>
+                <a class="ghost-button popup-cancel-button french" href="#" onclick="cancelPopupClicked()">Annulez</a>
+                <a class="ghost-button popup-confirm-button english" href="#" onclick="confirmPopupClicked()">Confirm Deposit</a>
+                <a class="ghost-button popup-confirm-button french" href="#" onclick="confirmPopupClicked()">Confirmez dépôt</a>
+            </div>
+        </div>
         
         <a class="ghost-button bottom-left-button english"  href="mainmenu.html">Back to Main Menu</a>
         <a class="ghost-button bottom-left-button french"  href="mainmenu.html">Retournez á menu principal</a>

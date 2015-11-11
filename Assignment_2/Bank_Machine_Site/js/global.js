@@ -37,7 +37,6 @@ $(document).ready(function () {
         }
     }
     
-    
     // POPULATE VIEW ACCTS =========================================
     else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
         $(".account-number-label")[0].innerHTML = currentAccount.accountNumber;
@@ -75,41 +74,8 @@ $(document).ready(function () {
    
     // ENABLE/DISABLE BUTTON FROM INPUT =========================================
     if (($(".enter-number-input")[0]) != null && window.location.href.indexOf("enterpin.html") < 0) {
-        $(".enter-number-input").bind('input', function () {
-            var val = $(this).val();
-            
-            // show error if invalid
-            if (isNaN(val) || val == "") {
-                $(".enter-number-button").addClass("disabled-button")
-                
-                // show error box
-                if ($(".enter-number-input-error")[0] != null) {
-                    $(".enter-number-input-error")[0].style.visibility = "visible";
-                    if ($(".enter-number-input-error")[1] != null) {
-                        $(".enter-number-input-error")[1].style.visibility = "visible";
-                    }
-                }
-            } else {
-                $(".enter-number-button").removeClass("disabled-button");
-                
-                // hide error box
-                if ($(".enter-number-input-error")[0] != null) {
-                    $(".enter-number-input-error")[0].style.visibility = "hidden";
-                    if ($(".enter-number-input-error")[1] != null) {
-                        $(".enter-number-input-error")[1].style.visibility = "hidden";
-                    }
-                }
-            }
-            
-            // transfer.html -- show error if account not selected
-            if (selectedFromAccountName == null && $(".from-not-selected-error")[0] != null) {
-                $(".from-not-selected-error")[0].style.visibility = "visible";
-                $(".from-not-selected-error")[1].style.visibility = "visible";
-            }
-            if (selectedToAccountName == null && $(".to-not-selected-error")[0] != null) {
-                $(".to-not-selected-error")[0] .style.visibility = "visible";
-                $(".to-not-selected-error")[1] .style.visibility = "visible";
-            }
+        $(".enter-number-input").bind('input', function () {            
+            setEnterNumberButtonState();            
         });
     }
 });
@@ -383,7 +349,10 @@ function selectAccount(sender, accountName, isToAccountPicker) {
     } else {
         selectedBankAccountName = accountName;
     }
-    $(".enter-number-input")[0].disabled = false;
+    if (selectedBankAccountName != null
+       || (selectedFromAccountName != null && selectedToAccountName != null)) {
+        $(".enter-number-input")[0].disabled = false;
+    } 
     
     // add the name and balance as button text
     var lineToAdd = "<span class=\"left-column select-account-span\" onclick=\"showAccountsPicker(" + isToAccountPicker + ")\">";
@@ -396,6 +365,103 @@ function selectAccount(sender, accountName, isToAccountPicker) {
     $(".select-account-table")[i].style.visibility = "hidden";
     $(".select-account-button")[i].innerHTML = lineToAdd;
     $(".select-account-button")[i].textAlign = "center";
+}
+
+function setEnterNumberButtonState() {
+    if ($(".enter-number-button") == null) {
+        return;
+    }
+
+    // enable / disable enter button
+    if (isValidAmountInput()
+    && (selectedBankAccountName != null 
+    || (selectedFromAccountName != null && selectedToAccountName != null))) {
+        $(".enter-number-button").removeClass("disabled-button");
+    } else {
+        $(".enter-number-button").addClass("disabled-button");
+    }
+    
+    // transfer.html -- show error if account not selected
+    if (selectedFromAccountName == null && $(".from-not-selected-error")[0] != null) {
+        $(".from-not-selected-error")[0].style.visibility = "visible";
+        $(".from-not-selected-error")[1].style.visibility = "visible";
+        $(".enter-number-button").addClass("disabled-button")
+    }
+    if (selectedToAccountName == null && $(".to-not-selected-error")[0] != null) {
+        $(".to-not-selected-error")[0] .style.visibility = "visible";
+        $(".to-not-selected-error")[1] .style.visibility = "visible";
+        $(".enter-number-button").addClass("disabled-button")
+    }
+}
+
+function isValidAmountInput() {
+    var input = $(".enter-number-input")[0].value;
+    
+    var hideErrorBoxGeneric = true;
+    var hideErrorBoxEmpty = true;
+    var hideErrorBoxTwenty = true;
+    
+    // show empty input error box
+    if (input == "") {
+        if ($(".enter-number-input-error-empty")[0] != null) {
+            $(".enter-number-input-error-empty")[0].style.visibility = "visible";
+        }
+        if ($(".enter-number-input-error-empty")[1] != null) {
+            $(".enter-number-input-error-empty")[1].style.visibility = "visible";
+        }
+        hideErrorBoxEmpty = false;
+    }
+    
+    // show generic input error box
+    else if (isNaN(input)) {    
+        if ($(".enter-number-input-error")[0] != null) {
+            $(".enter-number-input-error")[0].style.visibility = "visible";
+        }
+        if ($(".enter-number-input-error")[1] != null) {
+            $(".enter-number-input-error")[1].style.visibility = "visible";
+        }
+        hideErrorBoxGeneric = false;
+    }
+    
+    // show not divisible by 20 input error box
+    else if (window.location.href.indexOf("withdraw.html") > -1
+     && (input % 20.0 != 0 || input == 0)) {
+        if ($(".enter-number-input-error-twenty")[0] != null) {
+            $(".enter-number-input-error-twenty")[0].style.visibility = "visible";
+        }
+        if ($(".enter-number-input-error-twenty")[1] != null) {
+            $(".enter-number-input-error-twenty")[1].style.visibility = "visible";
+        }
+        hideErrorBoxTwenty = false;
+    }
+    
+    // hide input error boxes
+    if (hideErrorBoxEmpty) {
+        if ($(".enter-number-input-error-empty")[0] != null) {
+            $(".enter-number-input-error-empty")[0].style.visibility = "hidden";
+        }
+        if ($(".enter-number-input-error-empty")[1] != null) {
+            $(".enter-number-input-error-empty")[1].style.visibility = "hidden";
+        }
+    }
+    if (hideErrorBoxGeneric) {
+        if ($(".enter-number-input-error")[0] != null) {
+            $(".enter-number-input-error")[0].style.visibility = "hidden";
+        }
+        if ($(".enter-number-input-error")[1] != null) {
+            $(".enter-number-input-error")[1].style.visibility = "hidden";
+        }    
+    }
+    if (hideErrorBoxTwenty) {
+        if ($(".enter-number-input-error-twenty")[0] != null) {
+            $(".enter-number-input-error-twenty")[0].style.visibility = "hidden";
+        }
+        if ($(".enter-number-input-error-twenty")[1] != null) {
+            $(".enter-number-input-error-twenty")[1].style.visibility = "hidden";
+        }    
+    }
+    
+    return (hideErrorBoxEmpty && hideErrorBoxGeneric && hideErrorBoxTwenty);
 }
 
 /***********************************************
@@ -416,10 +482,72 @@ function withdraw() {
         return;
     }
     
-    if (updateBalance(selectedBankAccountName, -amount)) {
-        window.location.href = "confirm.html";
-    } else {
-        displayMessage("Not enough funds in '" + selectedBankAccountName + "' to perform withdrwawal.", true);
+    showConfirmationDialog();
+}
+
+/***********************************************
+* Shows confirmation dialog 
+***********************************************/
+function showConfirmationDialog() {
+    if ($(".popup-amount")[0] != null) {
+        $(".popup-amount")[0].innerHTML = parseFloat($(".enter-number-input")[0].value).toFixed(2);
+        $(".popup-amount")[1].innerHTML = parseFloat($(".enter-number-input")[0].value).toFixed(2);
+    }
+    if ($(".popup-from")[0] != null) {
+        $(".popup-from")[0].innerHTML = selectedFromAccountName;
+        $(".popup-from")[1].innerHTML = selectedFromAccountName;
+    }
+    if ($(".popup-to")[0] != null) {
+        $(".popup-to")[0].innerHTML = selectedToAccountName;
+        $(".popup-to")[1].innerHTML = selectedToAccountName;
+    }
+    if ($(".popup-bank-account")[0] != null) {
+        console.log("HERE");
+        $(".popup-bank-account")[0].innerHTML = selectedBankAccountName;
+        $(".popup-bank-account")[1].innerHTML = selectedBankAccountName;
+    }
+    $(".confirm-popup")[0].style.visibility = "visible";
+}
+
+/***********************************************
+* Hide confirmation dialog 
+***********************************************/
+function cancelPopupClicked() {
+    $(".confirm-popup")[0].style.visibility = "hidden";
+}
+
+/***********************************************
+* confirm clicked -- proceed to do action
+***********************************************/
+function confirmPopupClicked() {
+    var amount = parseFloat($(".enter-number-input")[0].value);
+    
+    // withdraw
+    if (window.location.href.indexOf("withdraw.html") > -1) {
+        if (updateBalance(selectedBankAccountName, -amount)) {
+            window.location.href = "confirm.html";
+        } else {
+            displayMessage("Not enough funds in '" + selectedBankAccountName + "' to perform withdrwawal.", true);
+        }
+    }
+    
+    // deposit
+    if (window.location.href.indexOf("deposit.html") > -1) {
+        if (updateBalance(selectedBankAccountName, amount)) {
+            window.location.href = "confirm.html";
+        } else {
+            console.log("Error when depositing");
+        }
+    }
+
+    // transfer
+    if (window.location.href.indexOf("transfermoney.html") > -1) {
+        if (updateBalance(selectedFromAccountName, -amount)) { 
+            updateBalance(selectedToAccountName, amount);
+            window.location.href = "confirm.html";
+        } else {
+            displayMessage("Not enough funds in '" + selectedFromAccountName + "' to perform transfer.",true);
+        }
     }
 }
 
@@ -434,13 +562,10 @@ function deposit() {
     var amount = parseFloat($(".enter-number-input")[0].value);
     if (isNaN(amount)) {
         displayMessage("Amount in unrecognized format.", true);
+        return;
     }
     
-    if (updateBalance(selectedBankAccountName, amount)) {
-        window.location.href = "confirm.html";
-    } else {
-        console.log("Error when depositing");
-    }
+    showConfirmationDialog();
 }
 
 /**********************************************
@@ -469,13 +594,7 @@ function transfer() {
         return;
     }
     
-    // perform transfer
-    if (updateBalance(selectedFromAccountName, -amount)) { 
-        updateBalance(selectedToAccountName, amount);
-        window.location.href = "confirm.html";
-    } else {
-        displayMessage("Not enough funds in '" + selectedFromAccountName + "' to perform transfer.",true);
-    }
+    showConfirmationDialog();
 }
 
 /***********************************************
