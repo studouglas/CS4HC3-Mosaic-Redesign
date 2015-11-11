@@ -15,28 +15,32 @@
 
 <body>
 	<div class="content">
-        <h1 class="page-title">Deposit</h1>
+        <h1 class="page-title english">Deposit</h1>
+        <h1 class="page-title french">Déposez</h1>
         
         <div class="message-box" style="margin-top: -20px;">
             <p class="message-box-text"></p>
         </div>
         
         <div class="select-account-container">
-            <p>Select Account:</p>
+            <p class="english">Select Account:</p>
+            <p class="french">Choisissez compte:</p>
             <a class="ghost-button select-account-button" href="#" onclick="showAccountsPicker()">Choose Account <span style="font-size: 12px;">▼</span></a>
             <table class="select-account-table">
             </table>
         </div>
         
         <div class="select-amount-container">
-            <p>Select Amount:</p>
+            <p class="english">Select Amount:</p>
+            <p class="french">Choisissez somme:</p>
             <span class="dollar-sign">$</span><!--
             --><input class="enter-number-input enter-amount-input" disabled="disabled" placeholder="Amount to Deposit">
-            <p class="enter-number-input-error">Invalid input</p>
+            <p class="enter-number-input-error english">Invalid input</p>
+            <p class="enter-number-input-error french">Donnée invalide</p>
         </div>
         
-        <a href="#" class="ghost-button disabled-button enter-number-button" id="deposit-button" onclick="deposit()">Continue</a>
-        
+        <a href="#" class="ghost-button disabled-button enter-number-button english" id="deposit-button" onclick="deposit()">Continue</a>
+        <a href="#" class="ghost-button disabled-button enter-number-button french" id="deposit-button" onclick="deposit()">Continuez</a>
         
         <a class="ghost-button bottom-left-button english"  href="mainmenu.html">Back to Main Menu</a>
         <a class="ghost-button bottom-left-button french"  href="mainmenu.html">Retournez á menu principal</a>

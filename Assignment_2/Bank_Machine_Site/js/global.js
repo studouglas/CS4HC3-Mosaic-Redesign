@@ -6,7 +6,6 @@ var currentAccount;
 var selectedBankAccountName;
 var selectedFromAccountName;
 var selectedToAccountName;
-var indexEnglishFrench;
 
 /***********************************************
 * Load data / show messages initially
@@ -14,7 +13,7 @@ var indexEnglishFrench;
 $(document).ready(function () {
     accounts = loadAccountsJson();
     if (localStorage.getItem("accountNumber") != "") {
-        for (i = 0; i < accounts.length; i++) {
+        for (var i = 0; i < accounts.length; i++) {
             if (accounts[i].accountNumber == localStorage.getItem("accountNumber")) {
                 currentAccount = accounts[i];
                 break;
@@ -22,9 +21,12 @@ $(document).ready(function () {
         }
     }
 
+    if (localStorage.getItem("currentLang") == null) {
+        localStorage.setItem("currentLang", "English");
+    }
     setLanguageElements();
     
-    // enter account number
+    // ENTER ACCT # PAGE =========================================
     if (window.location.href.indexOf("index.html") > -1) {
         if (window.location.href.indexOf("logout") > -1) {
             displayMessage("You have been successfully logged out.", false);
@@ -36,7 +38,7 @@ $(document).ready(function () {
     }
     
     
-    // view accounts
+    // POPULATE VIEW ACCTS =========================================
     else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
         $(".account-number-label")[0].innerHTML = currentAccount.accountNumber;
         if ($(".account-number-label")[1] != null) {
@@ -53,7 +55,7 @@ $(document).ready(function () {
         }
     }
     
-    // populate select account dropdowns
+    // POPULATE SELECT ACCT DROPDOWN =========================================
     else if (window.location.href.indexOf("withdraw.html") > -1
             || window.location.href.indexOf("transfermoney.html") > -1
             || window.location.href.indexOf("deposit.html") > -1) {
@@ -71,13 +73,16 @@ $(document).ready(function () {
         }
     }
    
-    // when input changes, enable withdraw/deposit button 
+    // ENABLE/DISABLE BUTTON FROM INPUT =========================================
     if (($(".enter-number-input")[0]) != null && window.location.href.indexOf("enterpin.html") < 0) {
-        console.log("BINDING");
         $(".enter-number-input").bind('input', function () {
             var val = $(this).val();
+            
+            // show error if invalid
             if (isNaN(val) || val == "") {
                 $(".enter-number-button").addClass("disabled-button")
+                
+                // show error box
                 if ($(".enter-number-input-error")[0] != null) {
                     $(".enter-number-input-error")[0].style.visibility = "visible";
                     if ($(".enter-number-input-error")[1] != null) {
@@ -86,6 +91,8 @@ $(document).ready(function () {
                 }
             } else {
                 $(".enter-number-button").removeClass("disabled-button");
+                
+                // hide error box
                 if ($(".enter-number-input-error")[0] != null) {
                     $(".enter-number-input-error")[0].style.visibility = "hidden";
                     if ($(".enter-number-input-error")[1] != null) {
@@ -94,11 +101,12 @@ $(document).ready(function () {
                 }
             }
             
+            // transfer.html -- show error if account not selected
             if (selectedFromAccountName == null && $(".from-not-selected-error")[0] != null) {
                 $(".from-not-selected-error")[0].style.visibility = "visible";
                 $(".from-not-selected-error")[1].style.visibility = "visible";
             }
-            if (selectedToAccountName == null && $(".from-not-selected-error")[0] != null) {
+            if (selectedToAccountName == null && $(".to-not-selected-error")[0] != null) {
                 $(".to-not-selected-error")[0] .style.visibility = "visible";
                 $(".to-not-selected-error")[1] .style.visibility = "visible";
             }
@@ -125,7 +133,6 @@ $(document).click(function (e) {
 ***********************************************/
 function accountNumberEntered() {
     var accountNumber = $(".enter-number-input")[0].value;
-    
     if (accountNumber == "") {
         return;
     }
@@ -143,9 +150,7 @@ function accountNumberEntered() {
         displayMessage("Account number could not be found. Please try entering it again.", true);
     } else {
         localStorage.setItem("accountNumber", accountNumber);
-        console.log("ACCT NUM: " + accountNumber);
         window.location.href = "enterpin.html";
-        console.log("ACCT NUM: " + accountNumber);
     }
 }
 
@@ -154,10 +159,11 @@ function accountNumberEntered() {
 ***********************************************/
 function pinNumberEntered() {
     var pinNumber = $(".enter-number-input")[0].value;
-    if (pinNumber == "")
+    if (pinNumber == "") {
         return;
-    
-    // check that account number in account
+    }
+
+    // check that pin number in correct
     var validPinNumber = false;
     for (var i = 0; i < accounts.length; i++) {
         if (accounts[i].accountPin == pinNumber 
@@ -197,9 +203,11 @@ var timer;
 function displayMessage(message, isError) {
     var messageBox = $(".message-box")[0];
     var translatedMessage = translate(message);
-    console.log(translatedMessage);
+
     if (fadingOut) {
         clearInterval(timer);
+        fadingOut = false;
+        message.style.opacity = 0;
     }
     
     // set background colour
@@ -214,7 +222,7 @@ function displayMessage(message, isError) {
     
     // show it, then fade it out after a few seconds
     var opacity = 1;
-    messageBox.style.opacity = "1";
+    messageBox.style.opacity = opacity;
     fadingOut = true;
     setTimeout(function () {
         timer = setInterval(function () {
@@ -260,7 +268,6 @@ function switchLanguageClicked() {
 ***********************************************/
 function setLanguageElements() {
     var isEnglish = (localStorage.getItem("currentLang") != "French");
-    indexEnglishFrench = isEnglish ? 0 : 1;
     
     var englishElements = $(".english");
     var frenchElements = $(".french");
@@ -278,7 +285,6 @@ function setLanguageElements() {
         if (isEnglish && selectAccountButtons[i].innerHTML.indexOf("▼") > -1) {
             selectAccountButtons[i].innerHTML = "Choose Account <span style='font-size: 12px;'>▼</span>";   
         } else if (!isEnglish && selectAccountButtons[i].innerHTML.indexOf("▼") > -1) {
-            console.log("CHANGING");
             selectAccountButtons[i].innerHTML = "Choisissez compte <span style='font-size: 12px;'>▼</span>";   
         }
     }
@@ -291,9 +297,9 @@ function setLanguageElements() {
     if ($("#PinNumber")[0] != null) {
         $("#PinNumber")[0].placeholder = isEnglish ? "Pin Number" : "Numéro secret";
     }
-    if ($(".message-box")[0] != null && $(".message-box")[0].style.opacity > 0) {
+    if ($(".message-box")[0] != null) {
         $(".message-box-text")[0].innerHTML = translate($(".message-box-text")[0].innerHTML);
-    } 
+    }
 }
 
 /***********************************************
@@ -344,10 +350,12 @@ function resetBalanceUpdates() {
 /***********************************************
 * Shows dropdown with accounts 
 ***********************************************/
-function showAccountsPicker(second) {
-    if (second) {
+function showAccountsPicker(isToAccountPicker) {
+    if (isToAccountPicker) {
         $(".select-account-table")[0].style.visibility = "hidden";    
-        $(".select-account-table")[1].style.visibility = "visible";    
+        if ($(".select-account-table")[1] != null) {
+            $(".select-account-table")[1].style.visibility = "visible";    
+        }
     } else {
         $(".select-account-table")[0].style.visibility = "visible";
         if ($(".select-account-table")[1] != null) {
@@ -359,33 +367,32 @@ function showAccountsPicker(second) {
 /***********************************************
 * Choose account from dropdown 
 ***********************************************/
-function selectAccount(sender, accountName, second) {
-    
+function selectAccount(sender, accountName, isToAccountPicker) {
     var selectedBalance = getBalance(accountName);
     
     if (window.location.href.indexOf("transfermoney.html") > -1) {
-        if (isDescendant($(".select-account-table")[0], sender)) {
+        if (isDescendant($(".select-account-table")[0], sender)) { // from
             selectedFromAccountName = accountName;
             $(".from-not-selected-error")[0].style.visibility = "hidden";
             $(".from-not-selected-error")[1].style.visibility = "hidden";
-        } else if (isDescendant($(".select-account-table")[1], sender)) {
+        } else if (isDescendant($(".select-account-table")[1], sender)) { // to
             selectedToAccountName = accountName;
             $(".to-not-selected-error")[0].style.visibility = "hidden";
             $(".to-not-selected-error")[1].style.visibility = "hidden";
         }
     } else {
         selectedBankAccountName = accountName;
-        $(".enter-number-input")[0].disabled = false;
     }
+    $(".enter-number-input")[0].disabled = false;
     
     // add the name and balance as button text
-    var lineToAdd = "<span class=\"left-column select-account-span\" onclick=\"showAccountsPicker(" + second + ")\">";
+    var lineToAdd = "<span class=\"left-column select-account-span\" onclick=\"showAccountsPicker(" + isToAccountPicker + ")\">";
     lineToAdd += accountName;
-    lineToAdd += "</span><span class=\"right-column select-account-span\" onclick=\"showAccountsPicker(" + second + ")\" style=\"font-weight: 800;\">$";
+    lineToAdd += "</span><span class=\"right-column select-account-span\" onclick=\"showAccountsPicker(" + isToAccountPicker + ")\" style=\"font-weight: 800;\">$";
     lineToAdd += selectedBalance;
     lineToAdd += "</span>"
     
-    var i = (second == true) ? 1 : 0;
+    var i = (isToAccountPicker == true) ? 1 : 0;
     $(".select-account-table")[i].style.visibility = "hidden";
     $(".select-account-button")[i].innerHTML = lineToAdd;
     $(".select-account-button")[i].textAlign = "center";
@@ -398,9 +405,15 @@ function withdraw() {
     if ($("#withdraw-button").hasClass("disabled-button")) {
         return;
     }
+    
     var amount = parseFloat($(".enter-number-input")[0].value);
     if (isNaN(amount)) {
         displayMessage("Amount in unrecognized format.", true);
+        return;
+    }
+    if (amount % 20.0 != 0 || amount == 0) {
+        displayMessage("Bank machine can only dispense $20 bills.", true);
+        return;
     }
     
     if (updateBalance(selectedBankAccountName, -amount)) {
@@ -417,6 +430,7 @@ function deposit() {
     if ($("#deposit-button").hasClass("disabled-button")) {
         return;
     }
+    
     var amount = parseFloat($(".enter-number-input")[0].value);
     if (isNaN(amount)) {
         displayMessage("Amount in unrecognized format.", true);
@@ -430,11 +444,10 @@ function deposit() {
 }
 
 /**********************************************
-* Checks to ensure Transfer is valid 
+* transfer money
 ***********************************************/
-function checkValidTransfer() {
+function transfer() {
     if ($("#transfer-button").hasClass("disabled-button")) {
-        console.log("button is disabled")
         return;
     }
     
@@ -449,6 +462,10 @@ function checkValidTransfer() {
     }
     if (isNaN($(".enter-number-input")[0].value)) {
         displayMessage("Amount in unrecognized format.", true);
+        return;
+    }
+    if (amount < 1.00) {
+        displayMessage("A minimum value of $1.00 is required for a transfer.", true);
         return;
     }
     
@@ -506,12 +523,18 @@ function translate(message) {
         case "Amount in unrecognized format.":
             message = "Format n'est pas correcte.";
             break;
+        case "Bank machine can only dispense $20 bills.":
+            message = "Ce machine a seulement des billets de $20.";
+            break;
         case "Two accounts must be selected to perform transfer.":
             message = "Deux comptes doivent être choisi.";
             break;
         case "Cannot perform transfer to same account.":
             message = "On ne peut pas transferer à la même compte.";
-            break; 
+            break;
+        case "A minimum value of $1.00 is required for a transfer.":
+            message = "On a besoin d'un minimum de $1.00 pour faire le transfer.";
+            break;
         default: 
             break;
     }
