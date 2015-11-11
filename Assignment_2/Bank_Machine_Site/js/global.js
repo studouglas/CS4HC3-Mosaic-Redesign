@@ -375,7 +375,8 @@ function setEnterNumberButtonState() {
     // enable / disable enter button
     if (isValidAmountInput()
     && (selectedBankAccountName != null 
-    || (selectedFromAccountName != null && selectedToAccountName != null))) {
+    || (selectedFromAccountName != null && selectedToAccountName != null)
+    || window.location.href.indexOf("index.html") > -1)) {
         $(".enter-number-button").removeClass("disabled-button");
     } else {
         $(".enter-number-button").addClass("disabled-button");
