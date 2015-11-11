@@ -6,6 +6,7 @@ var currentAccount;
 var selectedBankAccountName;
 var selectedFromAccountName;
 var selectedToAccountName;
+var indexEnglishFrench;
 
 /***********************************************
 * Load data / show messages initially
@@ -38,6 +39,9 @@ $(document).ready(function () {
     // view accounts
     else if (window.location.href.indexOf("viewaccounts.html") > -1 || window.location.href.indexOf("confirm.html") > -1) {
         $(".account-number-label")[0].innerHTML = currentAccount.accountNumber;
+        if ($(".account-number-label")[1] != null) {
+            $(".account-number-label")[1].innerHTML = currentAccount.accountNumber;
+        }
         for (i = 0; i < currentAccount.bankAccounts.length; i++) {
             var lineToAdd = $(".view-accounts-container")[0].innerHTML;
             lineToAdd += "<p class=\"account-name\">";
@@ -68,27 +72,35 @@ $(document).ready(function () {
     }
    
     // when input changes, enable withdraw/deposit button 
-    if (($(".enter-number-input")[0]) != null) {
+    if (($(".enter-number-input")[0]) != null && window.location.href.indexOf("enterpin.html") < 0) {
+        console.log("BINDING");
         $(".enter-number-input").bind('input', function () {
             var val = $(this).val();
-            if (isNaN(val)) {
+            if (isNaN(val) || val == "") {
                 $(".enter-number-button").addClass("disabled-button")
                 if ($(".enter-number-input-error")[0] != null) {
                     $(".enter-number-input-error")[0].style.visibility = "visible";
+                    if ($(".enter-number-input-error")[1] != null) {
+                        $(".enter-number-input-error")[1].style.visibility = "visible";
+                    }
                 }
             } else {
                 $(".enter-number-button").removeClass("disabled-button");
-                console.log("HERE");
                 if ($(".enter-number-input-error")[0] != null) {
                     $(".enter-number-input-error")[0].style.visibility = "hidden";
+                    if ($(".enter-number-input-error")[1] != null) {
+                        $(".enter-number-input-error")[1].style.visibility = "hidden";
+                    }
                 }
             }
             
             if (selectedFromAccountName == null && $(".from-not-selected-error")[0] != null) {
                 $(".from-not-selected-error")[0].style.visibility = "visible";
+                $(".from-not-selected-error")[1].style.visibility = "visible";
             }
             if (selectedToAccountName == null && $(".from-not-selected-error")[0] != null) {
                 $(".to-not-selected-error")[0] .style.visibility = "visible";
+                $(".to-not-selected-error")[1] .style.visibility = "visible";
             }
         });
     }
@@ -113,6 +125,7 @@ $(document).click(function (e) {
 ***********************************************/
 function accountNumberEntered() {
     var accountNumber = $(".enter-number-input")[0].value;
+    
     if (accountNumber == "") {
         return;
     }
@@ -130,7 +143,9 @@ function accountNumberEntered() {
         displayMessage("Account number could not be found. Please try entering it again.", true);
     } else {
         localStorage.setItem("accountNumber", accountNumber);
+        console.log("ACCT NUM: " + accountNumber);
         window.location.href = "enterpin.html";
+        console.log("ACCT NUM: " + accountNumber);
     }
 }
 
@@ -245,11 +260,10 @@ function switchLanguageClicked() {
 ***********************************************/
 function setLanguageElements() {
     var isEnglish = (localStorage.getItem("currentLang") != "French");
+    indexEnglishFrench = isEnglish ? 0 : 1;
     
     var englishElements = $(".english");
     var frenchElements = $(".french");
-    
-    console.log("Language is: " + (isEnglish ? "English" : "French"));
     
     $(".switch-language-button")[0].innerHTML = isEnglish ? "Changez à Français" : "Switch to English";
     for (var i = 0; i < frenchElements.length; i++) {
@@ -258,6 +272,28 @@ function setLanguageElements() {
     for (var i = 0; i < englishElements.length; i++) {
         englishElements[i].style.display = isEnglish ? "" : "none";
     }
+    
+    var selectAccountButtons = $(".select-account-button");
+    for (var i = 0; i < selectAccountButtons.length; i++) {
+        if (isEnglish && selectAccountButtons[i].innerHTML.indexOf("▼") > -1) {
+            selectAccountButtons[i].innerHTML = "Choose Account <span style='font-size: 12px;'>▼</span>";   
+        } else if (!isEnglish && selectAccountButtons[i].innerHTML.indexOf("▼") > -1) {
+            console.log("CHANGING");
+            selectAccountButtons[i].innerHTML = "Choisissez compte <span style='font-size: 12px;'>▼</span>";   
+        }
+    }
+    if ($(".enter-amount-input")[0] != null) {
+        $(".enter-amount-input")[0].placeholder = isEnglish ? "Amount" : "Somme";
+    }
+    if ($("#AccountNumber")[0] != null) {
+        $("#AccountNumber")[0].placeholder = isEnglish ? "Account Number" : "Numéro de compte";
+    }
+    if ($("#PinNumber")[0] != null) {
+        $("#PinNumber")[0].placeholder = isEnglish ? "Pin Number" : "Numéro secret";
+    }
+    if ($(".message-box")[0] != null && $(".message-box")[0].style.opacity > 0) {
+        $(".message-box-text")[0].innerHTML = translate($(".message-box-text")[0].innerHTML);
+    } 
 }
 
 /***********************************************
@@ -331,9 +367,11 @@ function selectAccount(sender, accountName, second) {
         if (isDescendant($(".select-account-table")[0], sender)) {
             selectedFromAccountName = accountName;
             $(".from-not-selected-error")[0].style.visibility = "hidden";
+            $(".from-not-selected-error")[1].style.visibility = "hidden";
         } else if (isDescendant($(".select-account-table")[1], sender)) {
             selectedToAccountName = accountName;
             $(".to-not-selected-error")[0].style.visibility = "hidden";
+            $(".to-not-selected-error")[1].style.visibility = "hidden";
         }
     } else {
         selectedBankAccountName = accountName;
