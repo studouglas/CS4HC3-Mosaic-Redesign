@@ -1,0 +1,121 @@
+\documentclass[10pt]{article}
+
+% Packages
+\usepackage{enumerate}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{listings}
+\usepackage[left=0.75in,right=0.75in,top=0.875in,bottom=0.875in]{geometry}
+\usepackage{titling}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[explicit]{titlesec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Single column figure
+\newenvironment{InlineColumnFigure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+% Caption
+\newcommand{\Caption}[1]
+{\vspace{-4mm}\fontsize{9}{9}\textbf{Figure \refstepcounter{figCounter} 
+\arabic{figCounter}: #1}}
+
+\newcounter{figCounter}
+\setcounter{figCounter}{0}
+
+% ACM CHI Format
+\setlength{\columnsep}{0.85cm}
+\setlength{\parindent}{0pt}
+
+\titlespacing{\section}{0pt}{10pt}{-\parskip}
+\titlespacing{\subsection}{0pt}{10pt}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{10pt}{-\parskip}
+
+\titleformat{\section}{\normalfont\fontsize{9}{9}\sffamily\bfseries}
+{\thesection}{1em}{\MakeUppercase{#1}}
+\titleformat{\subsection}{\normalfont\fontsize{9}{9}\sffamily\bfseries}
+{\thesubsection}{1em}{#1}
+\titleformat{\subsubsection}{\normalfont\fontsize{9}{9}\sffamily\itshape}
+{\thesubsubsection}{1em}{#1}
+
+\pagenumbering{gobble}
+
+%===============================- 80 columns -=================================%
+\begin{document}
+
+% Title
+\begin{center}
+{\LARGE \sffamily \textbf{Personas} 
+\vspace{2mm}}\\
+\begin{tabular}{cccc}
+\textbf{Stuart Douglas} & \textbf{Matthew Pagnan} & \textbf{Rob Gorrie} & 
+\textbf{Derek Dagworthy}\\
+1214422 & 1208693 & 1222547 & 1214937\\
+McMaster University & McMaster University & McMaster University & McMaster 
+University\\
+dougls2@mcmaster.ca & pagnanmm@mcmaster.ca & gorrierw@mcmaster.ca & 
+dagwordj@mcmaster.ca\\
+\end{tabular}
+\end{center}
+\vspace{2mm}
+
+This document is used to highlight the design principals that were used in making our bank machine.
+The following sections contain point form notes about how each of the design principals was used.
+
+\section{Affordances/Signifiers} %=========================== Section
+\begin{itemize}
+\item When the user selects the text box a blinking text cursor will appear to signify that the text box affords typing
+\item The drop down boxes have little downwards pointing arrows to indicate that they are drop down boxes and they afford drop down functions.
+\item Buttons will darken when the pressed (and when the cursor is over them if this is being run on a computer) to signify they afford pressing.
+\item The drop down items will darken when pressed (and when the cursor is over them if this is being run on a computer) to signify they afford pressing.
+\end{itemize}
+
+\section{Constraints} %=========================== Section
+\begin{itemize}
+\item The continue buttons are grayed out and disabled until the users fills out all the required information on the screen
+\item The system will not allow the user to withdrawn or transfer out more money than what is in the account
+\item The bank machine is only able to dispense \$20 bills. If the user enters in a withdraw amount that is not a multiple of 20 then the user will be constrained from continuing their transaction
+\end{itemize}
+
+\section{Mappings} %=========================== Section
+
+\section{Feedback} %=========================== Section
+\begin{itemize}
+\item When the user gives invalid input there are error messages that will pop up and indicate to the user what they did incorrectly.
+\item There is a summary screen that will be displayed after the user makes a transaction as a way to inform the user that their transaction was successful.
+\item If the user tries to withdraw an amount that is not a multiple of 20 then the bank machine will display a warning indicating that the bank machine can only dispense \$20 bills.
+\item Pop up menus will appear when the user makes a transaction to confirm that they want to make that transaction
+\end{itemize}
+
+\section{Visibility} %=========================== Section
+\begin{itemize}
+\item There are no tabs so the user can see all the widgets they need to see.
+\item Error messages appear in red so they easily stand out so the user can see them.
+\item All Text boxes, buttons and drop down menus are labeled so the user knows what they are for
+\end{itemize}
+
+\section{Conceptual Model} %=========================== Section
+\begin{itemize}
+\item In the Transfer Between Accounts has an arrow pointing from the account the money is being transfered out of to the account where the money is being transfered to.
+\item The Transfer Between Accounts button on the main menu has two arrows pointing in different directions to indicate movement between accounts.
+\item The Withdraw button on the main menu has a down arrow because when you withdraw money your accounts balance goes down.
+\item The Deposit button on the main menu has an up arrow because when you deposit money the money in your account goes up.
+\end{itemize}
+
+\section{Consistency} %=========================== Section
+\begin{itemize}
+\item The Enter Account Number screen and the Enter PIN number screen both look similar as well. The user know that the text box is above the button and they are not able to continue until they have filled out the text box.
+\item All our pages behave similarly, text boxes and drop down boxes need to selected and set before the user can continue on to the next page.
+\item All our pages have a similar layout, especially the withdraw and deposit pages. If the user knows how to withdraw money with this bank machine they will know how to deposit money as well.
+\item The French/English toggle button can be found in the bottom right of every screen.
+\item The back to main menu or logout button is always located on the bottom left of the screen.
+\item All the pop up messages are laid out the same way. 
+\end{itemize}
+
+
+
+
+\end{document}
