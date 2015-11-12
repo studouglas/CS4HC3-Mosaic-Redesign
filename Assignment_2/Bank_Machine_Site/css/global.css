@@ -1,0 +1,563 @@
+/***************************************
+STANDARDIZE http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+***************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*=============== End Standardize ==================*/
+/***********************************************
+    LESS Variables / Functions
+***********************************************/
+.default-font {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  line-height: 1.7em;
+  color: #2E2E2E;
+}
+/***********************************************
+    Text
+***********************************************/
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+td,
+.button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  line-height: 1.7em;
+  color: #2E2E2E;
+}
+h1 {
+  font-size: 2em;
+}
+strong {
+  font-weight: 800;
+}
+/***********************************************
+    Links
+***********************************************/
+a {
+  text-decoration: none;
+  color: #32d1b3;
+  -webkit-transition: color 0.3s ease-out;
+  -moz-transition: color 0.3s ease-out;
+  -ms-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+}
+a:hover,
+a:focus {
+  color: #2a917a;
+}
+/***********************************************
+    Layout
+***********************************************/
+body {
+  background-color: #ffffff;
+}
+.content {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-width: 1000px;
+  height: 600px;
+  background: #f0f0f0;
+}
+.left-column {
+  float: left;
+  margin-left: 15px;
+}
+.right-column {
+  float: right;
+  margin-right: 15px;
+}
+/***********************************************
+     Button (ghost)
+***********************************************/
+.ghost-button {
+  padding: 4px 16px;
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #619a91;
+  background: none;
+  border-radius: 3px;
+  border: 2px solid #619a91;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.ghost-button:hover {
+  background-color: #e3e3e3;
+  color: #555555;
+  border-color: #555555;
+}
+.disabled-button {
+  border-color: #c6c6c6;
+  color: #c6c6c6;
+}
+.disabled-button:hover {
+  cursor: default;
+  background: none;
+  color: #c6c6c6;
+  border-color: #c6c6c6;
+}
+.disabled-button:visited {
+  color: #c6c6c6;
+  border-color: #c6c6c6;
+}
+/***********************************************
+    Page Title
+***********************************************/
+.page-title {
+  text-align: center;
+  width: 100%;
+  background-color: #58dea6;
+  margin-bottom: 30px;
+  padding: 23px;
+  font-weight: 600;
+  height: 100px;
+}
+/***********************************************
+    Enter Number
+***********************************************/
+.enter-number-wrapper {
+  display: table;
+  width: auto;
+  margin: 0 auto;
+  position: relative;
+  top: 130px;
+}
+.enter-number-label {
+  display: inline-block;
+}
+.enter-number-input {
+  height: 50px;
+  width: 400px;
+  border-radius: 3px;
+  border: none;
+  padding: 0 15px;
+  font-size: 16px;
+}
+.enter-number-input:disabled {
+  background: #e6e6e6;
+}
+.enter-number-button {
+  padding-top: 11px;
+  width: 400px;
+  height: 50px;
+  margin-top: 15px;
+}
+.enter-number-input-error {
+  color: red;
+  font-size: 13px;
+  visibility: hidden;
+}
+.enter-number-input-error-empty {
+  color: red;
+  font-size: 13px;
+  visibility: hidden;
+  margin-top: -22px;
+}
+.enter-number-input-error-twenty {
+  color: red;
+  font-size: 13px;
+  visibility: hidden;
+  margin-top: -22px;
+}
+.enter-amount-input {
+  width: 370px;
+  margin: 0;
+  height: 50px;
+  border-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+/***********************************************
+    Message box
+***********************************************/
+.message-box {
+  opacity: 0;
+  background-color: #fff;
+  border-radius: 3px;
+  max-width: 400px;
+  padding: 3px 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+/***********************************************
+    Bottom buttons
+***********************************************/
+.bottom-left-button {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+.bottom-right-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+/***********************************************
+    Main Menu buttons
+**********************************************/
+.go-function-button {
+  width: 300px;
+  height: 160px;
+  text-align: center;
+  padding-top: 15px;
+  font-size: 18px;
+}
+.go-view-accounts-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 120px;
+}
+.go-transfer-money-button {
+  margin-left: 120px;
+}
+.go-withdraw-button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-right: 120px;
+}
+.go-deposit-button {
+  margin-right: 120px;
+}
+.main-menu-icon {
+  height: 95px;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+/***********************************************
+    View Accounts
+ **********************************************/
+.view-accounts-container {
+  width: 800px;
+  margin: 0 100px;
+  max-height: 355px;
+  overflow: scroll;
+  background-color: #e6e6e6;
+  border-radius: 3px;
+  padding: 15px 15px 8px 15px;
+}
+.account-name {
+  font-size: 22px;
+}
+.account-balance {
+  font-size: 22px;
+  font-weight: 800;
+}
+.account-separator {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+.account-number-label {
+  font-weight: 700;
+}
+.bank-accounts-label {
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-left: 100px;
+}
+/***********************************************
+* Accounts picker 
+***********************************************/
+.select-account-container {
+  width: 400px;
+  margin: 100px auto 0 auto;
+}
+.select-account-button {
+  width: 400px;
+  margin-bottom: 50px;
+  height: 50px;
+  line-height: 40px;
+  padding: 3px 0 0 0;
+}
+.select-account-table {
+  max-height: 370px;
+  width: 400px;
+  z-index: 100;
+  position: absolute;
+  top: 227px;
+  background-color: white;
+  overflow: scroll;
+  border-radius: 3px;
+  visibility: hidden;
+  -webkit-box-shadow: 0px 12px 69px -2px rgba(74, 74, 74, 0.35);
+  -moz-box-shadow: 0px 12px 69px -2px rgba(74, 74, 74, 0.35);
+  box-shadow: 0px 12px 69px -2px rgba(74, 74, 74, 0.35);
+}
+.select-account-row {
+  height: 60px;
+  line-height: 40px;
+  border: 2px solid #848484;
+  border-radius: 3px;
+}
+.select-account-row:hover {
+  background-color: #e0e0e0;
+}
+.select-account-column-1 {
+  text-align: left;
+  padding: 0 5%;
+  vertical-align: middle;
+}
+.select-account-column-2 {
+  text-align: right;
+  padding: 0 5%;
+  vertical-align: middle;
+}
+.select-account-span {
+  margin: 0 5%;
+  padding: 0;
+}
+/***********************************************
+* TransferMoney.html
+***********************************************/
+.absolute-amount-transfer {
+  position: absolute;
+  display: block;
+  top: 360px;
+  left: 290px;
+}
+.select-account-transfer-page-left {
+  padding-left: 150px;
+  margin: 0 auto;
+}
+.select-account-transfer-page-right {
+  margin: 0 auto;
+}
+.select-account-table-transfer {
+  top: 239px;
+}
+.left-column .bank-accounts-label {
+  margin-left: 150px;
+}
+.transfer-from-label {
+  font-size: 24px;
+  margin-left: 150px;
+  margin-bottom: 5px;
+}
+.transfer-to-label {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.select-amount-container {
+  width: 400px;
+  margin: 0 auto;
+}
+.from-not-selected-error {
+  color: red;
+  font-size: 13px;
+  margin-top: -50px;
+  visibility: hidden;
+}
+.to-not-selected-error {
+  color: red;
+  font-size: 13px;
+  margin-top: -50px;
+  visibility: hidden;
+}
+.right-arrow-image {
+  width: 100px;
+  opacity: 0.3;
+  position: absolute;
+  top: 235px;
+  left: 424px;
+}
+/***********************************************
+* centered big buttons
+***********************************************/
+#withdraw-button,
+#deposit-button {
+  display: block;
+  margin: 15px auto;
+}
+/***********************************************
+* Miscellaneous 
+***********************************************/
+.dollar-sign {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  line-height: 1.7em;
+  color: #2E2E2E;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-color: #d4d4d4;
+  font-size: 20px;
+  color: #797979;
+  padding: 10px 10px 13px 8px;
+}
+#goPin {
+  margin-top: 2em;
+  /* so same spacing as account # (which has error box) */
+}
+/***********************************************
+* Confirm popup 
+***********************************************/
+.confirm-popup {
+  visibility: hidden;
+  position: absolute;
+  top: 200px;
+  left: 325px;
+  width: 350px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 12px 69px -2px rgba(74, 74, 74, 0.55);
+  -moz-box-shadow: 0px 12px 69px -2px rgba(74, 74, 74, 0.55);
+  box-shadow: 0px 12px 69px -2px rgba(74, 74, 74, 0.55);
+}
+.popup-confirm-button {
+  background-color: #58dea6;
+  color: #666;
+}
+.popup-confirm-button:hover {
+  background-color: #32c174;
+  color: #666;
+}
+.popup-button-container {
+  float: right;
+}

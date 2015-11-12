@@ -77,6 +77,14 @@ $(document).ready(function () {
         $(".enter-number-input").bind('input', function () {            
             setEnterNumberButtonState();            
         });
+    } else if (window.location.href.indexOf("enterpin.html") > -1) {
+        $(".enter-number-input").bind('input', function () {
+            if ($(".enter-number-input")[0].value == "") {
+                $(".enter-number-button").addClass("disabled-button");
+            } else {
+                $(".enter-number-button").removeClass("disabled-button");
+            }
+        })
     }
 });
 
@@ -528,7 +536,8 @@ function confirmPopupClicked() {
         if (updateBalance(selectedBankAccountName, -amount)) {
             window.location.href = "confirm.html";
         } else {
-            displayMessage("Not enough funds in '" + selectedBankAccountName + "' to perform withdrwawal.", true);
+            displayMessage("Not enough funds in '" + selectedBankAccountName + "' to perform withdrawal.", true);
+            $(".confirm-popup")[0].style.visibility = "hidden";
         }
     }
     
@@ -548,6 +557,7 @@ function confirmPopupClicked() {
             window.location.href = "confirm.html";
         } else {
             displayMessage("Not enough funds in '" + selectedFromAccountName + "' to perform transfer.",true);
+            $(".confirm-popup")[0].style.visibility = "hidden";
         }
     }
 }

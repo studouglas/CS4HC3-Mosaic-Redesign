@@ -5,7 +5,7 @@
 \usepackage{mathptmx}
 \usepackage{helvet}
 \usepackage{listings}
-\usepackage[left=0.75in,right=0.75in,top=0.875in,bottom=0.875in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{titling}
 \usepackage{tabularx}
 \usepackage{multicol}
@@ -48,7 +48,7 @@
 
 % Title
 \begin{center}
-{\LARGE \sffamily \textbf{Personas} 
+{\LARGE \sffamily \textbf{CS 4HC3: ATM Design Document} 
 \vspace{2mm}}\\
 \begin{tabular}{cccc}
 \textbf{Stuart Douglas} & \textbf{Matthew Pagnan} & \textbf{Rob Gorrie} & 
@@ -60,62 +60,89 @@ dougls2@mcmaster.ca & pagnanmm@mcmaster.ca & gorrierw@mcmaster.ca &
 dagwordj@mcmaster.ca\\
 \end{tabular}
 \end{center}
-\vspace{2mm}
+\vspace{5mm}
 
-This document is used to highlight the design principals that were used in making our bank machine.
-The following sections contain point form notes about how each of the design principals was used.
+This document is used to highlight the design principals that were used in the design of our touchscreen bank machine.
+The following sections describe each of the main design principles used, and examples from within the project that adhere to them.\\
 
-\section{Affordances/Signifiers} %=========================== Section
+\section*{Affordances/Signifiers} %=========================== Section
 \begin{itemize}
-\item When the user selects the text box a blinking text cursor will appear to signify that the text box affords typing
-\item The drop down boxes have little downwards pointing arrows to indicate that they are drop down boxes and they afford drop down functions.
-\item Buttons will darken when the pressed (and when the cursor is over them if this is being run on a computer) to signify they afford pressing.
-\item The drop down items will darken when pressed (and when the cursor is over them if this is being run on a computer) to signify they afford pressing.
+\item The drop-down boxes for accoutn selection (withdraw, transfer, deposit pages) have a small downwards arrow to indicate that they are drop down boxes and they afford drop down functions
+\item Buttons signify that they can be clicked by using action verbs (i.e. "Switch to English")
+\item Buttons will darken when pressed (and when the cursor is over them if this is being run on a computer) to signify they afford pressing
+\item The drop down items will darken when pressed (and when the cursor is over them if this is being run on a computer) to signify they afford pressing\\
 \end{itemize}
 
-\section{Constraints} %=========================== Section
+\section*{Constraints} %=========================== Section
 \begin{itemize}
 \item The continue buttons are grayed out and disabled until the users fills out all the required information on the screen
-\item The system will not allow the user to withdrawn or transfer out more money than what is in the account
-\item The bank machine is only able to dispense \$20 bills. If the user enters in a withdraw amount that is not a multiple of 20 then the user will be constrained from continuing their transaction
+\item The input text box is disabled until the user selects an account
+\item The system will not allow the user to withdraw or transfer out more money than what is in the account
+\item Entering a non-number into an amount input is not allowed, and will disable the continue button
+\item The user is not allowed to transfer money from one account to the same one, and will be shown an error message if they try
+\item The bank machine is only able to dispense \$20 bills. If the user enters in a withdraw amount that is not a multiple of 20 then the withdraw button will be disabled
+\\
 \end{itemize}
 
-\section{Mappings} %=========================== Section
-
-\section{Feedback} %=========================== Section
+\section*{Mappings} %=========================== Section
 \begin{itemize}
-\item When the user gives invalid input there are error messages that will pop up and indicate to the user what they did incorrectly.
-\item There is a summary screen that will be displayed after the user makes a transaction as a way to inform the user that their transaction was successful.
-\item If the user tries to withdraw an amount that is not a multiple of 20 then the bank machine will display a warning indicating that the bank machine can only dispense \$20 bills.
-\item Pop up menus will appear when the user makes a transaction to confirm that they want to make that transaction
+\item On the transfer screen the ``left to right'' mapping common in Western countries is used to show transferring of money \emph{from} the account selected on the left \emph{to} the account to the right\\
 \end{itemize}
 
-\section{Visibility} %=========================== Section
+\section*{Feedback} %=========================== Section
 \begin{itemize}
-\item There are no tabs so the user can see all the widgets they need to see.
-\item Error messages appear in red so they easily stand out so the user can see them.
+\item As soon as the user types an invalid character in an input box, a red message will appear telling them what they did wrong
+\item After they have initially typed something in the input box, if they delete it a red message will appear telling them that the amount must not be empty. This does not appear until they have typed something so that they are not ``punished" for not filling it out if they haven't got there yet
+\item When the user gives invalid input there are error messages that will pop up and indicate to the user what they did incorrectly
+\item When the user logs out, a small message appears showing that logout was successful, and disappears after several seconds so the next user does not see it
+\item When the user cancels the login process, a message appears showing that cancellation  was successful, and disappears after several seconds so the next user does not see it
+\item There is a summary screen that will be displayed after the user makes a transaction as a way to inform the user that their transaction was successful
+\item If the user tries to withdraw an amount that is not a multiple of 20 then the bank machine will display a warning indicating that the bank machine can only dispense \$20 bills
+\item Pop up menus will appear when the user makes a transaction to confirm that they want to make that transaction\\
+\end{itemize}
+
+\section*{Visibility} %=========================== Section
+\begin{itemize}
+\item The title of the page appears in very large letters at the top of the page so the user knows where they are at all times
+\item All functions are displayed in large boxes with icons and labels on the main page
+\item Error messages appear in red so they easily stand out so the user can see them
+\item Success messages (i.e. successful logout) are in green, using the user's conceptual model to show them that they were successful
 \item All Text boxes, buttons and drop down menus are labeled so the user knows what they are for
+\item Amounts of money in confirmation dialogs are bolded so the user can quickly see the most important information\\
 \end{itemize}
 
-\section{Conceptual Model} %=========================== Section
+\section*{Conceptual Model} %=========================== Section
 \begin{itemize}
-\item In the Transfer Between Accounts has an arrow pointing from the account the money is being transfered out of to the account where the money is being transfered to.
 \item The Transfer Between Accounts button on the main menu has two arrows pointing in different directions to indicate movement between accounts.
-\item The Withdraw button on the main menu has a down arrow because when you withdraw money your accounts balance goes down.
-\item The Deposit button on the main menu has an up arrow because when you deposit money the money in your account goes up.
+\item The Withdraw button on the main menu has a down arrow to indicate money coming "from" the bank machine down and out to you
+\item The Deposit button on the main menu has an up arrow to indicate uploading money into the bank machine
+\item The confirm button on popups is coloured green to indicate that it's the default action\\
 \end{itemize}
 
-\section{Consistency} %=========================== Section
+\section*{Consistency} %=========================== Section
 \begin{itemize}
-\item The Enter Account Number screen and the Enter PIN number screen both look similar as well. The user know that the text box is above the button and they are not able to continue until they have filled out the text box.
-\item All our pages behave similarly, text boxes and drop down boxes need to selected and set before the user can continue on to the next page.
-\item All our pages have a similar layout, especially the withdraw and deposit pages. If the user knows how to withdraw money with this bank machine they will know how to deposit money as well.
-\item The French/English toggle button can be found in the bottom right of every screen.
-\item The back to main menu or logout button is always located on the bottom left of the screen.
-\item All the pop up messages are laid out the same way. 
+\item All error and success messages are in the exact same location
+\item The Enter Account Number screen and the Enter PIN number screen both have identical layouts of the input field and button
+\item All pages behave similarly, text boxes and drop down boxes need to selected and set before the user can continue on to the next page
+\item All our pages have a similar layout, especially the withdraw and deposit pages. If the user knows how to withdraw money with this bank machine they will know how to deposit money as well
+\item The French/English toggle button can be found in the bottom right of every screen
+\item The back to main menu or logout button is always located on the bottom left of the screen
+\item All the pop up messages are laid out the same way\\
 \end{itemize}
 
-
+\section*{Other Usability Choices}
+\begin{itemize}
+\item A forest green is used as the brand colour and is used for the header colour as well as link and button colours
+\item Switching the language immediately changes the language of all elements without a reload
+\item Language setting is saved even when user leaves website
+\item Selecting an account switches the button text to the selected account with the balance shown as well
+\item When the select account dropdown is visible, clicking outside of it will dismiss it
+\item Shadows are used on popups to convey depth and what item requires action
+\item The screen is a fixed width and height to simulate a real ATM
+\item Pure black and pure white are not used, instead slightly lighter and darker shades respectively are used to be less harsh on the eyes
+\item All colour changes (i.e. button hovers) are faded in and out to be less jarring to user
+\item The same page is used for selecting the account to withdraw from or deposit to and the amount, instead of 2 pages as in most ATM's. This lets the user see what account (and its balance) they're withdrawing from or depositing to when choosing an amount, and switch it if desired.
+\end{itemize}
 
 
 \end{document}
