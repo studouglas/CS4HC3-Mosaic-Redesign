@@ -1,6 +1,10 @@
+# General
+*.*~
+
 # LaTeX
 *.synctex.*
 *.aux
 *.log
 *.out
 *.toc
+
