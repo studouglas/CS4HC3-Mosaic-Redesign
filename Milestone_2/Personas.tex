@@ -1,0 +1,140 @@
+\documentclass[10pt]{article}
+
+% Packages
+\usepackage{enumerate}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{listings}
+\usepackage[left=0.75in,right=0.75in,top=0.875in,bottom=0.875in]{geometry}
+\usepackage{titling}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage[explicit]{titlesec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Single column figure
+\newenvironment{InlineColumnFigure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+% Caption
+\newcommand{\Caption}[1]
+{\vspace{-4mm}\fontsize{9}{9}\textbf{Figure \refstepcounter{figCounter} 
+\arabic{figCounter}: #1}}
+
+\newcounter{figCounter}
+\setcounter{figCounter}{0}
+
+% ACM CHI Format
+\setlength{\columnsep}{0.85cm}
+\setlength{\parindent}{0pt}
+
+\titlespacing{\section}{0pt}{10pt}{-\parskip}
+\titlespacing{\subsection}{0pt}{10pt}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{10pt}{-\parskip}
+
+\titleformat{\section}{\normalfont\fontsize{9}{9}\sffamily\bfseries}
+{\thesection}{1em}{\MakeUppercase{#1}}
+\titleformat{\subsection}{\normalfont\fontsize{9}{9}\sffamily\bfseries}
+{\thesubsection}{1em}{#1}
+\titleformat{\subsubsection}{\normalfont\fontsize{9}{9}\sffamily\itshape}
+{\thesubsubsection}{1em}{#1}
+
+\pagenumbering{gobble}
+
+%===============================- 80 columns -=================================%
+\begin{document}
+
+% Title
+\begin{center}
+{\LARGE \sffamily \textbf{Personas} 
+\vspace{2mm}}\\
+\begin{tabular}{cccc}
+\textbf{Stuart Douglas} & \textbf{Matthew Pagnan} & \textbf{Rob Gorrie} & 
+\textbf{Derek Dagworthy}\\
+1214422 & 1208693 & 1222547 & 1214937\\
+McMaster University & McMaster University & McMaster University & McMaster 
+University\\
+dougls2@mcmaster.ca & pagnanmm@mcmaster.ca & gorrierw@mcmaster.ca & 
+dagwordj@mcmaster.ca\\
+\end{tabular}
+\end{center}
+\vspace{2mm}
+
+%\begin{multicols}{2}
+%============================= Persona 1 ======================================%
+\section{Trevor Clark}
+\begin{minipage}{0.5\textwidth}
+\fbox{\includegraphics[width = 80mm , scale = 0.01, height = 70mm]{Trevor.jpg}}
+\begin{center}
+``Yo Brah, when do classes start?"\\  Trevor --  September 23 2015
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item Born: London, ON
+\item Age: 22
+\item 3rd Year Civil Engineering McMaster Student
+\end{itemize}
+\end{minipage}\\ \\ \\
+
+Trevor is a third year Civil Engineering student at McMaster. He currently lives 10 minutes away from campus with some friends he met in first year. Trevor's parents are paying for his tuition. He has a student loan which he uses to pay for rent and food.\\ \\
+Trevor is very unorganized and rarely goes to class and often forgets to hand in assignments on time. Trevor is not apart of any clubs and prefers to spend his free time with his house mates playing video games.\\ \\
+Trevor can never remember when important dates are like when to sign up for courses or when his exams are. When he tries to find out information if he cannot get the information he is looking for within 5 minutes he usually gives up. Trevor would like it if the new course management system was quick and easy to use. He also would not mind it if certain information was made more accessible during certain times of the year (easy to see link to exam schedule around exam season).
+
+
+\newpage
+
+
+%============================= Persona 2 ======================================%
+\section{Candice Taylor}
+\begin{minipage}{0.5\textwidth}
+\fbox{\includegraphics[width = 80mm , scale = 0.25]{Candice.jpg}}
+\begin{center}
+``I don't know what electives I want to take "
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item Born: Oakville, ON
+\item Age: 18
+\item Grade 12 High school Student
+\end{itemize}
+\end{minipage}\\ \\ \\
+
+
+Candice has been accepted to the chemistry program at McMaster. Candice currently lives at home with her parents and will be moving into residence in the fall. Candice's parents are paying for her tuition. Candice is paying for her residence and meal plan. Candice works part time at the Fortinos in her home town to save up money so she can go to the movies whenever new blockbuster movies come out.\\ \\
+Candice has done well in all of her classes in high school and is apart of several high school teams; such as the volleyball team, track and field as well as the Harry Potter fan club.\\  \\
+Candice has several electives that she can take but cannot decide which ones she will take. She has heard that you can change classes during the first couple weeks of class and plans on doing that as she is not 100\% sure if she will like some of her electives or not. Candice has already made a list of classes she would like to take in her first year and is waiting for the course registration to open up. Candice would like the new course management system to allow her to be able to browse all the courses available to her and would like it if there were descriptions for each course that she could read before she registers for them.
+
+
+\newpage
+
+%============================= Persona 3 ======================================%
+\section{Andrew Lopez}
+\begin{minipage}{0.5\textwidth}
+\fbox{\includegraphics[width = 80mm, scale = 0.25]{Pablo.jpg}}
+\begin{center}
+``What is  ``French immersion"? Should I take it? "
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+\item Born: Chapala, Jal
+\item Age: 20
+\item 2nd Year Geography Exchange Student
+\end{itemize}
+\end{minipage}\\ \\ \\
+
+
+Andrew is an geography student from Mexico on exchange at McMaster for the year. Andrew is living in an house 20 minutes away from campus with other students in the foreign exchange program.Andrew's tuition is being paid for by a grant received as being apart of the foreign exchange program. His parents are giving him some money for rent and food but Andrew has to pay for some of it himself. Andrew is a hard working individual during the week and can be found in the Thode library between classes. Andrew likes to get all of his assignments done during the week so he can spend his weekend going to clubs with his house mates and friends.\\ \\
+Andrew is apart of the improv club which he regularly goes to. Andrew has a light course load this year as he would like to experience Canada as much as he can before he goes back to Mexico next September.\\ \\
+Since English is not Andrew 's first language he sometimes has trouble reading and understanding websites with a lot text and can get confused on where to navigate for the information he is looking for. Andrew would like it if the new course management system was easy to navigate and intuitive enough that you don't have to read an instruction manual to know how to use it.
+
+\newpage
+
+
+%\end{multicols}
+
+\end{document}
