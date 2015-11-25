@@ -34,9 +34,9 @@
 \titlespacing{\subsection}{0pt}{10pt}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{10pt}{-\parskip}
 
-\titleformat{\section}{\normalfont\fontsize{9}{9}\sffamily\bfseries}
-{\thesection}{1em}{\MakeUppercase{#1}}
-\titleformat{\subsection}{\normalfont\fontsize{9}{9}\sffamily\bfseries}
+\titleformat{\section}{\normalfont\fontsize{22}{9}\sffamily\bfseries}
+{\thesection.}{1em}{{#1}}
+\titleformat{\subsection}{\normalfont\fontsize{16}{9}\sffamily\bfseries}
 {\thesubsection}{1em}{#1}
 \titleformat{\subsubsection}{\normalfont\fontsize{9}{9}\sffamily\itshape}
 {\thesubsubsection}{1em}{#1}
@@ -49,7 +49,7 @@
 % Title
 \begin{center}
 {\LARGE \sffamily \textbf{Personas} 
-\vspace{2mm}}\\
+\vspace{4mm}}\\
 \begin{tabular}{cccc}
 \textbf{Stuart Douglas} & \textbf{Matthew Pagnan} & \textbf{Rob Gorrie} & 
 \textbf{Derek Dagworthy}\\
@@ -60,81 +60,110 @@ dougls2@mcmaster.ca & pagnanmm@mcmaster.ca & gorrierw@mcmaster.ca &
 dagwordj@mcmaster.ca\\
 \end{tabular}
 \end{center}
-\vspace{2mm}
+\vspace{4mm}
 
-%\begin{multicols}{2}
+%============================= Intro ======================================%
+\section{Introduction}\vspace{2mm}
+This document is based off of the \emph{Persona Template} as linked from the assignment outline from McMaster University, COMP SCI 4HC3. The \textbf{design project} involves creating a new user interface and user experience for university student management software. The focus has been on developing an improved system design as compared to McMaster University's current Mosaic software. Other university's systems have been researched and studied in previous milestones, and those results have informed design decisions for our replacement.\\
+
+This document initially presents the personas used to develop our design. These personas were created to archetype the most common user types, and have been integral to developing a product that will satisfy all of them.\\
+
+Following the personas, we've included two HTA's to highlight the two most important functions of the software -- enrolling in courses and viewing one's class schedule. The simplicity of the HTA's as compared to those created from existing systems is an attestation to our efforts to reduce the complexity of core interactions with the product.\\
+
+Finally, design documents for each page of the system are included. These include several revisions for each page (some underwent more revisions than others). Along with each revision we've included a brief description of what motivated our changes, and how they improve upon the design. Initial revisions for each page were sketched on paper for rapid prototyping, and subsequent revisions were created in Photoshop.
+
+
+\newpage
+\section{Personas}
+\vspace{5mm}
 %============================= Persona 1 ======================================%
-\section{Trevor Clark}
-\begin{minipage}{0.5\textwidth}
-\fbox{\includegraphics[width = 80mm , scale = 0.01, height = 70mm]{Trevor.jpg}}
+\hrule
+\vspace{2mm}
+\subsection{Persona 1 -- Primary persona}
+\vspace{11mm}
+
+\subsection*{Trevor Clark}
+\vspace{4mm}
+
+\begin{minipage}{60mm}
+\includegraphics[width=60mm]{Trevor.jpg}
 \begin{center}
-``Yo Brah, when do classes start?"\\  Trevor --  September 23 2015
+\emph{``When do classes start?"}
 \end{center}
-\end{minipage}\hfill
-\begin{minipage}{0.45\textwidth}
+\end{minipage}
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item Born: London, ON
 \item Age: 22
-\item 3rd Year Civil Engineering McMaster Student
+\item 3rd Year Engineering Student at McMaster
 \end{itemize}
-\end{minipage}\\ \\ \\
+\end{minipage}\\\\\\
 
-Trevor is a third year Civil Engineering student at McMaster. He currently lives 10 minutes away from campus with some friends he met in first year. Trevor's parents are paying for his tuition. He has a student loan which he uses to pay for rent and food.\\ \\
-Trevor is very unorganized and rarely goes to class and often forgets to hand in assignments on time. Trevor is not apart of any clubs and prefers to spend his free time with his house mates playing video games.\\ \\
+Trevor is a third year Civil Engineering student at McMaster. He currently lives 10 minutes away from campus with some friends he met in first year. Trevor's parents are paying for his tuition. He has a student loan which he uses to pay for rent and food.\\
+
+Trevor is very unorganized and rarely goes to class and often forgets to hand in assignments on time. Trevor is not apart of any clubs and prefers to spend his free time with his house mates playing video games.\\
+
 Trevor can never remember when important dates are like when to sign up for courses or when his exams are. When he tries to find out information if he cannot get the information he is looking for within 5 minutes he usually gives up. Trevor would like it if the new course management system was quick and easy to use. He also would not mind it if certain information was made more accessible during certain times of the year (easy to see link to exam schedule around exam season).
 
-
-\newpage
-
-
 %============================= Persona 2 ======================================%
-\section{Candice Taylor}
-\begin{minipage}{0.5\textwidth}
-\fbox{\includegraphics[width = 80mm , scale = 0.25]{Candice.jpg}}
+\newpage
+\hrule
+\vspace{2mm}
+\subsection{Persona 2 -- Secondary persona}
+\vspace{11mm}
+
+\subsection*{Candice Smith}
+\vspace{4mm}
+
+\begin{minipage}{80mm}
+\includegraphics[width=80mm]{Candice.jpg}
 \begin{center}
-``I don't know what electives I want to take "
+\emph{``I don't know what electives I want to take for university next year"}
 \end{center}
 \end{minipage} \hfill
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{\textwidth}
 \begin{itemize}
 \item Born: Oakville, ON
 \item Age: 18
-\item Grade 12 High school Student
+\item Grade 12 High School Student
 \end{itemize}
-\end{minipage}\\ \\ \\
+\end{minipage}\\\\\\
 
 
-Candice has been accepted to the chemistry program at McMaster. Candice currently lives at home with her parents and will be moving into residence in the fall. Candice's parents are paying for her tuition. Candice is paying for her residence and meal plan. Candice works part time at the Fortinos in her home town to save up money so she can go to the movies whenever new blockbuster movies come out.\\ \\
-Candice has done well in all of her classes in high school and is apart of several high school teams; such as the volleyball team, track and field as well as the Harry Potter fan club.\\  \\
+Candice has been accepted to the chemistry program at McMaster. Candice currently lives at home with her parents and will be moving into residence in the fall. Candice's parents are paying for her tuition. Candice is paying for her residence and meal plan. Candice works part time at the Fortinos in her home town to save up money so she can go to the movies whenever new blockbuster movies come out.\\
+
+Candice has done well in all of her classes in high school and is apart of several high school teams; such as the volleyball team, track and field as well as the Harry Potter fan club.\\
+
 Candice has several electives that she can take but cannot decide which ones she will take. She has heard that you can change classes during the first couple weeks of class and plans on doing that as she is not 100\% sure if she will like some of her electives or not. Candice has already made a list of classes she would like to take in her first year and is waiting for the course registration to open up. Candice would like the new course management system to allow her to be able to browse all the courses available to her and would like it if there were descriptions for each course that she could read before she registers for them.
 
-
-\newpage
-
 %============================= Persona 3 ======================================%
-\section{Andrew Lopez}
-\begin{minipage}{0.5\textwidth}
-\fbox{\includegraphics[width = 80mm, scale = 0.25]{Pablo.jpg}}
+\newpage
+\hrule
+\vspace{2mm}
+\subsection{Persona 3 -- Secondary persona}
+\vspace{11mm}
+
+\subsection*{Adrian Lopez}
+\vspace{4mm}
+
+\begin{minipage}{70mm}
+\includegraphics[width=70mm]{Adrian.png}
 \begin{center}
-``What is  ``French immersion"? Should I take it? "
+\emph{``I have a lot of new things to get used to in Canada"}
 \end{center}
 \end{minipage}\hfill
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}{\textwidth}
 \begin{itemize}
-\item Born: Chapala, Jal
+\item Born: Mexico City, Mexico
 \item Age: 20
-\item 2nd Year Geography Exchange Student
+\item 2nd Year Geography Student on Exchange to McMaster
 \end{itemize}
-\end{minipage}\\ \\ \\
+\end{minipage}\\\\\\
 
+Andrew is a geography student from Mexico on exchange at McMaster for the year. Andrew is living in an house 20 minutes away from campus with other students in the foreign exchange program.Andrew's tuition is being paid for by a grant received as being apart of the foreign exchange program. His parents are giving him some money for rent and food but Andrew has to pay for some of it himself. Andrew is a hard working individual during the week and can be found in the Thode library between classes. Andrew likes to get all of his assignments done during the week so he can spend his weekend going to clubs with his house mates and friends.\\
 
-Andrew is an geography student from Mexico on exchange at McMaster for the year. Andrew is living in an house 20 minutes away from campus with other students in the foreign exchange program.Andrew's tuition is being paid for by a grant received as being apart of the foreign exchange program. His parents are giving him some money for rent and food but Andrew has to pay for some of it himself. Andrew is a hard working individual during the week and can be found in the Thode library between classes. Andrew likes to get all of his assignments done during the week so he can spend his weekend going to clubs with his house mates and friends.\\ \\
-Andrew is apart of the improv club which he regularly goes to. Andrew has a light course load this year as he would like to experience Canada as much as he can before he goes back to Mexico next September.\\ \\
+Andrew is a part of the improv club which he regularly goes to. Andrew has a light course load this year as he would like to experience Canada as much as he can before he goes back to Mexico next September.\\
+
 Since English is not Andrew 's first language he sometimes has trouble reading and understanding websites with a lot text and can get confused on where to navigate for the information he is looking for. Andrew would like it if the new course management system was easy to navigate and intuitive enough that you don't have to read an instruction manual to know how to use it.
-
-\newpage
-
-
-%\end{multicols}
 
 \end{document}
