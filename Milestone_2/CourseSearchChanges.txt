@@ -1,0 +1,12 @@
+Changes made to Course Search criteria page from rev0 to rev1:
+-condensed the two different search criteria's into 1
+	-less confusion, more visibility
+	-new hierarchical search method offers better conceptual map
+-removed 'term' search criteria
+	-was decided to be unnecessary
+	-during registration process students are generally
+	 concerned with material of courses, schedule management is 
+	 handled later
+-removed 'enroll' and 'required courses' buttons
+	-extra and somewhat inconsistent as there are already 
+	 buttons for these in the top navbar
