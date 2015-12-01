@@ -1,0 +1,363 @@
+/***************************************
+STANDARDIZE http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+***************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*=============== End Standardize ==================*/
+
+
+/***********************************************
+    LESS Variables / Functions
+***********************************************/
+.default-font {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 200;
+    line-height: 1.7em;
+    color: @dark-text;
+}
+.vendor(@property, @value) {
+    -webkit-@{property}: @value;
+       -moz-@{property}: @value;
+        -ms-@{property}: @value;
+         -o-@{property}: @value;
+            @{property}: @value;
+}
+
+@default-margin: 15px;
+
+@maroon: #990033;
+@maroon-hover: #6f072a;
+
+@link-light: #efefef;
+@link-light-hover: #dedede;
+@link-dark: #4760cb;
+@link-dark-hover: #3a4ea0;
+
+@dark-text: #2E2E2E;
+@medium-text: #848484;
+@light-text: #eeeeee;
+
+/***********************************************
+    Text
+***********************************************/
+p, a, h1, h2, h3, h4, h5, h6, ul, td, .button {
+    .default-font;
+}
+h1 {
+    font-size: 2em;
+}
+strong {
+    font-weight: 800;
+}
+
+/***********************************************
+    Links
+***********************************************/
+a {
+    text-decoration: none;
+    color: @link-dark;
+    .vendor(transition, color 0.3s ease-out);
+}
+a:hover, a:focus {
+    color: @link-dark-hover;
+}
+
+/***********************************************
+    Layout
+***********************************************/
+body {
+    background-color: #fafafa;
+}
+.content {
+    position: relative;
+    margin: 0 auto;
+    max-width: 900px;
+    min-width: 900px;
+    margin-top: 100px;
+}
+.left-column {
+    float: left;
+    margin-left: @default-margin;
+}
+.right-column {
+    float: right;
+    margin-right: @default-margin;
+}
+
+/***********************************************
+     Button (ghost)
+***********************************************/
+.ghost-button {
+    padding: 4px 16px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: @maroon;
+    background: none;
+    border-radius: 3px;
+    border: 2px solid @maroon;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.ghost-button:hover {
+    background-color: #e3e3e3;
+    color: @maroon;
+    border-color: @maroon;
+}
+.disabled-button {
+    border-color: #c6c6c6;
+    color: #c6c6c6;
+}
+.disabled-button:hover {
+    cursor: default;
+    background: none;
+    color: #c6c6c6;
+    border-color: #c6c6c6;
+}
+.disabled-button:visited {
+    color: #c6c6c6;
+    border-color: #c6c6c6;
+}
+
+/***********************************************
+    Message box
+***********************************************/
+.message-box {
+    opacity: 0;
+    background-color: #fff;
+    border-radius: 3px;
+    max-width: 400px;
+    padding: 3px 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/***********************************************
+* Accounts picker 
+***********************************************/
+.select-account-container {
+    width: 400px;
+    margin: 100px auto 0 auto;
+}
+.select-account-button {
+    width: 400px;
+    margin-bottom: 50px;
+    height: 50px;
+    line-height: 40px;
+    padding: 3px 0 0 0;
+}
+.select-account-table {
+    max-height: 370px;
+    width: 400px;
+    z-index: 100;
+    position: absolute;
+    top: 227px;
+    background-color: white;
+    overflow: scroll;
+    border-radius: 3px;
+    visibility: hidden;
+    -webkit-box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.35);
+    -moz-box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.35);
+    box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.35);
+}
+.select-account-row {
+    height: 60px;
+    line-height: 40px;
+    border: 2px solid @medium-text;
+    border-radius: 3px;
+}
+.select-account-row:hover {
+    background-color: #e0e0e0;
+}
+.select-account-column-1 {
+    text-align: left;
+    padding: 0 5%;
+    vertical-align: middle;
+}
+.select-account-column-2 {
+    text-align: right;
+    padding: 0 5%;
+    vertical-align: middle;
+}
+.select-account-span {
+    margin: 0 5%;
+    padding: 0;
+}
+
+/***********************************************
+* Confirm popup 
+***********************************************/
+.confirm-popup {
+    visibility: hidden;
+    position: absolute;
+    top: 200px;
+    left: 325px;
+    width: 350px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.55);
+    -moz-box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.55);
+    box-shadow: 0px 12px 69px -2px rgba(74,74,74,0.55);
+}
+.popup-confirm-button {
+    background-color: @maroon;
+    color: #666;
+}
+.popup-confirm-button:hover {
+    background-color: #32c174;
+    color: #666;
+}
+.popup-button-container {
+    float: right;
+}
+
+/***********************************************
+    Header
+***********************************************/
+.header-logo-background {
+    width: 100%;
+    height: 120px;
+}
+.header-nav-background {
+    width: 100%;
+    height: 50px;
+    background-color: @maroon;
+}
+.nav-list {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    text-align: justify;
+
+    /* text is red */
+    a {
+        color: @link-light;
+        font-weight: 100;
+        font-size: 16px;
+    }
+    a:hover {
+        color: @link-light-hover;
+    }
+    
+    /* links on right of nav */
+    li {
+        display: inline-block;
+        margin: 0 5px;
+        padding: 13px 5px 0 5px;
+        height: 100%;
+        text-align: center;
+        .vendor(transition, background-color 0.3s ease-in-out);
+    }
+    li:hover {
+        background-color: @maroon-hover;
+    }
+    
+    /* highlight bottom of current page */
+    .current-page {
+        border-bottom: 4px solid @link-light;
+        .vendor(transition, border-bottom 0.3s ease-in-out);
+    }
+    .current-page:hover {
+        border-bottom: 4px solid @link-light-hover;
+    }
+}
+.nav-list:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+.nav-title-logo {
+    height: 80px;
+    display: inline-block;
+    margin-top: 24px;
+    margin-left: 34px;
+}
+.header-logo-title-text {
+    position: absolute;
+    padding-top: 15px;
+    font-size: 42px;
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    min-width: 900px;
+}
+.header-account-dropdown {
+    float: right;
+    margin-right: 34px;
+    margin-top: 34px;
+    padding-left: 20px;
+    padding-top: 8px;
+    width: 300px;
+    height: 40px;
+    background-color: #dddddd;
+}
+
+.header-account-dropdown-text {
+    color: @medium-text
+}
+
+.header-account-dropdown-arrow {
+    float: right;
+    color: @medium-text;
+    margin-right: 20px;
+    margin-top: -22px;
+}
