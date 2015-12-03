@@ -1,22 +1,377 @@
-{"accounts":[
-    {"accountNumber":"12345", "accountPin":"55555", "bankAccounts":
-        [{"name":"Chequing","balance":"518.00"},
-         {"name":"Savings", "balance":"3568.00"}]},
-    {"accountNumber":"11111", "accountPin":"12345",  "bankAccounts":
-        [{"name":"Chequing","balance":"1056.00"},
-         {"name":"Savings", "balance":"1150.00"},
-         {"name":"Travel",  "balance":"350.00"}]},
-    {"accountNumber":"98765", "accountPin":"10202",  "bankAccounts":
-        [{"name":"Chequing", "balance":"56052.00"},
-         {"name":"Savings",  "balance":"285.00"},
-         {"name":"Emergency","balance":"500.00"}]},
-    {"accountNumber":"55555", "accountPin":"11223",  "bankAccounts":
-        [{"name":"Chequing","balance":"2322.00"},
-         {"name":"Savings", "balance":"6768.00"},
-         {"name":"Travel","balance":"1800.00"},
-         {"name":"Emergency", "balance":"200.00"}]},
-    {"accountNumber":"10101", "accountPin":"00000",  "bankAccounts":
-        [{"name":"Chequing","balance":"4330.00"},
-         {"name":"Savings", "balance":"89570.00"},
-         {"name":"Tuition", "balance":"3000.00"}]}
-]}
+{"courses":[
+    {"Name":"Introduction to Anthropology: Sex, Food and Death", "Code":"1AA3",
+	 "Subject":"ANTHROP", "Professor":"Staff",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Wed_19.0_3"}]},
+         {"Core":"C02","Times":[{"Time1":"Mon_11.5_1","Time2":"Thu_12.5_1","Time3":"Fri_14.5_1"}]}],
+	 "Tutorials":
+		[{"Tut":"T01","Times":[{"Time1":"Tue_8.5_1"}]}],
+	 "Labs":
+		[{"Lab":"L01", "Times":[{"Time1":"Wed_13.5_3"}]},
+		 {"Lab":"L02", "Times":[{"Time1":"Fri_13.5_3"}]}]
+	},
+	
+	{"Name":"Introduction to Anthropology: Sex, Food and Death", "Code":"1AA3",
+	 "Subject":"ANTHROP", "Professor":"Staff",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Wed_19.0_3"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Introduction to Anthropology: Race, Religion and Conflict", "Code":"1AB3",
+	 "Subject":"ANTHROP", "Professor":"Karen Mcgarry",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Thu_19.0_3"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Material Investigations and Concepts", "Code":"1MI3",
+	 "Subject":"ART", "Professor":"Briana Palmer",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Mon_8.5_4"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Studio Investigations", "Code":"1SI3",
+	 "Subject":"ART", "Professor":"Christopher Myhr",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Thu_13.5_4"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Argumentation", "Code":"1BB3",
+	 "Subject":"ARTSSCI", "Professor":"Matthew Grellette",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Tue_15.5_1", "Time2":"Wed_15.5_1", "Time3":"Fri_15.5_1"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Cellular and Molecular Biology", "Code":"1A03",
+	 "Subject":"BIOLOGY", "Professor":"Alastair Tracy",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Thu_08.5_1", "Time2":"Fri_08.5_1"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[{"Lab":"L01","Times":[{"Time1":"Tue_09.5_2"}]},
+		 {"Lab":"L03","Times":[{"Time1":"Tue_09.5_2"}]},
+		 {"Lab":"L09","Times":[{"Time1":"Wed_09.5_2"}]},
+		 {"Lab":"L11","Times":[{"Time1":"Wed_09.5_2"}]},
+		 {"Lab":"L12","Times":[{"Time1":"Wed_09.5_2"}]},
+		 {"Lab":"L13","Times":[{"Time1":"Wed_14.5_2"}]},
+		 {"Lab":"L15","Times":[{"Time1":"Wed_14.5_2"}]},
+		 {"Lab":"L16","Times":[{"Time1":"Wed_14.5_2"}]},
+		 {"Lab":"L17","Times":[{"Time1":"Thu_09.5_2"}]},
+		 {"Lab":"L18","Times":[{"Time1":"Thu_09.5_2"}]},
+		 {"Lab":"L19","Times":[{"Time1":"Thu_09.5_2"}]},
+		 {"Lab":"L20","Times":[{"Time1":"Thu_09.5_2"}]},
+		 {"Lab":"L21","Times":[{"Time1":"Thu_14.5_2"}]},
+		 {"Lab":"L23","Times":[{"Time1":"Thu_14.5_2"}]},
+		 {"Lab":"L24","Times":[{"Time1":"Thu_14.5_2"}]},
+		 {"Lab":"L25","Times":[{"Time1":"Fri_09.5_2"}]},
+		 {"Lab":"L26","Times":[{"Time1":"Fri_09.5_2"}]}
+		]
+	},
+
+		{"Name":"Biodiversity, Evolution and Humanity", "Code":"1M03",
+	 "Subject":"BIOLOGY", "Professor":"Alastair Tracey",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Mon_13.5_1", "Time2":"Wed_13.5_1", "Time3":"Thu_13.5_1"}]},
+		 {"Core":"C02","Times":[{"Time1":"Mon_16.5_2", "Time2":"Wed_16.5_2", "Time3":"Thu_16.5_2"}]}
+		],
+	 "Tutorials":
+		[{"Tut":"T02","Times":[{"Time1":"Tue_09.5_2"}]},
+		 {"Tut":"T03","Times":[{"Time1":"Tue_11.5_2"}]},
+		 {"Tut":"T05","Times":[{"Time1":"Tue_14.5_2"}]},
+		 {"Tut":"T06","Times":[{"Time1":"Tue_14.5_2"}]},
+		 {"Tut":"T09","Times":[{"Time1":"Wed_14.5_2"}]},
+		 {"Tut":"T11","Times":[{"Time1":"Thu_09.5_2"}]},
+		 {"Tut":"T12","Times":[{"Time1":"Thu_09.5_2"}]},
+		 {"Tut":"T15","Times":[{"Time1":"Thu_14.5_2"}]},
+		 {"Tut":"T16","Times":[{"Time1":"Thu_14.5_2"}]}
+		],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"General Chemistry", "Code":"1R03",
+	 "Subject":"CHEM", "Professor":"Gary Schrobilgen",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Thu_19.0_3"}]}],
+	 "Tutorials":
+		[{"Tut":"T01","Times":[{"Time1":"Thu_18.0_1"}]}],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Introductory Chemistry II", "Code":"1AA3",
+	 "Subject":"CHEM", "Professor":"Harald Stover",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Mon_08.5_1", "Time2":"Wed_08.5_1", "Time3":"Fri_10.5_1"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[{"Lab":"L01","Times":[{"Time1":"Mon_08.5_3"}]},
+		 {"Lab":"L03","Times":[{"Time1":"Tue_08.5_3"}]},
+		 {"Lab":"L04","Times":[{"Time1":"Tue_08.5_3"}]},
+		 {"Lab":"L05","Times":[{"Time1":"Wed_08.5_3"}]},
+		 {"Lab":"L06","Times":[{"Time1":"Wed_08.5_3"}]},
+		 {"Lab":"L07","Times":[{"Time1":"Thu_08.5_3"}]},
+		 {"Lab":"L08","Times":[{"Time1":"Thu_08.5_3"}]},
+		 {"Lab":"L09","Times":[{"Time1":"Fri_08.5_3"}]},
+		 {"Lab":"L10","Times":[{"Time1":"Fri_08.5_3"}]},
+		 {"Lab":"L17","Times":[{"Time1":"Thu_14.5_3"}]},
+		 {"Lab":"L18","Times":[{"Time1":"Thu_14.5_3"}]},
+		 {"Lab":"L20","Times":[{"Time1":"Fri_14.5_3"}]},
+		 {"Lab":"L22","Times":[{"Time1":"Mon_17.5_3"}]}
+		]
+	},
+	
+		{"Name":"History of Greece and Rome", "Code":"1M03",
+	 "Subject":"CLASSICS", "Professor":"Sean Corner",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Wed_12.5_1", "Time2":"Fri_12.5_1"}]}],
+	 "Tutorials":
+		[{"Tut":"T05","Times":[{"Time1":"Mon_13.5_1"}]},
+		 {"Tut":"T09","Times":[{"Time1":"Mon_15.5_1"}]},
+		 {"Tut":"T12","Times":[{"Time1":"Wed_08.5_1"}]},
+		 {"Tut":"T15","Times":[{"Time1":"Tue_08.5_1"}]},
+		 {"Tut":"T19","Times":[{"Time1":"Mon_09.5_1"}]}
+		],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Organizational Behaviour", "Code":"1BA3",
+	 "Subject":"COMMERCE", "Professor":"Teal Mcateer",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Mon_09.5_1", "Time1":"Thu_09.5_1", "Time1":"Tue_10.5_1"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Business Environment and Organization", "Code":"1E03",
+	 "Subject":"COMMERCE", "Professor":"1E03",
+	 "Lectures":
+        [{"Core":"C02","Times":[{"Time1":"Tue_15.5_1", "Time2":"Wed_15.5_1"}]},
+		 {"Core":"C03","Times":[{"Time1":"Tue_14.5_1", "Time2":"Thu_14.5_1"}]}
+		 ],
+	 "Tutorials":
+		[{"Tut":"T06","Times":[{"Time1":"Fri_08.5_1"}]},
+		 {"Tut":"T07","Times":[{"Time1":"Fri_12.5_1"}]},
+		 {"Tut":"T08","Times":[{"Time1":"Fri_09.5_1"}]},
+		 {"Tut":"T12","Times":[{"Time1":"Wed_08.5_1"}]},
+		 {"Tut":"T13","Times":[{"Time1":"Thu_08.5_1"}]},
+		 {"Tut":"T16","Times":[{"Time1":"Mon_10.5_1"}]},
+		 {"Tut":"T17","Times":[{"Time1":"Mon_09.5_1"}]},
+		],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Elementary Computing and Computer Use", "Code":"1TA3",
+	 "Subject":"COMPSCI", "Professor":"Staff",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Mon_12.5_1", "Time2":"Thu_12.5_1", "Time3":"Tue_13.5_1"}]}],
+	 "Tutorials":
+		[{"Tut":"T01","Times":[{"Time1":"Mon_09.5_1"}]},
+		 {"Tut":"T02","Times":[{"Time1":"Mon_11.5_1"}]}
+		],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Computer Science Practice and Experience: Basic Concepts", "Code":"1XA3",
+	 "Subject":"COMPSCI", "Professor":"George Karakostas",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Fri_11.5_1"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[{"Lab":"L01","Times":[{"Time1":"Fri_14.5_2", "Time2":"Tue_12.5_2"}]}]
+	},
+	
+		{"Name":"Studying Culture: A Critical Introduction", "Code":"1CS3",
+	 "Subject":"CSCT", "Professor":"Joanne Leow",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Tue_19.0_2"}]}],
+	 "Tutorials":
+		[{"Tut":"T01","Times":[{"Time1":"Tue_18.0_1"}]},
+		 {"Tut":"T02","Times":[{"Time1":"Tue_18.0_1"}]},
+		 {"Tut":"T03","Times":[{"Time1":"Tue_18.0_1"}]},
+		 {"Tut":"T04","Times":[{"Time1":"Tue_18.0_1"}]},
+		 {"Tut":"T05","Times":[{"Time1":"Tue_18.0_1"}]},
+		 {"Tut":"T06","Times":[{"Time1":"Tue_18.0_1"}]},
+		 {"Tut":"T07","Times":[{"Time1":"Tue_21.0_1"}]},
+		 {"Tut":"T08","Times":[{"Time1":"Tue_21.0_1"}]},
+		 {"Tut":"T09","Times":[{"Time1":"Tue_21.0_1"}]},
+		 {"Tut":"T10","Times":[{"Time1":"Tue_21.0_1"}]},
+		 {"Tut":"T11","Times":[{"Time1":"Tue_16.5_1"}]},
+		 {"Tut":"T12","Times":[{"Time1":"Tue_16.5_1"}]}
+		],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Earth and the Enviroment", "Code":"1G03",
+	 "Subject":"EARTHSC", "Professor":"Lisa Leoni",
+	 "Lectures":
+        [{"Core":"C02","Times":[{"Time1":"Tue_12.5_1", "Time2":"Wed_12.5_1", "Time3":"Fri_12.5_1"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[{"Lab":"T19","Times":[{"Time1":"Tue_14.5_2"}]},
+		 {"Lab":"T20","Times":[{"Time1":"Tue_16.5_2"}]},
+		 {"Lab":"T21","Times":[{"Time1":"Wed_08.5_2"}]},
+		 {"Lab":"T22","Times":[{"Time1":"Wed_10.5_2"}]},
+		 {"Lab":"T24","Times":[{"Time1":"Wed_16.5_2"}]},
+		 {"Lab":"T25","Times":[{"Time1":"Thu_08.5_2"}]},
+		 {"Lab":"T28","Times":[{"Time1":"Fri_14.5_2"}]}
+		 ]
+	},
+	
+		{"Name":"Introductory Microeconomics", "Code":"1B03",
+	 "Subject":"ECON", "Professor":"Hannah Holmes",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Mon_08.5_1", "Time2":"Wed_08.5_1", "Time3":"Fri_10.5_1"}]}],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Introductory Macroeconomics", "Code":"1BB3",
+	 "Subject":"ECON", "Professor":"Bridget O'shaughnessy",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Tue_09.5_1"}]},
+		 {"Core":"C02","Times":[{"Time1":"Tue_08.5_1"}]},
+		 {"Core":"C03","Times":[{"Time1":"Thu_19.0_2"}]}
+		],
+	 "Tutorials":
+		[{"Tut":"T03","Times":[{"Time1":"Wed_09.5_1"}]},
+		 {"Tut":"T04","Times":[{"Time1":"Tue_16.5_1"}]},
+		 {"Tut":"T05","Times":[{"Time1":"Mon_15.5_1"}]},
+		 {"Tut":"T06","Times":[{"Time1":"Thu_13.5_1"}]},
+		 {"Tut":"T09","Times":[{"Time1":"Fri_08.5_1"}]},
+		 {"Tut":"T10","Times":[{"Time1":"Fri_11.5_1"}]},
+		 {"Tut":"T11","Times":[{"Time1":"Mon_14.5_1"}]},
+		 {"Tut":"T12","Times":[{"Time1":"Fri_16.5_1"}]},
+		 {"Tut":"T13","Times":[{"Time1":"Mon_08.5_1"}]},
+		 {"Tut":"T14","Times":[{"Time1":"Mon_16.5_1"}]},
+		 {"Tut":"T15","Times":[{"Time1":"Thu_10.5_1"}]},
+		 {"Tut":"T16","Times":[{"Time1":"Wed_14.5_1"}]},
+		 {"Tut":"T19","Times":[{"Time1":"Fri_12.5_1"}]},
+		 {"Tut":"T20","Times":[{"Time1":"Fri_09.5_1"}]},
+		 {"Tut":"T23","Times":[{"Time1":"Tue_14.5_1"}]},
+		 {"Tut":"T24","Times":[{"Time1":"Mon_11.5_1"}]},
+		 {"Tut":"T25","Times":[{"Time1":"Fri_13.5_1"}]},
+		 {"Tut":"T26","Times":[{"Time1":"Wed_15.5_1"}]}
+		],
+	 "Labs":
+		[]
+	},
+	
+		{"Name":"Engineering Design and Graphics", "Code":"1C03",
+	 "Subject":"ENGINEER", "Professor":"Colin McDonald",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Mon_08.5_1"}]}],
+	 "Tutorials":
+		[{"Tut":"T01","Times":[{"Time1":"Mon_10.5_2"}]},
+		 {"Tut":"T03","Times":[{"Time1":"Tue_10.5_2"}]},
+		 {"Tut":"T04","Times":[{"Time1":"Tue_12.5_2"}]},
+		 {"Tut":"T05","Times":[{"Time1":"Wed_10.5_2"}]},
+		 {"Tut":"T06","Times":[{"Time1":"Thu_12.5_2"}]},
+		 {"Tut":"T07","Times":[{"Time1":"Thu_10.5_2"}]},
+		 {"Tut":"T08","Times":[{"Time1":"Thu_12.5_2"}]},
+		 {"Tut":"T09","Times":[{"Time1":"Fri_10.5_2"}]},
+		 {"Tut":"T10","Times":[{"Time1":"Fri_12.5_2"}]}
+		],
+	 "Labs":
+		[{"Lab":"L01","Times":[{"Time1":"Mon_08.5_3"}]},
+		 {"Lab":"L03","Times":[{"Time1":"Tue_08.5_3"}]},
+		 {"Lab":"L05","Times":[{"Time1":"Wed_08.5_3"}]},
+		 {"Lab":"L07","Times":[{"Time1":"Thu_08.5_3"}]},
+		 {"Lab":"L08","Times":[{"Time1":"Thu_14.5_3"}]},
+		 {"Lab":"L09","Times":[{"Time1":"Fri_08.5_3"}]},
+		 {"Lab":"L10","Times":[{"Time1":"Fri_14.5_3"}]}
+		]
+	},
+	
+	
+		{"Name":"Engineering Computation", "Code":"1D04",
+	 "Subject":"ENGINEER", "Professor":"William Michael Farmer",
+	 "Lectures":
+        [{"Core":"C01","Times":[{"Time1":"Wed_08.5_1"}]}],
+	 "Tutorials":
+		[{"Tut":"T04","Times":[{"Time1":"Tue_08.5_2"}]},
+		 {"Tut":"T05","Times":[{"Time1":"Wed_08.5_2"}]},
+		 {"Tut":"T06","Times":[{"Time1":"Wed_08.5_2"}]},
+		 {"Tut":"T07","Times":[{"Time1":"Thu_08.5_2"}]},
+		 {"Tut":"T08","Times":[{"Time1":"Thu_08.5_2"}]},
+		 {"Tut":"T09","Times":[{"Time1":"Fri_08.5_2"}]},
+		 {"Tut":"T10","Times":[{"Time1":"Fri_08.5_2"}]}
+		],
+	 "Labs":
+		[{"Lab":"L01","Times":[{"Time1":"Mon_11.5_3"}]},
+		 {"Lab":"L04","Times":[{"Time1":"Tue_11.5_3"}]},
+		 {"Lab":"L05","Times":[{"Time1":"Wed_11.5_3"}]},
+		 {"Lab":"L06","Times":[{"Time1":"Wed_11.5_3"}]},
+		 {"Lab":"L08","Times":[{"Time1":"Thu_11.5_3"}]},
+		 {"Lab":"L09","Times":[{"Time1":"Fri_11.5_3"}]},
+		 {"Lab":"L10","Times":[{"Time1":"Fri_11.5_3"}]}
+		]
+	},
+	
+		{"Name":"Introduction to the Engineering Co-op Program", "Code":"1EE0",
+	 "Subject":"ENGINEER", "Professor":"Jeffrey Ollinger",
+	 "Lectures":
+        [{"Core":"C07","Times":[{"Time1":"Fri_09.5_2"}]},
+		 {"Core":"C08","Times":[{"Time1":"Mon_09.5_2"}]},
+		 {"Core":"C09","Times":[{"Time1":"Wed_12.5_2"}]},
+		 {"Core":"C10","Times":[{"Time1":"Thu_09.5_2"}]},
+		 {"Core":"C11","Times":[{"Time1":"Fri_12.5_2"}]},
+		 {"Core":"C12","Times":[{"Time1":"Fri_014.5_2"}]}
+		],
+	 "Tutorials":
+		[],
+	 "Labs":
+		[]
+	}
+	
+	]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
