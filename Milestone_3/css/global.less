@@ -97,6 +97,10 @@ h1 {
 strong {
     font-weight: 800;
 }
+.content-heading {
+    font-size: 32px;
+    font-weight: 600;
+}
 
 /***********************************************
     Links
@@ -108,6 +112,7 @@ a {
 }
 a:hover, a:focus {
     color: @link-dark-hover;
+    cursor: pointer;
 }
 
 /***********************************************
@@ -115,10 +120,12 @@ a:hover, a:focus {
 ***********************************************/
 body {
     background-color: #fafafa;
+    min-width: 900px;
 }
 .content {
     position: relative;
     margin: 0 auto;
+    padding: 50px;
     max-width: 900px;
     min-width: 900px;
     margin-top: 100px;
@@ -154,7 +161,15 @@ body {
 .ghost-button:hover {
     background-color: #e3e3e3;
     color: @maroon;
-    border-color: @maroon;
+}
+.highlighted-button {
+    color: #2d6955;
+    border: 2px solid #2d6955;
+    background-color: #5bd196;
+}
+.highlighted-button:hover {
+    background-color: #58b587;
+    color: #2d6955;
 }
 .disabled-button {
     border-color: #c6c6c6;
@@ -336,11 +351,7 @@ body {
     width: 100%;
     text-align: center;
 }
-
-body {
-    min-width: 900px;
-}
-.header-account-dropdown {
+.header-account-dropdown-button {
     float: right;
     margin-right: 34px;
     margin-top: 34px;
@@ -350,17 +361,35 @@ body {
     height: 40px;
     background-color: #dddddd;
 }
-
-.header-account-dropdown-text {
+.header-account-dropdown-button-text {
     color: @medium-text
 }
-
-.header-account-dropdown-arrow {
+.header-account-dropdown-button-arrow {
     float: right;
     color: @medium-text;
     margin-right: 20px;
     margin-top: -22px;
 }
+.header-account-dropdown {
+    position: relative;
+    visibility: hidden;
+    top: 5px;
+    left: -20px;
+    width: 300px;
+}
+.header-account-dropdown-row {
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    background-color: #f2f2f2;
+}
+.header-account-dropdown-row:hover {
+    background-color: #ebebeb;
+}
+.header-account-dropdown-text {
+    padding: 6px 20px;
+}
+
 /***********************************************
     Search Criteria
 ***********************************************/
@@ -372,35 +401,117 @@ body {
 	padding-left: 40px;
 	background-color: lightgrey;
 }
-
 .left {
 	float: left;
 	width: 33%;
 }
-
 .center {
 	display: inline-block;
 	width: 33%;
 }
-
 .right {
 	float: right;
 	width: 33%;
 }
 
-select {
-	-webkit-appearance: button;
-	-moz-appearance: button;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-webkit-padding-end: 20px;
-	-moz-padding-end: 20px;
-	-webkit-padding-start: 2px;
-	-moz-padding-start: 2px;
+//select {
+//	-webkit-appearance: button;
+//	-moz-appearance: button;
+//	-webkit-user-select: none;
+//	-moz-user-select: none;
+//	-webkit-padding-end: 20px;
+//	-moz-padding-end: 20px;
+//	-webkit-padding-start: 2px;
+//	-moz-padding-start: 2px;
 	//background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
     //background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Fx (3.6 to 15) */
     //background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
     //background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
     //background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+//}
+
+/***********************************************
+* Courses table 
+***********************************************/
+
+@light-border: 1px solid #cecece;
+@light-medium-border: 2px solid #d4d4d4;
+@medium-border: 2px solid #bababa;
+@thick-border: 2px solid #999;
+
+/* table / rows */
+.course-table {
+    width: 100%;
+    border: @thick-border;
+}
+.course-table-header-row {
+    background-color: #dedede;
+}
+.course-table-row-bottom {
+    border-bottom: @thick-border;
+}
+.course-table-row {
+    height: 30px;
 }
 
+/* header row */
+.course-table-heading {
+    font-weight: 600;
+    border: @thick-border;
+    padding: 5px;
+}
+.course-table-day-heading {
+    font-size: 12px;
+    background-color: #ebebeb;
+    border: @thick-border;
+    text-align: center;
+    width: 70px;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Content rows */
+.course-table-code {
+    font-weight: 600;
+    text-decoration: underline;
+    padding-left: 5px;
+}
+.course-table-title {
+    padding-left: 5px;
+}
+.course-table-professor {
+    font-style: italic;
+    padding-left: 5px;
+}
+.course-table-dropdown {
+    margin-left: 5px;
+    margin-right: -2px;
+    width: 80px;
+}
+.course-table-dropdown-row {
+    border-top: @light-border;
+    border-bottom: @light-border;
+    border-left: @medium-border;
+    border-right: @light-medium-border;
+}
+.course-table-day-text {
+    font-size: 12px;
+    border: @light-border;
+    text-align: center;
+}
+.course-table-enrolled {
+    text-align: center;
+    border-left: @medium-border;
+    border-right: @medium-border;
+    border-bottom: @thick-border;
+    vertical-align: middle;
+}
+.course-table-action {
+    border-bottom: @thick-border;
+}
+.course-table-action-button {
+    display: block;
+    padding: 2px 6px;
+    margin: 5px;
+    vertical-align: middle;
+}

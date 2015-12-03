@@ -31,3 +31,11 @@ function setCurrentPage() {
         break;
     }
 }
+
+function headerAccountDropdownClicked() {
+    if ($(".header-account-dropdown")[0].style.visibility == "visible") {
+        $(".header-account-dropdown")[0].style.visibility = "hidden"
+    } else {
+        $(".header-account-dropdown")[0].style.visibility = "visible"
+    }
+}
