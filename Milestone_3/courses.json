@@ -1,43 +1,49 @@
 {"courses":[
-	{"Name":"Introduction to Anthropology: Sex, Food and Death", "Code":"1AA3",
-	 "Subject":"ANTHROP", "Professor":"Staff",
+	{"Name":"Introduction to Anthropology: Sex, Food and Death",
+     "Code":"1AA3",
+	 "Subject":"ANTHROP", 
+     "Professor":"TBD",
 	 "Enrolled":"38/100",
 	 "Lectures":
-        [{"Core":"C01","Times":[{"Time1":"Wed_19.0_3"}]}],
-	 "Tutorials":
-		[],
-	 "Labs":
-		[],
+        [{"Core":"C01",
+          "Times":["Wed_19.0_3"]}
+        ],
+	 "Tutorials":[],
+	 "Labs":[],
 	 "Exam":"12_13.0_3"
 	},
 	
-		{"Name":"Introduction to Anthropology: Race, Religion and Conflict", "Code":"1AB3",
-	 "Subject":"ANTHROP", "Professor":"Karen Mcgarry",
+    {"Name":"Introduction to Anthropology: Race, Religion and Conflict",
+     "Code":"1AB3",
+	 "Subject":"ANTHROP",
+     "Professor":"Karen Mcgarry",
 	 "Enrolled":"38/100",
 	 "Lectures":
-        [{"Core":"C01","Times":[{"Time1":"Thu_19.0_3"}]}],
-	 "Tutorials":
-		[],
-	 "Labs":
-		[],
+        [{"Core":"C01",
+          "Times":["Thu_19.0_3"]}
+        ],
+	 "Tutorials":[],
+	 "Labs":[],
 	 "Exam":"13_13.0_3"
 	},
 	
-		{"Name":"Material Investigations and Concepts", "Code":"1MI3",
-	 "Subject":"ART", "Professor":"Briana Palmer",
+    {"Name":"Material Investigations and Concepts",
+     "Code":"1MI3",
+	 "Subject":"ART", 
+     "Professor":"Briana Palmer",
 	 "Enrolled":"16/100",
 	 "Lectures":
-        [{"Core":"C01","Times":[{"Time1":"Mon_8.5_4"}]}],
-	 "Tutorials":
-		[],
-	 "Labs":
-		[],
+        [{"Core":"C01",
+          "Times":["Mon_8.5_4"]}
+        ],
+	 "Tutorials":[],
+	 "Labs":[],
 	 "Exam":"14_13.0_3"
 	},
 	
 		{"Name":"Studio Investigations", "Code":"2SI3",
 	 "Subject":"ART", "Professor":"Christopher Myhr",
-	 "Enrolled":"13/050",
+	 "Enrolled":"13/50",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Thu_13.5_4"}]}],
 	 "Tutorials":
@@ -199,10 +205,10 @@
 	},
 	
 		{"Name":"Elementary Computing and Computer Use", "Code":"1TA3",
-	 "Subject":"COMPSCI", "Professor":"Staff",
+	 "Subject":"COMPSCI", "Professor":"TBD",
 	 "Enrolled":"24/100",
 	 "Lectures":
-        [{"Core":"C01","Times":[{"Time1":"Mon_12.5_1", "Time2":"Thu_12.5_1", "Time3":"Tue_13.5_1"}]}],
+        [{"Core":"C01","Times":["Mon_12.5_1","Thu_12.5_1","Tue_13.5_1"}]}],
 	 "Tutorials":
 		[{"Tut":"T01","Times":[{"Time1":"Mon_09.5_1"}]},
 		 {"Tut":"T02","Times":[{"Time1":"Mon_11.5_1"}]}
@@ -386,21 +392,3 @@
 	}
 ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
