@@ -95,6 +95,7 @@ p, a, h1, h2, h3, h4, h5, h6, ul, td {
 h1 {
     font-size: 2em;
 }
+
 strong {
     font-weight: 800;
 }
@@ -140,6 +141,24 @@ body {
     float: right;
     margin-right: @default-margin;
 }
+.imgcontainer{
+    position:relative;
+    width:50%;
+    
+    top:5px
+}
+.overlaytext{
+    position:absolute;
+    top:45%; 
+    left:30%;
+    width:25%;
+    padding:4px;
+    text-align: left;
+}
+
+
+
+
 
 /***********************************************
      Button (ghost)
@@ -453,9 +472,48 @@ body {
 //}
 
 /***********************************************
+* Exam Schedule table 
+***********************************************/
+.exam-table-row {
+    height: 90px;
+    width: 90px;
+}
+
+.exam-table-text{
+    font-size: 14px;
+    border: @light-border;
+    padding: 5px;
+    text-align: right;
+    vertical-align: top;
+}
+
+.weekend
+{
+    background-color: #e6e6e6;
+}
+
+
+/***********************************************
 * Weekly Schedule table 
 ***********************************************/
 
+
+.weekly-table-heading {
+    font-weight: 600;
+    border: @thick-border;
+    width: 70px
+    padding: 5px;
+}
+
+.weekly-table-day-heading {
+    font-size: 12px;
+    background-color: #ebebeb;
+    border: @thick-border;
+    text-align: center;
+    width: 70px;
+    color: #666;
+    font-weight: 600;
+}
 
 .weekly-table-row {
     height: 30px;
