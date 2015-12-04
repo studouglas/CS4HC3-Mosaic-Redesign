@@ -220,6 +220,29 @@ function addCourseRowToPage(course, courseTable) {
     courseTable.innerHTML += courseRowHtml;
 }
 
+function getWeeklyTime(){
+    for(var i = 0; i < enrolledCourses.length; i++){    // for all course id's enrolled
+       for(var j = 0; j < allCourses.length; j++){      // itterate through the allCourses list
+           if(enrolledCourses[i] == allCourses[j].id){  // find the course information
+               // get Lecture times
+               // get Tutorial times
+               // get Lab times
+           }
+       } 
+    }
+}
+
+function getExamDates(){
+    for (var i = 0; i < enrolledCourses.length; i++){   // for all course id's enrolled
+        for(var j = 0; j < allCourses.length; j++){     // iterate through the allCourses list
+            if(enrolledCourses[i] == allCourses[j].id){ // find the course information
+                var examTime = allCourses[j].exam       // get the exam time
+                // add the course to the exam time table
+                }
+        }
+    }
+}
+
 function loadCoursesFromJson() {
     var coursesJson = [];
     $.ajax({
