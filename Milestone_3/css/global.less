@@ -128,7 +128,7 @@ body {
     padding: 50px;
     max-width: 900px;
     min-width: 900px;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 .left-column {
     float: left;
@@ -170,6 +170,15 @@ body {
 .highlighted-button:hover {
     background-color: #58b587;
     color: #2d6955;
+}
+.highlighted-red-button {
+    background-color: #ef8383;
+    border: 2px solid #642929;
+    color: #642929;
+}
+.highlighted-red-button:hover {
+    background-color: #c16767;
+    color: #642929;
 }
 .disabled-button {
     border-color: #c6c6c6;
@@ -472,9 +481,12 @@ body {
 
 /* Content rows */
 .course-table-code {
-    font-weight: 600;
     text-decoration: underline;
     padding-left: 5px;
+    a {
+        color: @dark-text;
+        font-weight: 600;
+    }
 }
 .course-table-title {
     padding-left: 5px;
@@ -511,7 +523,41 @@ body {
 }
 .course-table-action-button {
     display: block;
-    padding: 2px 6px;
+    padding: 3px 6px 1px 6px;
     margin: 5px;
     vertical-align: middle;
+}
+
+.breadcrumb-home {
+    background-image: url("images/home_icon.png");
+    width: 24px;
+    height: 24px;
+}
+.breadcrumb {
+    list-style: none;
+    display: inline-block;
+}
+.breadcrumb li {
+    float: left;
+}
+.breadcrumb li a {
+    background-color: #e6e6e6;
+    padding: 10px 0 10px 65px;
+    position: relative;
+    display: block;
+    float: left;
+}
+.breadcrumb li a:after {
+    content: " "; 
+	display: block; 
+	width: 0; 
+	height: 0;
+	border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+	border-bottom: 50px solid transparent;
+	border-left: 30px solid hsla(34,85%,35%,1);
+	position: absolute;
+	top: 50%;
+	margin-top: -50px; 
+	left: 100%;
+	z-index: 2; 
 }
