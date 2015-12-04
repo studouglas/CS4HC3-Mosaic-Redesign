@@ -1,19 +1,7 @@
 {"courses":[
-    {"Name":"Introduction to Anthropology: Sex, Food and Death", "Code":"1AA3",
-	 "Subject":"ANTHROP", "Professor":"Staff",
-	 "Lectures":
-        [{"Core":"C01","Times":[{"Time1":"Wed_19.0_3"}]},
-         {"Core":"C02","Times":[{"Time1":"Mon_11.5_1","Time2":"Thu_12.5_1","Time3":"Fri_14.5_1"}]}],
-	 "Tutorials":
-		[{"Tut":"T01","Times":[{"Time1":"Tue_8.5_1"}]}],
-	 "Labs":
-		[{"Lab":"L01", "Times":[{"Time1":"Wed_13.5_3"}]},
-		 {"Lab":"L02", "Times":[{"Time1":"Fri_13.5_3"}]}],
-	 "Exam":"11_13.0_3"
-	},
-	
 	{"Name":"Introduction to Anthropology: Sex, Food and Death", "Code":"1AA3",
 	 "Subject":"ANTHROP", "Professor":"Staff",
+	 "Enrolled":"38/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Wed_19.0_3"}]}],
 	 "Tutorials":
@@ -25,6 +13,7 @@
 	
 		{"Name":"Introduction to Anthropology: Race, Religion and Conflict", "Code":"1AB3",
 	 "Subject":"ANTHROP", "Professor":"Karen Mcgarry",
+	 "Enrolled":"38/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Thu_19.0_3"}]}],
 	 "Tutorials":
@@ -36,6 +25,7 @@
 	
 		{"Name":"Material Investigations and Concepts", "Code":"1MI3",
 	 "Subject":"ART", "Professor":"Briana Palmer",
+	 "Enrolled":"16/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_8.5_4"}]}],
 	 "Tutorials":
@@ -47,6 +37,7 @@
 	
 		{"Name":"Studio Investigations", "Code":"2SI3",
 	 "Subject":"ART", "Professor":"Christopher Myhr",
+	 "Enrolled":"13/050",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Thu_13.5_4"}]}],
 	 "Tutorials":
@@ -58,6 +49,7 @@
 	
 		{"Name":"Argumentation", "Code":"1BB3",
 	 "Subject":"ARTSSCI", "Professor":"Matthew Grellette",
+	 "Enrolled":"30/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Tue_15.5_1", "Time2":"Wed_15.5_1", "Time3":"Fri_15.5_1"}]}],
 	 "Tutorials":
@@ -69,6 +61,7 @@
 	
 		{"Name":"Cellular and Molecular Biology", "Code":"1A03",
 	 "Subject":"BIOLOGY", "Professor":"Alastair Tracy",
+	 "Enrolled":"16/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Thu_08.5_1", "Time2":"Fri_08.5_1"}]}],
 	 "Tutorials":
@@ -97,6 +90,7 @@
 
 		{"Name":"Biodiversity, Evolution and Humanity", "Code":"2M03",
 	 "Subject":"BIOLOGY", "Professor":"Alastair Tracey",
+	 "Enrolled":"13/050",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_13.5_1", "Time2":"Wed_13.5_1", "Time3":"Thu_13.5_1"}]},
 		 {"Core":"C02","Times":[{"Time1":"Mon_16.5_2", "Time2":"Wed_16.5_2", "Time3":"Thu_16.5_2"}]}
@@ -119,6 +113,7 @@
 	
 		{"Name":"General Chemistry", "Code":"1R03",
 	 "Subject":"CHEM", "Professor":"Gary Schrobilgen",
+	 "Enrolled":"38/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Thu_19.0_3"}]}],
 	 "Tutorials":
@@ -130,6 +125,7 @@
 	
 		{"Name":"Introductory Chemistry II", "Code":"1AA3",
 	 "Subject":"CHEM", "Professor":"Harald Stover",
+	 "Enrolled":"16/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_08.5_1", "Time2":"Wed_08.5_1", "Time3":"Fri_10.5_1"}]}],
 	 "Tutorials":
@@ -154,6 +150,7 @@
 	
 		{"Name":"History of Greece and Rome", "Code":"1M03",
 	 "Subject":"CLASSICS", "Professor":"Sean Corner",
+	 "Enrolled":"24/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Wed_12.5_1", "Time2":"Fri_12.5_1"}]}],
 	 "Tutorials":
@@ -170,6 +167,7 @@
 	
 		{"Name":"Organizational Behaviour", "Code":"1BA3",
 	 "Subject":"COMMERCE", "Professor":"Teal Mcateer",
+	 "Enrolled":"18/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_09.5_1", "Time1":"Thu_09.5_1", "Time1":"Tue_10.5_1"}]}],
 	 "Tutorials":
@@ -181,6 +179,7 @@
 	
 		{"Name":"Business Environment and Organization", "Code":"2E03",
 	 "Subject":"COMMERCE", "Professor":"1E03",
+	 "Enrolled":"15/050",
 	 "Lectures":
         [{"Core":"C02","Times":[{"Time1":"Tue_15.5_1", "Time2":"Wed_15.5_1"}]},
 		 {"Core":"C03","Times":[{"Time1":"Tue_14.5_1", "Time2":"Thu_14.5_1"}]}
@@ -201,6 +200,7 @@
 	
 		{"Name":"Elementary Computing and Computer Use", "Code":"1TA3",
 	 "Subject":"COMPSCI", "Professor":"Staff",
+	 "Enrolled":"24/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_12.5_1", "Time2":"Thu_12.5_1", "Time3":"Tue_13.5_1"}]}],
 	 "Tutorials":
@@ -214,6 +214,7 @@
 	
 		{"Name":"Computer Science Practice and Experience: Basic Concepts", "Code":"2XA3",
 	 "Subject":"COMPSCI", "Professor":"George Karakostas",
+	 "Enrolled":"22/050",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Fri_11.5_1"}]}],
 	 "Tutorials":
@@ -225,6 +226,7 @@
 	
 		{"Name":"Studying Culture: A Critical Introduction", "Code":"1CS3",
 	 "Subject":"CSCT", "Professor":"Joanne Leow",
+	 "Enrolled":"38/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Tue_19.0_2"}]}],
 	 "Tutorials":
@@ -248,6 +250,7 @@
 	
 		{"Name":"Earth and the Enviroment", "Code":"1G03",
 	 "Subject":"EARTHSC", "Professor":"Lisa Leoni",
+	 "Enrolled":"24/100",
 	 "Lectures":
         [{"Core":"C02","Times":[{"Time1":"Tue_12.5_1", "Time2":"Wed_12.5_1", "Time3":"Fri_12.5_1"}]}],
 	 "Tutorials":
@@ -266,6 +269,7 @@
 	
 		{"Name":"Introductory Microeconomics", "Code":"1B03",
 	 "Subject":"ECON", "Professor":"Hannah Holmes",
+	 "Enrolled":"16/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_08.5_1", "Time2":"Wed_08.5_1", "Time3":"Fri_10.5_1"}]}],
 	 "Tutorials":
@@ -277,6 +281,7 @@
 	
 		{"Name":"Introductory Macroeconomics", "Code":"1BB3",
 	 "Subject":"ECON", "Professor":"Bridget O'shaughnessy",
+	 "Enrolled":"18/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Tue_09.5_1"}]},
 		 {"Core":"C02","Times":[{"Time1":"Tue_08.5_1"}]},
@@ -309,6 +314,7 @@
 	
 		{"Name":"Engineering Design and Graphics", "Code":"1C03",
 	 "Subject":"ENGINEER", "Professor":"Colin McDonald",
+	 "Enrolled":"16/100",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_08.5_1"}]}],
 	 "Tutorials":
@@ -337,6 +343,7 @@
 	
 		{"Name":"Engineering Computation", "Code":"2D04",
 	 "Subject":"ENGINEER", "Professor":"William Michael Farmer",
+	 "Enrolled":"08/050",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Wed_08.5_1"}]}],
 	 "Tutorials":
@@ -362,6 +369,7 @@
 	
 		{"Name":"Introduction to the Engineering Co-op Program", "Code":"1EE0",
 	 "Subject":"ENGINEER", "Professor":"Jeffrey Ollinger",
+	 "Enrolled":"18/100",
 	 "Lectures":
         [{"Core":"C07","Times":[{"Time1":"Fri_09.5_2"}]},
 		 {"Core":"C08","Times":[{"Time1":"Mon_09.5_2"}]},
