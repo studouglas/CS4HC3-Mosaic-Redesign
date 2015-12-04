@@ -25,6 +25,13 @@ $(document).ready(function () {
     if (window.location.href.indexOf("searchresults.html") > -1) {
         addSearchedCoursesToHtml();
     }
+	
+	if (window.location.href == "searchcourses.html") {
+		var slct1 = document.getElementById("subselect");
+		var slct2 = document.getElementById("levselect");
+		var slct3 = document.getElementById("crsselect");
+		//populate select elements accordingly
+	}
 });
 
 // called from templates/header.html once it's loaded
