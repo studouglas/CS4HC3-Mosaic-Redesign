@@ -7,11 +7,11 @@
      "professor":"TBD",
 	 "enrolled":"38/100",
 	 "lectures":
-        [{"core":"C01","times":["Wed_19.0_3"]}
+        [{"core":"C01","times":["Wed_19:00_3"]}
         ],
 	 "tutorials":[],
 	 "labs":[],
-	 "exam":"12_13.0_3"
+	 "exam":"12_13:00_3"
 	},
 	
     {"name":"Introduction to Anthropology: Race, Religion and Conflict",
@@ -22,11 +22,11 @@
      "professor":"Karen Mcgarry",
 	 "enrolled":"38/100",
 	 "lectures":
-        [{"core":"C01","times":["Thu_19.0_3"]}
+        [{"core":"C01","times":["Thu_19:00_3"]}
         ],
 	 "tutorials":[],
 	 "labs":[],
-	 "exam":"13_13.0_3"
+	 "exam":"13_13:00_3"
 	},
 	
     {"name":"Material Investigations and Concepts",
@@ -37,11 +37,11 @@
      "professor":"Briana Palmer",
 	 "enrolled":"16/100",
 	 "lectures":
-        [{"core":"C01","times":["Mon_8.5_4"]}
+        [{"core":"C01","times":["Mon_8:30_4"]}
         ],
 	 "tutorials":[],
 	 "labs":[],
-	 "exam":"14_13.0_3"
+	 "exam":"14_13:00_3"
 	},
 	
     {"name":"Studio Investigations", 
@@ -51,12 +51,12 @@
      "subject":"BIOLOGY", "professor":"Christopher Myhr",
 	 "enrolled":"13/50",
 	 "lectures":
-        [{"core":"C01","times":[{"Time1":"Thu_13.5_4"}]}],
+        [{"core":"C01","times":["Thu_13:30_4"]}],
 	 "tutorials":
 		[],
 	 "labs":
 		[],
-	 "exam":"15_13.0_3"
+	 "exam":"15_13:00_3"
 	},
 	
     {"name":"Argumentation",
@@ -68,11 +68,11 @@
 	 "enrolled":"30/100",
 	 "lectures":
         [{"core":"C01",
-          "times":["Tue_15.5_1","Wed_15.5_1","Fri_15.5_1"]}
+          "times":["Tue_15:30_1","Wed_15:30_1","Fri_15:30_1"]}
         ],
 	 "tutorials":[],
 	 "labs":[],
-	 "exam":"16_13.0_1"
+	 "exam":"16_13:00_1"
 	},
 	
     {"name":"Cellular and Molecular Biology", 
@@ -84,29 +84,29 @@
 	 "enrolled":"16/100",
 	 "lectures":
         [{"core":"C01",
-          "times":["Thu_08.5_1","Fri_08.5_1"]}
+          "times":["Thu_08:30_1","Fri_08:30_1"]}
      ],
 	 "tutorials":[],
 	 "labs":
-		[{"lab":"L01","times":["Tue_09.5_2"]},
-		 {"lab":"L03","times":["Tue_09.5_2"]},
-		 {"lab":"L09","times":["Wed_09.5_2"]},
-		 {"lab":"L11","times":["Wed_09.5_2"]},
-		 {"lab":"L12","times":["Wed_09.5_2"]},
-		 {"lab":"L13","times":["Wed_14.5_2"]},
-		 {"lab":"L15","times":["Wed_14.5_2"]},
-		 {"lab":"L16","times":["Wed_14.5_2"]},
-		 {"lab":"L17","times":["Thu_09.5_2"]},
-		 {"lab":"L18","times":["Thu_09.5_2"]},
-		 {"lab":"L19","times":["Thu_09.5_2"]},
-		 {"lab":"L20","times":["Thu_09.5_2"]},
-		 {"lab":"L21","times":["Thu_14.5_2"]},
-		 {"lab":"L23","times":["Thu_14.5_2"]},
-		 {"lab":"L24","times":["Thu_14.5_2"]},
-		 {"lab":"L25","times":["Fri_09.5_2"]},
-		 {"lab":"L26","times":["Fri_09.5_2"]}
+		[{"lab":"L01","times":["Tue_09:30_2"]},
+		 {"lab":"L03","times":["Tue_09:30_2"]},
+		 {"lab":"L09","times":["Wed_09:30_2"]},
+		 {"lab":"L11","times":["Wed_09:30_2"]},
+		 {"lab":"L12","times":["Wed_09:30_2"]},
+		 {"lab":"L13","times":["Wed_14:30_2"]},
+		 {"lab":"L15","times":["Wed_14:30_2"]},
+		 {"lab":"L16","times":["Wed_14:30_2"]},
+		 {"lab":"L17","times":["Thu_09:30_2"]},
+		 {"lab":"L18","times":["Thu_09:30_2"]},
+		 {"lab":"L19","times":["Thu_09:30_2"]},
+		 {"lab":"L20","times":["Thu_09:30_2"]},
+		 {"lab":"L21","times":["Thu_14:30_2"]},
+		 {"lab":"L23","times":["Thu_14:30_2"]},
+		 {"lab":"L24","times":["Thu_14:30_2"]},
+		 {"lab":"L25","times":["Fri_09:30_2"]},
+		 {"lab":"L26","times":["Fri_09:30_2"]}
 		],
-	 "exam":"17_13.0_2"
+	 "exam":"17_13:00_2"
 	},
 
     {"name":"Biodiversity, Evolution and Humanity",
@@ -117,22 +117,22 @@
      "professor":"Alastair Tracey",
 	 "enrolled":"13/050",
 	 "lectures":
-        [{"core":"C01","times":["Mon_13.5_1","Wed_13.5_1","Thu_13.5_1"]},
-		 {"core":"C02","times":["Mon_16.5_2","Wed_16.5_2","Thu_16.5_2"]}
+        [{"core":"C01","times":["Mon_13:30_1","Wed_13:30_1","Thu_13:30_1"]},
+		 {"core":"C02","times":["Mon_16:30_2","Wed_16:30_2","Thu_16:30_2"]}
 		],
 	 "tutorials":
-		[{"tut":"T02","times":["Tue_09.5_2"]},
-		 {"tut":"T03","times":["Tue_11.5_2"]},
-		 {"tut":"T05","times":["Tue_14.5_2"]},
-		 {"tut":"T06","times":["Tue_14.5_2"]},
-		 {"tut":"T09","times":["Wed_14.5_2"]},
-		 {"tut":"T11","times":["Thu_09.5_2"]},
-		 {"tut":"T12","times":["Thu_09.5_2"]},
-		 {"tut":"T15","times":["Thu_14.5_2"]},
-		 {"tut":"T16","times":["Thu_14.5_2"]}
+		[{"tut":"T02","times":["Tue_09:30_2"]},
+		 {"tut":"T03","times":["Tue_11:30_2"]},
+		 {"tut":"T05","times":["Tue_14:30_2"]},
+		 {"tut":"T06","times":["Tue_14:30_2"]},
+		 {"tut":"T09","times":["Wed_14:30_2"]},
+		 {"tut":"T11","times":["Thu_09:30_2"]},
+		 {"tut":"T12","times":["Thu_09:30_2"]},
+		 {"tut":"T15","times":["Thu_14:30_2"]},
+		 {"tut":"T16","times":["Thu_14:30_2"]}
 		],
 	 "labs":[],
-	 "exam":"18_14.0_2"
+	 "exam":"18_14:00_2"
 	},
 	
     {"name":"General Biology", 
@@ -143,13 +143,13 @@
      "professor":"Gary Schrobilgen",
 	 "enrolled":"38/100",
 	 "lectures":
-        [{"core":"C01","times":["Thu_19.0_3"]}
+        [{"core":"C01","times":["Thu_19:00_3"]}
         ],
 	 "tutorials":
-		[{"tut":"T01","times":["Thu_18.0_1"]}
+		[{"tut":"T01","times":["Thu_18:00_1"]}
         ],
 	 "labs":[],
-	 "exam":"19_13.0_1"
+	 "exam":"19_13:00_1"
 	},
 	
     {"name":"Introductory to Biology II", 
@@ -160,25 +160,25 @@
      "professor":"Harald Stover",
 	 "enrolled":"16/100",
 	 "lectures":
-        [{"core":"C01","times":["Mon_08.5_1","Wed_08.5_1","Fri_10.5_1"]}
+        [{"core":"C01","times":["Mon_08:30_1","Wed_08:30_1","Fri_10:30_1"]}
         ],
 	 "tutorials":[],
 	 "labs":
-		[{"lab":"L01","times":["Mon_08.5_3"]},
-		 {"lab":"L03","times":["Tue_08.5_3"]},
-		 {"lab":"L04","times":["Tue_08.5_3"]},
-		 {"lab":"L05","times":["Wed_08.5_3"]},
-		 {"lab":"L06","times":["Wed_08.5_3"]},
-		 {"lab":"L07","times":["Thu_08.5_3"]},
-		 {"lab":"L08","times":["Thu_08.5_3"]},
-		 {"lab":"L09","times":["Fri_08.5_3"]},
-		 {"lab":"L10","times":["Fri_08.5_3"]},
-		 {"lab":"L17","times":["Thu_14.5_3"]},
-		 {"lab":"L18","times":["Thu_14.5_3"]},
-		 {"lab":"L20","times":["Fri_14.5_3"]},
-		 {"lab":"L22","times":["Mon_17.5_3"]}
+		[{"lab":"L01","times":["Mon_08:30_3"]},
+		 {"lab":"L03","times":["Tue_08:30_3"]},
+		 {"lab":"L04","times":["Tue_08:30_3"]},
+		 {"lab":"L05","times":["Wed_08:30_3"]},
+		 {"lab":"L06","times":["Wed_08:30_3"]},
+		 {"lab":"L07","times":["Thu_08:30_3"]},
+		 {"lab":"L08","times":["Thu_08:30_3"]},
+		 {"lab":"L09","times":["Fri_08:30_3"]},
+		 {"lab":"L10","times":["Fri_08:30_3"]},
+		 {"lab":"L17","times":["Thu_14:30_3"]},
+		 {"lab":"L18","times":["Thu_14:30_3"]},
+		 {"lab":"L20","times":["Fri_14:30_3"]},
+		 {"lab":"L22","times":["Mon_17:30_3"]}
 		],
-	 "exam":"20_13.0_3"
+	 "exam":"20_13:00_3"
 	},
 	
     {"name":"History of Anthropology", 
@@ -189,17 +189,17 @@
      "professor":"Sean Corner",
 	 "enrolled":"24/100",
 	 "lectures":
-        [{"core":"C01","times":["Wed_12.5_1","Fri_12.5_1"]}
+        [{"core":"C01","times":["Wed_12:30_1","Fri_12:30_1"]}
         ],
 	 "tutorials":
-		[{"tut":"T05","times":["Mon_13.5_1"]},
-		 {"tut":"T09","times":["Mon_15.5_1"]},
-		 {"tut":"T12","times":["Wed_08.5_1"]},
-		 {"tut":"T15","times":["Tue_08.5_1"]},
-		 {"tut":"T19","times":["Mon_09.5_1"]}
+		[{"tut":"T05","times":["Mon_13:30_1"]},
+		 {"tut":"T09","times":["Mon_15:30_1"]},
+		 {"tut":"T12","times":["Wed_08:30_1"]},
+		 {"tut":"T15","times":["Tue_08:30_1"]},
+		 {"tut":"T19","times":["Mon_09:30_1"]}
 		],
 	 "labs":[],
-	 "exam":"21_13.0_1"
+	 "exam":"21_13:00_1"
 	},
 	
     {"name":"Organizational Behaviour", 
@@ -210,11 +210,11 @@
      "professor":"Teal Mcateer",
 	 "enrolled":"18/100",
 	 "lectures":
-        [{"core":"C01","times":["Mon_09.5_1","Thu_09.5_1","Tue_10.5_1"]}
+        [{"core":"C01","times":["Mon_09:30_1","Thu_09:30_1","Tue_10:30_1"]}
         ],
 	 "tutorials":[],
 	 "labs":[],
-	"exam":"22_13.0_1"
+	"exam":"22_13:00_1"
 	},
 	
     {"name":"Business Environment and Organization", 
@@ -225,20 +225,20 @@
      "professor":"1E03",
 	 "enrolled":"15/050",
 	 "lectures":
-        [{"core":"C02","times":["Tue_15.5_1","Wed_15.5_1"]},
-		 {"core":"C03","times":["Tue_14.5_1","Thu_14.5_1"]}
+        [{"core":"C02","times":["Tue_15:30_1","Wed_15:30_1"]},
+		 {"core":"C03","times":["Tue_14:30_1","Thu_14:30_1"]}
         ],
 	 "tutorials":
-		[{"tut":"T06","times":["Fri_08.5_1"]},
-		 {"tut":"T07","times":["Fri_12.5_1"]},
-		 {"tut":"T08","times":["Fri_09.5_1"]},
-		 {"tut":"T12","times":["Wed_08.5_1"]},
-		 {"tut":"T13","times":["Thu_08.5_1"]},
-		 {"tut":"T16","times":["Mon_10.5_1"]},
-		 {"tut":"T17","times":["Mon_09.5_1"]}
+		[{"tut":"T06","times":["Fri_08:30_1"]},
+		 {"tut":"T07","times":["Fri_12:30_1"]},
+		 {"tut":"T08","times":["Fri_09:30_1"]},
+		 {"tut":"T12","times":["Wed_08:30_1"]},
+		 {"tut":"T13","times":["Thu_08:30_1"]},
+		 {"tut":"T16","times":["Mon_10:30_1"]},
+		 {"tut":"T17","times":["Mon_09:30_1"]}
 		],
 	 "labs":[],
-	 "exam":"14_16.0_1"
+	 "exam":"14_16:00_1"
 	},
     
     {"name":"Elementary Computing and Computer Use", 
@@ -249,15 +249,15 @@
      "professor":"TBD",
 	 "enrolled":"24/100",
 	 "lectures":
-        [{"core":"C01","times":["Mon_12.5_1","Thu_12.5_1","Tue_13.5_1"]}
+        [{"core":"C01","times":["Mon_12:30_1","Thu_12:30_1","Tue_13:30_1"]}
         ],
 	 "tutorials":
-		[{"tut":"T01","times":["Mon_09.5_1"]},
-		 {"tut":"T02","times":["Mon_11.5_1"]}
+		[{"tut":"T01","times":["Mon_09:30_1"]},
+		 {"tut":"T02","times":["Mon_11:30_1"]}
 		],
 	 "labs":
 		[],
-	 "exam":"15_16.0_1"
+	 "exam":"15_16:00_1"
 	},
 	
     {"name":"Computer Science Practice and Experience: Basic Concepts", 
@@ -268,13 +268,13 @@
      "professor":"George Karakostas",
 	 "enrolled":"22/050",
 	 "lectures":
-        [{"core":"C01","times":["Fri_11.5_1"]}
+        [{"core":"C01","times":["Fri_11:30_1"]}
         ],
 	 "tutorials":[],
 	 "labs":
-		[{"lab":"L01","times":["Fri_14.5_2","Tue_12.5_2"]}
+		[{"lab":"L01","times":["Fri_14:30_2","Tue_12:30_2"]}
         ],
-	 "exam":"16_16.0_3"
+	 "exam":"16_16:00_3"
 	},
 	
     {"name":"Studying Culture: A Critical Introduction",
@@ -285,24 +285,24 @@
      "professor":"Joanne Leow",
 	 "enrolled":"38/100",
 	 "lectures":
-        [{"core":"C01","times":["Tue_19.0_2"]}
+        [{"core":"C01","times":["Tue_19:00_2"]}
         ],
 	 "tutorials":
-		[{"tut":"T01","times":["Tue_18.0_1"]},
-		 {"tut":"T02","times":["Tue_18.0_1"]},
-		 {"tut":"T03","times":["Tue_18.0_1"]},
-		 {"tut":"T04","times":["Tue_18.0_1"]},
-		 {"tut":"T05","times":["Tue_18.0_1"]},
-		 {"tut":"T06","times":["Tue_18.0_1"]},
-		 {"tut":"T07","times":["Tue_21.0_1"]},
-		 {"tut":"T08","times":["Tue_21.0_1"]},
-		 {"tut":"T09","times":["Tue_21.0_1"]},
-		 {"tut":"T10","times":["Tue_21.0_1"]},
-		 {"tut":"T11","times":["Tue_16.5_1"]},
-		 {"tut":"T12","times":["Tue_16.5_1"]}
+		[{"tut":"T01","times":["Tue_18:00_1"]},
+		 {"tut":"T02","times":["Tue_18:00_1"]},
+		 {"tut":"T03","times":["Tue_18:00_1"]},
+		 {"tut":"T04","times":["Tue_18:00_1"]},
+		 {"tut":"T05","times":["Tue_18:00_1"]},
+		 {"tut":"T06","times":["Tue_18:00_1"]},
+		 {"tut":"T07","times":["Tue_21:00_1"]},
+		 {"tut":"T08","times":["Tue_21:00_1"]},
+		 {"tut":"T09","times":["Tue_21:00_1"]},
+		 {"tut":"T10","times":["Tue_21:00_1"]},
+		 {"tut":"T11","times":["Tue_16:30_1"]},
+		 {"tut":"T12","times":["Tue_16:30_1"]}
 		],
 	 "labs":[],
-	 "exam":"17_16.0_3"
+	 "exam":"17_16:00_3"
 	},
 	
     {"name":"Earth and the Enviroment", 
@@ -313,19 +313,19 @@
      "professor":"Lisa Leoni",
 	 "enrolled":"24/100",
 	 "lectures":
-        [{"core":"C02","times":["Tue_12.5_1","Wed_12.5_1","Fri_12.5_1"]}
+        [{"core":"C02","times":["Tue_12:30_1","Wed_12:30_1","Fri_12:30_1"]}
         ],
 	 "tutorials":[],
 	 "labs":
-		[{"lab":"T19","times":["Tue_14.5_2"]},
-		 {"lab":"T20","times":["Tue_16.5_2"]},
-		 {"lab":"T21","times":["Wed_08.5_2"]},
-		 {"lab":"T22","times":["Wed_10.5_2"]},
-		 {"lab":"T24","times":["Wed_16.5_2"]},
-		 {"lab":"T25","times":["Thu_08.5_2"]},
-		 {"lab":"T28","times":["Fri_14.5_2"]}
+		[{"lab":"T19","times":["Tue_14:30_2"]},
+		 {"lab":"T20","times":["Tue_16:30_2"]},
+		 {"lab":"T21","times":["Wed_08:30_2"]},
+		 {"lab":"T22","times":["Wed_10:30_2"]},
+		 {"lab":"T24","times":["Wed_16:30_2"]},
+		 {"lab":"T25","times":["Thu_08:30_2"]},
+		 {"lab":"T28","times":["Fri_14:30_2"]}
 		],
-	 "exam":"18_16.0_3"
+	 "exam":"18_16:00_3"
 	},
 	
     {"name":"Introductory Microeconomics", 
@@ -336,11 +336,11 @@
      "professor":"Hannah Holmes",
 	 "enrolled":"16/100",
 	 "lectures":
-        [{"core":"C01","times":["Mon_08.5_1","Wed_08.5_1","Fri_10.5_1"]}
+        [{"core":"C01","times":["Mon_08:30_1","Wed_08:30_1","Fri_10:30_1"]}
         ],
 	 "tutorials":[],
 	 "labs":[],
-	 "exam":"19_16.0_3"
+	 "exam":"19_16:00_3"
 	},
 	
     {"name":"Introductory Macroeconomics",
@@ -351,32 +351,32 @@
      "professor":"Bridget O'shaughnessy",
 	 "enrolled":"18/100",
 	 "lectures":
-        [{"core":"C01","times":["Tue_09.5_1"]},
-		 {"core":"C02","times":["Tue_08.5_1"]},
-		 {"core":"C03","times":["Thu_19.0_2"]}
+        [{"core":"C01","times":["Tue_09:30_1"]},
+		 {"core":"C02","times":["Tue_08:30_1"]},
+		 {"core":"C03","times":["Thu_19:00_2"]}
 		],
 	 "tutorials":
-		[{"tut":"T03","times":["Wed_09.5_1"]},
-		 {"tut":"T04","times":["Tue_16.5_1"]},
-		 {"tut":"T05","times":["Mon_15.5_1"]},
-		 {"tut":"T06","times":["Thu_13.5_1"]},
-		 {"tut":"T09","times":["Fri_08.5_1"]},
-		 {"tut":"T10","times":["Fri_11.5_1"]},
-		 {"tut":"T11","times":["Mon_14.5_1"]},
-		 {"tut":"T12","times":["Fri_16.5_1"]},
-		 {"tut":"T13","times":["Mon_08.5_1"]},
-		 {"tut":"T14","times":["Mon_16.5_1"]},
-		 {"tut":"T15","times":["Thu_10.5_1"]},
-		 {"tut":"T16","times":["Wed_14.5_1"]},
-		 {"tut":"T19","times":["Fri_12.5_1"]},
-		 {"tut":"T20","times":["Fri_09.5_1"]},
-		 {"tut":"T23","times":["Tue_14.5_1"]},
-		 {"tut":"T24","times":["Mon_11.5_1"]},
-		 {"tut":"T25","times":["Fri_13.5_1"]},
-		 {"tut":"T26","times":["Wed_15.5_1"]}
+		[{"tut":"T03","times":["Wed_09:30_1"]},
+		 {"tut":"T04","times":["Tue_16:30_1"]},
+		 {"tut":"T05","times":["Mon_15:30_1"]},
+		 {"tut":"T06","times":["Thu_13:30_1"]},
+		 {"tut":"T09","times":["Fri_08:30_1"]},
+		 {"tut":"T10","times":["Fri_11:30_1"]},
+		 {"tut":"T11","times":["Mon_14:30_1"]},
+		 {"tut":"T12","times":["Fri_16:30_1"]},
+		 {"tut":"T13","times":["Mon_08:30_1"]},
+		 {"tut":"T14","times":["Mon_16:30_1"]},
+		 {"tut":"T15","times":["Thu_10:30_1"]},
+		 {"tut":"T16","times":["Wed_14:30_1"]},
+		 {"tut":"T19","times":["Fri_12:30_1"]},
+		 {"tut":"T20","times":["Fri_09:30_1"]},
+		 {"tut":"T23","times":["Tue_14:30_1"]},
+		 {"tut":"T24","times":["Mon_11:30_1"]},
+		 {"tut":"T25","times":["Fri_13:30_1"]},
+		 {"tut":"T26","times":["Wed_15:30_1"]}
 		],
 	 "labs":[],
-	 "exam":"20_16.0_3"
+	 "exam":"20_16:00_3"
 	},
 	
     {"name":"Engineering Design and Graphics",
@@ -387,29 +387,29 @@
      "professor":"Colin McDonald",
 	 "enrolled":"16/100",
 	 "lectures":
-        [{"core":"C01","times":["Mon_08.5_1"]}
+        [{"core":"C01","times":["Mon_08:30_1"]}
         ],
 	 "tutorials":
-		[{"tut":"T01","times":["Mon_10.5_2"]},
-		 {"tut":"T03","times":["Tue_10.5_2"]},
-		 {"tut":"T04","times":["Tue_12.5_2"]},
-		 {"tut":"T05","times":["Wed_10.5_2"]},
-		 {"tut":"T06","times":["Thu_12.5_2"]},
-		 {"tut":"T07","times":["Thu_10.5_2"]},
-		 {"tut":"T08","times":["Thu_12.5_2"]},
-		 {"tut":"T09","times":["Fri_10.5_2"]},
-		 {"tut":"T10","times":["Fri_12.5_2"]}
+		[{"tut":"T01","times":["Mon_10:30_2"]},
+		 {"tut":"T03","times":["Tue_10:30_2"]},
+		 {"tut":"T04","times":["Tue_12:30_2"]},
+		 {"tut":"T05","times":["Wed_10:30_2"]},
+		 {"tut":"T06","times":["Thu_12:30_2"]},
+		 {"tut":"T07","times":["Thu_10:30_2"]},
+		 {"tut":"T08","times":["Thu_12:30_2"]},
+		 {"tut":"T09","times":["Fri_10:30_2"]},
+		 {"tut":"T10","times":["Fri_12:30_2"]}
 		],
 	 "labs":
-		[{"lab":"L01","times":["Mon_08.5_3"]},
-		 {"lab":"L03","times":["Tue_08.5_3"]},
-		 {"lab":"L05","times":["Wed_08.5_3"]},
-		 {"lab":"L07","times":["Thu_08.5_3"]},
-		 {"lab":"L08","times":["Thu_14.5_3"]},
-		 {"lab":"L09","times":["Fri_08.5_3"]},
-		 {"lab":"L10","times":["Fri_14.5_3"]}
+		[{"lab":"L01","times":["Mon_08:30_3"]},
+		 {"lab":"L03","times":["Tue_08:30_3"]},
+		 {"lab":"L05","times":["Wed_08:30_3"]},
+		 {"lab":"L07","times":["Thu_08:30_3"]},
+		 {"lab":"L08","times":["Thu_14:30_3"]},
+		 {"lab":"L09","times":["Fri_08:30_3"]},
+		 {"lab":"L10","times":["Fri_14:30_3"]}
 		],
-	 "exam":"21_16.0_3"
+	 "exam":"21_16:00_3"
 	},
 	
     {"name":"Engineering Computation",
@@ -420,27 +420,27 @@
      "professor":"William Michael Farmer",
 	 "enrolled":"08/050",
 	 "lectures":
-        [{"core":"C01","times":["Wed_08.5_1"]}
+        [{"core":"C01","times":["Wed_08:30_1"]}
         ],
 	 "tutorials":
-		[{"tut":"T04","times":["Tue_08.5_2"]},
-		 {"tut":"T05","times":["Wed_08.5_2"]},
-		 {"tut":"T06","times":["Wed_08.5_2"]},
-		 {"tut":"T07","times":["Thu_08.5_2"]},
-		 {"tut":"T08","times":["Thu_08.5_2"]},
-		 {"tut":"T09","times":["Fri_08.5_2"]},
-		 {"tut":"T10","times":["Fri_08.5_2"]}
+		[{"tut":"T04","times":["Tue_08:30_2"]},
+		 {"tut":"T05","times":["Wed_08:30_2"]},
+		 {"tut":"T06","times":["Wed_08:30_2"]},
+		 {"tut":"T07","times":["Thu_08:30_2"]},
+		 {"tut":"T08","times":["Thu_08:30_2"]},
+		 {"tut":"T09","times":["Fri_08:30_2"]},
+		 {"tut":"T10","times":["Fri_08:30_2"]}
 		],
 	 "labs":
-		[{"lab":"L01","times":["Mon_11.5_3"]},
-		 {"lab":"L04","times":["Tue_11.5_3"]},
-		 {"lab":"L05","times":["Wed_11.5_3"]},
-		 {"lab":"L06","times":["Wed_11.5_3"]},
-		 {"lab":"L08","times":["Thu_11.5_3"]},
-		 {"lab":"L09","times":["Fri_11.5_3"]},
-		 {"lab":"L10","times":["Fri_11.5_3"]}
+		[{"lab":"L01","times":["Mon_11:30_3"]},
+		 {"lab":"L04","times":["Tue_11:30_3"]},
+		 {"lab":"L05","times":["Wed_11:30_3"]},
+		 {"lab":"L06","times":["Wed_11:30_3"]},
+		 {"lab":"L08","times":["Thu_11:30_3"]},
+		 {"lab":"L09","times":["Fri_11:30_3"]},
+		 {"lab":"L10","times":["Fri_11:30_3"]}
 		],
-	 "exam":"22_16.0_3"
+	 "exam":"22_16:00_3"
 	},
 	
     {"name":"Introduction to the Engineering Co-op Program",
@@ -451,15 +451,15 @@
      "professor":"Jeffrey Ollinger",
 	 "enrolled":"18/100",
 	 "lectures":
-        [{"core":"C07","times":["Fri_09.5_2"]},
-		 {"core":"C08","times":["Mon_09.5_2"]},
-		 {"core":"C09","times":["Wed_12.5_2"]},
-		 {"core":"C10","times":["Thu_09.5_2"]},
-		 {"core":"C11","times":["Fri_12.5_2"]},
-		 {"core":"C12","times":["Fri_14.5_2"]}
+        [{"core":"C07","times":["Fri_09:30_2"]},
+		 {"core":"C08","times":["Mon_09:30_2"]},
+		 {"core":"C09","times":["Wed_12:30_2"]},
+		 {"core":"C10","times":["Thu_09:30_2"]},
+		 {"core":"C11","times":["Fri_12:30_2"]},
+		 {"core":"C12","times":["Fri_14:30_2"]}
 		],
 	 "tutorials":[],
 	 "labs":[],
-	 "exam":"14_19.0_3"
+	 "exam":"14_19:00_3"
 	}
 ]}

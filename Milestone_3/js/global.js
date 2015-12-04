@@ -88,12 +88,70 @@ function addSearchedCoursesToHtml() {
         $(".course-table")[0].style.display = "none";
     }
 }
+function getTimetableHtml(course, sectionStr) {
+    var timetableHtml = "";
+    var timeTextDaysOfWeek = ['','','','',''];
+    var coreTimesFromJson = [];
+
+    if (sectionStr.charAt(0) == "C") {
+        for (var i = 0; i < course.lectures.length; i++) {
+            if (course.lectures[i].core == sectionStr) {
+                coreTimesFromJson = course.lectures[i].times;
+                break;
+            }
+        }
+    } else if (sectionStr.charAt(0) == "T") {
+        for (var i = 0; i < course.tutorials.length; i++) {
+            if (course.tutorials[i].tut == sectionStr) {
+                coreTimesFromJson = course.tutorials[i].times;
+                break;
+            }
+        }
+    } else {
+        for (var i = 0; i < course.labs.length; i++) {
+            if (course.labs[i].lab == sectionStr) {
+                coreTimesFromJson = course.labs[i].times;
+                break;
+            }
+        }
+    }
+    
+    for (var i = 0; i < timeTextDaysOfWeek.length; i++) {
+        for (var j = 0; j < coreTimesFromJson.length; j++) {
+            var coreTimeSplit = coreTimesFromJson[j].split('_');
+            var coreTimePrettyString = parseInt(coreTimeSplit[1].split(":")[0]) + ":" + coreTimeSplit[1].split(":")[1] + " - ";
+            var startHour = parseInt(coreTimeSplit[1].split(":")[0]);
+            var endTime = (startHour + parseInt(coreTimeSplit[2])) + ":" + coreTimeSplit[1].split(":")[1];
+            coreTimePrettyString += endTime;
+            if (sectionStr.charAt(0) == "L") {
+                console.log("in herre 4 lab");
+            }
+            if (i == 0 && coreTimeSplit[0] == "Mon") {
+                timeTextDaysOfWeek[i] = coreTimePrettyString;
+            } else if (i == 1 && coreTimeSplit[0] == "Tue") {
+                timeTextDaysOfWeek[i] = coreTimePrettyString;
+            } else if (i == 2 && coreTimeSplit[0] == "Wed") {
+                timeTextDaysOfWeek[i] = coreTimePrettyString;
+            } else if (i == 3 && coreTimeSplit[0] == "Thu") {
+                timeTextDaysOfWeek[i] = coreTimePrettyString;
+            } else if (i == 4 && coreTimeSplit[0] == "Fri") {
+                timeTextDaysOfWeek[i] = coreTimePrettyString;
+            }
+        }
+    }
+    timetableHtml += '<td class="course-table-day-text">' + timeTextDaysOfWeek[0] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text">' + timeTextDaysOfWeek[1] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text">' + timeTextDaysOfWeek[2] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text">' + timeTextDaysOfWeek[3] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text">' + timeTextDaysOfWeek[4] + '</td>\n';
+    
+    return timetableHtml;
+}
 
 function addCourseRowToPage(course, courseTable) {
-    console.log("ADDING COURSE:" + course.id);
     var courseRowHtml = "";
 
-    // TOP ROW (of 3)
+    // TOP ROW (of 3) ======================================================
     courseRowHtml += '<tr class="course-table-row">\n';
     courseRowHtml += '<td class="course-table-code">\n';
     courseRowHtml += '<a target="_blank" href="' + course.link + '">' + course.subject + ' ' + course.code + '</a></td>\n';
@@ -105,11 +163,8 @@ function addCourseRowToPage(course, courseTable) {
         courseRowHtml += '<option value="' + section.core + '">Lecture ' + coreNum + '</option>\n';
     }
     courseRowHtml += '</select></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
+    courseRowHtml += getTimetableHtml(course, "C01");
+    
     courseRowHtml += '<td class="course-table-enrolled" rowspan="3">' + course.enrolled + '</td>\n';
     courseRowHtml += '<td class="course-table-action" rowspan="3">\n';
     courseRowHtml += '<a class="ghost-button course-table-action-button ';
@@ -136,7 +191,7 @@ function addCourseRowToPage(course, courseTable) {
     }
     courseRowHtml += '</td></tr>\n';
  
-    // MIDDLE ROW (of 3)
+    // MIDDLE ROW (of 3) ======================================================
     courseRowHtml += '<tr class="course-table-row">\n';
     courseRowHtml += '<td class="course-table-title">' + course.name + '</td>\n';
     courseRowHtml += '<td class="course-table-dropdown-row">\n';
@@ -147,13 +202,9 @@ function addCourseRowToPage(course, courseTable) {
         courseRowHtml += '<option value="' + section.core + '">Tutorial ' + coreNum + '</option>\n';
     }
     courseRowHtml += '</select></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td></tr>\n';
+    courseRowHtml += getTimetableHtml(course, "T01");
 
-    // BOTTOM ROW (of 3)
+    // BOTTOM ROW (of 3) ======================================================
     courseRowHtml += '<tr class="course-table-row course-table-row-bottom">\n';
     courseRowHtml += '<td class="course-table-professor">' + course.professor + '</td>\n';
     courseRowHtml += '<td class="course-table-dropdown-row">\n';
@@ -164,11 +215,7 @@ function addCourseRowToPage(course, courseTable) {
         courseRowHtml += '<option value="' + section.core + '">Lab ' + coreNum + '</option>\n';
     }
     courseRowHtml += '</select></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td>\n';
-    courseRowHtml += '<td class="course-table-day-text"></td></tr>\n';
+    courseRowHtml += getTimetableHtml(course, "L01");
 
     courseTable.innerHTML += courseRowHtml;
 }
