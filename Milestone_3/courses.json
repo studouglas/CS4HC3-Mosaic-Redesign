@@ -1,423 +1,465 @@
 {"courses":[
-	{"Name":"Introduction to Anthropology: Sex, Food and Death",
-     "Code":"4AA3",
-	 "Subject":"ANTHROP", 
-     "Professor":"TBD",
-	 "Enrolled":"38/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Wed_19.0_3"]}
+	{"name":"Introduction to Anthropology: Sex, Food and Death",
+     "id":"1",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"4AA3",
+	 "subject":"ANTHROP", 
+     "professor":"TBD",
+	 "enrolled":"38/100",
+	 "lectures":
+        [{"core":"C01","times":["Wed_19.0_3"]}
         ],
-	 "Tutorials":[],
-	 "Labs":[],
-	 "Exam":"12_13.0_3"
+	 "tutorials":[],
+	 "labs":[],
+	 "exam":"12_13.0_3"
 	},
 	
-    {"Name":"Introduction to Anthropology: Race, Religion and Conflict",
-     "Code":"1AB3",
-	 "Subject":"ANTHROP",
-     "Professor":"Karen Mcgarry",
-	 "Enrolled":"38/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Thu_19.0_3"]}
+    {"name":"Introduction to Anthropology: Race, Religion and Conflict",
+     "id":"2",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"1AB3",
+	 "subject":"ANTHROP",
+     "professor":"Karen Mcgarry",
+	 "enrolled":"38/100",
+	 "lectures":
+        [{"core":"C01","times":["Thu_19.0_3"]}
         ],
-	 "Tutorials":[],
-	 "Labs":[],
-	 "Exam":"13_13.0_3"
+	 "tutorials":[],
+	 "labs":[],
+	 "exam":"13_13.0_3"
 	},
 	
-    {"Name":"Material Investigations and Concepts",
-     "Code":"3MI3",
-	 "Subject":"ANTHROP", 
-     "Professor":"Briana Palmer",
-	 "Enrolled":"16/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Mon_8.5_4"]}
+    {"name":"Material Investigations and Concepts",
+     "id":"3",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"3MI3",
+	 "subject":"ANTHROP", 
+     "professor":"Briana Palmer",
+	 "enrolled":"16/100",
+	 "lectures":
+        [{"core":"C01","times":["Mon_8.5_4"]}
         ],
-	 "Tutorials":[],
-	 "Labs":[],
-	 "Exam":"14_13.0_3"
+	 "tutorials":[],
+	 "labs":[],
+	 "exam":"14_13.0_3"
 	},
 	
-    {"Name":"Studio Investigations", "Code":"2SI3",
-	 "Subject":"BIOLOGY", "Professor":"Christopher Myhr",
-	 "Enrolled":"13/50",
-	 "Lectures":
-        [{"Core":"C01","Times":[{"Time1":"Thu_13.5_4"}]}],
-	 "Tutorials":
+    {"name":"Studio Investigations", 
+     "id":"4",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2SI3",
+     "subject":"BIOLOGY", "professor":"Christopher Myhr",
+	 "enrolled":"13/50",
+	 "lectures":
+        [{"core":"C01","times":[{"Time1":"Thu_13.5_4"}]}],
+	 "tutorials":
 		[],
-	 "Labs":
+	 "labs":
 		[],
-	 "Exam":"15_13.0_3"
+	 "exam":"15_13.0_3"
 	},
 	
-    {"Name":"Argumentation", 
-     "Code":"1BB3",
-	 "Subject":"BIOLOGY", 
-     "Professor":"Matthew Grellette",
-	 "Enrolled":"30/100",
-	 "Lectures":
-        [{"Core":"C01",
-          "Times":["Tue_15.5_1","Wed_15.5_1","Fri_15.5_1"]}
+    {"name":"Argumentation",
+     "id":"5",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"1BB3",
+	 "subject":"BIOLOGY", 
+     "professor":"Matthew Grellette",
+	 "enrolled":"30/100",
+	 "lectures":
+        [{"core":"C01",
+          "times":["Tue_15.5_1","Wed_15.5_1","Fri_15.5_1"]}
         ],
-	 "Tutorials":[],
-	 "Labs":[],
-	 "Exam":"16_13.0_1"
+	 "tutorials":[],
+	 "labs":[],
+	 "exam":"16_13.0_1"
 	},
 	
-    {"Name":"Cellular and Molecular Biology", 
-     "Code":"1A03",
-	 "Subject":"BIOLOGY",
-     "Professor":"Alastair Tracy",
-	 "Enrolled":"16/100",
-	 "Lectures":
-        [{"Core":"C01",
-          "Times":["Thu_08.5_1","Fri_08.5_1"]}
+    {"name":"Cellular and Molecular Biology", 
+     "id":"6",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"1A03",
+	 "subject":"BIOLOGY",
+     "professor":"Alastair Tracy",
+	 "enrolled":"16/100",
+	 "lectures":
+        [{"core":"C01",
+          "times":["Thu_08.5_1","Fri_08.5_1"]}
      ],
-	 "Tutorials":[],
-	 "Labs":
-		[{"Lab":"L01","Times":["Tue_09.5_2"]},
-		 {"Lab":"L03","Times":["Tue_09.5_2"]},
-		 {"Lab":"L09","Times":["Wed_09.5_2"]},
-		 {"Lab":"L11","Times":["Wed_09.5_2"]},
-		 {"Lab":"L12","Times":["Wed_09.5_2"]},
-		 {"Lab":"L13","Times":["Wed_14.5_2"]},
-		 {"Lab":"L15","Times":["Wed_14.5_2"]},
-		 {"Lab":"L16","Times":["Wed_14.5_2"]},
-		 {"Lab":"L17","Times":["Thu_09.5_2"]},
-		 {"Lab":"L18","Times":["Thu_09.5_2"]},
-		 {"Lab":"L19","Times":["Thu_09.5_2"]},
-		 {"Lab":"L20","Times":["Thu_09.5_2"]},
-		 {"Lab":"L21","Times":["Thu_14.5_2"]},
-		 {"Lab":"L23","Times":["Thu_14.5_2"]},
-		 {"Lab":"L24","Times":["Thu_14.5_2"]},
-		 {"Lab":"L25","Times":["Fri_09.5_2"]},
-		 {"Lab":"L26","Times":["Fri_09.5_2"]}
+	 "tutorials":[],
+	 "labs":
+		[{"lab":"L01","times":["Tue_09.5_2"]},
+		 {"lab":"L03","times":["Tue_09.5_2"]},
+		 {"lab":"L09","times":["Wed_09.5_2"]},
+		 {"lab":"L11","times":["Wed_09.5_2"]},
+		 {"lab":"L12","times":["Wed_09.5_2"]},
+		 {"lab":"L13","times":["Wed_14.5_2"]},
+		 {"lab":"L15","times":["Wed_14.5_2"]},
+		 {"lab":"L16","times":["Wed_14.5_2"]},
+		 {"lab":"L17","times":["Thu_09.5_2"]},
+		 {"lab":"L18","times":["Thu_09.5_2"]},
+		 {"lab":"L19","times":["Thu_09.5_2"]},
+		 {"lab":"L20","times":["Thu_09.5_2"]},
+		 {"lab":"L21","times":["Thu_14.5_2"]},
+		 {"lab":"L23","times":["Thu_14.5_2"]},
+		 {"lab":"L24","times":["Thu_14.5_2"]},
+		 {"lab":"L25","times":["Fri_09.5_2"]},
+		 {"lab":"L26","times":["Fri_09.5_2"]}
 		],
-	 "Exam":"17_13.0_2"
+	 "exam":"17_13.0_2"
 	},
 
-    {"Name":"Biodiversity, Evolution and Humanity", 
-     "Code":"2M03",
-	 "Subject":"BIOLOGY", 
-     "Professor":"Alastair Tracey",
-	 "Enrolled":"13/050",
-	 "Lectures":
-        [{"Core":"C01","Times":["Mon_13.5_1","Wed_13.5_1","Thu_13.5_1"]},
-		 {"Core":"C02","Times":["Mon_16.5_2","Wed_16.5_2","Thu_16.5_2"]}
+    {"name":"Biodiversity, Evolution and Humanity",
+     "id":"7",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2M03",
+	 "subject":"BIOLOGY", 
+     "professor":"Alastair Tracey",
+	 "enrolled":"13/050",
+	 "lectures":
+        [{"core":"C01","times":["Mon_13.5_1","Wed_13.5_1","Thu_13.5_1"]},
+		 {"core":"C02","times":["Mon_16.5_2","Wed_16.5_2","Thu_16.5_2"]}
 		],
-	 "Tutorials":
-		[{"Tut":"T02","Times":["Tue_09.5_2"]},
-		 {"Tut":"T03","Times":["Tue_11.5_2"]},
-		 {"Tut":"T05","Times":["Tue_14.5_2"]},
-		 {"Tut":"T06","Times":["Tue_14.5_2"]},
-		 {"Tut":"T09","Times":["Wed_14.5_2"]},
-		 {"Tut":"T11","Times":["Thu_09.5_2"]},
-		 {"Tut":"T12","Times":["Thu_09.5_2"]},
-		 {"Tut":"T15","Times":["Thu_14.5_2"]},
-		 {"Tut":"T16","Times":["Thu_14.5_2"]}
+	 "tutorials":
+		[{"tut":"T02","times":["Tue_09.5_2"]},
+		 {"tut":"T03","times":["Tue_11.5_2"]},
+		 {"tut":"T05","times":["Tue_14.5_2"]},
+		 {"tut":"T06","times":["Tue_14.5_2"]},
+		 {"tut":"T09","times":["Wed_14.5_2"]},
+		 {"tut":"T11","times":["Thu_09.5_2"]},
+		 {"tut":"T12","times":["Thu_09.5_2"]},
+		 {"tut":"T15","times":["Thu_14.5_2"]},
+		 {"tut":"T16","times":["Thu_14.5_2"]}
 		],
-	 "Labs":[],
-	 "Exam":"18_14.0_2"
+	 "labs":[],
+	 "exam":"18_14.0_2"
 	},
 	
-    {"Name":"General Biology", 
-     "Code":"3R03",
-	 "Subject":"BIOLOGY", 
-     "Professor":"Gary Schrobilgen",
-	 "Enrolled":"38/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Thu_19.0_3"]}
+    {"name":"General Biology", 
+     "id":"8",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"3R03",
+	 "subject":"BIOLOGY", 
+     "professor":"Gary Schrobilgen",
+	 "enrolled":"38/100",
+	 "lectures":
+        [{"core":"C01","times":["Thu_19.0_3"]}
         ],
-	 "Tutorials":
-		[{"Tut":"T01","Times":["Thu_18.0_1"]}
+	 "tutorials":
+		[{"tut":"T01","times":["Thu_18.0_1"]}
         ],
-	 "Labs":[],
-	 "Exam":"19_13.0_1"
+	 "labs":[],
+	 "exam":"19_13.0_1"
 	},
 	
-    {"Name":"Introductory to Biology II", 
-     "Code":"2AA3",
-	 "Subject":"BIOLOGY", 
-     "Professor":"Harald Stover",
-	 "Enrolled":"16/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Mon_08.5_1","Wed_08.5_1","Fri_10.5_1"]}
+    {"name":"Introductory to Biology II", 
+     "id":"9",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2AA3",
+	 "subject":"BIOLOGY", 
+     "professor":"Harald Stover",
+	 "enrolled":"16/100",
+	 "lectures":
+        [{"core":"C01","times":["Mon_08.5_1","Wed_08.5_1","Fri_10.5_1"]}
         ],
-	 "Tutorials":[],
-	 "Labs":
-		[{"Lab":"L01","Times":["Mon_08.5_3"]},
-		 {"Lab":"L03","Times":["Tue_08.5_3"]},
-		 {"Lab":"L04","Times":["Tue_08.5_3"]},
-		 {"Lab":"L05","Times":["Wed_08.5_3"]},
-		 {"Lab":"L06","Times":["Wed_08.5_3"]},
-		 {"Lab":"L07","Times":["Thu_08.5_3"]},
-		 {"Lab":"L08","Times":["Thu_08.5_3"]},
-		 {"Lab":"L09","Times":["Fri_08.5_3"]},
-		 {"Lab":"L10","Times":["Fri_08.5_3"]},
-		 {"Lab":"L17","Times":["Thu_14.5_3"]},
-		 {"Lab":"L18","Times":["Thu_14.5_3"]},
-		 {"Lab":"L20","Times":["Fri_14.5_3"]},
-		 {"Lab":"L22","Times":["Mon_17.5_3"]}
+	 "tutorials":[],
+	 "labs":
+		[{"lab":"L01","times":["Mon_08.5_3"]},
+		 {"lab":"L03","times":["Tue_08.5_3"]},
+		 {"lab":"L04","times":["Tue_08.5_3"]},
+		 {"lab":"L05","times":["Wed_08.5_3"]},
+		 {"lab":"L06","times":["Wed_08.5_3"]},
+		 {"lab":"L07","times":["Thu_08.5_3"]},
+		 {"lab":"L08","times":["Thu_08.5_3"]},
+		 {"lab":"L09","times":["Fri_08.5_3"]},
+		 {"lab":"L10","times":["Fri_08.5_3"]},
+		 {"lab":"L17","times":["Thu_14.5_3"]},
+		 {"lab":"L18","times":["Thu_14.5_3"]},
+		 {"lab":"L20","times":["Fri_14.5_3"]},
+		 {"lab":"L22","times":["Mon_17.5_3"]}
 		],
-	 "Exam":"20_13.0_3"
+	 "exam":"20_13.0_3"
 	},
 	
-    {"Name":"History of Anthropology", 
-     "Code":"4M03",
-	 "Subject":"ANTHROP", 
-     "Professor":"Sean Corner",
-	 "Enrolled":"24/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Wed_12.5_1","Fri_12.5_1"]}
+    {"name":"History of Anthropology", 
+     "id":"10",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"4M03",
+	 "subject":"ANTHROP", 
+     "professor":"Sean Corner",
+	 "enrolled":"24/100",
+	 "lectures":
+        [{"core":"C01","times":["Wed_12.5_1","Fri_12.5_1"]}
         ],
-	 "Tutorials":
-		[{"Tut":"T05","Times":["Mon_13.5_1"]},
-		 {"Tut":"T09","Times":["Mon_15.5_1"]},
-		 {"Tut":"T12","Times":["Wed_08.5_1"]},
-		 {"Tut":"T15","Times":["Tue_08.5_1"]},
-		 {"Tut":"T19","Times":["Mon_09.5_1"]}
+	 "tutorials":
+		[{"tut":"T05","times":["Mon_13.5_1"]},
+		 {"tut":"T09","times":["Mon_15.5_1"]},
+		 {"tut":"T12","times":["Wed_08.5_1"]},
+		 {"tut":"T15","times":["Tue_08.5_1"]},
+		 {"tut":"T19","times":["Mon_09.5_1"]}
 		],
-	 "Labs":[],
-	 "Exam":"21_13.0_1"
+	 "labs":[],
+	 "exam":"21_13.0_1"
 	},
 	
-    {"Name":"Organizational Behaviour", 
-     "Code":"4BA3",
-	 "Subject":"COMMERCE", 
-     "Professor":"Teal Mcateer",
-	 "Enrolled":"18/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Mon_09.5_1","Thu_09.5_1","Tue_10.5_1"]}
+    {"name":"Organizational Behaviour", 
+     "id":"11",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"4BA3",
+	 "subject":"COMMERCE", 
+     "professor":"Teal Mcateer",
+	 "enrolled":"18/100",
+	 "lectures":
+        [{"core":"C01","times":["Mon_09.5_1","Thu_09.5_1","Tue_10.5_1"]}
         ],
-	 "Tutorials":[],
-	 "Labs":[],
-	"Exam":"22_13.0_1"
+	 "tutorials":[],
+	 "labs":[],
+	"exam":"22_13.0_1"
 	},
 	
-    {"Name":"Business Environment and Organization", 
-     "Code":"2E03",
-	 "Subject":"COMMERCE", 
-     "Professor":"1E03",
-	 "Enrolled":"15/050",
-	 "Lectures":
-        [{"Core":"C02","Times":["Tue_15.5_1","Wed_15.5_1"]},
-		 {"Core":"C03","Times":["Tue_14.5_1","Thu_14.5_1"]}
+    {"name":"Business Environment and Organization", 
+     "id":"12",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2E03",
+	 "subject":"COMMERCE", 
+     "professor":"1E03",
+	 "enrolled":"15/050",
+	 "lectures":
+        [{"core":"C02","times":["Tue_15.5_1","Wed_15.5_1"]},
+		 {"core":"C03","times":["Tue_14.5_1","Thu_14.5_1"]}
         ],
-	 "Tutorials":
-		[{"Tut":"T06","Times":["Fri_08.5_1"]},
-		 {"Tut":"T07","Times":["Fri_12.5_1"]},
-		 {"Tut":"T08","Times":["Fri_09.5_1"]},
-		 {"Tut":"T12","Times":["Wed_08.5_1"]},
-		 {"Tut":"T13","Times":["Thu_08.5_1"]},
-		 {"Tut":"T16","Times":["Mon_10.5_1"]},
-		 {"Tut":"T17","Times":["Mon_09.5_1"]}
+	 "tutorials":
+		[{"tut":"T06","times":["Fri_08.5_1"]},
+		 {"tut":"T07","times":["Fri_12.5_1"]},
+		 {"tut":"T08","times":["Fri_09.5_1"]},
+		 {"tut":"T12","times":["Wed_08.5_1"]},
+		 {"tut":"T13","times":["Thu_08.5_1"]},
+		 {"tut":"T16","times":["Mon_10.5_1"]},
+		 {"tut":"T17","times":["Mon_09.5_1"]}
 		],
-	 "Labs":[],
-	 "Exam":"14_16.0_1"
+	 "labs":[],
+	 "exam":"14_16.0_1"
 	},
     
-    {"Name":"Elementary Computing and Computer Use", 
-     "Code":"1TA3",
-	 "Subject":"COMPSCI", 
-     "Professor":"TBD",
-	 "Enrolled":"24/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Mon_12.5_1","Thu_12.5_1","Tue_13.5_1"]}
+    {"name":"Elementary Computing and Computer Use", 
+     "id":"13",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"1TA3",
+	 "subject":"COMPSCI", 
+     "professor":"TBD",
+	 "enrolled":"24/100",
+	 "lectures":
+        [{"core":"C01","times":["Mon_12.5_1","Thu_12.5_1","Tue_13.5_1"]}
         ],
-	 "Tutorials":
-		[{"Tut":"T01","Times":["Mon_09.5_1"]},
-		 {"Tut":"T02","Times":["Mon_11.5_1"]}
+	 "tutorials":
+		[{"tut":"T01","times":["Mon_09.5_1"]},
+		 {"tut":"T02","times":["Mon_11.5_1"]}
 		],
-	 "Labs":
+	 "labs":
 		[],
-	 "Exam":"15_16.0_1"
+	 "exam":"15_16.0_1"
 	},
 	
-    {"Name":"Computer Science Practice and Experience: Basic Concepts", 
-     "Code":"2XA3",
-	 "Subject":"COMPSCI", 
-     "Professor":"George Karakostas",
-	 "Enrolled":"22/050",
-	 "Lectures":
-        [{"Core":"C01","Times":["Fri_11.5_1"]}
+    {"name":"Computer Science Practice and Experience: Basic Concepts", 
+     "id":"14",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2XA3",
+	 "subject":"COMPSCI", 
+     "professor":"George Karakostas",
+	 "enrolled":"22/050",
+	 "lectures":
+        [{"core":"C01","times":["Fri_11.5_1"]}
         ],
-	 "Tutorials":[],
-	 "Labs":
-		[{"Lab":"L01","Times":["Fri_14.5_2","Tue_12.5_2"]}
+	 "tutorials":[],
+	 "labs":
+		[{"lab":"L01","times":["Fri_14.5_2","Tue_12.5_2"]}
         ],
-	 "Exam":"16_16.0_3"
+	 "exam":"16_16.0_3"
 	},
 	
-    {"Name":"Studying Culture: A Critical Introduction",
-     "Code":"3CS3",
-	 "Subject":"ANTHROP",
-     "Professor":"Joanne Leow",
-	 "Enrolled":"38/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Tue_19.0_2"]}
+    {"name":"Studying Culture: A Critical Introduction",
+     "id":"15",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"3CS3",
+	 "subject":"ANTHROP",
+     "professor":"Joanne Leow",
+	 "enrolled":"38/100",
+	 "lectures":
+        [{"core":"C01","times":["Tue_19.0_2"]}
         ],
-	 "Tutorials":
-		[{"Tut":"T01","Times":["Tue_18.0_1"]},
-		 {"Tut":"T02","Times":["Tue_18.0_1"]},
-		 {"Tut":"T03","Times":["Tue_18.0_1"]},
-		 {"Tut":"T04","Times":["Tue_18.0_1"]},
-		 {"Tut":"T05","Times":["Tue_18.0_1"]},
-		 {"Tut":"T06","Times":["Tue_18.0_1"]},
-		 {"Tut":"T07","Times":["Tue_21.0_1"]},
-		 {"Tut":"T08","Times":["Tue_21.0_1"]},
-		 {"Tut":"T09","Times":["Tue_21.0_1"]},
-		 {"Tut":"T10","Times":["Tue_21.0_1"]},
-		 {"Tut":"T11","Times":["Tue_16.5_1"]},
-		 {"Tut":"T12","Times":["Tue_16.5_1"]}
+	 "tutorials":
+		[{"tut":"T01","times":["Tue_18.0_1"]},
+		 {"tut":"T02","times":["Tue_18.0_1"]},
+		 {"tut":"T03","times":["Tue_18.0_1"]},
+		 {"tut":"T04","times":["Tue_18.0_1"]},
+		 {"tut":"T05","times":["Tue_18.0_1"]},
+		 {"tut":"T06","times":["Tue_18.0_1"]},
+		 {"tut":"T07","times":["Tue_21.0_1"]},
+		 {"tut":"T08","times":["Tue_21.0_1"]},
+		 {"tut":"T09","times":["Tue_21.0_1"]},
+		 {"tut":"T10","times":["Tue_21.0_1"]},
+		 {"tut":"T11","times":["Tue_16.5_1"]},
+		 {"tut":"T12","times":["Tue_16.5_1"]}
 		],
-	 "Labs":[],
-	 "Exam":"17_16.0_3"
+	 "labs":[],
+	 "exam":"17_16.0_3"
 	},
 	
-    {"Name":"Earth and the Enviroment", 
-     "Code":"2G03",
-	 "Subject":"EARTHSC", 
-     "Professor":"Lisa Leoni",
-	 "Enrolled":"24/100",
-	 "Lectures":
-        [{"Core":"C02","Times":["Tue_12.5_1","Wed_12.5_1","Fri_12.5_1"]}
+    {"name":"Earth and the Enviroment", 
+     "id":"16",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2G03",
+	 "subject":"EARTHSC", 
+     "professor":"Lisa Leoni",
+	 "enrolled":"24/100",
+	 "lectures":
+        [{"core":"C02","times":["Tue_12.5_1","Wed_12.5_1","Fri_12.5_1"]}
         ],
-	 "Tutorials":[],
-	 "Labs":
-		[{"Lab":"T19","Times":["Tue_14.5_2"]},
-		 {"Lab":"T20","Times":["Tue_16.5_2"]},
-		 {"Lab":"T21","Times":["Wed_08.5_2"]},
-		 {"Lab":"T22","Times":["Wed_10.5_2"]},
-		 {"Lab":"T24","Times":["Wed_16.5_2"]},
-		 {"Lab":"T25","Times":["Thu_08.5_2"]},
-		 {"Lab":"T28","Times":["Fri_14.5_2"]}
+	 "tutorials":[],
+	 "labs":
+		[{"lab":"T19","times":["Tue_14.5_2"]},
+		 {"lab":"T20","times":["Tue_16.5_2"]},
+		 {"lab":"T21","times":["Wed_08.5_2"]},
+		 {"lab":"T22","times":["Wed_10.5_2"]},
+		 {"lab":"T24","times":["Wed_16.5_2"]},
+		 {"lab":"T25","times":["Thu_08.5_2"]},
+		 {"lab":"T28","times":["Fri_14.5_2"]}
 		],
-	 "Exam":"18_16.0_3"
+	 "exam":"18_16.0_3"
 	},
 	
-    {"Name":"Introductory Microeconomics", 
-     "Code":"1B03",
-	 "Subject":"COMMERCE", 
-     "Professor":"Hannah Holmes",
-	 "Enrolled":"16/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Mon_08.5_1","Wed_08.5_1","Fri_10.5_1"]}
+    {"name":"Introductory Microeconomics", 
+     "id":"17",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"1B03",
+	 "subject":"COMMERCE", 
+     "professor":"Hannah Holmes",
+	 "enrolled":"16/100",
+	 "lectures":
+        [{"core":"C01","times":["Mon_08.5_1","Wed_08.5_1","Fri_10.5_1"]}
         ],
-	 "Tutorials":[],
-	 "Labs":[],
-	 "Exam":"19_16.0_3"
+	 "tutorials":[],
+	 "labs":[],
+	 "exam":"19_16.0_3"
 	},
 	
-    {"Name":"Introductory Macroeconomics",
-     "Code":"4BB3",
-	 "Subject":"COMMERCE",
-     "Professor":"Bridget O'shaughnessy",
-	 "Enrolled":"18/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Tue_09.5_1"]},
-		 {"Core":"C02","Times":["Tue_08.5_1"]},
-		 {"Core":"C03","Times":["Thu_19.0_2"]}
+    {"name":"Introductory Macroeconomics",
+     "id":"18",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"4BB3",
+	 "subject":"COMMERCE",
+     "professor":"Bridget O'shaughnessy",
+	 "enrolled":"18/100",
+	 "lectures":
+        [{"core":"C01","times":["Tue_09.5_1"]},
+		 {"core":"C02","times":["Tue_08.5_1"]},
+		 {"core":"C03","times":["Thu_19.0_2"]}
 		],
-	 "Tutorials":
-		[{"Tut":"T03","Times":["Wed_09.5_1"]},
-		 {"Tut":"T04","Times":["Tue_16.5_1"]},
-		 {"Tut":"T05","Times":["Mon_15.5_1"]},
-		 {"Tut":"T06","Times":["Thu_13.5_1"]},
-		 {"Tut":"T09","Times":["Fri_08.5_1"]},
-		 {"Tut":"T10","Times":["Fri_11.5_1"]},
-		 {"Tut":"T11","Times":["Mon_14.5_1"]},
-		 {"Tut":"T12","Times":["Fri_16.5_1"]},
-		 {"Tut":"T13","Times":["Mon_08.5_1"]},
-		 {"Tut":"T14","Times":["Mon_16.5_1"]},
-		 {"Tut":"T15","Times":["Thu_10.5_1"]},
-		 {"Tut":"T16","Times":["Wed_14.5_1"]},
-		 {"Tut":"T19","Times":["Fri_12.5_1"]},
-		 {"Tut":"T20","Times":["Fri_09.5_1"]},
-		 {"Tut":"T23","Times":["Tue_14.5_1"]},
-		 {"Tut":"T24","Times":["Mon_11.5_1"]},
-		 {"Tut":"T25","Times":["Fri_13.5_1"]},
-		 {"Tut":"T26","Times":["Wed_15.5_1"]}
+	 "tutorials":
+		[{"tut":"T03","times":["Wed_09.5_1"]},
+		 {"tut":"T04","times":["Tue_16.5_1"]},
+		 {"tut":"T05","times":["Mon_15.5_1"]},
+		 {"tut":"T06","times":["Thu_13.5_1"]},
+		 {"tut":"T09","times":["Fri_08.5_1"]},
+		 {"tut":"T10","times":["Fri_11.5_1"]},
+		 {"tut":"T11","times":["Mon_14.5_1"]},
+		 {"tut":"T12","times":["Fri_16.5_1"]},
+		 {"tut":"T13","times":["Mon_08.5_1"]},
+		 {"tut":"T14","times":["Mon_16.5_1"]},
+		 {"tut":"T15","times":["Thu_10.5_1"]},
+		 {"tut":"T16","times":["Wed_14.5_1"]},
+		 {"tut":"T19","times":["Fri_12.5_1"]},
+		 {"tut":"T20","times":["Fri_09.5_1"]},
+		 {"tut":"T23","times":["Tue_14.5_1"]},
+		 {"tut":"T24","times":["Mon_11.5_1"]},
+		 {"tut":"T25","times":["Fri_13.5_1"]},
+		 {"tut":"T26","times":["Wed_15.5_1"]}
 		],
-	 "Labs":[],
-	 "Exam":"20_16.0_3"
+	 "labs":[],
+	 "exam":"20_16.0_3"
 	},
 	
-    {"Name":"Engineering Design and Graphics",
-     "Code":"3C03",
-	 "Subject":"COMP SCI", 
-     "Professor":"Colin McDonald",
-	 "Enrolled":"16/100",
-	 "Lectures":
-        [{"Core":"C01","Times":["Mon_08.5_1"]}
+    {"name":"Engineering Design and Graphics",
+     "id":"19",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"3C03",
+	 "subject":"COMP SCI", 
+     "professor":"Colin McDonald",
+	 "enrolled":"16/100",
+	 "lectures":
+        [{"core":"C01","times":["Mon_08.5_1"]}
         ],
-	 "Tutorials":
-		[{"Tut":"T01","Times":["Mon_10.5_2"]},
-		 {"Tut":"T03","Times":["Tue_10.5_2"]},
-		 {"Tut":"T04","Times":["Tue_12.5_2"]},
-		 {"Tut":"T05","Times":["Wed_10.5_2"]},
-		 {"Tut":"T06","Times":["Thu_12.5_2"]},
-		 {"Tut":"T07","Times":["Thu_10.5_2"]},
-		 {"Tut":"T08","Times":["Thu_12.5_2"]},
-		 {"Tut":"T09","Times":["Fri_10.5_2"]},
-		 {"Tut":"T10","Times":["Fri_12.5_2"]}
+	 "tutorials":
+		[{"tut":"T01","times":["Mon_10.5_2"]},
+		 {"tut":"T03","times":["Tue_10.5_2"]},
+		 {"tut":"T04","times":["Tue_12.5_2"]},
+		 {"tut":"T05","times":["Wed_10.5_2"]},
+		 {"tut":"T06","times":["Thu_12.5_2"]},
+		 {"tut":"T07","times":["Thu_10.5_2"]},
+		 {"tut":"T08","times":["Thu_12.5_2"]},
+		 {"tut":"T09","times":["Fri_10.5_2"]},
+		 {"tut":"T10","times":["Fri_12.5_2"]}
 		],
-	 "Labs":
-		[{"Lab":"L01","Times":["Mon_08.5_3"]},
-		 {"Lab":"L03","Times":["Tue_08.5_3"]},
-		 {"Lab":"L05","Times":["Wed_08.5_3"]},
-		 {"Lab":"L07","Times":["Thu_08.5_3"]},
-		 {"Lab":"L08","Times":["Thu_14.5_3"]},
-		 {"Lab":"L09","Times":["Fri_08.5_3"]},
-		 {"Lab":"L10","Times":["Fri_14.5_3"]}
+	 "labs":
+		[{"lab":"L01","times":["Mon_08.5_3"]},
+		 {"lab":"L03","times":["Tue_08.5_3"]},
+		 {"lab":"L05","times":["Wed_08.5_3"]},
+		 {"lab":"L07","times":["Thu_08.5_3"]},
+		 {"lab":"L08","times":["Thu_14.5_3"]},
+		 {"lab":"L09","times":["Fri_08.5_3"]},
+		 {"lab":"L10","times":["Fri_14.5_3"]}
 		],
-	 "Exam":"21_16.0_3"
+	 "exam":"21_16.0_3"
 	},
 	
-	
-    {"Name":"Engineering Computation",
-     "Code":"2D04",
-	 "Subject":"COMP SCI",
-     "Professor":"William Michael Farmer",
-	 "Enrolled":"08/050",
-	 "Lectures":
-        [{"Core":"C01","Times":["Wed_08.5_1"]}
+    {"name":"Engineering Computation",
+     "id":"20",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2D04",
+	 "subject":"COMP SCI",
+     "professor":"William Michael Farmer",
+	 "enrolled":"08/050",
+	 "lectures":
+        [{"core":"C01","times":["Wed_08.5_1"]}
         ],
-	 "Tutorials":
-		[{"Tut":"T04","Times":["Tue_08.5_2"]},
-		 {"Tut":"T05","Times":["Wed_08.5_2"]},
-		 {"Tut":"T06","Times":["Wed_08.5_2"]},
-		 {"Tut":"T07","Times":["Thu_08.5_2"]},
-		 {"Tut":"T08","Times":["Thu_08.5_2"]},
-		 {"Tut":"T09","Times":["Fri_08.5_2"]},
-		 {"Tut":"T10","Times":["Fri_08.5_2"]}
+	 "tutorials":
+		[{"tut":"T04","times":["Tue_08.5_2"]},
+		 {"tut":"T05","times":["Wed_08.5_2"]},
+		 {"tut":"T06","times":["Wed_08.5_2"]},
+		 {"tut":"T07","times":["Thu_08.5_2"]},
+		 {"tut":"T08","times":["Thu_08.5_2"]},
+		 {"tut":"T09","times":["Fri_08.5_2"]},
+		 {"tut":"T10","times":["Fri_08.5_2"]}
 		],
-	 "Labs":
-		[{"Lab":"L01","Times":["Mon_11.5_3"]},
-		 {"Lab":"L04","Times":["Tue_11.5_3"]},
-		 {"Lab":"L05","Times":["Wed_11.5_3"]},
-		 {"Lab":"L06","Times":["Wed_11.5_3"]},
-		 {"Lab":"L08","Times":["Thu_11.5_3"]},
-		 {"Lab":"L09","Times":["Fri_11.5_3"]},
-		 {"Lab":"L10","Times":["Fri_11.5_3"]}
+	 "labs":
+		[{"lab":"L01","times":["Mon_11.5_3"]},
+		 {"lab":"L04","times":["Tue_11.5_3"]},
+		 {"lab":"L05","times":["Wed_11.5_3"]},
+		 {"lab":"L06","times":["Wed_11.5_3"]},
+		 {"lab":"L08","times":["Thu_11.5_3"]},
+		 {"lab":"L09","times":["Fri_11.5_3"]},
+		 {"lab":"L10","times":["Fri_11.5_3"]}
 		],
-	 "Exam":"22_16.0_3"
+	 "exam":"22_16.0_3"
 	},
 	
-    {"Name":"Introduction to the Engineering Co-op Program",
-     "Code":"2EE0",
-	 "Subject":"COMP SCI", 
-     "Professor":"Jeffrey Ollinger",
-	 "Enrolled":"18/100",
-	 "Lectures":
-        [{"Core":"C07","Times":["Fri_09.5_2"]},
-		 {"Core":"C08","Times":["Mon_09.5_2"]},
-		 {"Core":"C09","Times":["Wed_12.5_2"]},
-		 {"Core":"C10","Times":["Thu_09.5_2"]},
-		 {"Core":"C11","Times":["Fri_12.5_2"]},
-		 {"Core":"C12","Times":["Fri_14.5_2"]}
+    {"name":"Introduction to the Engineering Co-op Program",
+     "id":"21",
+     "link":"http://academiccalendars.romcmaster.ca",
+     "code":"2EE0",
+	 "subject":"COMP SCI", 
+     "professor":"Jeffrey Ollinger",
+	 "enrolled":"18/100",
+	 "lectures":
+        [{"core":"C07","times":["Fri_09.5_2"]},
+		 {"core":"C08","times":["Mon_09.5_2"]},
+		 {"core":"C09","times":["Wed_12.5_2"]},
+		 {"core":"C10","times":["Thu_09.5_2"]},
+		 {"core":"C11","times":["Fri_12.5_2"]},
+		 {"core":"C12","times":["Fri_14.5_2"]}
 		],
-	 "Tutorials":[],
-	 "Labs":[],
-	 "Exam":"14_19.0_3"
+	 "tutorials":[],
+	 "labs":[],
+	 "exam":"14_19.0_3"
 	}
 ]}
