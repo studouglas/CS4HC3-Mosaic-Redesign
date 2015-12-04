@@ -184,3 +184,19 @@ function loadCoursesFromJson() {
     });
     return coursesJson.courses;
 }
+
+//Search courses function for ungreying search fields and button
+function srchBttnUpdate() {
+	var slct1 = document.getElementById("subselect");
+	var slct2 = document.getElementById("levselect");
+	var slct3 = document.getElementById("crsselect");
+	var subTxt = slct1.options[slct1.selectedIndex].text;
+	var levTxt = slct2.options[slct2.selectedIndex].text;
+	if (subTxt != "Choose Subject"){
+		document.getElementById("levselect").disabled = false;
+		document.getElementById("searchbttn").className = "ghost-button highlighted-button";
+	}
+	if (levTxt != "Choose Level"){
+		document.getElementById("crsselect").disabled = false;
+	}
+}
