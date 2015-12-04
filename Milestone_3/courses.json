@@ -41,7 +41,7 @@
 		[]
 	},
 	
-		{"Name":"Studio Investigations", "Code":"1SI3",
+		{"Name":"Studio Investigations", "Code":"2SI3",
 	 "Subject":"ART", "Professor":"Christopher Myhr",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Thu_13.5_4"}]}],
@@ -88,7 +88,7 @@
 		]
 	},
 
-		{"Name":"Biodiversity, Evolution and Humanity", "Code":"1M03",
+		{"Name":"Biodiversity, Evolution and Humanity", "Code":"2M03",
 	 "Subject":"BIOLOGY", "Professor":"Alastair Tracey",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Mon_13.5_1", "Time2":"Wed_13.5_1", "Time3":"Thu_13.5_1"}]},
@@ -167,7 +167,7 @@
 		[]
 	},
 	
-		{"Name":"Business Environment and Organization", "Code":"1E03",
+		{"Name":"Business Environment and Organization", "Code":"2E03",
 	 "Subject":"COMMERCE", "Professor":"1E03",
 	 "Lectures":
         [{"Core":"C02","Times":[{"Time1":"Tue_15.5_1", "Time2":"Wed_15.5_1"}]},
@@ -198,7 +198,7 @@
 		[]
 	},
 	
-		{"Name":"Computer Science Practice and Experience: Basic Concepts", "Code":"1XA3",
+		{"Name":"Computer Science Practice and Experience: Basic Concepts", "Code":"2XA3",
 	 "Subject":"COMPSCI", "Professor":"George Karakostas",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Fri_11.5_1"}]}],
@@ -315,7 +315,7 @@
 	},
 	
 	
-		{"Name":"Engineering Computation", "Code":"1D04",
+		{"Name":"Engineering Computation", "Code":"2D04",
 	 "Subject":"ENGINEER", "Professor":"William Michael Farmer",
 	 "Lectures":
         [{"Core":"C01","Times":[{"Time1":"Wed_08.5_1"}]}],
@@ -337,22 +337,6 @@
 		 {"Lab":"L09","Times":[{"Time1":"Fri_11.5_3"}]},
 		 {"Lab":"L10","Times":[{"Time1":"Fri_11.5_3"}]}
 		]
-	},
-	
-		{"Name":"Introduction to the Engineering Co-op Program", "Code":"1EE0",
-	 "Subject":"ENGINEER", "Professor":"Jeffrey Ollinger",
-	 "Lectures":
-        [{"Core":"C07","Times":[{"Time1":"Fri_09.5_2"}]},
-		 {"Core":"C08","Times":[{"Time1":"Mon_09.5_2"}]},
-		 {"Core":"C09","Times":[{"Time1":"Wed_12.5_2"}]},
-		 {"Core":"C10","Times":[{"Time1":"Thu_09.5_2"}]},
-		 {"Core":"C11","Times":[{"Time1":"Fri_12.5_2"}]},
-		 {"Core":"C12","Times":[{"Time1":"Fri_014.5_2"}]}
-		],
-	 "Tutorials":
-		[],
-	 "Labs":
-		[]
 	},
 	
 		{"Name":"Introduction to the Engineering Co-op Program", "Code":"1EE0",
