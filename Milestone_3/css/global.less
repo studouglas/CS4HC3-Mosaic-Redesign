@@ -88,8 +88,9 @@ table {
 /***********************************************
     Text
 ***********************************************/
-p, a, h1, h2, h3, h4, h5, h6, ul, td, .button {
+p, a, h1, h2, h3, h4, h5, h6, ul, td {
     .default-font;
+    text-align: left;
 }
 h1 {
     font-size: 2em;
@@ -121,6 +122,7 @@ a:hover, a:focus {
 body {
     background-color: #fafafa;
     min-width: 900px;
+    text-align: center;
 }
 .content {
     position: relative;
@@ -161,6 +163,11 @@ body {
 .ghost-button:hover {
     background-color: #e3e3e3;
     color: @maroon;
+}
+.ghost-button-big {
+    padding: 12px 32px;
+    margin: 6px;
+    font-size: 18px;
 }
 .highlighted-button {
     color: #2d6955;
@@ -528,36 +535,50 @@ body {
     vertical-align: middle;
 }
 
-.breadcrumb-home {
-    background-image: url("images/home_icon.png");
-    width: 24px;
-    height: 24px;
-}
+/***********************************************
+* Breadcrumbs 
+***********************************************/
 .breadcrumb {
-    list-style: none;
-    display: inline-block;
+    display: block;
+    margin-bottom: 40px;
+    height: 46px;
+}
+.breadcrumb-home-img {    
+    width: 28px;
+    margin-top: -1px;
+    opacity: 0.5;
 }
 .breadcrumb li {
     float: left;
+    margin: 0 3px;
 }
-.breadcrumb li a {
+.breadcrumb li {
+    height: 100%;
+    border-radius: 2px;
     background-color: #e6e6e6;
-    padding: 10px 0 10px 65px;
+    padding: 10px 30px;
     position: relative;
     display: block;
     float: left;
+    .vendor(transition, background-color 0.3s ease-in-out);
 }
-.breadcrumb li a:after {
-    content: " "; 
-	display: block; 
-	width: 0; 
-	height: 0;
-	border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
-	border-bottom: 50px solid transparent;
-	border-left: 30px solid hsla(34,85%,35%,1);
-	position: absolute;
-	top: 50%;
-	margin-top: -50px; 
-	left: 100%;
-	z-index: 2; 
+.breadcrumb li a {
+    color: @medium-text;
+}
+.breadcrumb li:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+.breadcrumb li.breadcrumb-current {
+    font-weight: 500;
+}
+.breadcrumb li.breadcrumb-current:hover {
+    background-color: #e6e6e6;
+    cursor: default;
+}
+
+.center-container {
+    display: inline-block;
+    text-align: left;
+    margin-top: 40px;
 }

@@ -14,6 +14,198 @@
     <div id="header"></div>
     
 	<div class="content">
-        <p>This is the content</p>    
+        <ul class="breadcrumb">
+            <li class="breadcrumb-home-container">
+                <a href="index.html">
+                    <img class="breadcrumb-home-img" src="images/home_icon.png">
+                </a>
+            </li>
+            <li><a href="searchcourses.html">1. Search for Courses</a></li>
+            <li class="breadcrumb-current">2. Search Results</li>
+            <li><a href="enroll.html">3. Enroll / Drop</a></li>
+        </ul>
+        
+        <h1 class="content-heading">Search Results</h1>
+        <table class="course-table">
+            <tr class="course-table-header-row">
+                <td class="course-table-heading">Course Info</td>
+                <td class="course-table-heading course-table-times-heading">Times</td>
+                <td class="course-table-day-heading">Monday</td>
+                <td class="course-table-day-heading">Tuesday</td>
+                <td class="course-table-day-heading">Wednesday</td>
+                <td class="course-table-day-heading">Thursday</td>
+                <td class="course-table-day-heading">Friday</td>
+                <td class="course-table-heading">Enrolled</td>
+                <td class="course-table-heading">Action</td>
+            </tr>
+            
+            <!-- CS 1Z06 -->
+            <tr class="course-table-row">
+                <td class="course-table-code">
+                    <a href="">COMP SCI 1Z06</a>
+                </td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="C01">Lecture 1</option>
+                        <option value="C02">Lecture 2</option>
+                        <option value="C02">Lecture 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-enrolled" rowspan="3">10/50</td>
+                <td class="course-table-action" rowspan="3">
+                    <a class="ghost-button course-table-action-button disabled-button">&#10003; On Wishlist</a>
+                </td>
+            </tr>
+            <tr class="course-table-row">
+                <td class="course-table-title">Intro to Programming</td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="T01">Tutorial 1</option>
+                        <option value="T02">Tutorial 2</option>
+                        <option value="T02">Tutorial 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text">11:30-12:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+            </tr>
+            <tr class="course-table-row course-table-row-bottom">
+                <td class="course-table-professor">Dr. S. Smith</td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="L01">Lab 1</option>
+                        <option value="L02">Lab 2</option>
+                        <option value="L02">Lab 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">12:30-14:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+            </tr>
+            <!-- CS 1Z06 -->
+        
+            <!-- MATH 1B03 -->
+            <tr class="course-table-row">
+                <td class="course-table-code">
+                    <a href="">MATH 1B03</a>
+                </td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="C01">Lecture 1</option>
+                        <option value="C02">Lecture 2</option>
+                        <option value="C02">Lecture 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-enrolled" rowspan="3">10/50</td>
+                <td class="course-table-action" rowspan="3">
+                    <a class="ghost-button course-table-action-button highlighted-button">Add to Wishlist</a>
+                </td>
+            </tr>
+            <tr class="course-table-row">
+                <td class="course-table-title">Calculus II</td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="T01">Tutorial 1</option>
+                        <option value="T02">Tutorial 2</option>
+                        <option value="T02">Tutorial 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text">11:30-12:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+            </tr>
+            <tr class="course-table-row course-table-row-bottom">
+                <td class="course-table-professor">Dr. B. Loney</td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="L01">Lab 1</option>
+                        <option value="L02">Lab 2</option>
+                        <option value="L02">Lab 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">12:30-14:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+            </tr>
+            <!-- End MATH 1B03 -->
+            
+            <!-- CS 1P03 -->
+            <tr class="course-table-row">
+                <td class="course-table-code">
+                    <a href="">COMP SCI 1P03</a>
+                </td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="C01">Lecture 1</option>
+                        <option value="C02">Lecture 2</option>
+                        <option value="C02">Lecture 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">8:30-9:30</td>
+                <td class="course-table-enrolled" rowspan="3">10/50</td>
+                <td class="course-table-action" rowspan="3">
+                    <a class="ghost-button course-table-action-button highlighted-button">Add to Wishlist</a>
+                </td>
+            </tr>
+            <tr class="course-table-row">
+                <td class="course-table-title">Computer Architecture</td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="T01">Tutorial 1</option>
+                        <option value="T02">Tutorial 2</option>
+                        <option value="T02">Tutorial 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text">11:30-12:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+            </tr>
+            <tr class="course-table-row course-table-row-bottom">
+                <td class="course-table-professor">Dr. M. Moore</td>
+                <td class="course-table-dropdown-row">
+                    <select class="course-table-dropdown">
+                        <option value="L01">Lab 1</option>
+                        <option value="L02">Lab 2</option>
+                        <option value="L02">Lab 3</option>
+                    </select>
+                </td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text">12:30-14:30</td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+                <td class="course-table-day-text"></td>
+            </tr>
+            <!-- end CS 1P03 -->
+        </table>
+        
+        <div class="center-container">
+            <a class="ghost-button ghost-button-big" href="searchcourses.html">Back to Search</a>
+            <a class="ghost-button ghost-button-big highlighted-button" href="enroll.html">Continue to Enroll</a>
+        </div>
     </div>
+
 </body>
