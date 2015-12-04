@@ -39,3 +39,20 @@ function headerAccountDropdownClicked() {
         $(".header-account-dropdown")[0].style.visibility = "visible"
     }
 }
+
+
+//Search courses function for ungreying search fields and button
+function srchBttnUpdate() {
+	var slct1 = document.getElementById("subselect");
+	var slct2 = document.getElementById("levselect");
+	var slct3 = document.getElementById("crsselect");
+	var subTxt = slct1.options[slct1.selectedIndex].text;
+	var levTxt = slct2.options[slct2.selectedIndex].text;
+	if (subTxt != "Choose Subject"){
+		//ungrey level select
+		//ungrey button
+	}
+	if (levTxt != "Choose Level"){
+		//ungrey course select
+	}
+}

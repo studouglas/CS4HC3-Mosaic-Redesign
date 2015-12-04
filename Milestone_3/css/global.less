@@ -95,6 +95,7 @@ p, a, h1, h2, h3, h4, h5, h6, ul, td {
 h1 {
     font-size: 2em;
 }
+
 strong {
     font-weight: 800;
 }
@@ -140,6 +141,24 @@ body {
     float: right;
     margin-right: @default-margin;
 }
+.imgcontainer{
+    position:relative;
+    width:50%;
+    
+    top:5px
+}
+.overlaytext{
+    position:absolute;
+    top:45%; 
+    left:30%;
+    width:25%;
+    padding:4px;
+    text-align: left;
+}
+
+
+
+
 
 /***********************************************
      Button (ghost)
@@ -415,7 +434,7 @@ body {
 	border: 2px solid darkgrey;
 	padding-top: 50px;
 	padding-left: 40px;
-	background-color: lightgrey;
+	background-color: #eaeae1;
 }
 .left {
 	float: left;
@@ -428,6 +447,12 @@ body {
 .right {
 	float: right;
 	width: 33%;
+}
+
+.right-bottom  {
+	margin-top: 25px;
+	float: right;
+	width: 20%;
 }
 
 //select {
