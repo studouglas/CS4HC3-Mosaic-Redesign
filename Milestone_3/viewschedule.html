@@ -21,15 +21,22 @@
                 </a>
             </li>
             <li class="breadcrumb-current"> View Schedule</li>
+            <li><a href="examschedule.html"> Exam Schedule</a></li>
         </ul>
         
         <!-- Class Schedule Label -->
-        <h1 class="content-heading">Class Schedule:</h1>
+        <h1 class="content-heading">Class Schedule:
         
+        <!-- Drop Down -->
+        <select class="schedule-dropdown">
+            <option value="T01">Fall 2015</option>
+            <option value="T02">Winter 2016</option>
+        </select>
+        </h1>        
         <!-- Weekly Schedule table -->
-        <table class="course-table">
+        <table class="course-table" style = "margin-bottom: 30px; margin-top: 15px;">
         <tr class="course-table-header-row">
-            <td class="weekly-table-heading ">Time</td>
+            <td class="weekly-table-heading">Time</td>
             <td class="weekly-table-day-heading">Sunday</td>
             <td class="weekly-table-day-heading">Monday</td>
             <td class="weekly-table-day-heading">Tuesday</td>
@@ -321,7 +328,7 @@
         </table>
 
         <!-- View Exam Button -->
-        <a id='toExam' class="ghost-button" href="examschedule.html">View Exam Schedule</a>
+        <a class="ghost-button ghost-button-big" href="examschedule.html">View Exam Schedule</a>
         
     </div>
 </body>
