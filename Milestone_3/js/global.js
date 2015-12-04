@@ -49,10 +49,10 @@ function srchBttnUpdate() {
 	var subTxt = slct1.options[slct1.selectedIndex].text;
 	var levTxt = slct2.options[slct2.selectedIndex].text;
 	if (subTxt != "Choose Subject"){
-		//ungrey level select
-		//ungrey button
+		document.getElementById("levselect").disabled = false;
+		document.getElementById("searchbttn").className = "ghost-button highlighted-button";
 	}
 	if (levTxt != "Choose Level"){
-		//ungrey course select
+		document.getElementById("crsselect").disabled = false;
 	}
 }
