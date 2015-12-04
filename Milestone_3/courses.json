@@ -8,7 +8,8 @@
 		[{"Tut":"T01","Times":[{"Time1":"Tue_8.5_1"}]}],
 	 "Labs":
 		[{"Lab":"L01", "Times":[{"Time1":"Wed_13.5_3"}]},
-		 {"Lab":"L02", "Times":[{"Time1":"Fri_13.5_3"}]}]
+		 {"Lab":"L02", "Times":[{"Time1":"Fri_13.5_3"}]}],
+	 "Exam":"11_13.0_3"
 	},
 	
 	{"Name":"Introduction to Anthropology: Sex, Food and Death", "Code":"1AA3",
@@ -18,7 +19,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"12_13.0_3"
 	},
 	
 		{"Name":"Introduction to Anthropology: Race, Religion and Conflict", "Code":"1AB3",
@@ -28,7 +30,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"13_13.0_3"
 	},
 	
 		{"Name":"Material Investigations and Concepts", "Code":"1MI3",
@@ -38,7 +41,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"14_13.0_3"
 	},
 	
 		{"Name":"Studio Investigations", "Code":"2SI3",
@@ -48,7 +52,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"15_13.0_3"
 	},
 	
 		{"Name":"Argumentation", "Code":"1BB3",
@@ -58,7 +63,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"16_13.0_1"
 	},
 	
 		{"Name":"Cellular and Molecular Biology", "Code":"1A03",
@@ -85,7 +91,8 @@
 		 {"Lab":"L24","Times":[{"Time1":"Thu_14.5_2"}]},
 		 {"Lab":"L25","Times":[{"Time1":"Fri_09.5_2"}]},
 		 {"Lab":"L26","Times":[{"Time1":"Fri_09.5_2"}]}
-		]
+		],
+	 "Exam":"17_13.0_2"
 	},
 
 		{"Name":"Biodiversity, Evolution and Humanity", "Code":"2M03",
@@ -106,7 +113,8 @@
 		 {"Tut":"T16","Times":[{"Time1":"Thu_14.5_2"}]}
 		],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"18_14.0_2"
 	},
 	
 		{"Name":"General Chemistry", "Code":"1R03",
@@ -116,7 +124,8 @@
 	 "Tutorials":
 		[{"Tut":"T01","Times":[{"Time1":"Thu_18.0_1"}]}],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"19_13.0_1"
 	},
 	
 		{"Name":"Introductory Chemistry II", "Code":"1AA3",
@@ -139,7 +148,8 @@
 		 {"Lab":"L18","Times":[{"Time1":"Thu_14.5_3"}]},
 		 {"Lab":"L20","Times":[{"Time1":"Fri_14.5_3"}]},
 		 {"Lab":"L22","Times":[{"Time1":"Mon_17.5_3"}]}
-		]
+		],
+	 "Exam":"20_13.0_3"
 	},
 	
 		{"Name":"History of Greece and Rome", "Code":"1M03",
@@ -154,7 +164,8 @@
 		 {"Tut":"T19","Times":[{"Time1":"Mon_09.5_1"}]}
 		],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"21_13.0_1"
 	},
 	
 		{"Name":"Organizational Behaviour", "Code":"1BA3",
@@ -164,7 +175,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	"Exam":"22_13.0_1"
 	},
 	
 		{"Name":"Business Environment and Organization", "Code":"2E03",
@@ -183,7 +195,8 @@
 		 {"Tut":"T17","Times":[{"Time1":"Mon_09.5_1"}]},
 		],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"14_16.0_1"
 	},
 	
 		{"Name":"Elementary Computing and Computer Use", "Code":"1TA3",
@@ -195,7 +208,8 @@
 		 {"Tut":"T02","Times":[{"Time1":"Mon_11.5_1"}]}
 		],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"15_16.0_1"
 	},
 	
 		{"Name":"Computer Science Practice and Experience: Basic Concepts", "Code":"2XA3",
@@ -205,7 +219,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[{"Lab":"L01","Times":[{"Time1":"Fri_14.5_2", "Time2":"Tue_12.5_2"}]}]
+		[{"Lab":"L01","Times":[{"Time1":"Fri_14.5_2", "Time2":"Tue_12.5_2"}]}],
+	 "Exam":"16_16.0_3"
 	},
 	
 		{"Name":"Studying Culture: A Critical Introduction", "Code":"1CS3",
@@ -227,7 +242,8 @@
 		 {"Tut":"T12","Times":[{"Time1":"Tue_16.5_1"}]}
 		],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"17_16.0_3"
 	},
 	
 		{"Name":"Earth and the Enviroment", "Code":"1G03",
@@ -244,7 +260,8 @@
 		 {"Lab":"T24","Times":[{"Time1":"Wed_16.5_2"}]},
 		 {"Lab":"T25","Times":[{"Time1":"Thu_08.5_2"}]},
 		 {"Lab":"T28","Times":[{"Time1":"Fri_14.5_2"}]}
-		 ]
+		 ],
+	 "Exam":"18_16.0_3"
 	},
 	
 		{"Name":"Introductory Microeconomics", "Code":"1B03",
@@ -254,7 +271,8 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"19_16.0_3"
 	},
 	
 		{"Name":"Introductory Macroeconomics", "Code":"1BB3",
@@ -285,7 +303,8 @@
 		 {"Tut":"T26","Times":[{"Time1":"Wed_15.5_1"}]}
 		],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"20_16.0_3"
 	},
 	
 		{"Name":"Engineering Design and Graphics", "Code":"1C03",
@@ -311,7 +330,8 @@
 		 {"Lab":"L08","Times":[{"Time1":"Thu_14.5_3"}]},
 		 {"Lab":"L09","Times":[{"Time1":"Fri_08.5_3"}]},
 		 {"Lab":"L10","Times":[{"Time1":"Fri_14.5_3"}]}
-		]
+		],
+	 "Exam":"21_16.0_3"
 	},
 	
 	
@@ -336,7 +356,8 @@
 		 {"Lab":"L08","Times":[{"Time1":"Thu_11.5_3"}]},
 		 {"Lab":"L09","Times":[{"Time1":"Fri_11.5_3"}]},
 		 {"Lab":"L10","Times":[{"Time1":"Fri_11.5_3"}]}
-		]
+		],
+	 "Exam":"22_16.0_3"
 	},
 	
 		{"Name":"Introduction to the Engineering Co-op Program", "Code":"1EE0",
@@ -352,9 +373,9 @@
 	 "Tutorials":
 		[],
 	 "Labs":
-		[]
+		[],
+	 "Exam":"14_19.0_3"
 	}
-	
 ]
 }
 
