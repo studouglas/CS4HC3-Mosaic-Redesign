@@ -115,7 +115,7 @@
      "code":"2M03",
 	 "subject":"BIOLOGY", 
      "professor":"Alastair Tracey",
-	 "enrolled":"13/050",
+	 "enrolled":"13/50",
 	 "lectures":
         [{"core":"C01","times":["Mon_13:30_1","Wed_13:30_1","Thu_13:30_1"]},
 		 {"core":"C02","times":["Mon_16:30_2","Wed_16:30_2","Thu_16:30_2"]}
@@ -222,8 +222,8 @@
      "link":"http://academiccalendars.romcmaster.ca",
      "code":"2E03",
 	 "subject":"COMMERCE", 
-     "professor":"1E03",
-	 "enrolled":"15/050",
+     "professor":"John Smith",
+	 "enrolled":"15/50",
 	 "lectures":
         [{"core":"C02","times":["Tue_15:30_1","Wed_15:30_1"]},
 		 {"core":"C03","times":["Tue_14:30_1","Thu_14:30_1"]}
@@ -266,7 +266,7 @@
      "code":"2XA3",
 	 "subject":"COMPSCI", 
      "professor":"George Karakostas",
-	 "enrolled":"22/050",
+	 "enrolled":"22/50",
 	 "lectures":
         [{"core":"C01","times":["Fri_11:30_1"]}
         ],
@@ -417,8 +417,8 @@
      "link":"http://academiccalendars.romcmaster.ca",
      "code":"2D04",
 	 "subject":"COMP SCI",
-     "professor":"William Michael Farmer",
-	 "enrolled":"08/050",
+     "professor":"William Farmer",
+	 "enrolled":"08/50",
 	 "lectures":
         [{"core":"C01","times":["Wed_08:30_1"]}
         ],
