@@ -76,6 +76,8 @@ table {
 @maroon: #990033;
 @maroon-hover: #6f072a;
 
+@light-green: #95e5bd;
+@light-green-hover: #75cea2;  
 @link-light: #efefef;
 @link-light-hover: #dedede;
 @link-dark: #4760cb;
@@ -188,10 +190,10 @@ body {
 .highlighted-button {
     color: #2d6955;
     border: 2px solid #2d6955;
-    background-color: #5bd196;
+    background-color: @light-green;
 }
 .highlighted-button:hover {
-    background-color: #58b587;
+    background-color: @light-green-hover;
     color: #2d6955;
 }
 .highlighted-red-button {
@@ -320,6 +322,7 @@ body {
 .header-logo-background {
     width: 100%;
     height: 120px;
+    text-align: left;
 }
 .header-nav-background {
     width: 100%;
@@ -595,7 +598,9 @@ body {
 .course-table-row {
     height: 30px;
 }
-
+.course-table-highlighted-row {
+    background-color: @light-green;
+}
 /* header row */
 .course-table-heading {
     font-weight: 600;
@@ -636,7 +641,7 @@ body {
 .course-table-dropdown {
     margin-left: 5px;
     margin-right: -2px;
-    width: 80px;
+    width: 85px;
 }
 .course-table-dropdown-row {
     border-top: @light-border;
@@ -651,6 +656,7 @@ body {
 }
 .course-table-enrolled {
     text-align: center;
+    font-size: 14px;
     border-left: @medium-border;
     border-right: @medium-border;
     border-bottom: @thick-border;
@@ -709,3 +715,7 @@ body {
     cursor: default;
 }
 
+
+.header-logo-link {
+    text-align: left;
+}
