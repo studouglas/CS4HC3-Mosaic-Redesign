@@ -7,7 +7,9 @@
      "professor":"TBD",
 	 "enrolled":"38/100",
 	 "lectures":
-        [{"core":"C01","times":["Wed_19:00_3"]}
+        [{"core":"C01","times":["Wed_19:00_3"]},
+         {"core":"C02","times":["Mon_13:00_3"]},
+         {"core":"C03","times":["Thu_19:00_3"]}
         ],
 	 "tutorials":[],
 	 "labs":[],
@@ -22,9 +24,13 @@
      "professor":"Karen Mcgarry",
 	 "enrolled":"38/100",
 	 "lectures":
-        [{"core":"C01","times":["Thu_19:00_3"]}
+        [{"core":"C01","times":["Thu_19:00_3"]},
+         {"core":"C02","times":["Mon_19:00_3"]}
         ],
-	 "tutorials":[],
+	 "tutorials":
+        [{"tut":"T01","times":["Wed_9:30_1"]},
+         {"tut":"T02","times":["Fri_10:30_1"]}
+        ],
 	 "labs":[],
 	 "exam":"13_13:00_3"
 	},

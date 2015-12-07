@@ -1,8 +1,8 @@
 'use strict';
 
 var allCourses;      // array of course objects from json
-var wishlistCourses; // array of course objects from json
-var enrolledCourses; // array of course objects from json
+var wishlistCourses; // format: '12-C01-T00-L03'
+var enrolledCourses; // format: '12-C01-T00-L03'
 
 /***********************************************
 * Setup functions called on load 
@@ -22,6 +22,10 @@ $(document).ready(function () {
     } else if (window.location.href.indexOf('searchcourses.html') > -1) {
         populateSearchCriteriaDropdowns();
         setSearchCriteriaFromUrl();
+    } else if (window.location.href.indexOf('examschedule.html') > -1) {
+        loadExamHtml();
+    } else if (window.location.href.indexOf('viewschedule.html') > -1) {
+        loadWeeklyScheduleHtml();
     }
     
     // clear cached searches if navigate away from enroll/search pages
@@ -756,17 +760,101 @@ function loadCoursesFromJson() {
 /*******************************************************
 *   Loading timetables
 ********************************************************/
-function getWeeklyTime(){
+function loadWeeklyScheduleHtml(){
+    if (enrolledCourses.length == 0) {
+        $(".no-enrolled")[0].style.display = 'inline-block';
+        $('.course-table')[0].style.display = 'none';
+        return;
+    } else {
+        $(".no-enrolled")[0].style.display = 'none';
+        $('.course-table')[0].style.display = 'table';
+    }
+    
     for (var i = 0; i < enrolledCourses.length; i++) {
-       var course = getCourse(enrolledCourses[i]);
+       var course = getCourse(enrolledCourses[i].split('-')[0]);
     }
 }
 
-function getExamDates(){
+function loadExamHtml(){
+    if (enrolledCourses.length == 0) {
+        $(".no-enrolled")[0].style.display = 'inline-block';
+        $('.course-table')[0].style.display = 'none';
+        return;
+    } else {
+        $(".no-enrolled")[0].style.display = 'none';
+        $('.course-table')[0].style.display = 'table';
+    }
+    
+    var examDays = [];
+    var examDayCourseIds = []; // kept in sync with exam days, examDays[1] corresponds with course id examDayCourseIds[1]
     for (var i = 0; i < enrolledCourses.length; i++) {
-        var course = getCourse(enrolledCourses[i]);
-        var examTime = course.exam
-        // add the course to the exam time table
+        var course = getCourse(enrolledCourses[i].split('-')[0]);
+        var examDay = course.exam.split('_')[0];
+        var startTime = course.exam.split('_')[1];
+        var endTime = parseInt(startTime.split(':')[0]) + parseInt(course.exam.split('_')[2]) + ':' + startTime.split(':')[1];
+
+        var courseStr = course.subject + ' ' + course.code;
+        var timeStr = startTime + ' - ' + endTime;
+        var locationStr = 'ITB AB102';
+        
+        if (arrayContainsElement(examDays, examDay)) {
+            var examHtml = '<p class="day-text-top-right">' + examDay + '</p>\n';
+
+            if ($("#multiple-exam-course-day-" + examDay)[0] == null) {
+                var firstExam = getCourse(examDayCourseIds[getIndexOfElement(examDays, examDay)]);
+                var firstExamCourseStr = firstExam.subject + ' ' + firstExam.code;
+                var firstExamTimeStr = firstExam.exam.split('_')[1] + ' - ' + parseInt(startTime.split(':')[0]) + parseInt(course.exam.split('_')[2]) + ':' + startTime.split(':')[1];
+                var firstExamLocationStr = 'ITB AB102';
+                console.log("CREATING NEW ONE");
+                examHtml += '<div class="multiple-exams-popup-container" id="multiple-exam-day-' + examDay + '">\n';
+                examHtml += '<div class="multiple-exams-popup" id="multiple-exam-course-day-' + examDay + '">\n';
+                examHtml += '<p class="multiple-exam-course">' + firstExamCourseStr + '</p>\n';
+                examHtml += '<p class="multiple-exam-time">' + firstExamTimeStr + '</p>\n';
+                examHtml += '<p class="multiple-exam-location">' + firstExamLocationStr + '</p>\n';
+                examHtml += '<hr class="multiple-exam-separator">\n';
+                examHtml += '<p class="multiple-exam-course">' + courseStr + '</p>\n';
+                examHtml += '<p class="multiple-exam-time">' + timeStr + '</p>\n';
+                examHtml += '<p class="multiple-exam-location">' + locationStr + '</p>\n';
+                examHtml += '</div><div class="arrow-down"></div></div>\n';
+            } else {
+                console.log("ADDING TO EXISTING ONE");
+                var courseHtml = '<hr class="multiple-exam-separator">\n';
+                courseHtml += '<p class="multiple-exam-course">' + courseStr + '</p>\n';
+                courseHtml += '<p class="multiple-exam-time">' + timeStr + '</p>\n';
+                courseHtml += '<p class="multiple-exam-location">' + locationStr + '</p>\n';
+                $("#multiple-exam-course-day-" + examDay)[0].innerHTML += courseHtml;
+            }
+            
+            examHtml += '<p class="exam-center-text">\n';
+            examHtml += '<p class="exam-center-text"><strong>Multiple Exams</strong></p>\n';
+            examHtml += '<p class="exam-center-text"><em>Tap to see exams</em></p>\n';
+            
+            $("#dec-" + examDay).addClass('multiple-exams-cell');
+            $("#dec-" + examDay)[0].onclick = function () {
+               toggleMultipleExamsPopup(this); 
+            };
+            $("#dec-" + examDay)[0].innerHTML = examHtml;
+        } else {
+            var examHtml = '<p class="day-text-top-right">' + examDay + '</p>\n';
+            examHtml += '<p class="exam-center-text">\n';
+            examHtml += '<p class="exam-center-text"><strong>' + courseStr + '</strong></p>\n';
+            examHtml += '<p class="exam-center-text"><em>' + timeStr + '</em></p>\n';
+            examHtml += '<p class="exam-center-text">' + locationStr + '</p>\n';
+
+            $("#dec-" + examDay).addClass('exam-day-cell');
+            $("#dec-" + examDay)[0].innerHTML = examHtml;
+            examDays.push(examDay);
+            examDayCourseIds.push(course.id);
+        }
+    }
+}
+
+function toggleMultipleExamsPopup(sender) {
+    var day = sender.id.split('-')[1];
+    if ($("#multiple-exam-day-" + day)[0].style.visibility == 'visible') {
+        $("#multiple-exam-day-" + day)[0].style.visibility = 'hidden';
+    } else {
+        $("#multiple-exam-day-" + day)[0].style.visibility = 'visible';
     }
 }
 //=====================================================
@@ -783,6 +871,15 @@ function isDescendant(parent, child) {
         }
         node = node.parentNode;
     }
+}
+
+function getIndexOfElement(arr, element) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == element) {
+            return i;
+        }
+    }
+    return null;
 }
 
 function setSelectedOptionToValue(selectElem, newVal) {

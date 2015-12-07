@@ -100,9 +100,11 @@ p, a, h1, h2, h3, h4, h5, h6, ul, td {
 h1 {
     font-size: 2em;
 }
-
 strong {
     font-weight: 800;
+}
+em {
+    font-style: italic;
 }
 .content-heading {
     font-size: 32px;
@@ -502,31 +504,40 @@ body {
     width: 90%;
     margin-bottom: 15px;
 }
+#search-criteria-subject-container {
+    border-color: @dark-text;
+}
+#search-criteria-number1 {
+    color: @dark-text;
+}
+#search-criteria-number1-container {
+    border-color: @dark-text;
+}
 
 /***********************************************
 * Exam Schedule table 
 ***********************************************/
 .exam-table-row {
-    height: 90px;
-    width: 90px;
+    height: 104px;
 }
-.exam-table-text {
+.exam-table-cell {
     font-size: 14px;
     border: @light-border;
     padding: 5px;
     width: 60px;
+    max-width: 60px;
+    height: 104px;
     text-align: right;
     vertical-align: top;
 }
-
 .weekend {
     background-color: @background-gray;
 }
-
 .exam-center-text {
     text-align: center;
     vertical-align: middle;
     line-height: 1.2em;
+    margin-top: 2px;
 }
 .day-text-top-right {
     text-align: right;
@@ -534,6 +545,65 @@ body {
 }
 .special-day {
     background-color: #a9ead4;
+}
+.exam-month-heading {
+    float: right;
+    font-weight: 200;
+    margin-top: -54px;
+}
+.exam-table-day-secondary-month {
+    color: #bababa;
+}
+.exam-day-cell {
+    background-color: #b1e5f8;
+}
+.multiple-exams-cell {
+    background-color: #f89e9e;
+    .vendor(transition, background-color 0.3s ease-in-out);
+}
+.multiple-exams-cell:hover {
+    background-color: #e58989;
+    cursor: pointer;
+}
+.multiple-exams-popup-container {
+    position: relative;
+    visibility: hidden;
+}
+.multiple-exams-popup {
+    border-radius: 3px;
+    padding: 10px;
+    width: 220px;
+    display: block;
+    position: absolute;
+    bottom: 48px;
+    left: -50px;
+    max-height: 300px;
+    overflow: scroll;
+    box-shadow: 0px 0px 70px 4px rgba(0,0,0,0.28);
+    background-color: #b1e5f8;    
+}
+.multiple-exam-course {
+    font-weight: 600;
+}
+.multiple-exam-time {
+    font-style: italic;
+}
+.multiple-exam-location {
+    
+}
+.multiple-exam-separator {
+    border: 1px solid @background-gray-border-color;
+}
+.arrow-down {
+    position: absolute;
+    margin: 0;
+    top: -48px;
+    left: 30px;
+    width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #b1e5f8;
 }
 
 /***********************************************
@@ -731,16 +801,4 @@ body {
 .breadcrumb li.breadcrumb-current:hover {
     background-color: @background-gray;
     cursor: default;
-}
-
-#search-criteria-subject-container {
-    border-color: @dark-text;
-}
-
-#search-criteria-number1 {
-    color: @dark-text;
-}
-
-#search-criteria-number1-container {
-    border-color: @dark-text;
 }
