@@ -19,6 +19,8 @@ $(document).ready(function () {
         addSearchedCoursesToHtml();
     } else if (window.location.href.indexOf('enroll.html') > -1) {
         addWishlistAndEnrolledCoursesToHtml();
+    } else if (window.location.href.indexOf('searchcourses.html') > -1) {
+        populateSearchCriteriaDropdowns();
     }
 });
 
@@ -53,6 +55,55 @@ function setCurrentPage() {
 /***********************************************
 * adding courses to html table rows
 ***********************************************/
+function populateSearchCriteriaDropdowns() {
+    var subjectDropdown = $("#search-criteria-subject-dropdown")[0];
+    var levelDropdown = $("#search-criteria-level-dropdown")[0];
+    var codeDropdown = $("#search-criteria-code-dropdown")[0];
+    var selectedSubject = subjectDropdown.value;
+    
+    subjectDropdown.innerHTML = '<option value="NONE">Select Subject...</option>';
+    levelDropdown.innerHTML = '<option value="NONE">Select Level...</option>';
+    codeDropdown.innerHTML = '<option value="NONE">Select Course Code...</option>';
+
+    var subjects = [];
+    var levels = [];
+    var codes = [];
+    
+    for (var i = 0; i < allCourses.length; i++) {
+        if (!arrayContainsElement(subjects, allCourses[i].subject)) {
+            subjects.push(allCourses[i].subject);
+        }
+    }
+
+    if (selectedSubject != 'NONE') {
+        for (var i = 0; i < allCourses.length; i++) {
+            if (allCourses[i].subject == selectedSubject) {
+                if (!arrayContainsElement(levels, allCourses[i].code.charAt(0))) {
+                    levels.push(allCourses[i].code.charAt(0));
+                }
+                if (!arrayContainsElement(codes, allCourses[i].code)) {
+                    codes.push(allCourses[i].code);
+                }   
+            }
+        }
+    }
+    
+    subjects.sort();
+    levels.sort();
+    codes.sort();
+    
+    for (var i = 0; i < subjects.length; i++) {
+        subjectDropdown.innerHTML += '\n<option value="' + subjects[i] + '">' + subjects[i] + '</option>';
+    }
+    for (var i = 0; i < levels.length; i++) {
+        levelDropdown.innerHTML += '\n<option value="' + levels[i] + '">' + levels[i] + '</option>';    
+    }
+    for (var i = 0; i < codes.length; i++) {
+        codeDropdown.innerHTML += '\n<option value="' + codes[i] + '">' + codes[i] + '</option>';
+    }
+    setSelectedOptionToValue(subjectDropdown, selectedSubject);
+}
+
 function addSearchedCoursesToHtml() {
     var searchedCourses = window.location.href.substring(window.location.href.indexOf("?results=") + 9); // 9 = length of '?results='
     if (window.location.href.indexOf("?results=") < 0 || searchedCourses == null || searchedCourses == 'null') {
@@ -360,8 +411,10 @@ function sectionDropdownChanged(sender, courseId) {
 
 function returnToSearchResults() {
     var cachedSearch = localStorage.getItem("cachedSearch");
-    if (cachedSearch != '') {
+    if (cachedSearch != '' && cachedSearch != null) {
         window.location.href = 'searchresults.html?results=' + cachedSearch;
+    } else {
+        window.location.href = 'searchresults.html';
     }
 }
 
@@ -369,99 +422,62 @@ function searchCriteriaDropdownChanged(sender) {
     var lightGreen = '#95e5bd';
     var darkGray = '#bcbcbc';
     var darkText = '#2E2E2E';
+    var noBackground = 'transparent';
     
-    if ($("#search-criteria-subject-dropdown")[0].value == 'NONE') {
-        // top row
-        $("#search-criteria-subject-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-subject-container")[0].style.borderColor = darkText;
-        
-        // numbers
-        $("#search-criteria-number1-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-number2-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-number2-container")[0].style.borderColor = darkGray;
-        $("#search-criteria-number2")[0].style.color = darkGray;
-        
-        // bottom row
-        $("#search-criteria-level-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-level-container")[0].style.borderColor = darkGray;
-        $("#search-criteria-code-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-code-container")[0].style.borderColor = darkGray;
-        
-        $("#search-criteria-level-dropdown")[0].disabled = true;
-        $("#search-criteria-code-dropdown")[0].disabled = true;
-        
-        $("#search-criteria-level-label")[0].style.color = darkGray;
-        $("#search-criteria-code-label")[0].style.color = darkGray;
-        
-        $(".search-criteria-or")[0].style.color = darkGray;
-        
-        // search button
-        $("#search-criteria-search-button").addClass("disabled-button");
-        $("#search-criteria-search-button").removeClass("highlighted-button");
-        $("#search-criteria-search-button")[0].onclick = '';
-    } else {
-        // top row
-        $("#search-criteria-subject-container")[0].style.backgroundColor = lightGreen;
-        $("#search-criteria-subject-container")[0].style.borderColor = darkText;
-        
-        // numbers
-        $("#search-criteria-number1-container")[0].style.backgroundColor = lightGreen;
-        $("#search-criteria-number1-container")[0].style.borderColor = darkText;
-        $("#search-criteria-number1")[0].style.color = darkText;
-        $("#search-criteria-number2-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-number2-container")[0].style.borderColor = darkText;
-        $("#search-criteria-number2")[0].style.color = darkText;
-        
-        // bottom row
-        $("#search-criteria-level-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-level-container")[0].style.borderColor = darkText;
-        $("#search-criteria-code-container")[0].style.backgroundColor = 'transparent';
-        $("#search-criteria-code-container")[0].style.borderColor = darkText;
-        
-        $("#search-criteria-level-dropdown")[0].disabled = false;
-        $("#search-criteria-code-dropdown")[0].disabled = false;
-        
-        $("#search-criteria-level-label")[0].style.color = darkText;
-        $("#search-criteria-code-label")[0].style.color = darkText;
-        
-        $(".search-criteria-or")[0].style.color = darkText;
-        
-        // search button
-        $("#search-criteria-search-button").addClass("disabled-button");
-        $("#search-criteria-search-button").removeClass("highlighted-button");
-        $("#search-criteria-search-button")[0].onclick = '';
-        
-        // course level is selected
+    var subjectChosen = ($("#search-criteria-subject-dropdown")[0].value != 'NONE');
+    var enableButton = false;
+    
+    // Colours
+    $("#search-criteria-subject-container")[0].style.backgroundColor = subjectChosen ? lightGreen : 'transparent';
+
+    $("#search-criteria-number1-container")[0].style.backgroundColor = subjectChosen ? lightGreen : 'transparent';
+    $("#search-criteria-number2-container")[0].style.backgroundColor = 'transparent';
+    $("#search-criteria-number2-container")[0].style.borderColor = subjectChosen ? darkText : darkGray;
+    $("#search-criteria-number2")[0].style.color = subjectChosen ? darkText : darkGray;
+
+    $("#search-criteria-level-container")[0].style.backgroundColor = 'transparent';
+    $("#search-criteria-level-container")[0].style.borderColor = subjectChosen ? darkText : darkGray;
+    $("#search-criteria-code-container")[0].style.backgroundColor = 'transparent';
+    $("#search-criteria-code-container")[0].style.borderColor = subjectChosen ? darkText : darkGray;
+    $("#search-criteria-level-dropdown")[0].disabled = !subjectChosen;
+    $("#search-criteria-code-dropdown")[0].disabled = !subjectChosen;
+    $("#search-criteria-level-label")[0].style.color = subjectChosen ? darkText : darkGray;
+    $("#search-criteria-code-label")[0].style.color = subjectChosen ? darkText : darkGray;
+
+    $(".search-criteria-or")[0].style.color = subjectChosen ? darkText : darkGray;
+
+    // Bottom row dropdowns
+    if (subjectChosen) {
         if ($("#search-criteria-level-dropdown")[0].value != "NONE") {
-            // if sender was course code, revert this one to default value
             if (isDescendant($("#search-criteria-code-container")[0], sender)) {
                 setSelectedOptionToValue($("#search-criteria-level-dropdown")[0], "NONE");
             } else {
                 $("#search-criteria-level-container")[0].style.backgroundColor = lightGreen;
-
-                // enable button
-                $("#search-criteria-number2-container")[0].style.backgroundColor = lightGreen;
-                $("#search-criteria-search-button").removeClass("disabled-button");
-                $("#search-criteria-search-button").addClass("highlighted-button");
-                $("#search-criteria-search-button")[0].onclick = 'searchCourses()';   
+                enableButton = true;
             }
         }
-        
-        // course subject is selected
         if ($("#search-criteria-code-dropdown")[0].value != "NONE") {
-            // if sender was course code, revert this one to default value
             if (isDescendant($("#search-criteria-level-container")[0], sender)) {
                 setSelectedOptionToValue($("#search-criteria-code-dropdown")[0], "NONE");
             } else {
                 $("#search-criteria-code-container")[0].style.backgroundColor = lightGreen;
-
-                // enable button
-                $("#search-criteria-number2-container")[0].style.backgroundColor = lightGreen;
-                $("#search-criteria-search-button").removeClass("disabled-button");
-                $("#search-criteria-search-button").addClass("highlighted-button");
-                $("#search-criteria-search-button")[0].onclick = 'searchCourses()';
+                enableButton = true;
             }
         }
+    }
+
+    // Search Button
+    if (enableButton) {
+        $("#search-criteria-number2-container")[0].style.backgroundColor = lightGreen;
+        $("#search-criteria-search-button").removeClass("disabled-button");
+        $("#search-criteria-search-button").addClass("highlighted-button");
+    } else {
+        $("#search-criteria-search-button").addClass("disabled-button");
+        $("#search-criteria-search-button").removeClass("highlighted-button");
+    }
+    
+    if (isDescendant($("#search-criteria-subject-container")[0], sender)) {
+        populateSearchCriteriaDropdowns();
     }
 }
 
@@ -478,13 +494,40 @@ function headerAccountDropdownClicked() {
 /***********************************************
 * Adding / removing from wishlist & enrolled 
 ***********************************************/
-function searchCourses() {
-    console.log("SEARCH COURSES");
-    if (sender.hasClass("disabled-button")) {
-        console.log("returning;");
+function searchCourses(sender) {
+    if (sender.classList.contains("disabled-button")) {
+        console.log("button is disalbed");
         return;
     }
-    console.log("Search courses");
+    var subject = $('#search-criteria-subject-dropdown')[0].value;
+    var level = $('#search-criteria-level-dropdown')[0].value;
+    var code = $('#search-criteria-code-dropdown')[0].value;
+    
+    if (subject == 'NONE' || (level == 'NONE' && code == 'NONE')) {
+        return;
+    }
+    
+    var levelChosen = (level != 'NONE');
+    var searchResults = []; // course id's of results
+    for (var i = 0; i < allCourses.length; i++) {
+        if (allCourses[i].subject == subject) {
+            if (levelChosen) {
+                if (allCourses[i].code.charAt(0) == level) {
+                    searchResults.push(allCourses[i].id);
+                }
+            } else {
+                if (allCourses[i].code == code) {
+                    searchResults.push(allCourses[i].id);
+                }
+            }
+        }
+    }
+    
+    if (searchResults.length == 0) {
+        window.location.href = "searchresults.html";
+    } else {
+        window.location.href = "searchresults.html?results=" + searchResults.join();
+    }
 }
 
 function addCourseToWishlist(courseId) {    
@@ -700,6 +743,15 @@ function setSelectedOptionToValue(selectElem, newVal) {
         }
     }
     selectElem.value = newVal;
+}
+
+function arrayContainsElement(arr, element) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == element) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function removeElementAtIndex(arr, index) {
