@@ -21,6 +21,15 @@ $(document).ready(function () {
         addWishlistAndEnrolledCoursesToHtml();
     } else if (window.location.href.indexOf('searchcourses.html') > -1) {
         populateSearchCriteriaDropdowns();
+        setSearchCriteriaFromUrl();
+    }
+    
+    // clear cached searches if navigate away from enroll/search pages
+    if (window.location.href.indexOf("searchcourses.html") < 0
+     && window.location.href.indexOf("searchresults.html") < 0
+     && window.location.href.indexOf("enroll.html") < 0) {
+        localStorage.removeItem("cachedSearch");
+        localStorage.removeItem("cachedSearchCriteria");
     }
 });
 
@@ -102,6 +111,31 @@ function populateSearchCriteriaDropdowns() {
         codeDropdown.innerHTML += '\n<option value="' + codes[i] + '">' + codes[i] + '</option>';
     }
     setSelectedOptionToValue(subjectDropdown, selectedSubject);
+}
+
+function setSearchCriteriaFromUrl() {
+    if (window.location.href.indexOf("searchcourses.html?criteria=") < 0) {
+        return;
+    }
+    var cachedCriteria = window.location.href.substring(window.location.href.indexOf("?criteria=") + 10, window.location.href.length); // 10 is length of '?criteria='
+    cachedCriteria = replaceCharactersInString(cachedCriteria, '_', ' ');
+    console.log(cachedCriteria);
+    
+    var cachedSubject = cachedCriteria.split('-')[0];
+    var cachedLevel = cachedCriteria.split('-')[1];
+    var cachedCode = cachedCriteria.split('-')[2];
+    
+    if (cachedSubject != 'NONE') {
+        setSelectedOptionToValue($("#search-criteria-subject-dropdown")[0], cachedSubject);
+        populateSearchCriteriaDropdowns();
+    }
+    if (cachedLevel != 'NONE') {
+        setSelectedOptionToValue($("#search-criteria-level-dropdown")[0], cachedLevel);
+    }
+    if (cachedCode != 'NONE') {
+        setSelectedOptionToValue($("#search-criteria-code-dropdown")[0], cachedCode);
+    }
+    searchCriteriaDropdownChanged(null);
 }
 
 function addSearchedCoursesToHtml() {
@@ -409,6 +443,15 @@ function sectionDropdownChanged(sender, courseId) {
     $(rowSelector)[0].innerHTML = getCourseRowInnerHtml(course, selectedLecture, selectedTutorial, selectedLab, tableTypeStr, modifiedRows);
 }
 
+function returnToSearchCriteria() {
+    var cachedSearchCriteria = localStorage.getItem("cachedSearchCriteria");
+    if (cachedSearchCriteria != '' && cachedSearchCriteria != null) {
+        window.location.href = 'searchcourses.html?criteria=' + cachedSearchCriteria;
+    } else {
+        window.location.href = 'searchcourses.html';
+    }
+}
+
 function returnToSearchResults() {
     var cachedSearch = localStorage.getItem("cachedSearch");
     if (cachedSearch != '' && cachedSearch != null) {
@@ -424,42 +467,42 @@ function searchCriteriaDropdownChanged(sender) {
     var darkText = '#2E2E2E';
     var noBackground = 'transparent';
     
-    var subjectChosen = ($("#search-criteria-subject-dropdown")[0].value != 'NONE');
+    var subjectIsChosen = ($("#search-criteria-subject-dropdown")[0].value != 'NONE');
     var enableButton = false;
     
     // Colours
-    $("#search-criteria-subject-container")[0].style.backgroundColor = subjectChosen ? lightGreen : 'transparent';
+    $("#search-criteria-subject-container")[0].style.backgroundColor = subjectIsChosen ? lightGreen : 'transparent';
 
-    $("#search-criteria-number1-container")[0].style.backgroundColor = subjectChosen ? lightGreen : 'transparent';
+    $("#search-criteria-number1-container")[0].style.backgroundColor = subjectIsChosen ? lightGreen : 'transparent';
     $("#search-criteria-number2-container")[0].style.backgroundColor = 'transparent';
-    $("#search-criteria-number2-container")[0].style.borderColor = subjectChosen ? darkText : darkGray;
-    $("#search-criteria-number2")[0].style.color = subjectChosen ? darkText : darkGray;
+    $("#search-criteria-number2-container")[0].style.borderColor = subjectIsChosen ? darkText : darkGray;
+    $("#search-criteria-number2")[0].style.color = subjectIsChosen ? darkText : darkGray;
 
     $("#search-criteria-level-container")[0].style.backgroundColor = 'transparent';
-    $("#search-criteria-level-container")[0].style.borderColor = subjectChosen ? darkText : darkGray;
+    $("#search-criteria-level-container")[0].style.borderColor = subjectIsChosen ? darkText : darkGray;
     $("#search-criteria-code-container")[0].style.backgroundColor = 'transparent';
-    $("#search-criteria-code-container")[0].style.borderColor = subjectChosen ? darkText : darkGray;
-    $("#search-criteria-level-dropdown")[0].disabled = !subjectChosen;
-    $("#search-criteria-code-dropdown")[0].disabled = !subjectChosen;
-    $("#search-criteria-level-label")[0].style.color = subjectChosen ? darkText : darkGray;
-    $("#search-criteria-code-label")[0].style.color = subjectChosen ? darkText : darkGray;
+    $("#search-criteria-code-container")[0].style.borderColor = subjectIsChosen ? darkText : darkGray;
+    $("#search-criteria-level-dropdown")[0].disabled = !subjectIsChosen;
+    $("#search-criteria-code-dropdown")[0].disabled = !subjectIsChosen;
+    $("#search-criteria-level-label")[0].style.color = subjectIsChosen ? darkText : darkGray;
+    $("#search-criteria-code-label")[0].style.color = subjectIsChosen ? darkText : darkGray;
 
-    $(".search-criteria-or")[0].style.color = subjectChosen ? darkText : darkGray;
+    $(".search-criteria-or")[0].style.color = subjectIsChosen ? darkText : darkGray;
 
     // Bottom row dropdowns
-    if (subjectChosen) {
+    if (subjectIsChosen) {
         if ($("#search-criteria-level-dropdown")[0].value != "NONE") {
-            if (isDescendant($("#search-criteria-code-container")[0], sender)) {
+            if (sender != null && isDescendant($("#search-criteria-code-container")[0], sender)) {
                 setSelectedOptionToValue($("#search-criteria-level-dropdown")[0], "NONE");
-            } else {
+            } else if (sender == null || (!isDescendant($("#search-criteria-subject-container")[0], sender))) {
                 $("#search-criteria-level-container")[0].style.backgroundColor = lightGreen;
                 enableButton = true;
             }
         }
         if ($("#search-criteria-code-dropdown")[0].value != "NONE") {
-            if (isDescendant($("#search-criteria-level-container")[0], sender)) {
+            if (sender != null && isDescendant($("#search-criteria-level-container")[0], sender)) {
                 setSelectedOptionToValue($("#search-criteria-code-dropdown")[0], "NONE");
-            } else {
+            } else if (sender == null || (!isDescendant($("#search-criteria-subject-container")[0], sender))) {
                 $("#search-criteria-code-container")[0].style.backgroundColor = lightGreen;
                 enableButton = true;
             }
@@ -476,8 +519,17 @@ function searchCriteriaDropdownChanged(sender) {
         $("#search-criteria-search-button").removeClass("highlighted-button");
     }
     
-    if (isDescendant($("#search-criteria-subject-container")[0], sender)) {
+    if (sender != null && isDescendant($("#search-criteria-subject-container")[0], sender)) {
         populateSearchCriteriaDropdowns();
+    }
+    
+    // cache the selected criteria
+    if (subjectIsChosen) {
+        var selectedSubject = $("#search-criteria-subject-dropdown")[0].value;
+        selectedSubject = replaceCharactersInString(selectedSubject, ' ', '_');
+        var selectedLevel = $("#search-criteria-level-dropdown")[0].value;
+        var selectedCode = $("#search-criteria-code-dropdown")[0].value;
+        localStorage.setItem('cachedSearchCriteria', selectedSubject + '-' + selectedLevel + '-' + selectedCode);
     }
 }
 
@@ -743,6 +795,18 @@ function setSelectedOptionToValue(selectElem, newVal) {
         }
     }
     selectElem.value = newVal;
+}
+
+function replaceCharactersInString(string, toReplace, replaceWith) {
+    var ret = '';
+    for (var i = 0; i < string.length; i++) {
+        if (string.charAt(i) == toReplace) {
+            ret += replaceWith;
+        } else {
+            ret += string.charAt(i);
+        }
+    }
+    return ret;
 }
 
 function arrayContainsElement(arr, element) {
