@@ -14,16 +14,61 @@
     <div id="header"></div>
 
     <div class="content">
+        <ul class="breadcrumb">
+            <a href="index.html"><li class="breadcrumb-home-container">
+                <img class="breadcrumb-home-img" src="images/home_icon.png">
+            </li></a>
+            <li class="breadcrumb-current">1. Search for Courses</li>
+            <a onclick="returnToSearchResults()"><li>2. Search Results</li></a>
+            <a href="enroll.html"><li>3. Enroll / Drop</li></a>
+        </ul>
+        
     	<h1 class="content-heading">Search for Courses</h1>
-		<div class="searchcrit">
-			<div class="left">Subject</div>
-			<div class="center">Course Level</div>
-			<div class="right">Course Code</div>
-			<div class="left"><select id="subselect" onchange="srchBttnUpdate()"> <option value="S00">Choose Subject</option> </select></div>
-			<div class="center"><select id="levselect" onchange="srchBttnUpdate()"> <option value="L00">Choose Level</option> </select></div>
-			<div class="right"><select id="crsselect" onchange="srchBttnUpdate()"> <option value="C00">Choose Course</option> </select></div>
-			<div class="right-bottom"><a class="ghost-button disabled-button">Search</a></div>
+		<div class="search-criteria-container">
+			
+            <div class="search-criteria-row">
+                <div class="search-criteria-number-container" id="search-criteria-number1-container">
+                    <h2 class="search-criteria-number" id="search-criteria-number1">1</h1>
+                </div>
+                <div class="search-criteria-widget-container" id="search-criteria-subject-container">
+                    <h2 class="search-criteria-label">Select Subject:</h2>
+                    <select id="search-criteria-subject-dropdown" class="search-criteria-select" onchange="searchCriteriaDropdownChanged(this)">
+                        <option value="NONE">Select Subject...</option>
+                        <option value="COMP SCI">cump sci</option>
+                    </select>
+                </div>
+            </div>
+			
+            <div class="horizontal-line"></div>
+            
+            <div class="search-criteria-row">
+                <div class="search-criteria-number-container" id="search-criteria-number2-container">
+                    <h2 class="search-criteria-number" id="search-criteria-number2">2</h1>
+                </div>
+                <div class="search-criteria-widget-container" id="search-criteria-level-container">
+                    <h2 class="search-criteria-label" id="search-criteria-level-label">Course Level</h2>
+                    <select id="search-criteria-level-dropdown" class="search-criteria-select" onchange="searchCriteriaDropdownChanged(this)" disabled>
+                        <option value="NONE">Choose Level...</option>
+                        <option value="2">yur twu</option>
+                    </select>
+                </div>
+                
+                <p class="search-criteria-or">OR</p>
+                
+                <div class="search-criteria-widget-container" id="search-criteria-code-container">
+                    <h2 class="search-criteria-label" id="search-criteria-code-label">Course Code</h2>
+                    <select id="search-criteria-code-dropdown" class="search-criteria-select" onchange="searchCriteriaDropdownChanged(this)" disabled>
+                        <option value="NONE">Choose Course...</option>
+                        <option value="1X03">1X03</option>
+                    </select>
+                </div>
+			</div>
 		</div>
+        
+        <div class="center-container">
+            <a class="ghost-button ghost-button-big" href="index.html">Back to Home</a>
+            <a id="search-criteria-search-button" class="ghost-button ghost-button-big disabled-button" onclick="searchCourses(this)">Search</a>
+        </div>
     </div>
 
 </body>

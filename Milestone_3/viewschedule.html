@@ -15,28 +15,34 @@
     <!-- Breadcrumb -->
 	<div class="content">
         <ul class="breadcrumb">
-            <li class="breadcrumb-home-container">
-                <a href="index.html">
-                    <img class="breadcrumb-home-img" src="images/home_icon.png">
-                </a>
-            </li>
-            <li class="breadcrumb-current"> View Schedule</li>
+            <a href="index.html"><li class="breadcrumb-home-container">
+                <img class="breadcrumb-home-img" src="images/home_icon.png">
+            </li></a>
+            <li class="breadcrumb-current">Weekly Schedule</li>
+            <a href="examschedule.html"><li>Exam Schedule</li></a>
         </ul>
         
         <!-- Class Schedule Label -->
-        <h1 class="content-heading">Class Schedule:</h1>
+        <h1 class="content-heading">Class Schedule:
+            <select class="schedule-dropdown">
+                <option value="T01">Fall 2015</option>
+            </select>
+        </h1>
+        <div class="no-enrolled no-results center-container" style="margin-bottom: 30px; margin-top: 10px;">
+            <h2 class="no-results-text">You are not Enrolled in any Courses</h2>
+        </div>
         
         <!-- Weekly Schedule table -->
-        <table class="course-table">
+        <table class="course-table" style="margin-bottom: 30px; margin-top: 10px;">
         <tr class="course-table-header-row">
-            <td class="course-table-heading course-table-times-heading">Time</td>
-            <td class="course-table-day-heading">Sunday</td>
-            <td class="course-table-day-heading">Monday</td>
-            <td class="course-table-day-heading">Tuesday</td>
-            <td class="course-table-day-heading">Wednesday</td>
-            <td class="course-table-day-heading">Thursday</td>
-            <td class="course-table-day-heading">Friday</td>
-            <td class="course-table-day-heading">Saturday</td>
+            <td class="weekly-table-heading">Time</td>
+            <td class="weekly-table-day-heading">Sunday</td>
+            <td class="weekly-table-day-heading">Monday</td>
+            <td class="weekly-table-day-heading">Tuesday</td>
+            <td class="weekly-table-day-heading">Wednesday</td>
+            <td class="weekly-table-day-heading">Thursday</td>
+            <td class="weekly-table-day-heading">Friday</td>
+            <td class="weekly-table-day-heading">Saturday</td>
         </tr>
             
         <tr class="weekly-table-row">
@@ -122,8 +128,7 @@
             <td class="weekly-table-time-text"></td>
             <td class="weekly-table-time-text"></td>
         </tr>
-            
-            
+                
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">12:30</td>
             <td class="weekly-table-time-text"></td>
@@ -144,8 +149,7 @@
             <td class="weekly-table-time-text"></td>
             <td class="weekly-table-time-text"></td>
         </tr>
-            
-            
+               
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">13:30</td>
             <td class="weekly-table-time-text"></td>
@@ -187,8 +191,7 @@
             <td class="weekly-table-time-text"></td>
             <td class="weekly-table-time-text"></td>
         </tr>
-            
-            
+                  
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">15:30</td>
             <td class="weekly-table-time-text"></td>
@@ -231,8 +234,7 @@
             <td class="weekly-table-time-text"></td>
             <td class="weekly-table-time-text"></td>
         </tr>
-            
-            
+                     
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">17:30</td>
             <td class="weekly-table-time-text"></td>
@@ -316,12 +318,11 @@
             <td class="weekly-table-time-text"></td>
             <td class="weekly-table-time-text"></td>
         </tr>    
-            
-            
+                     
         </table>
 
         <!-- View Exam Button -->
-        <a id='toExam' class="ghost-button" href="examschedule.html">View Exam Schedule</a>
+        <a class="ghost-button ghost-button-big" href="examschedule.html">View Exam Schedule</a>
         
     </div>
 </body>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     
     <link rel="stylesheet/less" type="text/css" href="css/global.less">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300,300italic' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/less.js"></script>
     <script src="js/global.js"></script>    
@@ -15,18 +15,103 @@
     <!-- Breadcrumb -->
 	<div class="content">
         <ul class="breadcrumb">
-            <li class="breadcrumb-home-container">
-                <a href="index.html">
-                    <img class="breadcrumb-home-img" src="images/home_icon.png">
-                </a>
-            </li>
-            <li><a href="viewschedule.html"> View Schedule</a></li>
-            <li class="breadcrumb-current"> Exam Schedule</li>
+            <a href="index.html"><li class="breadcrumb-home-container">
+                <img class="breadcrumb-home-img" src="images/home_icon.png">
+            </li></a>
+            <a href="viewschedule.html"><li>Weekly Schedule</li></a>
+            <li class="breadcrumb-current">Exam Schedule</li>
         </ul>
         
         <!-- Exam Schedule Label -->
-        <h1 class="content-heading">Exam Schedule:</h1>
+        <h1 class="content-heading">Exam Schedule:
         
+        
+        <!-- Drop Down -->
+        <select class="schedule-dropdown">
+            <option value="T01">Fall 2015</option>
+        </select>
+        </h1>
+        
+        <h1 class="content-heading exam-month-heading">December 2015</h1>
+        <div class="no-enrolled no-results center-container" style="margin-top: 10px;">
+            <h2 class="no-results-text">You are not Enrolled in any Courses</h2>
+        </div>
+        <!-- Exam Table -->
+        <table class="course-table" style="margin-top: 10px;">
+            <tr class="exam-table-row">
+                <td class="exam-table-cell weekend exam-table-day-secondary-month">29</td>
+                <td class="exam-table-cell exam-table-day-secondary-month">30</td>
+                <td id="dec-1" class="exam-table-cell">Dec 1</td>
+                <td id="dec-2" class="exam-table-cell">2</td>
+                <td id="dec-3" class="exam-table-cell">3</td>
+                <td id="dec-4" class="exam-table-cell">4</td>
+                <td id="dec-5" class="exam-table-cell weekend">5</td>
+            </tr>
+            
+            <tr class="exam-table-row">
+                <td id="dec-6" class="exam-table-cell weekend">6</td>
+                <td id="dec-7" class="exam-table-cell">7</td>
+                <td id="dec-8" class="exam-table-cell special-day">
+                    <p class="day-text-top-right">8</p>
+                    <p class="exam-center-text">
+                        Last Day of Classes:<br>
+                        <strong>Fall 2015</strong>
+                    </p>
+                </td>
+                <td id="dec-9" class="exam-table-cell">9</td>
+                <td id="dec-10" class="exam-table-cell">10</td>
+                <td id="dec-11" class="exam-table-cell">11</td>
+                <td id="dec-12" class="exam-table-cell weekend">12</td>
+            </tr>
+            
+            <tr class="exam-table-row">
+                <td id="dec-13" class="exam-table-cell weekend">13</td>
+                <td id="dec-14" class="exam-table-cell">14</td>
+                <td id="dec-15" class="exam-table-cell">15</td>
+                <td id="dec-16" class="exam-table-cell">16</td>
+                <td id="dec-17" class="exam-table-cell">17</td>
+                <td id="dec-18" class="exam-table-cell">18</td>
+                <td id="dec-19" class="exam-table-cell weekend">19</td>
+            </tr>
+            
+            <tr class="exam-table-row">
+                <td id="dec-20" class="exam-table-cell weekend">20</td>
+                <td id="dec-21" class="exam-table-cell">21</td>
+                <td id="dec-22" class="exam-table-cell">22</td>
+                <td id="dec-23" class="exam-table-cell">23</td>
+                <td id="dec-24" class="exam-table-cell">24</td>
+                <td id="dec-25" class="exam-table-cell">25</td>
+                <td id="dec-26" class="exam-table-cell weekend">26</td>
+            </tr>
+            
+            <tr class="exam-table-row">
+                <td id="dec-27" class="exam-table-cell weekend">27</td>
+                <td id="dec-28" class="exam-table-cell">28</td>
+                <td id="dec-29" class="exam-table-cell">29</td>
+                <td id="dec-30" class="exam-table-cell">30</td>
+                <td id="dec-31" class="exam-table-cell">31</td>
+                <td class="exam-table-cell exam-table-day-secondary-month">Jan 1</td>
+                <td class="exam-table-cell weekend exam-table-day-secondary-month">2</td>
+            </tr>
+            
+            <tr class="exam-table-row">
+                <td class="exam-table-cell weekend exam-table-day-secondary-month">3</td>
+                <td class="exam-table-cell exam-table-day-secondary-month">4</td>
+                <td class="exam-table-cell special-day">
+                    <p class="day-text-top-right exam-table-day-secondary-month">5</p>
+                    <p class="exam-center-text">
+                        First Day of Classes:<br>
+                        <strong>Winter 2016</strong>
+                    </p>
+                </td>
+                <td class="exam-table-cell exam-table-day-secondary-month">6</td>
+                <td class="exam-table-cell exam-table-day-secondary-month">7</td>
+                <td class="exam-table-cell exam-table-day-secondary-month">8</td>
+                <td class="exam-table-cell weekend exam-table-day-secondary-month">9</td>
+            </tr>
+        </table>
+        
+        <a class="ghost-button ghost-button-big" style="margin-top: 30px;" href="viewschedule.html">View Weekly Schedule</a>
         
     </div>
 </body>
