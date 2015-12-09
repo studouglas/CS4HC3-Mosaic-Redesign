@@ -927,7 +927,29 @@ function formattedCourseString(courseId, lecture, tutorial, lab) {
 }
 
 function loadHomePageCoursesHtml() {
-
+    
+    for (var i = 0; i < wishlistCourses.length; i++) {
+        var course = getCourse(wishlistCourses[i].split('-')[0]);
+        var rowToAdd = '';
+        rowToAdd += '<tr class="main-page-course-table-row">\n';
+        rowToAdd += '<td class="main-page-course-table-cell">\n';
+        rowToAdd += '<a href="' + course.link + '" target="_blank" class="main-page-course-link"><strong>' + course.subject + ' ' + course.code + '</strong></a>\n';
+        rowToAdd += '<p class="main-page-course-title">' + course.name + '</p></td></tr>\n';
+        
+        $("#main-page-wishlist-table")[0].innerHTML += rowToAdd;
+    }
+    
+    for (var i = 0; i < enrolledCourses.length; i++) {
+        var course = getCourse(enrolledCourses[i].split('-')[0]);
+        var rowToAdd = '';
+        rowToAdd += '<tr class="main-page-course-table-row">\n';
+        rowToAdd += '<td class="main-page-course-table-cell">\n';
+        rowToAdd += '<a href="' + course.link + '" target="_blank" class="main-page-course-link"><strong>' + course.subject + ' ' + course.code + '</strong></a>\n';
+        rowToAdd += '<p class="main-page-course-title">' + course.name + '</p></td></tr>\n';    
+        
+        $("#main-page-enrolled-table")[0].innerHTML += rowToAdd;
+    }
+    
 }
 
 function getWishlistCourses() {
