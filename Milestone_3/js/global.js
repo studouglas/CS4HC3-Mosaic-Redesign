@@ -180,6 +180,18 @@ function addWishlistAndEnrolledCoursesToHtml() {
         $(".no-wishlist")[0].style.display = "none";
         $(".wishlist-table")[0].style.display = "table";
 
+        var defaultHtml = '<tr class="course-table-header-row">';
+        defaultHtml += '<td class="course-table-heading course-table-info-heading">Course Info</td>\n';
+        defaultHtml += '<td class="course-table-heading course-table-times-heading">Times</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Monday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Tuesday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Wednesday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Thursday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Friday</td>\n';
+        defaultHtml += '<td class="course-table-heading">Enr.</td>\n';
+        defaultHtml += '<td class="course-table-heading">Action</td>\n</tr>';
+        $(".wishlist-table")[0].innerHTML = defaultHtml;
+        
         for (var i = 0; i < wishlistCourses.length; i++) {
             var course = getCourse(wishlistCourses[i].split('-')[0]);
             addCourseRowToPage(course, $(".wishlist-table")[0], "wishlist");
@@ -192,6 +204,19 @@ function addWishlistAndEnrolledCoursesToHtml() {
     } else {
         $(".no-enrolled")[0].style.display = "none";
         $(".enrolled-table")[0].style.display = "table";
+        
+        var defaultHtml = '<tr class="course-table-header-row">';
+        defaultHtml += '<td class="course-table-heading course-table-info-heading">Course Info</td>\n';
+        defaultHtml += '<td class="course-table-heading course-table-times-heading">Times</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Monday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Tuesday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Wednesday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Thursday</td>\n';
+        defaultHtml += '<td class="course-table-day-heading">Friday</td>\n';
+        defaultHtml += '<td class="course-table-heading">Enr.</td>\n';
+        defaultHtml += '<td class="course-table-heading">Action</td>\n</tr>';
+        $(".enrolled-table")[0].innerHTML = defaultHtml;
+        
         for (var i = 0; i < enrolledCourses.length; i++) {
             var course = getCourse(enrolledCourses[i].split('-')[0]);
             addCourseRowToPage(course, $(".enrolled-table")[0], "enrolled");
@@ -666,8 +691,9 @@ function enrollFromWishlist(courseId) {
     updateWishlistOrEnrolled(courseId, lecture, tutorial, lab, true, true);
     updateWishlistOrEnrolled(courseId, lecture, tutorial, lab, false, false);
     
-    $("#course-id-" + courseId)[0].remove();
-    addCourseRowToPage(getCourse(courseId), $(".enrolled-table")[0], "enrolled");
+    //$("#course-id-" + courseId)[0].remove();
+    addWishlistAndEnrolledCoursesToHtml();
+    //addCourseRowToPage(getCourse(courseId), $(".enrolled-table")[0], "enrolled");
 }
 
 function removeCourseFromWishlist(courseId) {
@@ -677,7 +703,8 @@ function removeCourseFromWishlist(courseId) {
 
 function dropCourseFromEnrolled(courseId) {
     updateWishlistOrEnrolled(courseId, '', '', '', true, false);
-    $("#course-id-" + courseId)[0].remove();
+    addWishlistAndEnrolledCoursesToHtml();
+    //$("#course-id-" + courseId)[0].remove();
 }
 
 function isTimetableConflict(section, courseId) {
@@ -973,8 +1000,9 @@ function loadWeeklyScheduleHtml(){
             sectionHtml += enrolledCourses[i].split('-')[1] + '</strong></p>';
             sectionHtml += '<p class="exam-center-text"><em>' + removeLeadingZero(lectureTimes[k].split('_')[1]) + ' - ';
             sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(lectureTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
-            sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
+            sectionHtml += '<p class="exam-center-text">' + course.location + '</p>';
         
+            $(cellSelector).addClass('weekly-section-color-' + i);
             $(cellSelector).addClass('weekly-lecture-cell');
             $(cellSelector).attr('rowspan', sectionLength*2);
             $(cellSelector)[0].innerHTML = sectionHtml;
@@ -1000,8 +1028,9 @@ function loadWeeklyScheduleHtml(){
             sectionHtml += enrolledCourses[i].split('-')[2] + '</strong></p>';
             sectionHtml += '<p class="exam-center-text"><em>' + removeLeadingZero(tutorialTimes[k].split('_')[1]) + ' - ';
             sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(tutorialTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
-            sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
+            sectionHtml += '<p class="exam-center-text">' + course.location + '</p>';
         
+            $(cellSelector).addClass('weekly-section-color-' + i);
             $(cellSelector).addClass('weekly-tutorial-cell');
             $(cellSelector).attr('rowspan', sectionLength*2);
             $(cellSelector)[0].innerHTML = sectionHtml;
@@ -1027,9 +1056,10 @@ function loadWeeklyScheduleHtml(){
             sectionHtml += enrolledCourses[i].split('-')[3] + '</strong></p>';
             sectionHtml += '<p class="exam-center-text"><em>' + removeLeadingZero(labTimes[k].split('_')[1]) + ' - ';
             sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(labTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
-            sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
+            sectionHtml += '<p class="exam-center-text">' + course.location + '</p>';
         
             $(cellSelector).addClass('weekly-lab-cell');
+            $(cellSelector).addClass('weekly-section-color-' + i);
             $(cellSelector).attr('rowspan', sectionLength*2);
             $(cellSelector)[0].innerHTML = sectionHtml;
             
@@ -1037,13 +1067,7 @@ function loadWeeklyScheduleHtml(){
             for (var l = startTimeDecimal + 0.5; l < startTimeDecimal + sectionLength; l += 0.5) {
                 var cellToDeleteSelector = '#weekly-cell-' + labTimes[k].split('_')[0].toLowerCase() + '-';
                 cellToDeleteSelector += replaceCharactersInString(timeDecimalToStr(l), ':', '-');
-                // NOTE: friday lab fro CS 1X03 deosn't work, won't remove final row
-                //console.log("DELETING: <" + cellToDeleteSelector + ">");
-                //console.log($(cellToDeleteSelector));
                 $(cellToDeleteSelector).remove();
-                //console.log($(cellToDeleteSelector));
-                //console.log("DONE DELETE");
-                
             }
         }
     }
@@ -1069,7 +1093,7 @@ function loadExamHtml(){
 
         var courseStr = course.subject + ' ' + course.code;
         var timeStr = startTime + ' - ' + endTime;
-        var locationStr = 'ITB AB102';
+        var locationStr = course.location;
         
         if (arrayContainsElement(examDays, examDay)) {
             var examHtml = '<p class="day-text-top-right">' + examDay + '</p>\n';
@@ -1078,7 +1102,7 @@ function loadExamHtml(){
                 var firstExam = getCourse(examDayCourseIds[getIndexOfElement(examDays, examDay)]);
                 var firstExamCourseStr = firstExam.subject + ' ' + firstExam.code;
                 var firstExamTimeStr = firstExam.exam.split('_')[1] + ' - ' + parseInt(startTime.split(':')[0]) + parseInt(course.exam.split('_')[2]) + ':' + startTime.split(':')[1];
-                var firstExamLocationStr = 'ITB AB102';
+                var firstExamLocationStr = firstExam.location;
 
                 examHtml += '<div class="multiple-exams-popup-container" id="multiple-exam-day-' + examDay + '">\n';
                 examHtml += '<div class="multiple-exams-popup" id="multiple-exam-course-day-' + examDay + '">\n';
