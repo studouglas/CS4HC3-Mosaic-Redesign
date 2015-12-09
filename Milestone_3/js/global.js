@@ -244,7 +244,7 @@ function addCourseRowToPage(course, courseTable, tableTypeStr) {
 }
 
 /* tableTypeStr = ['enrolled','wishlist','search']
- * modifiedRows is 'CTL' or 'L' or '' if none */
+ * modifiedRows is 'C0T0L0' or 'L0' or '' if none, or 'C1' if has conflict */
 function getCourseRowInnerHtml(course, lecture, tutorial, lab, tableTypeStr, modifiedRows) {
     var courseRowHtml = "";
     lecture = lecture.trim();
@@ -252,7 +252,12 @@ function getCourseRowInnerHtml(course, lecture, tutorial, lab, tableTypeStr, mod
     lab = lab.trim();
     
     // TOP ROW (of 3) ======================================================
-    var highlightRowClass = (modifiedRows.indexOf('C') > -1) ? 'course-table-highlighted-row' : '';
+    var highlightRowClass = '';
+    if (modifiedRows.indexOf('C0') > -1) {
+        highlightRowClass = 'course-table-highlighted-row';
+    } else if (modifiedRows.indexOf('C1') > -1) {
+        highlightRowClass = 'course-table-highlighted-red-row';
+    }
     courseRowHtml += '<tr class="course-table-row">\n';
     courseRowHtml += '<td class="course-table-code">\n';
     courseRowHtml += '<a target="_blank" href="' + course.link + '">' + course.subject + ' ' + course.code + '</a></td>\n';
@@ -267,14 +272,24 @@ function getCourseRowInnerHtml(course, lecture, tutorial, lab, tableTypeStr, mod
         courseRowHtml += '<option value="' + section.core + '" ' + ((section.core == lecture) ? ' selected' : ' ') + '>Lecture ' + coreNum + '</option>\n';
     }
     courseRowHtml += '</select></td>\n';
-    courseRowHtml += getTimetableHtml(course, lecture, (modifiedRows.indexOf('C') > -1));
+    courseRowHtml += getTimetableHtml(course, lecture, highlightRowClass);
     courseRowHtml += '<td class="course-table-enrolled" rowspan="3">' + course.enrolled + '</td>\n';
     courseRowHtml += '<td class="course-table-action" rowspan="3">\n';
-    courseRowHtml += getCourseTableButtonHtml(course.id, tableTypeStr, (modifiedRows != ''));
+
+    if (tableTypeStr == "wishlist") {
+        courseRowHtml += getCourseTableButtonHtml(course.id, tableTypeStr, (modifiedRows.indexOf('1') < 0));
+    } else {
+        courseRowHtml += getCourseTableButtonHtml(course.id, tableTypeStr, (modifiedRows != '' && modifiedRows.indexOf('1') < 0));
+    }
     courseRowHtml += '</td></tr>\n';
  
     // MIDDLE ROW (of 3) ======================================================
-    highlightRowClass = (modifiedRows.indexOf('T') > -1) ? 'course-table-highlighted-row' : '';
+    var highlightRowClass = '';
+    if (modifiedRows.indexOf('T0') > -1) {
+        highlightRowClass = 'course-table-highlighted-row';
+    } else if (modifiedRows.indexOf('T1') > -1) {
+        highlightRowClass = 'course-table-highlighted-red-row';
+    }
     courseRowHtml += '<tr class="course-table-row">\n';
     courseRowHtml += '<td class="course-table-title">' + course.name + '</td>\n';
     courseRowHtml += '<td class="course-table-dropdown-row ' + highlightRowClass + '">\n';
@@ -288,10 +303,15 @@ function getCourseRowInnerHtml(course, lecture, tutorial, lab, tableTypeStr, mod
         courseRowHtml += '<option value="' + section.tut + '" ' + ((section.tut == tutorial) ? 'selected' : ' ') + '>Tutorial ' + coreNum + '</option>\n';
     }
     courseRowHtml += '</select></td>\n';
-    courseRowHtml += getTimetableHtml(course, tutorial, (modifiedRows.indexOf('T') > -1));
+    courseRowHtml += getTimetableHtml(course, tutorial, highlightRowClass);
 
     // BOTTOM ROW (of 3) ======================================================
-    highlightRowClass = (modifiedRows.indexOf('L') > -1) ? 'course-table-highlighted-row' : '';
+    var highlightRowClass = '';
+    if (modifiedRows.indexOf('L0') > -1) {
+        highlightRowClass = 'course-table-highlighted-row';
+    } else if (modifiedRows.indexOf('L1') > -1) {
+        highlightRowClass = 'course-table-highlighted-red-row';
+    }
     courseRowHtml += '<tr class="course-table-row course-table-row-bottom">\n';
     courseRowHtml += '<td class="course-table-professor">' + course.professor + '</td>\n';
     courseRowHtml += '<td class="course-table-dropdown-row ' + highlightRowClass + '">\n';
@@ -305,12 +325,12 @@ function getCourseRowInnerHtml(course, lecture, tutorial, lab, tableTypeStr, mod
         courseRowHtml += '<option value="' + section.lab + '" ' + ((section.lab == lab) ? ' selected' : ' ') +  '>Lab ' + coreNum + '</option>\n';
     }
     courseRowHtml += '</select></td>\n';
-    courseRowHtml += getTimetableHtml(course, lab, (modifiedRows.indexOf('L') > -1));
+    courseRowHtml += getTimetableHtml(course, lab, highlightRowClass);
     
     return courseRowHtml;
 }
 
-function getTimetableHtml(course, sectionStr, rowWasModified) {
+function getTimetableHtml(course, sectionStr, highlightRowClass) {
     var timetableHtml = "";
     var timeTextDaysOfWeek = ['','','','',''];
     var coreTimesFromJson = [];
@@ -362,17 +382,16 @@ function getTimetableHtml(course, sectionStr, rowWasModified) {
             }
         }
     }
-    var highlightedRowClass = rowWasModified ? 'course-table-highlighted-row' : '';
-    timetableHtml += '<td class="course-table-day-text ' + highlightedRowClass + '">' + timeTextDaysOfWeek[0] + '</td>\n';
-    timetableHtml += '<td class="course-table-day-text ' + highlightedRowClass + '">' + timeTextDaysOfWeek[1] + '</td>\n';
-    timetableHtml += '<td class="course-table-day-text ' + highlightedRowClass + '">' + timeTextDaysOfWeek[2] + '</td>\n';
-    timetableHtml += '<td class="course-table-day-text ' + highlightedRowClass + '">' + timeTextDaysOfWeek[3] + '</td>\n';
-    timetableHtml += '<td class="course-table-day-text ' + highlightedRowClass + '">' + timeTextDaysOfWeek[4] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text ' + highlightRowClass + '">' + timeTextDaysOfWeek[0] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text ' + highlightRowClass + '">' + timeTextDaysOfWeek[1] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text ' + highlightRowClass + '">' + timeTextDaysOfWeek[2] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text ' + highlightRowClass + '">' + timeTextDaysOfWeek[3] + '</td>\n';
+    timetableHtml += '<td class="course-table-day-text ' + highlightRowClass + '">' + timeTextDaysOfWeek[4] + '</td>\n';
 
     return timetableHtml;
 }
 
-function getCourseTableButtonHtml(courseId, tableTypeStr, rowWasModified) {
+function getCourseTableButtonHtml(courseId, tableTypeStr, buttonShouldBeEnabled) {
     if (tableTypeStr == 'search') {
         for (var i = 0; i < enrolledCourses.length; i++) {
             if (enrolledCourses[i].split('-')[0] == courseId) {
@@ -389,12 +408,17 @@ function getCourseTableButtonHtml(courseId, tableTypeStr, rowWasModified) {
 
     else if (tableTypeStr == 'wishlist') {
         var ret = '<a class="ghost-button course-table-action-button" onclick=removeCourseFromWishlist(' + courseId +')>Remove</a>\n';
-        return (ret + '<a class="ghost-button highlighted-button course-table-action-button" onclick=enrollFromWishlist(' + courseId + ')>Enroll</a>\n');
+        if (buttonShouldBeEnabled) {
+            ret += '<a class="ghost-button highlighted-button course-table-action-button" onclick=enrollFromWishlist(' + courseId + ')>Enroll</a>\n';
+        } else {
+            ret += '<a class="ghost-button course-table-action-button disabled-button">Enroll</a>\n';
+        }
+        return ret;
     }
     
     else if (tableTypeStr == 'enrolled') {
         var ret = '';
-        if (rowWasModified) {
+        if (buttonShouldBeEnabled) {
             ret = '<a class="ghost-button course-table-action-button highlighted-button" onclick=saveTimetableChangesFromEnrolled(' + courseId + ')>Save Changes</a>\n';
         } else {
             ret = '<a class="ghost-button course-table-action-button disabled-button">Save Changes</a>\n';
@@ -426,18 +450,68 @@ function sectionDropdownChanged(sender, courseId) {
     }
 
     var modifiedRows = '';
-    if (isDescendant($(".enrolled-table")[0], $(rowSelector)[0])) {
-        // go through each of 3 rows and check if selected val is diff than in enrolledCourses
+    var isEnrolledTable = isDescendant($(".enrolled-table")[0], $(rowSelector)[0]);
+    var isWishlistTable = isDescendant($(".wishlist-table")[0], $(rowSelector)[0])
+    if (isEnrolledTable) {
+        console.log("Checking for modified rows in course: " + course.subject + ' ' + course.code);
+        
+        // find current course (i.e. one which dropdown changed) and 
         for (var i = 0; i < enrolledCourses.length; i++) {
             if (enrolledCourses[i].split('-')[0] == courseId) {
                 if (enrolledCourses[i].split('-')[1] != selectedLecture && selectedLecture != '') {
-                    modifiedRows += 'C';
+                    if (!isTimetableConflict(selectedLecture, courseId) && isEnrolledTable) {
+                        modifiedRows += 'C0';
+                    } else if (isTimetableConflict(selectedLecture, courseId)) {
+                        modifiedRows += 'C1';
+                    }
                 }
                 if (enrolledCourses[i].split('-')[2] != selectedTutorial && selectedTutorial != '') {
-                    modifiedRows += 'T';
+                    if (!isTimetableConflict(selectedTutorial, courseId) && isEnrolledTable) {
+                        modifiedRows += 'T0';
+                        console.log("No conflict in " + selectedTutorial + ' courseid: ' + courseId);
+                    } else if (isTimetableConflict(selectedTutorial, courseId)) {
+                        modifiedRows += 'T1';
+                    }
                 }
                 if (enrolledCourses[i].split('-')[3] != selectedLab && selectedLab != '') {
-                    modifiedRows += 'L';
+                    if (!isTimetableConflict(selectedLab, courseId) && selectedLab) {
+                        modifiedRows += 'L0';
+                    } else if (isTimetableConflict(selectedLab, courseId)) {
+                        modifiedRows += 'L1'
+                    }
+                }
+                break;
+            }    
+        }
+    }
+        
+    if (isWishlistTable) {
+        console.log("Checking for modified rows in course: " + course.subject + ' ' + course.code);
+        
+        // find current course (i.e. one which dropdown changed) and 
+        for (var i = 0; i < wishlistCourses.length; i++) {
+            if (wishlistCourses[i].split('-')[0] == courseId) {
+                if (wishlistCourses[i].split('-')[1] != selectedLecture && selectedLecture != '') {
+                    if (!isTimetableConflict(selectedLecture, courseId) && isEnrolledTable) {
+                        modifiedRows += 'C0';
+                    } else if (isTimetableConflict(selectedLecture, courseId)) {
+                        modifiedRows += 'C1';
+                    }
+                }
+                if (wishlistCourses[i].split('-')[2] != selectedTutorial && selectedTutorial != '') {
+                    if (!isTimetableConflict(selectedTutorial, courseId) && isEnrolledTable) {
+                        modifiedRows += 'T0';
+                        console.log("No conflict in " + selectedTutorial + ' courseid: ' + courseId);
+                    } else if (isTimetableConflict(selectedTutorial, courseId)) {
+                        modifiedRows += 'T1';
+                    }
+                }
+                if (wishlistCourses[i].split('-')[3] != selectedLab && selectedLab != '') {
+                    if (!isTimetableConflict(selectedLab, courseId) && selectedLab) {
+                        modifiedRows += 'L0';
+                    } else if (isTimetableConflict(selectedLab, courseId)) {
+                        modifiedRows += 'L1'
+                    }
                 }
                 break;
             }    
@@ -616,6 +690,107 @@ function removeCourseFromWishlist(courseId) {
 function dropCourseFromEnrolled(courseId) {
     updateWishlistOrEnrolled(courseId, '', '', '', true, false);
     $("#course-id-" + courseId)[0].remove();
+}
+
+function isTimetableConflict(section, courseId) {
+    var course = getCourse(courseId);
+    var sectionTimes = [];
+    if (section.charAt(0) == 'C') {
+        for (var i = 0; i < course.lectures.length; i++) {
+            if (course.lectures[i].core == section) {
+                sectionTimes = course.lectures[i].times;
+                break;
+            }
+        }
+    } else if (section.charAt(0) == 'T') {
+        for (var i = 0; i < course.tutorials.length; i++) {
+            if (course.tutorials[i].tut == section) {
+                sectionTimes = course.tutorials[i].times;
+                break;
+            }
+        }
+    } else if (section.charAt(0) == 'L') {
+        for (var i = 0; i < course.labs.length; i++) {
+            if (course.labs[i].lab == section) {
+                sectionTimes = course.labs[i].times;
+                break;
+            }
+        }
+    }
+    
+    // for every enrolled course, for every lecture/tut/lab time check if overlaps with each of sectionTimes
+    for (var i = 0; i < enrolledCourses.length; i++) {
+        var enrolledCourse = getCourse(enrolledCourses[i].split('-')[0]);
+        var enrolledLectureTimes = [];
+        var enrolledTutorialTimes = [];
+        var enrolledLabTimes = [];
+        
+        for (var j = 0; j < enrolledCourse.lectures.length; j++) {
+            if (enrolledCourses[i].split('-')[1] == enrolledCourse.lectures[j].core) {
+                enrolledLectureTimes = enrolledCourse.lectures[j].times;
+            }
+        }
+        for (var j = 0; j < enrolledCourse.tutorials.length; j++) {
+            if (enrolledCourses[i].split('-')[2] == enrolledCourse.tutorials[j].tut) {
+                enrolledTutorialTimes = enrolledCourse.tutorials[j].times;
+            }
+        }
+        for (var j = 0; j < enrolledCourse.labs.length; j++) {
+            if (enrolledCourses[i].split('-')[3] == enrolledCourse.labs[j].lab) {
+                enrolledLabTimes = enrolledCourse.labs[j].times;
+            }
+        }
+        
+        for (var k = 0; k < sectionTimes.length; k++) {
+            for (var l = 0; l < enrolledLectureTimes.length; l++) {
+                if (timesOverlap(sectionTimes[k], enrolledLectureTimes[l])) {
+                    return true;
+                }
+            }
+            for (var l = 0; l < enrolledTutorialTimes.length; l++) {
+                if (timesOverlap(sectionTimes[k], enrolledTutorialTimes[l])) {
+                    return true;
+                }
+            }
+            for (var l = 0; l < enrolledLabTimes.length; l++) {
+                if (timesOverlap(sectionTimes[k], enrolledLabTimes[l])) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+// format: 'Tue_09:30_2'
+function timesOverlap(timeStr1, timeStr2) {
+    var day1 = timeStr1.split('_')[0];
+    var day2 = timeStr2.split('_')[0];
+
+    var startHour1 = parseInt((timeStr1.split('_')[1]).split(':')[0]);
+    var startHour2 = parseInt((timeStr2.split('_')[1]).split(':')[0]);
+    
+    var length1 = parseInt(timeStr1.split('_')[2]);
+    var length2 = parseInt(timeStr2.split('_')[2]);
+    
+    if (day1 != day2) {
+        return false;
+    }
+    
+    if (startHour1 == startHour2) {
+        return true;
+    }
+    
+    if (startHour1 < startHour2) {
+        if (startHour1 + length1 > startHour2) {
+            return true;
+        }
+    } else {
+        if (startHour2 + length2 > startHour1) {
+            return true;
+        }  
+    }
+    return false;
 }
 
 function saveTimetableChangesFromEnrolled(courseId) {
@@ -805,7 +980,7 @@ function loadExamHtml(){
                 var firstExamCourseStr = firstExam.subject + ' ' + firstExam.code;
                 var firstExamTimeStr = firstExam.exam.split('_')[1] + ' - ' + parseInt(startTime.split(':')[0]) + parseInt(course.exam.split('_')[2]) + ':' + startTime.split(':')[1];
                 var firstExamLocationStr = 'ITB AB102';
-                console.log("CREATING NEW ONE");
+
                 examHtml += '<div class="multiple-exams-popup-container" id="multiple-exam-day-' + examDay + '">\n';
                 examHtml += '<div class="multiple-exams-popup" id="multiple-exam-course-day-' + examDay + '">\n';
                 examHtml += '<p class="multiple-exam-course">' + firstExamCourseStr + '</p>\n';
@@ -817,7 +992,6 @@ function loadExamHtml(){
                 examHtml += '<p class="multiple-exam-location">' + locationStr + '</p>\n';
                 examHtml += '</div><div class="arrow-down"></div></div>\n';
             } else {
-                console.log("ADDING TO EXISTING ONE");
                 var courseHtml = '<hr class="multiple-exam-separator">\n';
                 courseHtml += '<p class="multiple-exam-course">' + courseStr + '</p>\n';
                 courseHtml += '<p class="multiple-exam-time">' + timeStr + '</p>\n';

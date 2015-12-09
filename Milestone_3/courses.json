@@ -94,22 +94,22 @@
      ],
 	 "tutorials":[],
 	 "labs":
-		[{"lab":"L01","times":["Tue_09:30_2"]},
+		[{"lab":"L01","times":["Tue_08:30_2"]},
 		 {"lab":"L03","times":["Tue_09:30_2"]},
-		 {"lab":"L09","times":["Wed_09:30_2"]},
+		 {"lab":"L09","times":["Wed_08:30_2"]},
 		 {"lab":"L11","times":["Wed_09:30_2"]},
-		 {"lab":"L12","times":["Wed_09:30_2"]},
-		 {"lab":"L13","times":["Wed_14:30_2"]},
-		 {"lab":"L15","times":["Wed_14:30_2"]},
+		 {"lab":"L12","times":["Wed_10:30_2"]},
+		 {"lab":"L13","times":["Wed_12:30_2"]},
+		 {"lab":"L15","times":["Wed_13:30_2"]},
 		 {"lab":"L16","times":["Wed_14:30_2"]},
-		 {"lab":"L17","times":["Thu_09:30_2"]},
-		 {"lab":"L18","times":["Thu_09:30_2"]},
-		 {"lab":"L19","times":["Thu_09:30_2"]},
+		 {"lab":"L17","times":["Thu_11:30_2"]},
+		 {"lab":"L18","times":["Thu_10:30_2"]},
+		 {"lab":"L19","times":["Thu_08:30_2"]},
 		 {"lab":"L20","times":["Thu_09:30_2"]},
 		 {"lab":"L21","times":["Thu_14:30_2"]},
-		 {"lab":"L23","times":["Thu_14:30_2"]},
-		 {"lab":"L24","times":["Thu_14:30_2"]},
-		 {"lab":"L25","times":["Fri_09:30_2"]},
+		 {"lab":"L23","times":["Thu_13:30_2"]},
+		 {"lab":"L24","times":["Thu_12:30_2"]},
+		 {"lab":"L25","times":["Fri_08:30_2"]},
 		 {"lab":"L26","times":["Fri_09:30_2"]}
 		],
 	 "exam":"17_13:00_2"
@@ -130,12 +130,12 @@
 		[{"tut":"T02","times":["Tue_09:30_2"]},
 		 {"tut":"T03","times":["Tue_11:30_2"]},
 		 {"tut":"T05","times":["Tue_14:30_2"]},
-		 {"tut":"T06","times":["Tue_14:30_2"]},
+		 {"tut":"T06","times":["Tue_17:30_2"]},
 		 {"tut":"T09","times":["Wed_14:30_2"]},
 		 {"tut":"T11","times":["Thu_09:30_2"]},
-		 {"tut":"T12","times":["Thu_09:30_2"]},
-		 {"tut":"T15","times":["Thu_14:30_2"]},
-		 {"tut":"T16","times":["Thu_14:30_2"]}
+		 {"tut":"T12","times":["Thu_08:30_2"]},
+		 {"tut":"T15","times":["Thu_13:30_2"]},
+		 {"tut":"T16","times":["Thu_12:30_2"]}
 		],
 	 "labs":[],
 	 "exam":"18_14:00_2"
@@ -172,17 +172,17 @@
 	 "labs":
 		[{"lab":"L01","times":["Mon_08:30_3"]},
 		 {"lab":"L03","times":["Tue_08:30_3"]},
-		 {"lab":"L04","times":["Tue_08:30_3"]},
+		 {"lab":"L04","times":["Tue_09:30_3"]},
 		 {"lab":"L05","times":["Wed_08:30_3"]},
-		 {"lab":"L06","times":["Wed_08:30_3"]},
+		 {"lab":"L06","times":["Wed_09:30_3"]},
 		 {"lab":"L07","times":["Thu_08:30_3"]},
-		 {"lab":"L08","times":["Thu_08:30_3"]},
+		 {"lab":"L08","times":["Thu_09:30_3"]},
 		 {"lab":"L09","times":["Fri_08:30_3"]},
-		 {"lab":"L10","times":["Fri_08:30_3"]},
+		 {"lab":"L10","times":["Fri_09:30_3"]},
 		 {"lab":"L17","times":["Thu_14:30_3"]},
-		 {"lab":"L18","times":["Thu_14:30_3"]},
-		 {"lab":"L20","times":["Fri_14:30_3"]},
-		 {"lab":"L22","times":["Mon_17:30_3"]}
+		 {"lab":"L18","times":["Thu_15:30_3"]},
+		 {"lab":"L20","times":["Fri_16:30_3"]},
+		 {"lab":"L22","times":["Mon_19:00_3"]}
 		],
 	 "exam":"20_13:00_3"
 	},
@@ -294,18 +294,18 @@
         [{"core":"C01","times":["Tue_19:00_2"]}
         ],
 	 "tutorials":
-		[{"tut":"T01","times":["Tue_18:00_1"]},
-		 {"tut":"T02","times":["Tue_18:00_1"]},
-		 {"tut":"T03","times":["Tue_18:00_1"]},
-		 {"tut":"T04","times":["Tue_18:00_1"]},
-		 {"tut":"T05","times":["Tue_18:00_1"]},
-		 {"tut":"T06","times":["Tue_18:00_1"]},
+		[{"tut":"T01","times":["Tue_18:30_1"]},
+		 {"tut":"T02","times":["Wed_18:30_1"]},
+		 {"tut":"T03","times":["Thu_18:30_1"]},
+		 {"tut":"T04","times":["Fri_18:30_1"]},
+		 {"tut":"T05","times":["Mon_18:30_1"]},
+		 {"tut":"T06","times":["Tue_14:30_1"]},
 		 {"tut":"T07","times":["Tue_21:00_1"]},
-		 {"tut":"T08","times":["Tue_21:00_1"]},
-		 {"tut":"T09","times":["Tue_21:00_1"]},
-		 {"tut":"T10","times":["Tue_21:00_1"]},
+		 {"tut":"T08","times":["Tue_20:00_1"]},
+		 {"tut":"T09","times":["Tue_12:30_1"]},
+		 {"tut":"T10","times":["Wed_21:00_1"]},
 		 {"tut":"T11","times":["Tue_16:30_1"]},
-		 {"tut":"T12","times":["Tue_16:30_1"]}
+		 {"tut":"T12","times":["Fri_16:30_1"]}
 		],
 	 "labs":[],
 	 "exam":"17_16:00_3"
@@ -354,7 +354,7 @@
      "link":"http://academiccalendars.romcmaster.ca",
      "code":"4BB3",
 	 "subject":"COMMERCE",
-     "professor":"Bridget O'shaughnessy",
+     "professor":"Bridget O'Shaughnessy",
 	 "enrolled":"18/100",
 	 "lectures":
         [{"core":"C01","times":["Tue_09:30_1"]},
@@ -402,7 +402,7 @@
 		 {"tut":"T05","times":["Wed_10:30_2"]},
 		 {"tut":"T06","times":["Thu_12:30_2"]},
 		 {"tut":"T07","times":["Thu_10:30_2"]},
-		 {"tut":"T08","times":["Thu_12:30_2"]},
+		 {"tut":"T08","times":["Thu_11:30_2"]},
 		 {"tut":"T09","times":["Fri_10:30_2"]},
 		 {"tut":"T10","times":["Fri_12:30_2"]}
 		],
@@ -431,20 +431,20 @@
 	 "tutorials":
 		[{"tut":"T04","times":["Tue_08:30_2"]},
 		 {"tut":"T05","times":["Wed_08:30_2"]},
-		 {"tut":"T06","times":["Wed_08:30_2"]},
+		 {"tut":"T06","times":["Wed_09:30_2"]},
 		 {"tut":"T07","times":["Thu_08:30_2"]},
-		 {"tut":"T08","times":["Thu_08:30_2"]},
+		 {"tut":"T08","times":["Thu_11:30_2"]},
 		 {"tut":"T09","times":["Fri_08:30_2"]},
-		 {"tut":"T10","times":["Fri_08:30_2"]}
+		 {"tut":"T10","times":["Fri_09:30_2"]}
 		],
 	 "labs":
 		[{"lab":"L01","times":["Mon_11:30_3"]},
 		 {"lab":"L04","times":["Tue_11:30_3"]},
 		 {"lab":"L05","times":["Wed_11:30_3"]},
-		 {"lab":"L06","times":["Wed_11:30_3"]},
+		 {"lab":"L06","times":["Wed_14:30_3"]},
 		 {"lab":"L08","times":["Thu_11:30_3"]},
 		 {"lab":"L09","times":["Fri_11:30_3"]},
-		 {"lab":"L10","times":["Fri_11:30_3"]}
+		 {"lab":"L10","times":["Fri_10:30_3"]}
 		],
 	 "exam":"22_16:00_3"
 	},

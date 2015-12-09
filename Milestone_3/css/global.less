@@ -77,6 +77,8 @@ table {
 @light-green: #95e5bd;
 @light-green-hover: #75cea2;  
 
+@light-red: #f89e9e;
+
 @link-light: #efefef;
 @link-light-hover: #dedede;
 @link-dark: #4760cb;
@@ -558,7 +560,7 @@ body {
     background-color: #b1e5f8;
 }
 .multiple-exams-cell {
-    background-color: #f89e9e;
+    background-color: @light-red;
     .vendor(transition, background-color 0.3s ease-in-out);
 }
 .multiple-exams-cell:hover {
@@ -688,6 +690,9 @@ body {
 }
 .course-table-highlighted-row {
     background-color: @light-green;
+}
+.course-table-highlighted-red-row {
+    background-color: @light-red;
 }
 /* header row */
 .course-table-heading {
