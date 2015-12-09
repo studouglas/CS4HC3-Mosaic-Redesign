@@ -4,7 +4,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     
     <link rel="stylesheet/less" type="text/css" href="css/global.less">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,300,300italic' rel='stylesheet' type='text/css'>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/less.js"></script>
     <script src="js/global.js"></script>    
@@ -13,28 +13,63 @@
 <body>
     <div id="header"></div>
     <div class=content>
-    
-    <div style="text-align:center">
-    <a href="examschedule.html"><img class="imgcontainer" src="/images/writeexam.png" alt="WriteExam">
-        <p class="overlaytext"><strong><font size="24">Its Exam Season!<br> Check your Schedule!</font></strong></p></a>
-    </div>
-        <br>
-    <div class="col3 thinborder">
-        <strong>ENROLL</strong>
-    </div>
-        
-    <div class="spacer">&nbsp;</div>
-        
-    <div class="col3 thinborder" >
-        <strong>SCHEDULE</strong>
-    </div>
-                
-    <div class="spacer">&nbsp;</div>
+        <div class="banner-image-container">
+            <img class="full-width-image" src="images/writeexam.png">
+            <div class="overlay-text-container">
+                <h2 style="font-size: 42px; margin-bottom: -10px; font-weight: 600;">Exam Season</h2>
+                <h2 style="font-size: 22px; margin-bottom: 10px;"><em>Check your exam schedule here.</em></h2>
+                <a class="ghost-button highlighted-button ghost-button-big" href="examschedule.html">View Exam Schedule</a>
+            </div>
+        </div>
 
-        
-    <div class="col3 thinborder">
-        <strong>COURSES</strong>
-    </div>
-    
+        <div class="col-2" style="padding-right: 20px;">
+            <div class="main-page-card">
+                <h2 class="main-page-card-heading">Enroll / Drop</h2>
+                <a href="searchcourses.html" class="ghost-button">Search Courses</a>
+                <a href="enroll.html" class="ghost-button">Enroll/Drop</a>
+                
+                <p style="margin-top: 30px;">Wishlist:</p>
+                <table class="main-page-course-table" id="main-page-wishlist-table">
+                    <tr class="main-page-course-table-row">
+                        <td class="main-page-course-table-cell">
+                            <a href="" class="main-page-course-link"><strong>COMP SCI 1XX3</strong></a>
+                            <p>Introduction to Programming</p>
+                        </td>
+                    </tr>
+                    <tr class="main-page-course-table-row">
+                        <td class="main-page-course-table-cell">
+                            <a href="" class="main-page-course-link"><strong>COMP SCI 1XX3</strong></a>
+                            <p>Introduction to Programming</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="main-page-card">
+                <h2 class="main-page-card-heading">Schedule</h2>
+                <a href="searchcourses.html" class="ghost-button">Weekly Schedule</a>
+                <a href="enroll.html" class="ghost-button">Exam Schedule</a>
+                
+                <p style="margin-top: 30px;">Enrolled Courses:</p>
+                <table class="main-page-course-table" id="main-page-wishlist-table">
+                    <tr class="main-page-course-table-row">
+                        <td class="main-page-course-table-cell">
+                            <a href="" class="main-page-course-link"><strong>COMP SCI 1XX3</strong></a>
+                            <p>Introduction to Programming</p>
+                        </td>
+                    </tr>
+                    <tr class="main-page-course-table-row">
+                        <td class="main-page-course-table-cell">
+                            <a href="" class="main-page-course-link"><strong>COMP SCI 1XX3</strong></a>
+                            <p>Introduction to Programming</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
     </div>
 </body>

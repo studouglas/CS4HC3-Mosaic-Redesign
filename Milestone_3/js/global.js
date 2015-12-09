@@ -26,6 +26,8 @@ $(document).ready(function () {
         loadExamHtml();
     } else if (window.location.href.indexOf('viewschedule.html') > -1) {
         loadWeeklyScheduleHtml();
+    } else if (window.location.href.indexOf('index.html') > -1) {
+        loadHomePageCoursesHtml();
     }
     
     // clear cached searches if navigate away from enroll/search pages
@@ -915,6 +917,10 @@ function formattedCourseString(courseId, lecture, tutorial, lab) {
         lab = 'L00'
     }
     return (courseId + '-' + lecture + '-' + tutorial + '-' + lab);
+}
+
+function loadHomePageCoursesHtml() {
+
 }
 
 function getWishlistCourses() {
