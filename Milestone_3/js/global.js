@@ -975,7 +975,7 @@ function loadWeeklyScheduleHtml(){
             sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(lectureTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
             sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
         
-            $(cellSelector).addClass('exam-day-cell');
+            $(cellSelector).addClass('weekly-lecture-cell');
             $(cellSelector).attr('rowspan', sectionLength*2);
             $(cellSelector)[0].innerHTML = sectionHtml;
             
@@ -1002,7 +1002,7 @@ function loadWeeklyScheduleHtml(){
             sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(tutorialTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
             sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
         
-            $(cellSelector).addClass('exam-day-cell');
+            $(cellSelector).addClass('weekly-tutorial-cell');
             $(cellSelector).attr('rowspan', sectionLength*2);
             $(cellSelector)[0].innerHTML = sectionHtml;
             
@@ -1029,7 +1029,7 @@ function loadWeeklyScheduleHtml(){
             sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(labTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
             sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
         
-            $(cellSelector).addClass('exam-day-cell');
+            $(cellSelector).addClass('weekly-lab-cell');
             $(cellSelector).attr('rowspan', sectionLength*2);
             $(cellSelector)[0].innerHTML = sectionHtml;
             
