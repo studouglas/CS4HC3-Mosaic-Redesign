@@ -123,7 +123,6 @@ function setSearchCriteriaFromUrl() {
     }
     var cachedCriteria = window.location.href.substring(window.location.href.indexOf("?criteria=") + 10, window.location.href.length); // 10 is length of '?criteria='
     cachedCriteria = replaceCharactersInString(cachedCriteria, '_', ' ');
-    console.log(cachedCriteria);
     
     var cachedSubject = cachedCriteria.split('-')[0];
     var cachedLevel = cachedCriteria.split('-')[1];
@@ -480,7 +479,6 @@ function sectionDropdownChanged(sender, courseId) {
                 if (enrolledCourses[i].split('-')[2] != selectedTutorial && selectedTutorial != '') {
                     if (!isTimetableConflict(selectedTutorial, courseId)) {
                         modifiedRows += 'T0';
-                        console.log("No conflict in " + selectedTutorial + ' courseid: ' + courseId);
                     } else if (isTimetableConflict(selectedTutorial, courseId)) {
                         modifiedRows += 'T1';
                     }
@@ -498,20 +496,15 @@ function sectionDropdownChanged(sender, courseId) {
     }
 
     if (isWishlistTable) {
-//        for (var i = 0; i < wishlistCourses.length; i++) {
-//            if (wishlistCourses[i].split('-')[0] == courseId) {
-                if (selectedLecture != '' && isTimetableConflict(selectedLecture, courseId)) {
-                    modifiedRows += 'C1';
-                }
-                if (selectedTutorial != '' && isTimetableConflict(selectedTutorial, courseId)) {
-                    modifiedRows += 'T1';
-                }
-                if (selectedLab != '' && isTimetableConflict(selectedLab, courseId)) {
-                    modifiedRows += 'L1'
-                }
-//                break;
-//            }    
-//        }
+        if (selectedLecture != '' && isTimetableConflict(selectedLecture, courseId)) {
+            modifiedRows += 'C1';
+        }
+        if (selectedTutorial != '' && isTimetableConflict(selectedTutorial, courseId)) {
+            modifiedRows += 'T1';
+        }
+        if (selectedLab != '' && isTimetableConflict(selectedLab, courseId)) {
+            modifiedRows += 'L1'
+        }
     }
     
     $(rowSelector)[0].innerHTML = getCourseRowInnerHtml(course, selectedLecture, selectedTutorial, selectedLab, tableTypeStr, modifiedRows);
@@ -622,7 +615,6 @@ function headerAccountDropdownClicked() {
 ***********************************************/
 function searchCourses(sender) {
     if (sender.classList.contains("disabled-button")) {
-        console.log("button is disalbed");
         return;
     }
     var subject = $('#search-criteria-subject-dropdown')[0].value;
@@ -941,8 +933,119 @@ function loadWeeklyScheduleHtml(){
         $('.course-table')[0].style.display = 'table';
     }
     
+    // format '12-C01-T00-L03'
     for (var i = 0; i < enrolledCourses.length; i++) {
-       var course = getCourse(enrolledCourses[i].split('-')[0]);
+        
+        var course = getCourse(enrolledCourses[i].split('-')[0]);
+        // time format (from JSON): 'wed_16:30_2'
+        var lectureTimes = [];
+        var tutorialTimes = [];
+        var labTimes = [];
+        
+        // find enrolled lecture/tut/lab times
+        for (var k = 0; k < course.lectures.length; k++) {
+            if (course.lectures[k].core == enrolledCourses[i].split('-')[1]) {
+                lectureTimes = course.lectures[k].times;
+                break;
+            }
+        }
+        for (var k = 0; k < course.tutorials.length; k++) {
+            if (course.tutorials[k].tut == enrolledCourses[i].split('-')[2]) {
+                tutorialTimes = course.tutorials[k].times;
+                break;
+            }
+        }
+        for (var k = 0; k < course.labs.length; k++) {
+            if (course.labs[k].lab == enrolledCourses[i].split('-')[3]) {
+                labTimes = course.labs[k].times;
+                break;
+            }
+        }
+        
+        for (var k = 0; k < lectureTimes.length; k++) {
+            // format for lectureTimes[k]: 'wed_16:30_2'
+            // format for cellSelector:    '#weekly-cell-mon-08-30'
+            var cellSelector = '#weekly-cell-' + lectureTimes[k].split('_')[0].toLowerCase() + '-';
+            cellSelector += replaceCharactersInString(lectureTimes[k].split('_')[1], ':', '-');
+            var sectionLength = parseInt(lectureTimes[k].split('_')[2]);
+        
+            var sectionHtml = '<p class="exam-center-text"><strong>' + course.subject + ' ' + course.code + ' - ';
+            sectionHtml += enrolledCourses[i].split('-')[1] + '</strong></p>';
+            sectionHtml += '<p class="exam-center-text"><em>' + removeLeadingZero(lectureTimes[k].split('_')[1]) + ' - ';
+            sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(lectureTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
+            sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
+        
+            $(cellSelector).addClass('exam-day-cell');
+            $(cellSelector).attr('rowspan', sectionLength*2);
+            $(cellSelector)[0].innerHTML = sectionHtml;
+            
+            var firstHour = 0;
+            var startTimeDecimal = timeStrToDecimal(lectureTimes[k].split('_')[1]);
+            
+            for (var l = startTimeDecimal + 0.5; l < startTimeDecimal + sectionLength; l += 0.5) {
+                var cellToDeleteSelector = '#weekly-cell-' + lectureTimes[k].split('_')[0].toLowerCase() + '-';
+                cellToDeleteSelector += replaceCharactersInString(timeDecimalToStr(l), ':', '-');
+                $(cellToDeleteSelector).remove();
+            }
+        }
+        
+        for (var k = 0; k < tutorialTimes.length; k++) {
+            // format for lectureTimes[k]: 'wed_16:30_2'
+            // format for cellSelector:    '#weekly-cell-mon-08-30'
+            var cellSelector = '#weekly-cell-' + tutorialTimes[k].split('_')[0].toLowerCase() + '-';
+            cellSelector += replaceCharactersInString(tutorialTimes[k].split('_')[1], ':', '-');
+            var sectionLength = parseInt(tutorialTimes[k].split('_')[2]);
+        
+            var sectionHtml = '<p class="exam-center-text"><strong>' + course.subject + ' ' + course.code + ' - ';
+            sectionHtml += enrolledCourses[i].split('-')[2] + '</strong></p>';
+            sectionHtml += '<p class="exam-center-text"><em>' + removeLeadingZero(tutorialTimes[k].split('_')[1]) + ' - ';
+            sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(tutorialTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
+            sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
+        
+            $(cellSelector).addClass('exam-day-cell');
+            $(cellSelector).attr('rowspan', sectionLength*2);
+            $(cellSelector)[0].innerHTML = sectionHtml;
+            
+            var firstHour = 0;
+            var startTimeDecimal = timeStrToDecimal(tutorialTimes[k].split('_')[1]);
+            
+            for (var l = startTimeDecimal + 0.5; l < startTimeDecimal + sectionLength; l += 0.5) {
+                var cellToDeleteSelector = '#weekly-cell-' + tutorialTimes[k].split('_')[0].toLowerCase() + '-';
+                cellToDeleteSelector += replaceCharactersInString(timeDecimalToStr(l), ':', '-');
+                $(cellToDeleteSelector).remove();
+            }
+        }
+        
+        for (var k = 0; k < labTimes.length; k++) {
+            // format for lectureTimes[k]: 'wed_16:30_2'
+            // format for cellSelector:    '#weekly-cell-mon-08-30'
+            var cellSelector = '#weekly-cell-' + labTimes[k].split('_')[0].toLowerCase() + '-';
+            cellSelector += replaceCharactersInString(labTimes[k].split('_')[1], ':', '-');
+            var sectionLength = parseInt(labTimes[k].split('_')[2]);
+        
+            var sectionHtml = '<p class="exam-center-text"><strong>' + course.subject + ' ' + course.code + ' - ';
+            sectionHtml += enrolledCourses[i].split('-')[3] + '</strong></p>';
+            sectionHtml += '<p class="exam-center-text"><em>' + removeLeadingZero(labTimes[k].split('_')[1]) + ' - ';
+            sectionHtml += removeLeadingZero(timeDecimalToStr(timeStrToDecimal(labTimes[k].split('_')[1]) + sectionLength)) +'</em></p>';
+            sectionHtml += '<p class="exam-center-text">ITB AB102</p>';
+        
+            $(cellSelector).addClass('exam-day-cell');
+            $(cellSelector).attr('rowspan', sectionLength*2);
+            $(cellSelector)[0].innerHTML = sectionHtml;
+            
+            var startTimeDecimal = timeStrToDecimal(labTimes[k].split('_')[1]);
+            for (var l = startTimeDecimal + 0.5; l < startTimeDecimal + sectionLength; l += 0.5) {
+                var cellToDeleteSelector = '#weekly-cell-' + labTimes[k].split('_')[0].toLowerCase() + '-';
+                cellToDeleteSelector += replaceCharactersInString(timeDecimalToStr(l), ':', '-');
+                // NOTE: friday lab fro CS 1X03 deosn't work, won't remove final row
+                //console.log("DELETING: <" + cellToDeleteSelector + ">");
+                //console.log($(cellToDeleteSelector));
+                $(cellToDeleteSelector).remove();
+                //console.log($(cellToDeleteSelector));
+                //console.log("DONE DELETE");
+                
+            }
+        }
     }
 }
 
@@ -1006,7 +1109,6 @@ function loadExamHtml(){
             $("#dec-" + examDay)[0].innerHTML = examHtml;
         } else {
             var examHtml = '<p class="day-text-top-right">' + examDay + '</p>\n';
-            examHtml += '<p class="exam-center-text">\n';
             examHtml += '<p class="exam-center-text"><strong>' + courseStr + '</strong></p>\n';
             examHtml += '<p class="exam-center-text"><em>' + timeStr + '</em></p>\n';
             examHtml += '<p class="exam-center-text">' + locationStr + '</p>\n';
@@ -1050,6 +1152,33 @@ function getIndexOfElement(arr, element) {
         }
     }
     return null;
+}
+
+// input: 12:30, output 12.5
+function timeStrToDecimal(timeStr) {
+    var hour = parseInt(timeStr.split(':')[0]);
+    var halfPast = timeStr.split(':')[1] == '00' ? 0 : 0.5;
+    return hour + halfPast;
+}
+
+// input: [12.5,13], output: 12:30
+function timeDecimalToStr(timeDecimal) {
+    var hour = (Math.floor(timeDecimal).toString());
+    var minute = (timeDecimal > hour ? '30' : '00');
+    if (hour < 10) {
+        hour = '0' + hour;
+    }
+    return hour + ":" + minute;
+}
+
+function removeLeadingZero(str) {
+    if (str == '') {
+        return '';
+    }
+    if (str.charAt(0) == '0') {
+        return str.substring(1);
+    }
+    return str;
 }
 
 function setSelectedOptionToValue(selectElem, newVal) {
