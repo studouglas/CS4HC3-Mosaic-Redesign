@@ -227,6 +227,19 @@ function addCourseRowToPage(course, courseTable, tableTypeStr) {
             }
         }
     }
+    
+    var modifiedRows = '';
+    if (tableTypeStr == 'wishlist') {        
+        if (lecture != '' && isTimetableConflict(lecture, course.id)) {
+            modifiedRows += 'C1';
+        }
+        if (tutorial != '' && isTimetableConflict(tutorial, course.id)) {
+            modifiedRows += 'T1';
+        }
+        if (lab != '' && isTimetableConflict(lab, course.id)) {
+            modifiedRows += 'L1'
+        }
+    }
         
     if (lecture == 'C00') {
         lecture = '';
@@ -238,7 +251,7 @@ function addCourseRowToPage(course, courseTable, tableTypeStr) {
         lab = '';
     }
 
-    courseRowHtml += getCourseRowInnerHtml(course, lecture, tutorial, lab, tableTypeStr, '');
+    courseRowHtml += getCourseRowInnerHtml(course, lecture, tutorial, lab, tableTypeStr, modifiedRows);
     courseRowHtml += '</tbody>\n';   
     courseTable.innerHTML += courseRowHtml;
 }
@@ -452,21 +465,20 @@ function sectionDropdownChanged(sender, courseId) {
     var modifiedRows = '';
     var isEnrolledTable = isDescendant($(".enrolled-table")[0], $(rowSelector)[0]);
     var isWishlistTable = isDescendant($(".wishlist-table")[0], $(rowSelector)[0])
-    if (isEnrolledTable) {
-        console.log("Checking for modified rows in course: " + course.subject + ' ' + course.code);
-        
-        // find current course (i.e. one which dropdown changed) and 
+    if (isEnrolledTable) {        
+        // find current course (i.e. one which dropdown changed) and iff its value was modified as compared
+        // to what's stored in enrolled courses, colour it red or green
         for (var i = 0; i < enrolledCourses.length; i++) {
             if (enrolledCourses[i].split('-')[0] == courseId) {
                 if (enrolledCourses[i].split('-')[1] != selectedLecture && selectedLecture != '') {
-                    if (!isTimetableConflict(selectedLecture, courseId) && isEnrolledTable) {
+                    if (!isTimetableConflict(selectedLecture, courseId)) {
                         modifiedRows += 'C0';
                     } else if (isTimetableConflict(selectedLecture, courseId)) {
                         modifiedRows += 'C1';
                     }
                 }
                 if (enrolledCourses[i].split('-')[2] != selectedTutorial && selectedTutorial != '') {
-                    if (!isTimetableConflict(selectedTutorial, courseId) && isEnrolledTable) {
+                    if (!isTimetableConflict(selectedTutorial, courseId)) {
                         modifiedRows += 'T0';
                         console.log("No conflict in " + selectedTutorial + ' courseid: ' + courseId);
                     } else if (isTimetableConflict(selectedTutorial, courseId)) {
@@ -484,38 +496,22 @@ function sectionDropdownChanged(sender, courseId) {
             }    
         }
     }
-        
+
     if (isWishlistTable) {
-        console.log("Checking for modified rows in course: " + course.subject + ' ' + course.code);
-        
-        // find current course (i.e. one which dropdown changed) and 
-        for (var i = 0; i < wishlistCourses.length; i++) {
-            if (wishlistCourses[i].split('-')[0] == courseId) {
-                if (wishlistCourses[i].split('-')[1] != selectedLecture && selectedLecture != '') {
-                    if (!isTimetableConflict(selectedLecture, courseId) && isEnrolledTable) {
-                        modifiedRows += 'C0';
-                    } else if (isTimetableConflict(selectedLecture, courseId)) {
-                        modifiedRows += 'C1';
-                    }
+//        for (var i = 0; i < wishlistCourses.length; i++) {
+//            if (wishlistCourses[i].split('-')[0] == courseId) {
+                if (selectedLecture != '' && isTimetableConflict(selectedLecture, courseId)) {
+                    modifiedRows += 'C1';
                 }
-                if (wishlistCourses[i].split('-')[2] != selectedTutorial && selectedTutorial != '') {
-                    if (!isTimetableConflict(selectedTutorial, courseId) && isEnrolledTable) {
-                        modifiedRows += 'T0';
-                        console.log("No conflict in " + selectedTutorial + ' courseid: ' + courseId);
-                    } else if (isTimetableConflict(selectedTutorial, courseId)) {
-                        modifiedRows += 'T1';
-                    }
+                if (selectedTutorial != '' && isTimetableConflict(selectedTutorial, courseId)) {
+                    modifiedRows += 'T1';
                 }
-                if (wishlistCourses[i].split('-')[3] != selectedLab && selectedLab != '') {
-                    if (!isTimetableConflict(selectedLab, courseId) && selectedLab) {
-                        modifiedRows += 'L0';
-                    } else if (isTimetableConflict(selectedLab, courseId)) {
-                        modifiedRows += 'L1'
-                    }
+                if (selectedLab != '' && isTimetableConflict(selectedLab, courseId)) {
+                    modifiedRows += 'L1'
                 }
-                break;
-            }    
-        }
+//                break;
+//            }    
+//        }
     }
     
     $(rowSelector)[0].innerHTML = getCourseRowInnerHtml(course, selectedLecture, selectedTutorial, selectedLab, tableTypeStr, modifiedRows);
