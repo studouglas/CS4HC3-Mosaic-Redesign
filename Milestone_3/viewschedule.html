@@ -15,26 +15,25 @@
     <!-- Breadcrumb -->
 	<div class="content">
         <ul class="breadcrumb">
-            <li class="breadcrumb-home-container">
-                <a href="index.html">
-                    <img class="breadcrumb-home-img" src="images/home_icon.png">
-                </a>
-            </li>
-            <li class="breadcrumb-current"> View Schedule</li>
-            <li><a href="examschedule.html"> Exam Schedule</a></li>
+            <a href="index.html"><li class="breadcrumb-home-container">
+                <img class="breadcrumb-home-img" src="images/home_icon.png">
+            </li></a>
+            <li class="breadcrumb-current">Weekly Schedule</li>
+            <a href="examschedule.html"><li>Exam Schedule</li></a>
         </ul>
         
         <!-- Class Schedule Label -->
         <h1 class="content-heading">Class Schedule:
+            <select class="schedule-dropdown">
+                <option value="T01">Fall 2015</option>
+            </select>
+        </h1>
+        <div class="no-enrolled no-results center-container" style="margin-bottom: 30px; margin-top: 10px;">
+            <h2 class="no-results-text">You are not Enrolled in any Courses</h2>
+        </div>
         
-        <!-- Drop Down -->
-        <select class="schedule-dropdown">
-            <option value="T01">Fall 2015</option>
-            <option value="T02">Winter 2016</option>
-        </select>
-        </h1>        
         <!-- Weekly Schedule table -->
-        <table class="course-table" style = "margin-bottom: 30px; margin-top: 15px;">
+        <table class="course-table" style="margin-bottom: 30px; margin-top: 10px;">
         <tr class="course-table-header-row">
             <td class="weekly-table-heading">Time</td>
             <td class="weekly-table-day-heading">Sunday</td>
@@ -174,150 +173,150 @@
             
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">14:30</td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-8.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-8.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-8.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-8.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-8.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-8.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-8.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-9.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-9.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-9.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-9.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-9.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-9.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-9.5"></td>
         </tr>
                   
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">15:30</td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-10.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-10.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-10.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-10.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-10.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-10.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-10.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-11.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-11.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-11.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-11.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-11.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-11.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-11.5"></td>
         </tr>
             
             
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">16:30</td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-12.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-12.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-12.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-12.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-12.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-12.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-12.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-13.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-13.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-13.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-13.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-13.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-13.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sut-13.5"></td>
         </tr>
                      
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">17:30</td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-14.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-14.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-14.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-14.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-14.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-14.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-14.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-15.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-15.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-15.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-15.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-15.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-15.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-15.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">18:30</td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-16.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-16.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-16.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-16.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-16.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-16.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-16.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-17.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-17.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-17.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-17.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-17.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-17.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-17.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">19:30</td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-18.5" ></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-18.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-18.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-18.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-18.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-18.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-18.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-19.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-19.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-19.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-19.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-19.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-19.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-19.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
             <td class="weekly-table-time" rowspan = "2">20:30</td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-20.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-20.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-20.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-20.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-20.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-20.5"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-20.5"></td>
         </tr>
             
         <tr class="weekly-table-row">
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
-            <td class="weekly-table-time-text"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sun-21"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-mon-21"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-tue-21"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-wed-21"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-thu-21"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-fri-21"></td>
+            <td class="weekly-table-time-text" id="weekly-cell-sat-21"></td>
         </tr>    
                      
         </table>
