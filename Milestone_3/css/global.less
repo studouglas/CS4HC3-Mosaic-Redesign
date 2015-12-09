@@ -149,32 +149,51 @@ body {
 }
 .imgcontainer {
     position:relative;
-
-
-
-    width:50%;
-    top:5px
+    width:100%;
+    top:5px;
 
 }
 .overlaytext {
     position:absolute;
-    top:45%; 
+    top:40%; 
     left:7%;
     width:100%;
-    padding:4px;
+    padding:0px;
     text-align: left;
+}
+.overlaytext2 {
+    position:absolute;
+    top:50%; 
+    left:7.5%;
+    width:100%;
+    padding:0px;
+}
+
+
+.overlaybutton {
+    position:absolute;
+    top:62%; 
+    left:14%;
+    text-align: left;
+    padding: 2%;
+    border-radius: 10%;
+    border: 2px solid #f5f5f5;
+    overflow: hidden;
+    background-color:palegreen;
+    box-shadow: 0 0 3px gray;
+
 }
 
 
 .col3{
-    width:30%;
-    height:200px;
+    width:47%;
+    height:250px;
     padding-top:10px;
     float:left;
     background-color:#A2A9AB;
 }
 .spacer{
-    width:5%;
+    width:6%;
     float:left;
 }
 .thinborder{
@@ -657,6 +676,12 @@ body {
     color: #666;
     font-weight: 600;
 }
+.weekly-table-weekend-heading {
+    width: 25px;
+}
+.weekly-table-weekend-cell {
+    background-color: #f5f5f5;
+}
 .weekly-table-row {
     height: 30px;
 }
@@ -671,7 +696,54 @@ body {
     font-size: 12px;
     border: @light-border;
     text-align: center;
+    vertical-align: middle;
 }
+
+.weekly-lecture-cell {
+    border: 2px solid @background-gray-border-color;
+}
+.weekly-tutorial-cell {
+    border: 2px solid @background-gray-border-color;
+}
+.weekly-lab-cell {
+    border: 2px solid @background-gray-border-color;
+}
+.weekly-section-color-0 {
+    background-color: #b8f8f1;
+}
+.weekly-section-color-1 {
+    background-color: #b8daf8;
+}
+.weekly-section-color-2 {
+    background-color: #cff2e1;
+}
+.weekly-section-color-3 {
+    background-color: #d8b8f8;
+}
+.weekly-section-color-4 {
+    background-color: #f8b8cc;
+}
+.weekly-section-color-5 {
+    background-color: #e9f8b8;
+}
+.weekly-section-color-6 {
+    background-color: #f8bab8;
+}
+.weekly-section-color-7 {
+    background-color: #c2f8b8;
+}
+.weekly-section-color-9 {
+    background-color: #f8d8b8;
+}
+.weekly-section-color-10 {
+    background-color: #f8c4b8;
+}
+.weekly-section-color-11 {
+    background-color: #f3b8f8;
+}
+
+
+
 
 /***********************************************
 * Courses table 
@@ -830,3 +902,4 @@ body {
     background-color: @background-gray;
     cursor: default;
 }
+

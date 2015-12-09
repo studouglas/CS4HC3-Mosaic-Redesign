@@ -6,6 +6,7 @@
 	 "subject":"ANTHROP", 
      "professor":"TBD",
 	 "enrolled":"38/100",
+     "location":"ABB 144",
 	 "lectures":
         [{"core":"C01","times":["Wed_19:00_3"]},
          {"core":"C02","times":["Mon_13:00_3"]},
@@ -23,6 +24,7 @@
 	 "subject":"ANTHROP",
      "professor":"Karen Mcgarry",
 	 "enrolled":"38/100",
+     "location":"BSB 213",
 	 "lectures":
         [{"core":"C01","times":["Thu_19:00_3"]},
          {"core":"C02","times":["Mon_19:00_3"]}
@@ -42,6 +44,7 @@
 	 "subject":"ANTHROP", 
      "professor":"Briana Palmer",
 	 "enrolled":"16/100",
+     "location":"HH 12",
 	 "lectures":
         [{"core":"C01","times":["Mon_8:30_4"]}
         ],
@@ -56,6 +59,7 @@
      "code":"2SI3",
      "subject":"BIOLOGY", "professor":"Christopher Myhr",
 	 "enrolled":"13/50",
+     "location":"JHE 303",
 	 "lectures":
         [{"core":"C01","times":["Thu_13:30_4"]}],
 	 "tutorials":
@@ -72,6 +76,7 @@
 	 "subject":"BIOLOGY", 
      "professor":"Matthew Grellette",
 	 "enrolled":"30/100",
+     "location":"HSC 106",
 	 "lectures":
         [{"core":"C01",
           "times":["Tue_15:30_1","Wed_15:30_1","Fri_15:30_1"]}
@@ -88,6 +93,7 @@
 	 "subject":"BIOLOGY",
      "professor":"Alastair Tracy",
 	 "enrolled":"16/100",
+     "location":"HH 222",
 	 "lectures":
         [{"core":"C01",
           "times":["Thu_08:30_1","Fri_08:30_1"]}
@@ -122,6 +128,7 @@
 	 "subject":"BIOLOGY", 
      "professor":"Alastair Tracey",
 	 "enrolled":"13/50",
+     "location":"TSH 104",
 	 "lectures":
         [{"core":"C01","times":["Mon_13:30_1","Wed_13:30_1","Thu_13:30_1"]},
 		 {"core":"C02","times":["Mon_16:30_2","Wed_16:30_2","Thu_16:30_2"]}
@@ -148,6 +155,7 @@
 	 "subject":"BIOLOGY", 
      "professor":"Gary Schrobilgen",
 	 "enrolled":"38/100",
+     "location":"CNH 204",
 	 "lectures":
         [{"core":"C01","times":["Thu_19:00_3"]}
         ],
@@ -165,6 +173,7 @@
 	 "subject":"BIOLOGY", 
      "professor":"Harald Stover",
 	 "enrolled":"16/100",
+     "location":"MDCL 1103",
 	 "lectures":
         [{"core":"C01","times":["Mon_08:30_1","Wed_08:30_1","Fri_10:30_1"]}
         ],
@@ -194,6 +203,7 @@
 	 "subject":"ANTHROP", 
      "professor":"Sean Corner",
 	 "enrolled":"24/100",
+     "location":"MDCL 1044",
 	 "lectures":
         [{"core":"C01","times":["Wed_12:30_1","Fri_12:30_1"]}
         ],
@@ -215,6 +225,7 @@
 	 "subject":"COMMERCE", 
      "professor":"Teal Mcateer",
 	 "enrolled":"18/100",
+     "location":"BSB 111",
 	 "lectures":
         [{"core":"C01","times":["Mon_09:30_1","Thu_09:30_1","Tue_10:30_1"]}
         ],
@@ -230,6 +241,7 @@
 	 "subject":"COMMERCE", 
      "professor":"John Smith",
 	 "enrolled":"15/50",
+     "location":"JHE 144",
 	 "lectures":
         [{"core":"C02","times":["Tue_15:30_1","Wed_15:30_1"]},
 		 {"core":"C03","times":["Tue_14:30_1","Thu_14:30_1"]}
@@ -254,6 +266,7 @@
 	 "subject":"COMP SCI", 
      "professor":"TBD",
 	 "enrolled":"24/100",
+     "location":"ITB AB102",
 	 "lectures":
         [{"core":"C01","times":["Mon_12:30_1","Thu_12:30_1","Tue_13:30_1"]}
         ],
@@ -273,6 +286,7 @@
 	 "subject":"COMP SCI", 
      "professor":"George Karakostas",
 	 "enrolled":"22/50",
+     "location":"ETB 105",
 	 "lectures":
         [{"core":"C01","times":["Fri_11:30_1"]}
         ],
@@ -290,6 +304,7 @@
 	 "subject":"ANTHROP",
      "professor":"Joanne Leow",
 	 "enrolled":"38/100",
+     "location":"ITB 107",
 	 "lectures":
         [{"core":"C01","times":["Tue_19:00_2"]}
         ],
@@ -318,18 +333,19 @@
 	 "subject":"EARTHSC", 
      "professor":"Lisa Leoni",
 	 "enrolled":"24/100",
+     "location":"BSB 208",
 	 "lectures":
         [{"core":"C02","times":["Tue_12:30_1","Wed_12:30_1","Fri_12:30_1"]}
         ],
 	 "tutorials":[],
 	 "labs":
-		[{"lab":"T19","times":["Tue_14:30_2"]},
-		 {"lab":"T20","times":["Tue_16:30_2"]},
-		 {"lab":"T21","times":["Wed_08:30_2"]},
-		 {"lab":"T22","times":["Wed_10:30_2"]},
-		 {"lab":"T24","times":["Wed_16:30_2"]},
-		 {"lab":"T25","times":["Thu_08:30_2"]},
-		 {"lab":"T28","times":["Fri_14:30_2"]}
+		[{"lab":"L19","times":["Tue_14:30_2"]},
+		 {"lab":"L20","times":["Tue_16:30_2"]},
+		 {"lab":"L21","times":["Wed_08:30_2"]},
+		 {"lab":"L22","times":["Wed_10:30_2"]},
+		 {"lab":"L24","times":["Wed_16:30_2"]},
+		 {"lab":"L25","times":["Thu_08:30_2"]},
+		 {"lab":"L28","times":["Fri_14:30_2"]}
 		],
 	 "exam":"18_16:00_3"
 	},
@@ -341,6 +357,7 @@
 	 "subject":"COMMERCE", 
      "professor":"Hannah Holmes",
 	 "enrolled":"16/100",
+     "location":"HSC 1A6",
 	 "lectures":
         [{"core":"C01","times":["Mon_08:30_1","Wed_08:30_1","Fri_10:30_1"]}
         ],
@@ -356,6 +373,7 @@
 	 "subject":"COMMERCE",
      "professor":"Bridget O'Shaughnessy",
 	 "enrolled":"18/100",
+     "location":"CNH 102",
 	 "lectures":
         [{"core":"C01","times":["Tue_09:30_1"]},
 		 {"core":"C02","times":["Tue_08:30_1"]},
@@ -392,6 +410,7 @@
 	 "subject":"COMP SCI", 
      "professor":"Colin McDonald",
 	 "enrolled":"16/100",
+     "location":"ABB 203",
 	 "lectures":
         [{"core":"C01","times":["Mon_08:30_1"]}
         ],
@@ -407,7 +426,7 @@
 		 {"tut":"T10","times":["Fri_12:30_2"]}
 		],
 	 "labs":
-		[{"lab":"L01","times":["Mon_08:30_3"]},
+		[{"lab":"L01","times":["Mon_09:30_3"]},
 		 {"lab":"L03","times":["Tue_08:30_3"]},
 		 {"lab":"L05","times":["Wed_08:30_3"]},
 		 {"lab":"L07","times":["Thu_08:30_3"]},
@@ -425,6 +444,7 @@
 	 "subject":"COMP SCI",
      "professor":"William Farmer",
 	 "enrolled":"08/50",
+     "location":"ITB 100",
 	 "lectures":
         [{"core":"C01","times":["Wed_08:30_1"]}
         ],
@@ -456,6 +476,7 @@
 	 "subject":"COMP SCI", 
      "professor":"Jeffrey Ollinger",
 	 "enrolled":"18/100",
+     "location":"JHE 100",
 	 "lectures":
         [{"core":"C07","times":["Fri_09:30_2"]},
 		 {"core":"C08","times":["Mon_09:30_2"]},
