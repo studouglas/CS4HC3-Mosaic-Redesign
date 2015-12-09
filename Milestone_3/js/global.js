@@ -37,6 +37,13 @@ $(document).ready(function () {
         localStorage.removeItem("cachedSearch");
         localStorage.removeItem("cachedSearchCriteria");
     }
+	
+	if (window.location.href == "searchcourses.html") {
+		var slct1 = document.getElementById("subselect");
+		var slct2 = document.getElementById("levselect");
+		var slct3 = document.getElementById("crsselect");
+		//populate select elements accordingly
+	}
 });
 
 function headerFinishedLoading() {
