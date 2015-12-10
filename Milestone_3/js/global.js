@@ -61,9 +61,11 @@ function setCurrentPage() {
         $(".nav-home").addClass("current-page");
         break;
     case "viewschedule.html":
+    case "examschedule.html":
         $(".nav-view-schedule").addClass("current-page");
         break;
     case "searchcourses.html":
+    case "searchresults.html":
         $(".nav-search-courses").addClass("current-page");
         break;
     case "enroll.html":
@@ -927,6 +929,21 @@ function formattedCourseString(courseId, lecture, tutorial, lab) {
 }
 
 function loadHomePageCoursesHtml() {
+    if (wishlistCourses.length == 0) {
+        $("#main-page-wishlist-table")[0].style.display = 'none';
+        $(".no-wishlist")[0].style.display = 'inline-block';
+    } else {
+        $("#main-page-wishlist-table")[0].style.display = 'table';
+        $(".no-wishlist")[0].style.display = 'none';
+    }
+    
+    if (enrolledCourses.length == 0) {
+        $("#main-page-enrolled-table")[0].style.display = 'none';
+        $(".no-enrolled")[0].style.display = 'inline-block';
+    } else {
+        $("#main-page-enrolled-table")[0].style.display = 'table';
+        $(".no-enrolled")[0].style.display = 'none';
+    }
     
     for (var i = 0; i < wishlistCourses.length; i++) {
         var course = getCourse(wishlistCourses[i].split('-')[0]);
