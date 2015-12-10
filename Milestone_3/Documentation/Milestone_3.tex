@@ -3,6 +3,7 @@
 % Packages
 \usepackage{enumerate}
 \usepackage{mathptmx}
+\usepackage{hyperref}
 \usepackage{helvet}
 \usepackage{listings}
 \usepackage[left=0.75in,right=0.75in,top=0.875in,bottom=0.875in]{geometry}
@@ -84,7 +85,7 @@ The project proposed in this document is the design of a new
 university course-management system. Through scrutinization of several 
 pre-existing systems, we will apply design concepts discussed in class to 
 determine what features and design choices are crucial to the success of a course-
-management system's design.
+management system's design.\\
 
 It is commonplace for educational institutions to have one central course-
 management system which hosts all tools and information that students and staff 
@@ -92,12 +93,12 @@ may need to access. This includes tools to allow students to enroll in courses,
 view their schedule and view other course-related information. Additionally 
 there are a variety of other tools to perform financial and administrative 
 tasks, however this project's scope is focusing only on the course-related 
-functions.
+functions.\\
 
 Course-management systems have achieved near omnipresence in 
 the world of education, but there remains significant variability in their design, 
 structure, and functionality. It is our goal to take the best aspects of the 
-existing systems as well as consider the most prominent criticisms to develop a protoype of a new system.
+existing systems as well as consider the most prominent criticisms to develop a protoype of a new system.\\
 
 In the following section we will introduce several possible improvements that 
 could be made to these systems, informed by the system surveys below. It is 
@@ -116,13 +117,13 @@ ability to surface the most relevant data to the user quickly and consistently.
 To improve this aspect, the concept of an intelligent, ``dynamic'' element was 
 proposed. This prominent element is the first thing users see when 
 accessing the webpage. Several factors including the current date and enrollment 
-status were used to determine which task the user is most likely to perform.
+status were used to determine which task the user is most likely to perform.\\
 
 For example, when the user accesses the system during exam season, the element 
  displays the student's exam schedule. During the course registration period, 
 the element displays information related to course registration. If a user 
 is not yet accepted into University, the element displays their application 
-status.
+status.\\
 
 This dynamic element helps users quickly find the information they are 
 looking for by making information more visible and easier to access. All functions continue to be 
@@ -131,9 +132,8 @@ displayed below in a static and consistent manner, in case the user wishes to pe
 \subsubsection*{Improved Navigation}
 Many tasks performed by users of course-management software are broken into 
 several steps. A weakness of the existing products was in visually showing the 
-user at which step they were at. A navigation element was included for when the user is engaged in a multi-step task.
-This element shows which step the user is currently on, and includes the ability to 
-go back to a previous step, or jump ahead to the first uncompleted step.
+user at which step they were at. A navigation element was included for when the user is engaged in a multi-step task. This element shows which step the user is currently on, and includes the ability to 
+go back to a previous step, or jump ahead to the first uncompleted step.\\
 
 This visual indicator improves the user's comprehension of how the system 
 works, and gives them the ability to better navigate between steps. It also improves user satisfaction, 
@@ -176,8 +176,7 @@ The largest usability flaws in Mosaic center around difficulty to access
 required information. Combined with an unintuitive and inconsistent navigation 
 interface. The HTA for enrolling in a course demonstrates this 
 through the large number of steps required to perform a routine and common task. 
-Other functions are hidden behind dropdown menus, and are difficult to discover.
-
+Other functions are hidden behind dropdown menus, and are difficult to discover.\\
 
 The navigation is separated into a top navigation bar separated by user-type 
 (e.g. Students and Employees). Within the student center page, functions are 
@@ -222,7 +221,7 @@ inefficient use of space on the main page. The visibility of important functions
 is reduced by putting all functions in a small column to the right of the main 
 content. This main content contains news items, such as exam period times and 
 service outages, generally information that the user is less likely to need than 
-the functions beside it.
+the functions beside it.\\
 
 WebAdvisor does do some things quite well from a usability perspective however. 
 One of the most common tasks is enrolling in a course, and WebAdvisor has the 
@@ -274,7 +273,7 @@ figure 3). The submit button is aligned with other buttons for Class Search,
 which takes the user to a separate page, Reset, which undoes their changes, and 
 Return to Worksheet which navigates the user to a page showing them their 
 preferred courses. These buttons are not all related, and grouping them together 
-may confuse the user.
+may confuse the user.\\
 
 Overall, Central is a relatively unintuitive system, requiring users to spend 
 more time finding the information they need through poor mappings and a lack of 
@@ -305,7 +304,7 @@ information and functions they can use. The system is notorious for hiding
 options and menus from the user, requiring several screens of drill down menus 
 before being able to access any meaningful options. The menus look unfinished or 
 poorly formatted, and it is easy to become lost and confused while navigating 
-the various pages. Navigation on the main page is done using hyperlinked text, 
+the various pages. Navigation on the main page uses hyperlinked text, 
 while traversing the deeper options is done using blue menu tabs. Native browser 
 back and forward commands generally work as expected, which makes navigation a 
 little more manageable. 
@@ -364,8 +363,8 @@ little more manageable.
 %\fbox{\includegraphics[width=\textwidth]{WaterlooSchedule.png}}
 %\end{center}
 
-
-\section*{Personas}\vspace{2mm}
+\vspace{1mm}
+\section*{Personas}
 %. The \textbf{design project} involves creating a new user interface and user experience for university student management software. The focus has been on developing an improved system design as compared to McMaster University's current Mosaic software. Other university's systems have been researched and studied in previous milestones, and those results have informed design decisions for our replacement.\\
 
 Presented are the personas used to develop our design.These personas were based off of the \emph{Persona Template} as linked from the assignment outline from McMaster University, COMP SCI 4HC3 These personas were created to archetype the most common user types, and have been integral to developing a product that will satisfy all of them.\\
@@ -396,11 +395,11 @@ Presented are the personas used to develop our design.These personas were based 
 \item Age: 22
 \item 3rd Year Engineering Student at McMaster
 \end{itemize}
-\end{minipage}\\
+\end{minipage}\\\\
 
-Trevor is a third year Civil Engineering student at McMaster. He currently lives 10 minutes away from campus with some friends he met in first year. Trevor's parents are paying for his tuition and he has a student loan which he uses to pay for rent and food.
+Trevor is a third year Civil Engineering student at McMaster. He currently lives 10 minutes away from campus with some friends he met in first year. Trevor's parents are paying for his tuition and he has a student loan which he uses to pay for rent and food.\\
 
-Trevor is unorganized and rarely goes to class. He also forgets to hand in assignments on time. Trevor is not a part of any clubs and prefers to spend his free time with his housemates playing video games.
+Trevor is unorganized and rarely goes to class. He also forgets to hand in assignments on time. Trevor is not a part of any clubs and prefers to spend his free time with his housemates playing video games.\\
 
 Trevor has trouble remembering important dates, like his course selection or when his exams are. When he searches for information, he usually gives up after five minutes if he cannot find what he is looking for. Trevor would like it if the new course management system was quick and easy to use. He also would not mind it if certain information was made more accessible during certain times of the year (easy to see link to exam schedule around exam season).
 
@@ -413,8 +412,8 @@ Trevor has trouble remembering important dates, like his course selection or whe
 \subsection*{Candice Smith}
 %\vspace{4mm}
 
-\begin{minipage}{80mm}
-\includegraphics[width=80mm]{Candice.jpg}
+\begin{minipage}{60mm}
+\includegraphics[width=60mm]{Candice.jpg}
 \begin{center}
 \emph{``I don't know what electives I want to take for university next year"}
 \end{center}
@@ -425,12 +424,12 @@ Trevor has trouble remembering important dates, like his course selection or whe
 \item Age: 18
 \item Grade 12 High School Student
 \end{itemize}
-\end{minipage}\\
+\end{minipage}\\\\
 
 
-Candice has been accepted to the chemistry program at McMaster. Candice currently lives at home with her parents and will be moving into residence in the fall. Her parents are paying for her tuition, but Candice is paying for her residence and meal plan. Candice works part time at the Fortinos in her home town to save up money so she can go to the movies whenever new movies come out.
+Candice has been accepted to the chemistry program at McMaster. Candice currently lives at home with her parents and will be moving into residence in the fall. Her parents are paying for her tuition, but Candice is paying for her residence and meal plan. Candice works part time at the Fortinos in her home town to save up money so she can go to the movies whenever new movies come out.\\
 
-Candice has done well in all of her classes in high school and is a part of several high school groups; such as the volleyball team, track and field team and the Harry Potter fan club.
+Candice has done well in all of her classes in high school and is a part of several high school groups; such as the volleyball team, track and field team and the Harry Potter fan club.\\
 
 Candice has several electives that she can take, but she cannot decide which ones to enrol in. She has heard that she can change courses during the first couple weeks of class and plans on doing that if she ends up changing her mind. Candice has already made a list of classes she would like to take in her first year and is waiting for the course registration to open up. Candice would like the new course management system to allow her to browse all the courses available to her and would like it if there were descriptions for each course that she could read before she registers.
 
@@ -438,13 +437,12 @@ Candice has several electives that she can take, but she cannot decide which one
 %\hrule
 %\vspace{2mm}
 %\subsection{Persona 3 -- Secondary persona}
-%\vspace{11mm}
-
+\vspace{4mm}
 \subsection*{Adrian Lopez}
 %\vspace{4mm}
 
-\begin{minipage}{70mm}
-\includegraphics[width=70mm]{Adrian.png}
+\begin{minipage}{60mm}
+\includegraphics[width=60mm]{Adrian.png}
 \begin{center}
 \emph{``I have a lot of new things to get used to in Canada"}
 \end{center}
@@ -455,30 +453,35 @@ Candice has several electives that she can take, but she cannot decide which one
 \item Age: 20
 \item 2nd Year Geography Student on Exchange to McMaster
 \end{itemize}
-\end{minipage}\\
+\end{minipage}\\\\
 
-Adrian is a geography student from Mexico on exchange at McMaster for the year. Adrian is living in a house 20 minutes away from campus with other students in the foreign exchange program. Adrian's tuition is being paid for by a grant he received for being a part of the foreign exchange program. His parents are giving him some money for rent and food but Adrian has to pay for some of it himself. Adrian is a hard working individual during the week and can be found in the Thode library between classes. Adrian likes to get all of his assignments done during the week so he can spend his weekend going to clubs with his housemates and friends.
+Adrian is a geography student from Mexico on exchange at McMaster for the year. Adrian is living in a house 20 minutes away from campus with other students in the foreign exchange program. Adrian's tuition is being paid for by a grant he received for being a part of the foreign exchange program. His parents are giving him some money for rent and food but Adrian has to pay for some of it himself. Adrian is a hard working individual during the week and can be found in the Thode library between classes. Adrian likes to get all of his assignments done during the week so he can spend his weekend going to clubs with his housemates and friends.\\
 
-Adrian is a part of the improv club which he regularly goes to. Adrian has chosen a light course load this year as he would like some time to experience Canada before he goes back to Mexico next September.
+Adrian is a part of the improv club which he regularly goes to. Adrian has chosen a light course load this year as he would like some time to experience Canada before he goes back to Mexico next September.\\
 
 Since English is not Adrian's first language he sometimes has trouble reading and understanding websites that are primarily text, and he can get confused while navigating to the information he is looking for. Adrian would like it if the new course management system was easy to navigate and intuitive enough that he doesn't need to read an instruction manual to know how to use it.
 
 \newpage
 \begin{multicols}{2}
+
 \section*{Usability Tests}
 \subsection*{Overview}
-This section of the document describes a test plan for conducting a usability test for our course management software. This usability test plan will be using the template from(http://www.usability.gov/how-to-and-tools/resources/templates/usability-test-plan-template.html). The goals of this usability test  include establishing a baseline of user performance, establishing and validating user performance measures, and identifying potential design concerns to be addressed in order to improve the efficiency, productivity, and end-user satisfaction.
+This section of the document describes a test plan for conducting a usability test for our course management software. This usability test plan will be based off of the \href{http://www.usability.gov/how-to-and-tools/resources/templates/usability-test-plan-template.html}{\underline{Usability Test Plan Template}} created by the U.S. Department of Health \& Human Services. The goals of this usability test include establishing a baseline of user performance, establishing and validating user performance measures, and identifying potential design concerns to be addressed in order to improve the efficiency, productivity, and end-user satisfaction.\\
 
 The usability test objectives are:
 \begin{itemize}
 \item To determine design inconsistencies and usability problem areas within the user interface and content areas. 
+
 	\begin{itemize}
 	\item Navigation errors - failure to locate functions, failure to follow recommended screen flow.
 	\item Presentation errors - failure to locate and properly act upon desired information in screens, selection errors due to 				labeling ambiguities
 	\end{itemize}
+	
 \item Exercise the web site under controlled test conditions with representative users. Data will be used to access whether usability goals regarding an effective, efficient, and well-recieved user interface have been achieved.
+
 \item Establish baseline user performance and user=satisfaction levels of the user interface for future usability evaluations.
 \end{itemize}
+
 \subsection*{Procedure}
 \subsection*{Usability Metrics}
 \subsection*{Usability Goals}
