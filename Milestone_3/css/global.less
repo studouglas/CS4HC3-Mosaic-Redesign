@@ -147,6 +147,7 @@ body {
     text-align: left;
     margin-top: 40px;
 }
+<<<<<<< HEAD
 .imgcontainer {
     position:relative;
     width:100%;
@@ -204,11 +205,16 @@ body {
 .spacer{
     width:6%;
     float:left;
+=======
+.full-width-image {
+    width: 100%;
+    border-radius: 2px;
+>>>>>>> 532cb15b0465d6e76eeb65b15f0c91d36f953f39
 }
-.thinborder{
-    border: 1px solid black;
+.col-2 {
+    width: 50%;
+    float: left;
 }
-
 
 /***********************************************
      Button (ghost)
@@ -230,7 +236,7 @@ body {
     -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 .ghost-button:hover {
-    background-color: #e3e3e3;
+    background-color: #d3d3d3;
     color: @maroon;
 }
 .ghost-button-big {
@@ -482,6 +488,7 @@ body {
 /***********************************************
     Search Criteria
 ***********************************************/
+
 .search-criteria-container {
     padding-top: 20px;
 	background-color: @background-gray;
@@ -749,9 +756,6 @@ body {
     background-color: #f3b8f8;
 }
 
-
-
-
 /***********************************************
 * Courses table 
 ***********************************************/
@@ -910,3 +914,56 @@ body {
     cursor: default;
 }
 
+/***********************************************
+* Main page 
+***********************************************/
+
+.overlay-text-container {
+    position: absolute;
+    display: block;
+    bottom: 60px;
+    left: 40px;
+    text-align: left;
+}
+.banner-image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.main-page-card {
+    background-color: @background-gray;
+    border: @background-gray-border;
+    padding: 15px;
+    border-radius: 2px;
+}
+.main-page-card-heading {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.main-page-course-table {
+    border: @background-gray-border;
+    text-align: left;
+    width: 100%;
+    overflow: scroll;
+}
+.main-page-course-table-row {
+    border: 1px solid @background-gray-border-color;
+    text-align: left;
+    width: 100%;
+}
+.main-page-course-link {
+    text-align: left;
+    color: @maroon;
+    text-decoration: underline;
+}
+.main-page-course-link:hover {
+    color: @maroon-hover;
+}
+.main-page-course-table-cell {
+    padding: 8px 12px;
+}
+.main-page-course-title {
+    margin-top: -5px;
+}
