@@ -1,0 +1,29 @@
+Celia - never used Mosaic before, but has used other system (Guelph)
+
+MOSAIC
+1.1 - find exam schedule
+51s (and it was broken)
+path: weekly schedule =>Term Information tab on tab bar => View exam schedule
+
+1.2 - enroll in course
+3:45 (didn't actually click enroll)
+path: enroll -> search tab -> enter subject & term -> click select for correct course -> press next -> press next -> link to enroll wishlist -> select checkbox -> click enroll
+Note the blue square icon used to denote the course being closed
+
+1.3 - find weekly schedule
+6s
+clicked weekly schedule link on main page
+
+
+
+NEW SYSTEM
+2.1 - find exam schedule
+3s (used dynamic element)
+
+2.2 - enroll in course
+40s
+path: enroll button -> search for courses breadcrumbs -> choose course & level, click add to wishlist, drop other course (conflict) and click enroll)
+
+2.3 - find weekly schedule
+6s
+path: weekly schedule button from homepage
