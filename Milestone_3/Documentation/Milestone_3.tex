@@ -158,7 +158,7 @@ viewing one's course schedule.
 \subsubsection*{Critique}
 The largest usability flaws in Mosaic center around difficulty to access 
 required information. Combined with an unintuitive and inconsistent navigation 
-interface. The HTA for enrolling in a course (appendix: Figure 4) demonstrates this 
+interface. The HTA for enrolling in a course (appendix: Figure XXX) demonstrates this 
 through the large number of steps required to perform a routine and common task. 
 Other functions are hidden behind dropdown menus, and are difficult to discover.\\
 
@@ -191,7 +191,7 @@ could be improved upon, especially in the area of navigation. There are also
 certain strengths to the system as compared to others surveyed. The navigation 
 issues largely stem from a lack of consistent navigation elements to show the 
 user where they are. For example, when enrolling in a course there are several 
-steps that must be completed (appendix: Figure 10). The user is not aware how many steps there are total, how many they 
+steps that must be completed (appendix: Figure XXX). The user is not aware how many steps there are total, how many they 
 have completed or how many remain. Another large usability issue is an 
 inefficient use of space on the main page. The visibility of important functions 
 is reduced by putting all functions in a small column to the right of the main 
@@ -229,7 +229,7 @@ Again, the user must read through each one until they find the desired function.
 Another large usability flaw is the poor mapping between many actions. For 
 example, when adding a course, the user first enters a course number into one of 
 several (unlabeled) input boxes, and then they click the Submit button (appendix: 
-figure 13). The submit button is aligned with other buttons for Class Search, 
+Figure XXX). The submit button is aligned with other buttons for Class Search, 
 which takes the user to a separate page, Reset, which undoes their changes, and 
 Return to Worksheet which navigates the user to a page showing them their 
 preferred courses. These buttons are not all related, and grouping them together 
@@ -404,8 +404,55 @@ For each scenario to be tested, the time it takes the participant to complete th
 The goal for scenario completion time is to have the average completion time of each task be at most 10\% slower on the new system, and the total completion time for all tasks on the new system to be at least 20\% less than with Mosaic. This ensures that no task is significantly slower with the new system, and the overall benefit of the new system is significant.
 
 \section*{Results}
+The above usability tests were conducted with 8 different participants, all of whom had some experience using Mosaic. All participants were students at McMaster University. The results of the tests for each accompanying success metric follow.
+
+\subsection*{Scenario Completion}
+All participants successfully completed all scenarios in both Mosaic and the new system.
+
+\subsection*{Errors}
+There were several errors in both Mosaic and the new system that commonly came up during the tests.
+
+
 \section*{Discussion}
-When determining the focus for the system, we started by looking at our own experiences with Mosaic, and realized that a major grievance with the system was a major lack of visibility. It is very hard to find most functions of the website, as reported by our usability tests. Almost every user found every task on the Mosaic system moderately difficult to extremely difficult. Making features easy to find and locate on the page was one of our main focuses of our UI design. Our new system was designed to have a small number of large, easy to see buttons and menu items, and a limited amount of noise and additional controls in the workflows. While this to some degree limits the actions the user can perform, it allows them to access the core functionality of the website hassle-free. Our design kept some of the original features of Mosaic that functioned well, such as the course search engine, overall color palette, and calendar view for schedules. This was to make it easy for users with previous experience with the Mosaic system to understand the information presented in a form that is recognisable to them. The usability tests show that our design mantra of visibility and ease of access was a success, as users reported very little, if any difficulty performing the same actions performed in mosaic in our new system. Our focus on large, clean, and uncluttered workflows allowed users to complete comparable tasks with far greater ease, and often in significantly less time. One issue that was brought up during our usability tests was that users didn’t quite see that they could search by year and subject or individual course code. We would improve that screen so it was more visible that the users had more options. Also, the concept of the wishlist brought up some confusion, seeing an empty wishlist would leave users wondering what to do next. In future versions of the website we would refactor that feature into more of a “shopping cart” structure, which would be easier to understand and is more relatable to other internet services.
+The results of the usability tests will now be discussed in terms of the postive and negative aspects of the new systems, where it could be improved in the future, and how the results relate to the original goals of the project.
+
+\subsection*{Positive Aspects of New System}
+The results shown above show that the new system was consistently preferred by participants over Mosaic. This can be seen in the questionnaire results, with a consistently higher rating for the ease-of-use of functions in the new system over Mosaic. It can also be seen more objectively by examining the significant improvals to scenario completion time as in Figure XXX.\\
+
+There were several particular areas of strength for the new system as noted by comments from participants and ongoing evaluation by the facilitators as they worked on the tests. Each of these strengths will now be discussed, as well as how best to incorporate them going forward.
+
+\subsubsection*{Accessing Features from Home Page}
+One of the largest complaints with Mosaic was the difficulty in finding common features such as a user's exam schedule. The improved navigation of the new system significantly reduced the time it took participants to find features, even though all participants had experience with Mosaic and no experience with the new system. Providing large, accessible buttons as well as a prominent dynamic element (see Introduction: Suggested Improvements) for the most common functions on the home screen allows the user to quickly find what they are most likely to need. Improved navigation was one of the main focuses of the new design, and the results demonstrate that the focus was an important factor in improving efficiency and user-satisfaction.
+
+\subsubsection*{Visualization of Course Times}
+During the usability tests, most participants did not acknowledge Mosaic's course times when searching for courses. They instead chose the first available lecture and tutorial and added the course to the wishlist, resolving conflicts when actually enrolling. In the new system, the lecture, tutorial, and lab times are shown directly in the search results in a visual manner (Appendix: New System -- Screenshots). The same visual structure is used when enrolling in courses, and as a result most participants were able to quickly understand why a course had a conflict and how to fix it.
+
+\subsubsection*{Navigation Between Enrolling Steps}
+The ``breadcrumb'' navigation pattern was initially added to the course enrollment pages so that a user can quickly switch between searching for courses, seeing the results, and enrolling in courses. This proved to be an effective pattern, and almost every single participant used the element as the primary way to navigate between pages when enrolling in courses. Mosaic does not have a similar element, and it was noted during the tests that many users would add one course to their wishlist in Mosaic, return back to the home page, and then navigate back to the search courses page. It was our goal to eliminate this ineffiency with the new system, and the results of the completion time tests for enrolling in courses show that it was achieved (see Figure XXX).\\
+
+Although we have outlined the above features, there were a variety of other, less prominent enhancements that were appreciated by the participants during the tests. These included a less-cluttered UI, more obvious calls to action (i.e. bright green buttons), simpler conflict management (see Figure XXX), and an improved weekly schedule (courses colour-coded, rows all have consistent height).
+
+\subsection*{Negative Aspects of New System}
+Although the overall results from the usability tests were very positive, there were two main areas of weakness, where participants consistently encountered errors. Both areas would be primary areas of focus for future iterations.
+
+\subsubsection*{Selecting Search Criteria from Dropdowns}
+One of the design decisions for the new system was to allow the user to select \emph{either} the course level for a given subject when searching or the specifc course code for the subject. The reasoning behind this was that the user would be able to quickly see all courses for a given subject and year, or they could manually choose one if they knew the code. In reality, participants consistently chose the course level and then without clicking search, would choose the course code, blanking out the course level dropdown. The design attempted to mitigate this with a large ``OR'' label between the dropdowns, and a bright green highlight for the selected one, but participants continued to make the error.
+
+\subsubsection*{Initially Enrolling in Courses}
+Task 2.1 asks the user to enroll in several courses. The initial action by almost every user was to click the ``Enroll/Drop'' button on the main page, taking them to the page for enrolling in courses from the wishlist. Two large boxes are shown saying that they are not enrolled in any courses and their wishlist is empty, but there is no indication on how to add courses. Most participants looked around and eventually found the ``Search Courses'' button in the breadcrumb navigation at the top.\\
+
+The above two areas of weakness led to the vast majority of errors during the usability tests for the new system, and mitigating them should be prioritized for future iterations.
+
+\subsection*{Future Improvements}
+When designing future versions of the software, there are several important improvements that could be made, as can be seen in the results.\\
+
+Improving the two weaknesses discussed above should be prioritized. For the search criteria dropdowns, the design should not require the two options to be mutually exclusive. Instead, selecting a level should filter the number of course codes available in the course code dropdown. If the user does select a course code, there should be an option to quickly add the course to the wishlist without leaving the search criteria page. This will improve the time for enrolling in courses if the user knows which courses they would like to enroll in. To improve the initial enrolling steps, a large prominent call to action from the enroll page should be shown if the wishlist is empty, pointing the user to the ``Search Courses'' page. As soon as a course is added to the wishlist, the link would dissapear.\\
+
+Another future improvement to the system would be to include the smarter schedule generation feature as discussed in \emph{Introduction: Suggested Improvements}. This would improve the process for selecting timeslots, and would increase user satisfaction, as it will reduce the effort to create a schedule, while improving the schedule quality.
+
+\subsection*{Comparison with Original Goals}
+The original goal of this project was to create a university course-management system that is easier to use, smarter, and more efficient than existing systems. To create our design, we applied well-known design principles such as visibility (green buttons), mappings (course times shown on days of week table), and good conceptual models (breadcrumbs to show step-by-step nature of enrolling). The results from the usability tests clearly demonstrate that there are major usability issues with the current system (see Figure XXX), and that are new system improves upon many of the usability aspects (see Figure XXX). All success metrics were met or exceeded, demonstrating that the proposed system is a viable foundation for a new course-management software system.
+
 \section*{Conclusion}
 We proposed a design for a new university course-management system with several new features and enhancements to reduce the amount of time it takes for students to perform common tasks. We then surveyed and critiqued four existing university course-management systems, and used this information to inform our design proposals. Personas were then created to demonstrate potential users of the system and were used to guide the design process. This process involved an iterative process of design for each of the pages of the system, which resulted in a set of mockups (appendix: \emph{New System -- Final Design Mockups}) using a consistent design language and incorporating the improvements outlined earlier.\\
 
