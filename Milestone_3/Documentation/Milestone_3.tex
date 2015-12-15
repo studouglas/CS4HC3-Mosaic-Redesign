@@ -332,11 +332,10 @@ This section of the document describes a plan for conducting a usability test fo
 
 The usability test objectives are:
 \begin{itemize}
-\item To determine design inconsistencies and usability problem areas within the user interface and content areas. 
-
+\item To determine design inconsistencies and usability problem areas within the user interface and content areas
 	\begin{itemize}
-	\item Navigation errors - failure to locate functions, failure to follow recommended screen flow.
-	\item Presentation errors - failure to locate and properly act upon desired information in screens, selection errors due to 				labeling ambiguities
+	\item Navigation errors: failure to locate functions, failure to follow recommended screen flow
+	\item Presentation errors: failure to locate and properly act upon desired information in screens, selection errors due to labeling ambiguities
 	\end{itemize}
 	
 \item Exercise the web site under controlled test conditions with representative users. Data will be used to access whether usability goals regarding an effective, efficient, and well-recieved user interface have been achieved.
@@ -345,14 +344,23 @@ The usability test objectives are:
 \end{itemize}
 
 \subsection*{Procedure}
-The participant's interaction with the application will be monitored by the facilitator seated in the same room. The facilitator will be responsible for taking notes and logging data during the tests.
-The facilitator will explain that the amount of time taken to complete the test task will be measured as well as how many errors were made. At the start of each task the facilitator will inform the participant of the tasks objective.\\
+The following details about the usability tests are sufficient data for others to replicate the tests in a consistent manner.
+ 
+\subsubsection*{Test Conditions}
+The participant's interaction with the application will be monitored by the facilitator seated in the same room. The facilitator will be responsible for taking notes and logging data during the tests. All tasks will be run on the same machine, using the same web browser. The machine will be a desktop computer running Windows or Mac OS X. The browser used will be either Safari (7 or later), Chrome (39 or later), or Firefox (29 or later).
 
-Once the participant starts the task the facilitator will begin to time the participant.  The facilitator will instruct the participant to `think aloud' so that verbal record exists of their interaction with the application. The facilitator will observe and enter user behavior, user comments, and system actions. After the participant has completed all tasks they will be asked to complete a questionnaire.\\
+\subsubsection*{Task Setup}
+The facilitator will initially explain that the amount of time taken to complete the test task will be measured as well as how many errors were made and other notes about the participant's interactions with the software.\\
 
-Following is a list of the tasks the participant will complete. The reason the courses in tasks 1.1 and 2.1 are different is that dummy courses were used for the new system, and have different course codes.
+Before each task, the facilitator will ensure that no courses are enrolled in by navigating to the system's enroll page and dropping all current courses. The facilitator will then navigate to the home page of the system. The facilitator will instruct the participant to `think aloud' so that verbal record exists of their interaction with the application. Then, they will  inform the participant of the task's objective, and allow the participant to control the computer.
+
+\subsubsection*{Task Procedure}
+As soon as the participant starts the task the facilitator will begin to time the participant. The facilitator will observe and enter user behavior, user comments, and system actions. After the participant has completed all tasks they will be asked to complete a questionnaire.
+
+\subsubsection*{Tasks}
+Following is a list of the tasks the participant will complete. Note: the reason the courses in tasks 1.1 and 2.1 are different is that dummy courses were used for the new system, and have different course codes.
 \begin{itemize}
-\item \textbf{Task 1.1} - Have user enroll in the following courses for \emph{Winter 2016} through Mosaic, selecting lectures, tutorials, and sections so as to eliminate conflicts as needed:
+\item \textbf{Task 1.1} - Have user enroll in the following courses for the \emph{Winter 2016} term through Mosaic, selecting lectures, tutorials, and sections so as to eliminate conflicts as needed:
 \begin{itemize}
 \item ANTHROP 1AA3
 \item ANTHROP 1AB3
@@ -372,21 +380,28 @@ Following is a list of the tasks the participant will complete. The reason the c
 \item \textbf{Task 2.3} - Have user find their weekly schedule for the Fall 2015 semester using the new system
 \end{itemize}
 
-\subsection*{Usability Metrics}
-Usability metrics refers to user performance measured against specific performance goals necessary to satisfy usability requirements. Scenario completion success rates, error rates, subjective evaluations, and scenario completion times will be used.\\
+\subsection*{Success Metrics}
+Success metrics refers to user performance measured against specific performance goals necessary to satisfy usability requirements. Scenario completion success rates, error rates, subjective evaluations, and scenario completion times will be used.
 
 \subsubsection*{Scenario Completion}
-Each scenario will require that the participant performs a specific, common task. The scenario is complete when the scenario's goal has been obtained or the participant requests sufficient guidance to warrant scoring the scenario as a critical error.\\
+Each scenario will require that the participant performs a specific, common task. The scenario is complete when the scenario's goal has been obtained or the participant requests sufficient guidance to warrant scoring the scenario as a critical error, at which point the facilitator will terminate the task.\\
+
+The goal for scenario completion is that the participant successfully completes the task to completion.
 
 \subsubsection*{Errors}
 Errors are deviations from the target behaviour necessary to complete the scenario. Participants may or may not be aware that the they have deviated from the target behaviour. Errors may be procedural, in which the participant does not complete a scenario in the most optimal means (e.g. excessive steps and keystrokes). These errors may also be errors of confusion (such as attempting to edit an un-editable field).\\
 
+The goal for errors is for the new system to have at most the same number of errors for each task as the old system. Optimally, some (if not all) tasks will have less errors than the old system. It is important to note that some participants may have experience using Mosaic, and so will make less errors. Even if this is the case, the goal remains the same as we are performing tests to see if a replacement system would be an improvement, in which case the current system would have the advantage of most users having experience.
+
 \subsubsection*{Subjective Evaluations}
-Subjective evaluations regarding ease of use and satisfaction will be collected via questionnaires, and during debriefing at the conclusion of the session. The questionnaires will utilize free-form responses and rating scales.\\
+Subjective evaluations regarding ease of use and satisfaction will be collected via questionnaires, and during debriefing at the conclusion of the session. The questionnaire will utilize a 5-point Likert scale, and will ask participants their perceived ease-of-use of a variety of functions and features. Each question will be asked once for Mosaic, and once for the new system.\\
+
+The subjective evaluation goal is to have an average response number across all participants and all questions that is at least 1 point higher on the Likert scale for the new system, as well as to have no questions with an average response for the new system more than 1 point below the response for the same question for Mosaic. This ensures that the overall experience is significantly better from a user standpoint, and there are no areas of particular weakness with the new system.
 
 \subsubsection*{Scenario Completion Time}
-For each scenario to be tested, the time it takes the participant to complete the scenario will be recorded, to the nearest second. In general, shorter times are desirable.\\
+For each scenario to be tested, the time it takes the participant to complete the scenario will be recorded, to the nearest second. This time begins as soon as the user starts the task, and finishes as soon as the task is completed. If the task is not completed, the time is not recorded and the result is noted in the errors section.\\
 
+The goal for scenario completion time is to have the average completion time of each task be at most 10\% slower on the new system, and the total completion time for all tasks on the new system to be at least 20\% less than with Mosaic. This ensures that no task is significantly slower with the new system, and the overall benefit of the new system is significant.
 
 \section*{Results}
 \section*{Discussion}
