@@ -323,7 +323,7 @@ Since English is not Adrian's first language he sometimes has trouble reading an
 
 % =============================== USABILITY =========================== %
 \section*{Design Mockups}
-Please refer to the 
+Please refer to the appendix for final design mockups of each screen. They were closely adhered to when developing the system, as can be noted by examining the screenshots from the new system at the end of the appendix.
 
 % =============================== USABILITY =========================== %
 \section*{Usability Tests}
@@ -355,7 +355,7 @@ The facilitator will initially explain that the amount of time taken to complete
 Before each task, the facilitator will ensure that no courses are enrolled in by navigating to the system's enroll page and dropping all current courses. The facilitator will then navigate to the home page of the system. The facilitator will instruct the participant to `think aloud' so that verbal record exists of their interaction with the application. Then, they will  inform the participant of the task's objective, and allow the participant to control the computer.
 
 \subsubsection*{Task Procedure}
-As soon as the participant starts the task the facilitator will begin to time the participant. The facilitator will observe and enter user behaviour, user comments, and system actions. After the participant has completed all tasks they will be asked to complete a questionnaire.
+As soon as the participant starts the task the facilitator will begin to time the participant. The facilitator will observe and enter user behaviour, user comments, and system actions. After the participant has completed all tasks they will be asked to complete a 14-question questionnaire (see Appendix: Table 1) using a 5-point Likert scale with 1 being \emph{very easy} and 5 being \emph{very hard}.
 
 \subsubsection*{Tasks}
 Following is a list of the tasks the participant will complete. Note: the reason the courses in tasks 1.1 and 2.1 are different is that dummy courses were used for the new system, and have different course codes.
@@ -479,25 +479,26 @@ The system is clearly not a replacement for Mosaic -- it implements a small subs
 \section*{Appendix}
 % ================== SUBSECTION ============================ %
 \subsection*{Usability Tests -- Results}
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=\textwidth]{images/results_avg_time.png}}\\
-    \Caption{Task Completion Time: Mosaic vs New System}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.7\textwidth]{images/results_avg_questionnaire.png}}\\
-    \Caption{Usability Questionnaire Results}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \fbox{\includegraphics[width=0.7\textwidth]{images/results_enroll_time.png}}\\
-    \Caption{Completion Times for Enrolling in Courses}
-\end{figure}
+\begin{table}[h]
+\centering
+\caption{Usability Questionnaire Questions (5-point Likert scale)}
+\begin{tabular}{cllllllllllllll}
+\hline
+Question \# & With Mosaic, how easy is it to...\\\hline
+Q1 & find classes for enrollment?\\
+Q2 & add classes for enrollment? \\
+Q3 & find your weekly schedule\\
+Q4 & navigate your weekly schedule\\
+Q5 & select tutorial, lecture, and lab times for your course\\
+Q6 & enroll in courses\\
+Q7 & resolve schedule conflicts\\\hline
+\multicolumn{2}{c}{\emph{Questions 8 through 14 are identical to 1 through 7, but with the new system instead of Mosaic}}\\
+\hline
+\end{tabular}
+\end{table}
 
 \begin{table}[h]
+\centering
 \caption{Usability Questionnaire Results (5-point scale, lower is better)}
 \begin{tabular}{cllllllllllllll}
 \hline
@@ -515,6 +516,7 @@ Participant \# & Q1 & Q2 & Q3 & Q4 & Q5 & Q6 & Q7 & Q8 & Q9 & Q10 & Q11 & Q12 & 
 \end{table}
 
 \begin{table}[h]
+\centering
 \caption{Usability Scenario Completion Time Results (min:sec)}
 \begin{tabular}{ccccccc}
 \hline
@@ -530,8 +532,25 @@ Participant \# & Mosaic Enroll & New Enroll & Mosaic Exam & New Exam & Mosaic We
 8 & 2:36 & 1:31 & 0:11 & 0:02 & 0:06 & 0:02 \\
 \hline
 \end{tabular}
-
 \end{table}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.7\textwidth]{images/results_avg_time.png}}\\
+    \Caption{Task Completion Time: Mosaic vs New System}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.7\textwidth]{images/results_avg_questionnaire.png}}\\
+    \Caption{Usability Questionnaire Results}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.7\textwidth]{images/results_enroll_time.png}}\\
+    \Caption{Completion Times for Enrolling in Courses}
+\end{figure}
 
 \clearpage
 \newpage
