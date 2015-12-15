@@ -21,7 +21,7 @@
 
 % Caption
 \newcommand{\Caption}[1]
-{\vspace{-4mm}\fontsize{9}{9}\textbf{Figure \refstepcounter{figCounter} 
+{\vspace{0mm}\fontsize{9}{9}\textbf{Figure \refstepcounter{figCounter} 
 \arabic{figCounter}: #1}}
 
 \newcounter{figCounter}
@@ -67,57 +67,50 @@ dagwordj@mcmaster.ca\\
 
 % =================== Section =================== 
 \section*{Abstract}
-A \emph{final report} for a course-management system is presented 
-here. Such a system allows University students to enroll in courses, view their 
-schedule and perform other course-related tasks from a web portal. The proposed 
-project as well as suggested improvements are first explained. Four Canadian 
-university course-management software surveys are then presented. Each survey 
-has a brief description followed by a critique of the major usability flaws and 
-strengths. Three personas are then presented to give the reader an idea of the 
-people likely to be using this system. A section for information about the usablily 
-tests conducted for this system is presented next followed by a result, a discussion
-and a conclusion section about the results obtained from the usability tests
-% =================== Section =================== %
-\section*{Project Proposal}
+The final report for a design project for a course-management system is presented 
+here. The proposed course-management system allows university students to enroll in courses, view their 
+schedule and perform other course-related tasks from a web portal.\\
 
-% =================== SubSection =================== % --------- Rob -- condense and change to past tense
+Firstly, the proposed project and suggested improvements over existing systems are explained. To inform this, four Canadian university course-management systems were surveyed, and the surveys are presented after the suggested improvements. Each survey 
+has a brief description of the software followed by a critique of the major usability flaws and 
+strengths. Three personas are then presented to demonstrate the potential users of the system that guided the design process. Following personas, information about the usablily 
+tests conducted for this system is presented followed by the results, discussion about the results, and final conclusions about the project.
+
+\section*{Note about Formatting}
+This document strictly follows the ACM CHI format. Extra spacing between paragraphs is created by LaTeX to better arrange content, and is not directly controllable by the creator. The format used for the Personas section is based off of the format given along with Milestone 2 to fit into the 2-column layout, with images included inline (which does not violate the ACM CHI template). Extreme care has been given to follow the specified format exactly, including fonts, margins, and figures.
+
+% =================== Section =================== %
+\section*{Introduction}
+
+% =================== SubSection ================== %
 The project proposed in this document is the design of a new 
 university course-management system. Through scrutinization of several 
 pre-existing systems, we will apply design concepts discussed in class to 
 determine what features and design choices are crucial to the success of a course-
 management system's design.\\
 
-It is commonplace for educational institutions to have one central course-
-management system which hosts all tools and information that students and staff 
-may need to access. This includes tools to allow students to enroll in courses, 
-view their schedule and view other course-related information. Additionally 
-there are a variety of other tools to perform financial and administrative 
-tasks, however this project's scope is focusing only on the course-related 
-functions.\\
-
-Course-management systems have achieved near omnipresence in 
-the world of education, but there remains significant variability in their design, 
-structure, and functionality. It is our goal to take the best aspects of the 
-existing systems as well as consider the most prominent criticisms to develop a protoype of a new system.\\
+Users of the proposed system should be able to perform the following functions:
+\begin{itemize}
+\item enroll in courses
+\item change timeslots for lectures, tutorials, and labs of enrolled courses
+\item view weekly schedule
+\item view exam schedule
+\end{itemize}
 
 In the following section we will introduce several possible improvements that 
-could be made to these systems, informed by the system surveys below. It is 
-these suggestions that we plan to incorporate into prototypes for later 
-milestones.
+could be made to existing systems, informed by the system surveys conducted. These suggested improvements were incorporated into designs mockups for the new system, and into the final design of the working system.
 
 % =================== SubSection =================== %
 \subsection*{Suggested Improvements to Existing Systems}
-There were a variety of improvements that have been made to the course-management 
-system when compared to existing products. The software surveys identified 
+We have outlined several improvements over existing systems that have been incorporated into the design of the new system. The software surveys identified 
 several key areas of weaknesses, and solutions to those are presented below.
 
 \subsubsection*{Dynamic Element}
 One of the highlighted points of weakness in all the systems surveyed was the 
 ability to surface the most relevant data to the user quickly and consistently. 
 To improve this aspect, the concept of an intelligent, ``dynamic'' element was 
-proposed. This prominent element is the first thing users see when 
-accessing the webpage. Several factors including the current date and enrollment 
-status were used to determine which task the user is most likely to perform.\\
+proposed. This prominent element is the first thing users see on the home page of the enew system. Several factors including the current date and enrollment 
+status are used to determine which task the user is most likely to perform.\\
 
 For example, when the user accesses the system during exam season, the element 
  displays the student's exam schedule. During the course registration period, 
@@ -132,7 +125,7 @@ displayed below in a static and consistent manner, in case the user wishes to pe
 \subsubsection*{Improved Navigation}
 Many tasks performed by users of course-management software are broken into 
 several steps. A weakness of the existing products was in visually showing the 
-user at which step they were at. A navigation element was included for when the user is engaged in a multi-step task. This element shows which step the user is currently on, and includes the ability to 
+user at which step they were at. To solve this, a ``breadcrumbs'' navigation element was added  when the user is engaged in a multi-step task. This element shows which step the user is currently on, and includes the ability to 
 go back to a previous step, or jump ahead to the first uncompleted step.\\
 
 This visual indicator improves the user's comprehension of how the system 
@@ -140,17 +133,15 @@ works, and gives them the ability to better navigate between steps. It also impr
 as they are less likely to become impatient when they know exactly 
 how many steps they have completed and how many remain. 
 
+\subsubsection*{Smarter Schedule Generation}
+An initial proposal for the system was to have the system generate several possibly schedules based on the users wishlist, and rank them based on several factors such as early classes, gaps between classes and having certain days completely off. We do believe this would be a meaningful addition to a course-management system, however decided not to include it in the final product due to time and resource constraints.
+
 % =================== Section =================== %
-\section*{Software Survey}
+\section*{Related Work}
 Four course-management systems from Canadian universities were selected for 
 review. For each system, a brief description was followed by a critique of 
 the major usability flaws and strengths. From this, the main goals and tasks of 
 users using the systems was extracted. 
-
-%Finally, the two most important of 
-%those features was further analyzed via hierarchical task analyses. 
-%Screenshots were presented to reinforce the arguments in the critique for 
-%each software review.
 
 % =================== SubSection =================== %
 \subsection*{McMaster University -- Mosaic}
@@ -163,13 +154,6 @@ Academics, Finances, Personal Information, and Admissions. A small column to
 the right holds less common sections, such as Enrollment Dates and Graduation. 
 The focus of this analysis is on two common tasks -- enrolling in courses and 
 viewing one's course schedule.
-
-%\begin{InlineColumnFigure}
-%\begin{center}
-%	\includegraphics[width=0.8\textwidth]{MosaicScreen.png}
-%\end{center}
-%\Caption{Selecting courses to enroll in -- Mosaic}
-%\end{InlineColumnFigure}
 
 \subsubsection*{Critique}
 The largest usability flaws in Mosaic center around difficulty to access 
@@ -200,13 +184,6 @@ as processes are broken into steps. Navigating between sub-pages is done using
 native browser back and forward buttons. If an error occurs, such as no courses 
 found for specific search criteria, a large box is displayed with information 
 about the error and the option to search for a solution.
-
-%\begin{InlineColumnFigure}
-%\begin{center}
-%	\includegraphics[width=0.9\textwidth]{WebAdvisorScreen.png}
-%\end{center}
-%\Caption{Registering for preferred courses -- WebAdvisor}
-%\end{InlineColumnFigure}
 
 \subsubsection*{Critique}
 There are a variety of usability issues associated with \mbox{WebAdvisor} that 
@@ -241,14 +218,6 @@ various student-related categories of functions. A tab bar at the top lets the
 user switch between different sections of the system including Student Services 
 and Employee Services.
 
-%\begin{InlineColumnFigure}
-%\begin{center}
-%	\includegraphics[width=0.8\textwidth]{CarletonScreen.png}
-%\end{center}
-%\Caption{Add courses view -- Central}
-%\end{InlineColumnFigure}
-%\vspace{4mm}
-
 \subsubsection*{Critique}
 There are a large number of prominent usability flaws in Carleton University's 
 course-management system. Visibility of common functions on the main 
@@ -256,15 +225,7 @@ page is very low, as a long list of hyperlinks contains all the categories (e.g.
 Registration, Student Records etc) requiring the user to read each one until 
 they find the correct one. Once a category is selected, then another list of 
 hyperlinks to each of the functions in that category is shown (see figure 4). 
-Again, the user must read through each one until they find the desired function.
-
-
-%\begin{InlineColumnFigure}
-%\begin{center}
-%	\includegraphics[width=0.9\textwidth]{CarletonScreen2.png}
-%\end{center}
-%\Caption{Registration main page -- Central}
-%\end{InlineColumnFigure}
+Again, the user must read through each one until they find the desired function.\\
 
 Another large usability flaw is the poor mapping between many actions. For 
 example, when adding a course, the user first enters a course number into one of 
@@ -289,14 +250,7 @@ applications. The main page is broken up into 8 collapsible sections, 4 main
 sections (Academics, Finances, Personal Information, Admissions) with another four 
 sections in a sidebar (Holds, Finance Information, Academic Information, Other 
 Useful Links). The critique will focus on enrolling in courses and viewing a 
-user's course schedule. 
-
-%\begin{InlineColumnFigure}
-%\begin{center}
-%	\includegraphics[width=0.9\textwidth]{WaterlooScreen.png}
-%\end{center}
-%\Caption{Student main page -- Quest}
-%\end{InlineColumnFigure}
+user's course schedule.
 
 \subsubsection*{Critique}
 Quest has some major usability issues when it comes to providing the user to 
@@ -309,93 +263,21 @@ while traversing the deeper options is done using blue menu tabs. Native browser
 back and forward commands generally work as expected, which makes navigation a 
 little more manageable. 
 
-% =================== Section =================== 
-%\section*{Conclusion}
-%We have discussed several proposed improvements to a course-management system. 
-%These include a dynamic element highlighting the most-needed feature based on 
-%several factors, an improved layout with better indicators, and a more 
-%intelligent course scheduler. We have also provided a software survey for four 
-%Canadian university course-management systems. For each survey we critiqued the 
-%software as well as analyzed the two most important features via hierarchical 
-%task analyses, presented at the end of this paper.
-
-\end{multicols}
-%
-%\newpage
-%
-%\section*{HTA - Mosaic, Enrolling in a Course}
-%\begin{center}
-%\fbox{\includegraphics[height=\textheight]{MosaicEnroll.png}}
-%\end{center}
-%
-%\section*{HTA - Mosaic, Viewing Weekly Schedule}
-%\begin{center}
-%\fbox{\includegraphics[width=\textwidth]{MosaicViewSchedule.png}}
-%\end{center}
-%
-%\section*{HTA - WebAdvisor, Enrolling in a Course}
-%\begin{center}
-%\fbox{\includegraphics[width=\textwidth]{WebAdvisorEnroll.png}}
-%\end{center}
-%
-%\section*{HTA - WebAdvisor, Viewing Weekly Schedule}
-%\begin{center}
-%\fbox{\includegraphics[width=\textwidth]{WebAdvisorViewSchedule.png}}
-%\end{center}
-%
-%\section*{HTA - Central, Enrolling in a Course}
-%\begin{center}
-%\fbox{\includegraphics[height=\textheight]{CarletonEnroll.png}}
-%\end{center}
-%
-%\section*{HTA - Central, Viewing Weekly Schedule}
-%\begin{center}
-%\fbox{\includegraphics[width=\textwidth]{CarletonViewSchedule.png}}
-%\end{center}
-%
-%\section*{HTA - Quest, Enrolling in a Course}
-%\begin{center}
-%\fbox{\includegraphics[width=\textwidth]{WaterlooEnroll.png}}
-%\end{center}
-%
-%\section*{HTA - Quest, Viewing Weekly Schedule}
-%\begin{center}
-%\fbox{\includegraphics[width=\textwidth]{WaterlooSchedule.png}}
-%\end{center}
-
-\vspace{1mm}
 \section*{Personas}
-%. The \textbf{design project} involves creating a new user interface and user experience for university student management software. The focus has been on developing an improved system design as compared to McMaster University's current Mosaic software. Other university's systems have been researched and studied in previous milestones, and those results have informed design decisions for our replacement.\\
-
 Presented are the personas used to develop our design.These personas were based off of the \emph{Persona Template} as linked from the assignment outline from McMaster University, COMP SCI 4HC3 These personas were created to archetype the most common user types, and have been integral to developing a product that will satisfy all of them.\\
 
-%Following the personas, we've included two HTA's to highlight the two most important functions of the software -- enrolling in courses and viewing one's class schedule. The simplicity of the HTA's as compared to those created from existing systems is an attestation to our efforts to reduce the complexity of core interactions with the product.\\
-%
-%Finally, design documents for each page of the system are included. These include several revisions for each page (some underwent more revisions than others). Along with each revision we've included a brief description of what motivated our changes, and how they improve upon the design. Initial revisions for each page were sketched on paper for rapid prototyping, and subsequent revisions were created in Photoshop.
-
-%\vspace{5mm}
 %%============================= Persona 1 ======================================%
-%\hrule
-%\vspace{4mm}
-%\subsection{Persona 1 -- Primary persona}
-%\vspace{11mm}
-
 \subsection*{Trevor Clark}
-%\vspace{4mm}
-
-\begin{minipage}{60mm}
-\includegraphics[width=60mm]{Trevor.jpg}
 \begin{center}
-\emph{``When do classes start?"}
+\includegraphics[width=50mm]{images/Trevor.jpg}\\
+\Caption{``When do classes start?"}
 \end{center}
-\end{minipage}
-\begin{minipage}{\textwidth}
+
 \begin{itemize}
 \item Born: London, ON
 \item Age: 22
 \item 3rd Year Engineering Student at McMaster
 \end{itemize}
-\end{minipage}\\\\
 
 Trevor is a third year Civil Engineering student at McMaster. He currently lives 10 minutes away from campus with some friends he met in first year. Trevor's parents are paying for his tuition and he has a student loan which he uses to pay for rent and food.\\
 
@@ -404,28 +286,16 @@ Trevor is unorganized and rarely goes to class. He also forgets to hand in assig
 Trevor has trouble remembering important dates, like his course selection or when his exams are. When he searches for information, he usually gives up after five minutes if he cannot find what he is looking for. Trevor would like it if the new course management system was quick and easy to use. He also would not mind it if certain information was made more accessible during certain times of the year (easy to see link to exam schedule around exam season).
 
 %%============================= Persona 2 ======================================%
-%\hrule
-%\vspace{2mm}
-%\subsection{Persona 2 -- Secondary persona}
-%\vspace{11mm}
-\newpage
 \subsection*{Candice Smith}
-%\vspace{4mm}
-
-\begin{minipage}{60mm}
-\includegraphics[width=60mm]{Candice.jpg}
 \begin{center}
-\emph{``I don't know what electives I want to take for university next year"}
+\includegraphics[width=70mm]{images/Candice.jpg}\\
+\Caption{``I don't know what electives I want to take for university next year"}
 \end{center}
-\end{minipage} \hfill
-\begin{minipage}{\textwidth}
 \begin{itemize}
 \item Born: Oakville, ON
 \item Age: 18
 \item Grade 12 High School Student
 \end{itemize}
-\end{minipage}\\\\
-
 
 Candice has been accepted to the chemistry program at McMaster. Candice currently lives at home with her parents and will be moving into residence in the fall. Her parents are paying for her tuition, but Candice is paying for her residence and meal plan. Candice works part time at the Fortinos in her home town to save up money so she can go to the movies whenever new movies come out.\\
 
@@ -434,26 +304,17 @@ Candice has done well in all of her classes in high school and is a part of seve
 Candice has several electives that she can take, but she cannot decide which ones to enrol in. She has heard that she can change courses during the first couple weeks of class and plans on doing that if she ends up changing her mind. Candice has already made a list of classes she would like to take in her first year and is waiting for the course registration to open up. Candice would like the new course management system to allow her to browse all the courses available to her and would like it if there were descriptions for each course that she could read before she registers.
 
 %%============================= Persona 3 ======================================%
-%\hrule
-%\vspace{2mm}
-%\subsection{Persona 3 -- Secondary persona}
-\vspace{4mm}
 \subsection*{Adrian Lopez}
-%\vspace{4mm}
-
-\begin{minipage}{60mm}
-\includegraphics[width=60mm]{Adrian.png}
 \begin{center}
-\emph{``I have a lot of new things to get used to in Canada"}
+\includegraphics[width=70mm]{images/Adrian.png}\\
+\Caption{``I have a lot of new things to get used to in Canada"}
 \end{center}
-\end{minipage}\hfill
-\begin{minipage}{\textwidth}
+
 \begin{itemize}
 \item Born: Mexico City, Mexico
 \item Age: 20
 \item 2nd Year Geography Student on Exchange to McMaster
 \end{itemize}
-\end{minipage}\\\\
 
 Adrian is a geography student from Mexico on exchange at McMaster for the year. Adrian is living in a house 20 minutes away from campus with other students in the foreign exchange program. Adrian's tuition is being paid for by a grant he received for being a part of the foreign exchange program. His parents are giving him some money for rent and food but Adrian has to pay for some of it himself. Adrian is a hard working individual during the week and can be found in the Thode library between classes. Adrian likes to get all of his assignments done during the week so he can spend his weekend going to clubs with his housemates and friends.\\
 
@@ -461,12 +322,14 @@ Adrian is a part of the improv club which he regularly goes to. Adrian has chose
 
 Since English is not Adrian's first language he sometimes has trouble reading and understanding websites that are primarily text, and he can get confused while navigating to the information he is looking for. Adrian would like it if the new course management system was easy to navigate and intuitive enough that he doesn't need to read an instruction manual to know how to use it.
 
-\newpage
-\begin{multicols}{2}
+% =============================== USABILITY =========================== %
+\section*{Design Mockups}
+Please refer to the 
 
+% =============================== USABILITY =========================== %
 \section*{Usability Tests}
 \subsection*{Overview}
-This section of the document describes a test plan for conducting a usability test for our course management software. This usability test plan will be based off of the \href{http://www.usability.gov/how-to-and-tools/resources/templates/usability-test-plan-template.html}{\underline{Usability Test Plan Template}} created by the U.S. Department of Health \& Human Services. The goals of this usability test include establishing a baseline of user performance, establishing and validating user performance measures, and identifying potential design concerns to be addressed in order to improve the efficiency, productivity, and end-user satisfaction.\\
+This section of the document describes a plan for conducting a usability test for our course management software. This usability test plan will be based off of the \href{http://www.usability.gov/how-to-and-tools/resources/templates/usability-test-plan-template.html}{\underline{Usability Test Plan Template}} created by the U.S. Department of Health \& Human Services. The goals of this usability test are to establish a baseline of user performance, establish and validate user performance measures, and identify potential design concerns to be addressed in order to improve the efficiency, productivity, and end-user satisfaction of the product.\\
 
 The usability test objectives are:
 \begin{itemize}
@@ -486,46 +349,44 @@ The usability test objectives are:
 The participant's interaction with the application will be monitored by the facilitator seated in the same room. The facilitator will be responsible for taking notes and logging data during the tests.
 The facilitator will explain that the amount of time taken to complete the test task will be measured as well as how many errors were made. At the start of each task the facilitator will inform the participant of the tasks objective.\\
 
-Once the participant starts the task the facilitator will begin to time the participant.  The facilitator will instruct the participant to 'think aloud' so that verbal record exists of their interaction with the application. The facilitator will observe and enter user behavior, user comments, and system actions.\\
+Once the participant starts the task the facilitator will begin to time the participant.  The facilitator will instruct the participant to `think aloud' so that verbal record exists of their interaction with the application. The facilitator will observe and enter user behavior, user comments, and system actions. After the participant has completed all tasks they will be asked to complete a questionnaire.\\
 
-After the participant has completed all tasks they will be asked to complete a questionnaire.\\
-
-The following is a list of the Tasks the participant will complete:
+Following is a list of the tasks the participant will complete. The reason the courses in tasks 1.1 and 2.1 are different is that dummy courses were used for the new system, and have different course codes.
 \begin{itemize}
-\item \textbf{Test 1.1} - Have user find course enrollment and enroll in the following courses for Winter 2015 through Mosaic, selecting lectures, tutorials, and sections so as to eliminate conflicts as needed:
+\item \textbf{Task 1.1} - Have user enroll in the following courses for \emph{Winter 2016} through Mosaic, selecting lectures, tutorials, and sections so as to eliminate conflicts as needed:
 \begin{itemize}
 \item ANTHROP 1AA3
-\item ANTRHOP 1AB3
+\item ANTHROP 1AB3
 \item COMPSCI 2DM3
 \item BIOLOGY 1A03
 \end{itemize}
-\item \textbf{Test 1.2} - Have user find their exam schedule for the Fall 2015 semester on Mosaic 
-\item \textbf{Test 1.3} - Have user find their weekly schedule for the Fall 2015 semester on Mosaic
-\item \textbf{Test 2.1} -  Have user find course enrollment and enroll in the following courses using the new product selecting lectures, tutorials, and sections so as to eliminate conflicts as needed:
+\item \textbf{Task 1.2} - Have user find their exam schedule for the Fall 2015 semester on Mosaic 
+\item \textbf{Task 1.3} - Have user find their weekly schedule for the Fall 2015 semester on Mosaic
+\item \textbf{Task 2.1} -  Have user enroll in the following courses using the new system selecting lectures, tutorials, and sections so as to eliminate conflicts as needed:
 \begin{itemize}
-\item ANTHRO 4AA3
-\item ANTRHO 4M03
+\item ANTHROP 4AA3
+\item ANTHROP 4M03
 \item COMP SCI 1TA3
 \item BIOLOGY 2AA3
 \end{itemize}
-\item \textbf{Test 2.2} - Have user find their exam schedule for the Fall 2015 semester using the new product
-\item \textbf{Test 2.3} - Have user find their weekly schedule for the Fall 2015 semester using the new product
+\item \textbf{Task 2.2} - Have user find their exam schedule for the Fall 2015 semester using the new system
+\item \textbf{Task 2.3} - Have user find their weekly schedule for the Fall 2015 semester using the new system
 \end{itemize}
 
 \subsection*{Usability Metrics}
 Usability metrics refers to user performance measured against specific performance goals necessary to satisfy usability requirements. Scenario completion success rates, error rates and subjective evaluations will be used. Time-to-completion of scenarios will also be collected.\\
 
-\textbf{Scenario Completion}\\
+\subsubsection*{Scenario Completion}
 Each scenario will require, or request, that the participant obtains or inputs specific data that would be used in course of a typical task. The scenario is completed when the participant indicates the scenario's goal has been obtained (whether successfully or unsuccessfully) or the participant requests and receives sufficient guidance as to warrant scoring the scenario as a critical error.\\
 
-\textbf{Errors}\\
+\subsubsection*{Errors}
 Errors are deviations at completion from the targets of the scenario. Obtaining or otherwise reporting of the wrong data value due to participant work flow is a error. Participants may or may not be aware that the task goal is incorrect or incomplete.
 Independent completion of the scenario is a universal goal. Errors may be procedural, in which the participant does not complete a scenario in the most optimal means (e.g., excessive steps and keystrokes). These errors may also be errors of confusion (ex., initially selecting the wrong function, using a user-interface control incorrectly such as attempting to edit an un-editable field ).\\
 
-\textbf{Subjective Evaluations}\\
+\subsubsection*{Subjective Evaluations}
 Subjective evaluations regarding ease of use and satisfaction will be collected via questionnaires, and during debriefing at the conclusion of the session. The questionnaires will utilize free-form responses and rating scales.\\
 
-\textbf{Scenario Completion Time}\\
+\subsubsection*{Scenario Completion Time}
 the time to complete each scenario  will be recorded.\\
 
 
@@ -533,5 +394,170 @@ the time to complete each scenario  will be recorded.\\
 \section*{Discussion}
 \section*{Conclusion}
 \end{multicols}
+
+\newpage
+\section*{Appendix}
+% ================== SUBSECTION ============================ %
+\subsection*{Other Systems -- HTA's}
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/MosaicEnroll.png}}\\
+    \Caption{Mosaic HTA -- Enrolling in a Course}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/MosaicViewSchedule.png}}\\
+    \Caption{Mosaic HTA -- Viewing Weekly Schedule}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/CarletonEnroll.png}}\\
+    \Caption{Carleton HTA -- Enrolling in a Course}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.6\textwidth]{images/CarletonViewSchedule.png}}\\
+    \Caption{Carleton HTA -- Viewing Weekly Schedule}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.6\textwidth]{images/WaterlooEnroll.png}}\\
+    \Caption{Quest HTA -- Enrolling in a Course}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.6\textwidth]{images/WaterlooSchedule.png}}\\
+    \Caption{Quest HTA -- Viewing Weekly Schedule}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/WebAdvisorEnroll.png}}\\
+    \Caption{WebAdvisor HTA -- Enrolling in a Course}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/WebAdvisorViewSchedule.png}}\\
+    \Caption{WebAdvisor HTA -- Viewing Weekly Schedule}
+\end{figure}
+
+% ================== SUBSECTION ============================ %
+\clearpage
+\subsection*{Other Systems -- Screenshots}
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[height=70mm]{images/MosaicScreen.png}\\
+    \Caption{Mosaic -- Screenshot}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[height=70mm]{images/CarletonScreen.png}\\
+    \Caption{Carleton -- Screenshot}
+\end{minipage}\\\vspace{5mm}
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[height=70mm]{images/WaterlooScreen.png}\\
+\Caption{Quest -- Screenshot}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+    \centering
+	\includegraphics[height=70mm]{images/WebAdvisorScreen.png}\\
+	\Caption{WebAdvisor -- Screenshot}
+\end{minipage}\\\vspace{3mm}
+
+% ================== SUBSECTION ============================ %
+\subsection*{New System -- Final Design Mockups}
+\begin{minipage}{.5\textwidth}
+    \centering
+    \fbox{\includegraphics[height=80mm]{images/Rev2_MainPage.png}}\\
+    \Caption{Final Mockup of Home Page}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+    \centering
+    \fbox{\includegraphics[height=80mm]{images/Rev2_ExamSchedule.png}}\\
+    \Caption{Final Mockup of Exam Schedule}
+\end{minipage}\\\vspace{5mm}
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \fbox{\includegraphics[height=80mm]{images/Rev2_WeeklySchedule.png}}\\
+	\Caption{Final Mockup of Weekly Schedule}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+    \centering
+	\fbox{\includegraphics[height=80mm]{images/Rev2_SearchCourses.png}}\\
+	\Caption{Final Mockup of Search Criteria Page}
+\end{minipage}\\\vspace{3mm}
+
+\begin{minipage}{.5\textwidth}
+    \centering
+    \fbox{\includegraphics[height=80mm]{images/Rev2_CourseListing.png}}\\
+    \Caption{Final Mockup of Search Results Page}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+    \centering
+    \fbox{\includegraphics[height=80mm]{images/Rev2_WishlistEnroll.png}}\\
+    \Caption{Final Mockup of Enroll from Wishlist Page}
+\end{minipage}\\\vspace{5mm}
+
+% ================== SUBSECTION ============================ %
+\subsection*{New System -- HTA's}
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=\textwidth]{images/HTA_Enroll.png}}\\
+\Caption{New System HTA - Enrolling in a Course}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics[width=60mm]{images/HTA_ViewSchedule.png}}\\
+\Caption{New System HTA - View Weekly Schedule}
+\end{figure}
+
+% ================== SUBSECTION ============================ %
+\subsection*{New System -- Screenshots}
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/screen_home.png}}\\
+    \Caption{New System Screenshot -- Home Page}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/screen_exam.png}}\\
+    \Caption{New System Screenshot --  Exam Schedule}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/screen_weekly.png}}\\
+	\Caption{New System Screenshot -- Weekly Schedule}
+\end{figure}
+
+\begin{figure}
+    \centering
+	\fbox{\includegraphics[width=\textwidth]{images/screen_criteria.png}}\\
+	\Caption{New System Screenshot -- Search Criteria Page}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/screen_results.png}}\\
+    \Caption{New System Screenshot -- Search Results Page}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=\textwidth]{images/screen_enroll.png}}\\
+    \Caption{New System Screenshot --  Enroll from Wishlist Page}
+\end{figure}
+
 
 \end{document}
